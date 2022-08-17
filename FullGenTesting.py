@@ -187,40 +187,58 @@ STcha_box = False
 #Define Skills
 acrobatics = dex_mod
 int(acrobatics)
+acrobatics_box = False
 animal_handling = wis_mod
 int(animal_handling)
+animal_handling_box = False
 arcana = int_mod
 int(arcana)
+arcana_box = False
 athletics = str_mod
 int(athletics)
+athletics_box = False
 deception = cha_mod
 int(deception)
+deception_box = False
 history = int_mod
 int(history)
+history_box = False
 insight = wis_mod
 int(insight)
+insight_box = False
 intimidation = cha_mod
 int(intimidation)
+intimidation_box = False
 investigation = int_mod
 int(investigation)
+investigation_box = False
 medicine = wis_mod
 int(medicine)
+medicine_box = False
 nature = int_mod
 int(nature)
+nature_box = False
 perception = wis_mod
 int(perception)
+perception_box = False
 performance = cha_mod
 int(performance)
+performance_box = False
 persuasion = cha_mod
 int(persuasion)
+persuasion_box = False
 religion = int_mod
 int(religion)
+religion_box = False
 slight_of_hand = dex_mod
 int(slight_of_hand)
+slight_of_hand_box = False
 stealth = dex_mod
 int(stealth)
+stealth_box = False
 survival = wis_mod
 int(survival)
+survival_box = False
 #Run CharGen
 while True :
     print("Please select a race from the following list: ")
@@ -468,6 +486,7 @@ while True :
                 survival = wis_mod
                 int(survival)
                 perception += 2
+                perception_box = True
                 skill_list.remove("Perception")
                 barb_skill_list.remove("Perception")
                 speed = "30ft"
@@ -534,77 +553,95 @@ while True :
             while True :
                     skill_choice_three_input = int(input("Enter what skill you want first: "))
                     skill_choice_three = barb_skill_list[skill_choice_three_input - 1]
-                    if skill_choice_three == skill_list[0] or skill_choice_three == skill_list[1] or skill_choice_three == skill_list[2] or skill_choice_three == skill_list[3] or skill_choice_three == skill_list[4] or skill_choice_three == skill_list[5] or skill_choice_three == skill_list[6] or skill_choice_three == skill_list[7] or skill_choice_three == skill_list[8] or skill_choice_three == skill_list[9] or skill_choice_three == skill_list[10] or skill_choice_three == skill_list[11] or skill_choice_three == skill_list[12] or skill_choice_three == skill_list[13] or skill_choice_three == skill_list[14] or skill_choice_three == skill_list[15] :
+                    if skill_choice_three in skill_list :
                             if skill_choice_three == "Acrobatics" :
                                     acrobatics += 2
+                                    acrobatics_box = True
                                     skill_list.remove(skill_choice_three)
                                     break
                             elif skill_choice_three == "Animal Handling" :
                                     animal_handling += 2
+                                    animal_handling_box = True
                                     skill_list.remove(skill_choice_three)
                                     break
                             elif skill_choice_three == "Arcana" :
                                     arcana += 2
+                                    arcana_box = True
                                     skill_list.remove(skill_choice_three)
                                     break
                             elif skill_choice_three == "Athletics" :
                                     athletics += 2
+                                    athletics_box = True
                                     skill_list.remove(skill_choice_three)
                                     break
                             elif skill_choice_three == "Deception" :
                                     deception += 2
+                                    deception_box = True
                                     skill_list.remove(skill_choice_three)
                                     break
                             elif skill_choice_three == "History" :
                                     history += 2
+                                    history_box = True
                                     skill_list.remove(skill_choice_three)
                                     break
                             elif skill_choice_three == "Insight" :
                                     insight += 2
+                                    insight_box = True
                                     skill_list.remove(skill_choice_three)
                                     break
                             elif skill_choice_three == "Intimidation" :
                                     intimidation += 2
+                                    intimidation_box = True
                                     skill_list.remove(skill_choice_three)
                                     break
                             elif skill_choice_three == "Investigation" :
                                     investigation += 2
+                                    investigation_box = True
                                     skill_list.remove(skill_choice_three)
                                     break
                             elif skill_choice_three == "Medicine" :
                                     medicine += 2
+                                    medicine_box = True
                                     skill_list.remove(skill_choice_three)
                                     break
                             elif skill_choice_three == "Nature" :
                                     nature += 2
+                                    nature_box = True
                                     skill_list.remove(skill_choice_three)
                                     break
                             elif skill_choice_three == "Perception" :
                                     perception += 2
+                                    perception_box = True
                                     skill_list.remove(skill_choice_three)
                                     break
                             elif skill_choice_three == "Performance" :
                                     performance += 2
+                                    performance_box = True
                                     skill_list.remove(skill_choice_three)
                                     break
                             elif skill_choice_three == "Persuasion" :
                                     persuasion += 2
+                                    persuasion_box = True
                                     skill_list.remove(skill_choice_three)
                                     break
                             elif skill_choice_three == "Religion" :
                                     religion += 2
+                                    religion_box = True
                                     skill_list.remove(skill_choice_three)
                                     break
                             elif skill_choice_three == "Sleight of Hand" :
                                     slight_of_hand += 2
+                                    slight_of_hand_box = True
                                     skill_list.remove(skill_choice_three)
                                     break
                             elif skill_choice_three == "Stealth" :
                                     stealth += 2
+                                    stealth_box = True
                                     skill_list.remove(skill_choice_three)
                                     break
                             elif skill_choice_three == "Survival" :
                                     survival += 2
+                                    survival_box = True
                                     skill_list.remove(skill_choice_three)
                                     break
                             else :
@@ -621,77 +658,95 @@ while True :
                     if skill_choice_four == skill_choice_three :
                             print("You can not choose the came skill twice.")
                             continue
-                    elif skill_choice_four == skill_list[0] or skill_choice_four == skill_list[1] or skill_choice_four == skill_list[2] or skill_choice_four == skill_list[3] or skill_choice_four == skill_list[4] or skill_choice_four == skill_list[5] or skill_choice_four == skill_list[6] or skill_choice_four == skill_list[7] or skill_choice_four == skill_list[8] or skill_choice_four == skill_list[9] or skill_choice_four == skill_list[10] or skill_choice_four == skill_list[11] or skill_choice_four == skill_list[12] or skill_choice_four == skill_list[13] or skill_choice_four == skill_list[14] or skill_choice_four == skill_list[15] :
+                    elif skill_choice_four in skill_list :
                             if skill_choice_four == "Acrobatics" :
                                     acrobatics += 2
+                                    acrobatics_box = True
                                     skill_list.remove(skill_choice_four)
                                     break
                             elif skill_choice_four == "Animal Handling" :
                                     animal_handling += 2
+                                    animal_handling_box = True
                                     skill_list.remove(skill_choice_four)
                                     break
                             elif skill_choice_four == "Arcana" :
                                     arcana += 2
+                                    arcana_box = True
                                     skill_list.remove(skill_choice_four)
                                     break
                             elif skill_choice_four == "Athletics" :
                                     athletics += 2
+                                    athletics_box = True
                                     skill_list.remove(skill_choice_four)
                                     break
                             elif skill_choice_four == "Deception" :
                                     deception += 2
+                                    deception_box = True
                                     skill_list.remove(skill_choice_four)
                                     break
                             elif skill_choice_four == "History" :
                                     history += 2
+                                    history_box = True
                                     skill_list.remove(skill_choice_four)
                                     break
                             elif skill_choice_four == "Insight" :
                                     insight += 2
+                                    insight_box = True
                                     skill_list.remove(skill_choice_four)
                                     break
                             elif skill_choice_four == "Intimidation" :
                                     intimidation += 2
+                                    intimidation_box = True
                                     skill_list.remove(skill_choice_four)
                                     break
                             elif skill_choice_four == "Investigation" :
                                     investigation += 2
+                                    investigation_box = True
                                     skill_list.remove(skill_choice_four)
                                     break
                             elif skill_choice_four == "Medicine" :
                                     medicine += 2
+                                    medicine_box = True
                                     skill_list.remove(skill_choice_four)
                                     break
                             elif skill_choice_four == "Nature" :
                                     nature += 2
+                                    nature_box = True
                                     skill_list.remove(skill_choice_four)
                                     break
                             elif skill_choice_four == "Perception" :
                                     perception += 2
+                                    perception_box = True
                                     skill_list.remove(skill_choice_four)
                                     break
                             elif skill_choice_four == "Performance" :
                                     performance += 2
+                                    performance_box = True
                                     skill_list.remove(skill_choice_four)
                                     break
                             elif skill_choice_four == "Persuasion" :
                                     persuasion += 2
+                                    persuasion_box = True
                                     skill_list.remove(skill_choice_four)
                                     break
                             elif skill_choice_four == "Religion" :
                                     religion += 2
+                                    religion_box = True
                                     skill_list.remove(skill_choice_four)
                                     break
                             elif skill_choice_four == "Sleight of Hand" :
                                     slight_of_hand += 2
+                                    slight_of_hand_box = True
                                     skill_list.remove(skill_choice_four)
                                     break
                             elif skill_choice_four == "Stealth" :
                                     stealth += 2
+                                    stealth_box = True
                                     skill_list.remove(skill_choice_four)
                                     break
                             elif skill_choice_four == "Survival" :
                                     survival += 2
+                                    survival_box = True
                                     skill_list.remove(skill_choice_four)
                                     break
                             else :
@@ -1141,77 +1196,95 @@ for index, item in enumerate(skill_list, start=1):
 while True :
         skill_choice_three_input = int(input("Enter what skill you want first: "))
         skill_choice_three = skill_list[skill_choice_three_input - 1]
-        if skill_choice_three == skill_list[0] or skill_choice_three == skill_list[1] or skill_choice_three == skill_list[2] or skill_choice_three == skill_list[3] or skill_choice_three == skill_list[4] or skill_choice_three == skill_list[5] or skill_choice_three == skill_list[6] or skill_choice_three == skill_list[7] or skill_choice_three == skill_list[8] or skill_choice_three == skill_list[9] or skill_choice_three == skill_list[10] or skill_choice_three == skill_list[11] or skill_choice_three == skill_list[12] or skill_choice_three == skill_list[13] or skill_choice_three == skill_list[14] or skill_choice_three == skill_list[15] :
+        if skill_choice_three in skill_list :
                 if skill_choice_three == "Acrobatics" :
                         acrobatics += 2
+                        acrobatics_box = True
                         skill_list.remove(skill_choice_three)
                         break
                 elif skill_choice_three == "Animal Handling" :
                         animal_handling += 2
+                        animal_handling_box = True
                         skill_list.remove(skill_choice_three)
                         break
                 elif skill_choice_three == "Arcana" :
                         arcana += 2
+                        arcana_box = True
                         skill_list.remove(skill_choice_three)
                         break
-                elif skill_choice_three == "Atheltics" :
+                elif skill_choice_three == "Athletics" :
                         athletics += 2
+                        athletics_box = True
                         skill_list.remove(skill_choice_three)
                         break
                 elif skill_choice_three == "Deception" :
                         deception += 2
+                        deception_box = True
                         skill_list.remove(skill_choice_three)
                         break
                 elif skill_choice_three == "History" :
                         history += 2
+                        history_box = True
                         skill_list.remove(skill_choice_three)
                         break
                 elif skill_choice_three == "Insight" :
                         insight += 2
+                        insight_box = True
                         skill_list.remove(skill_choice_three)
                         break
                 elif skill_choice_three == "Intimidation" :
                         intimidation += 2
+                        intimidation_box = True
                         skill_list.remove(skill_choice_three)
                         break
                 elif skill_choice_three == "Investigation" :
                         investigation += 2
+                        investigation_box = True
                         skill_list.remove(skill_choice_three)
                         break
                 elif skill_choice_three == "Medicine" :
                         medicine += 2
+                        medicine_box = True
                         skill_list.remove(skill_choice_three)
                         break
                 elif skill_choice_three == "Nature" :
                         nature += 2
+                        nature_box = True
                         skill_list.remove(skill_choice_three)
                         break
                 elif skill_choice_three == "Perception" :
                         perception += 2
+                        perception_box = True
                         skill_list.remove(skill_choice_three)
                         break
                 elif skill_choice_three == "Performance" :
                         performance += 2
+                        performance_box = True
                         skill_list.remove(skill_choice_three)
                         break
                 elif skill_choice_three == "Persuasion" :
                         persuasion += 2
+                        persuasion_box = True
                         skill_list.remove(skill_choice_three)
                         break
                 elif skill_choice_three == "Religion" :
                         religion += 2
+                        religion_box = True
                         skill_list.remove(skill_choice_three)
                         break
                 elif skill_choice_three == "Sleight of Hand" :
                         slight_of_hand += 2
+                        slight_of_hand_box = True
                         skill_list.remove(skill_choice_three)
                         break
                 elif skill_choice_three == "Stealth" :
                         stealth += 2
+                        stealth_box = True
                         skill_list.remove(skill_choice_three)
                         break
                 elif skill_choice_three == "Survival" :
                         survival += 2
+                        survival_box = True
                         skill_list.remove(skill_choice_three)
                         break
                 else :
@@ -1228,77 +1301,95 @@ while True :
         if skill_choice_four == skill_choice_three :
                 print("You can not choose the came skill twice.")
                 continue
-        elif skill_choice_four == skill_list[0] or skill_choice_four == skill_list[1] or skill_choice_four == skill_list[2] or skill_choice_four == skill_list[3] or skill_choice_four == skill_list[4] or skill_choice_four == skill_list[5] or skill_choice_four == skill_list[6] or skill_choice_four == skill_list[7] or skill_choice_four == skill_list[8] or skill_choice_four == skill_list[9] or skill_choice_four == skill_list[10] or skill_choice_four == skill_list[11] or skill_choice_four == skill_list[12] or skill_choice_four == skill_list[13] or skill_choice_four == skill_list[14] or skill_choice_four == skill_list[15] :
+        elif skill_choice_four in skill_list :
                 if skill_choice_four == "Acrobatics" :
                         acrobatics += 2
+                        acrobatics_box = True
                         skill_list.remove(skill_choice_four)
                         break
                 elif skill_choice_four == "Animal Handling" :
                         animal_handling += 2
+                        animal_handling_box = True
                         skill_list.remove(skill_choice_four)
                         break
                 elif skill_choice_four == "Arcana" :
                         arcana += 2
+                        arcana_box = True
                         skill_list.remove(skill_choice_four)
                         break
-                elif skill_choice_four == "Atheltics" :
+                elif skill_choice_four == "Athletics" :
                         athletics += 2
+                        athletics_box = True
                         skill_list.remove(skill_choice_four)
                         break
                 elif skill_choice_four == "Deception" :
                         deception += 2
+                        deception_box = True
                         skill_list.remove(skill_choice_four)
                         break
                 elif skill_choice_four == "History" :
                         history += 2
+                        history_box = True
                         skill_list.remove(skill_choice_four)
                         break
                 elif skill_choice_four == "Insight" :
                         insight += 2
+                        insight_box = True
                         skill_list.remove(skill_choice_four)
                         break
                 elif skill_choice_four == "Intimidation" :
                         intimidation += 2
+                        intimidation_box = True
                         skill_list.remove(skill_choice_four)
                         break
                 elif skill_choice_four == "Investigation" :
                         investigation += 2
+                        investigation_box = True
                         skill_list.remove(skill_choice_four)
                         break
                 elif skill_choice_four == "Medicine" :
                         medicine += 2
+                        medicine_box = True
                         skill_list.remove(skill_choice_four)
                         break
                 elif skill_choice_four == "Nature" :
                         nature += 2
+                        nature_box = True
                         skill_list.remove(skill_choice_four)
                         break
                 elif skill_choice_four == "Perception" :
                         perception += 2
+                        perception_box = True
                         skill_list.remove(skill_choice_four)
                         break
                 elif skill_choice_four == "Performance" :
                         performance += 2
+                        performance_box = True
                         skill_list.remove(skill_choice_four)
                         break
                 elif skill_choice_four == "Persuasion" :
                         persuasion += 2
+                        persuasion_box = True
                         skill_list.remove(skill_choice_four)
                         break
                 elif skill_choice_four == "Religion" :
                         religion += 2
+                        religion_box = True
                         skill_list.remove(skill_choice_four)
                         break
                 elif skill_choice_four == "Sleight of Hand" :
                         slight_of_hand += 2
+                        slight_of_hand_box = True
                         skill_list.remove(skill_choice_four)
                         break
                 elif skill_choice_four == "Stealth" :
                         stealth += 2
+                        stealth_box = True
                         skill_list.remove(skill_choice_four)
                         break
                 elif skill_choice_four == "Survival" :
                         survival += 2
+                        survival_box = True
                         skill_list.remove(skill_choice_four)
                         break
                 else :
@@ -1342,8 +1433,8 @@ data_dict = {
     'CHA': charisma,
     'CHamod': cha_mod,
     'PersonalityTraits ': "PlaceHolder",
-    'Features and Traits': ', '.join(featurelist),
-    'ProficienciesLang': ', '.join(professionlist),
+    'Features and Traits': ',\n '.join(featurelist),
+    'ProficienciesLang': ',\n '.join(professionlist),
     'HD': hitdie,
     'HDTotal': hitdietotal,
     'ProfBonus': "+2",
@@ -1361,23 +1452,42 @@ data_dict = {
     'ST Charisma': STcha,
     'Check Box 22': STcha_box,
     'Acrobatics': acrobatics,
+    'Check Box 23': acrobatics_box,
     'Athletics': athletics,
+    'Check Box 24': animal_handling_box,
     'Animal': animal_handling,
+    'Check Box 25': arcana_box,
     'Deception ': deception,
+    'Check Box 26': athletics_box,
     'History ': history,
+    'Check Box 27': deception_box,
     'Insight': insight,
+    'Check Box 28': history_box,
     'Intimidation': intimidation,
+    'Check Box 29': insight_box,
     'Investigation ': investigation,
+    'Check Box 30': intimidation_box,
     'SleightofHand': slight_of_hand,
+    'Check Box 31': investigation_box,
     'Survival': survival,
+    'Check Box 32': medicine_box,
     'Arcana': arcana,
+    'Check Box 33': nature_box,
     'Perception ': perception,
+    'Check Box 34': perception_box,
     'Nature': nature,
+    'Check Box 35': performance_box,
     'Performance': performance,
+    'Check Box 36': persuasion_box,
     'Persuasion': persuasion,
+    'Check Box 37': religion_box,
     'Medicine': medicine,
+    'Check Box 38': slight_of_hand_box,
     'Religion': religion,
+    'Check Box 39': stealth_box,
     'Stealth ': stealth,
+    'Check Box 40': survival_box,
+    'Background': background,
     'Age': age,
     'Height': height,
     'Weight': weight,
@@ -1385,8 +1495,12 @@ data_dict = {
     'Skin': skin_color,
     'Hair': hair_color,
     'Wpn Name': wpn_name,
+    'Wpn1 Damage': wpn1_damage,
+    'Wpn Name 2': wpn_name_2,
+    'Wpn2 Damage ': wpn2_damage,
+    'Equipment': ', '.join(equipmentlist),
     
-    'Feat+Traits': "Dorf\ndarkvision\n"
+    'Feat+Traits': "PlaceHolder"
 }
 
 
