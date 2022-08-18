@@ -6,7 +6,7 @@ pdf_template = "template.pdf"
 pdf_output = "output.pdf"
 
 template_pdf = pdfrw.PdfReader(pdf_template)  # create a pdfrw object from our template.pdf
-print(template_pdf)  # uncomment to see all the data captured from this PDF.
+#print(template_pdf)  # uncomment to see all the data captured from this PDF.
 
 ANNOT_KEY = '/Annots'
 ANNOT_FIELD_KEY = '/T'
