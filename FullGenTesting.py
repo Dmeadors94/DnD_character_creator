@@ -275,7 +275,7 @@ while True:
     print("1.Human")
     print("2.Dwarf")
     print("3.Elf")
-    # print("4.Half-Elf")
+    print("4.Half-Elf")
     # print("5.Half-Orc")
     # print("6.Halfing")
     # print("7.Gnome")
@@ -569,6 +569,123 @@ while True:
 
         else:
             continue
+    elif race_input == "4":
+        print("Ability Score Increase: Your Charisma score increases by 2, and two other ability scores of your choice"
+        "increase by 1.")
+        print("========================")
+        print(
+            "Age: Half-elves mature at the same rate humans do and reach adulthood around the age of 20."
+            "They live much longer than humans, however, often exceeding 180 years.")
+        print("========================")
+        print(
+            "Alignment: Half-elves share the chaotic bent of their elven heritage. They value both personal freedom"
+            "and creative expression, demonstrating neither love of leaders nor desire for followers."
+            "They chafe at rules, resent others’ demands, and sometimes prove unreliable, or at least unpredictable.")
+        print("========================")
+        print("Size: Half-elves are about the same size as humans, ranging from 5 to 6 feet tall. Your size is Medium.")
+        print("========================")
+        print("Speed: Your base walking speed is 30 feet.")
+        print("========================")
+        print(
+            "Darkvision: Accustomed to twilit forests and the night sky, you have superior vision in dark and dim "
+            "conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness "
+            "as if it were dim light. You can’t discern color in darkness, only shades of gray.")
+        print("========================")
+        print(
+            "Fey Ancestry: You have advantage on saving throws against being charmed,"
+            "and magic can’t put you to sleep.")
+        print("========================")
+        print("Skill Versatility: You gain proficiency in two skills of your choice.")
+        print("========================")
+        print("Languages: You can speak, read, and write Common, Elvish, and one extra language of your choice.")
+        race_choice = input("Do you want to be a Half-Elf? Yes or No?: ")
+        if race_choice.lower() in ["y", "yes"]:
+            race = "Half-Elf"
+            charisma += 2
+            while True:
+                print("Please choose two ability scores to increase by 1.")
+                print("1.Strength")
+                print("2.Dexterity")
+                print("3.Constitution")
+                print("4.Intelligence")
+                print("5.Wisdom")
+                choice_a = input("First Stat Choice: ")
+                if choice_a == "1":
+                    strength += 1
+                    str_mod = Modcal.Modcal(strength)
+                    STstr = str_mod
+                    break
+                elif choice_a == "2":
+                    dexterity += 1
+                    dex_mod = Modcal.Modcal(dexterity)
+                    STdex = dex_mod
+                    break
+                elif choice_a == "3":
+                    constitution += 1
+                    con_mod = Modcal.Modcal(constitution)
+                    STcon = con_mod
+                    break
+                elif choice_a == "4":
+                    intelligence += 1
+                    int_mod = Modcal.Modcal(intelligence)
+                    STint = int_mod
+                    break
+                elif choice_a == "5":
+                    wisdom += 1
+                    wis_mod = Modcal.Modcal(wisdom)
+                    STwis = wis_mod
+                    break
+                else:
+                    print("Invalid Choice")
+                    continue
+            while True:
+                choice_b = input("Second Stat Choice: ")
+                if choice_b == choice
+
+            cha_mod = Modcal.Modcal(charisma)
+            STcha = cha_mod
+            acrobatics = dex_mod
+            int(acrobatics)
+            animal_handling = wis_mod
+            int(animal_handling)
+            arcana = int_mod
+            int(arcana)
+            athletics = str_mod
+            int(athletics)
+            deception = cha_mod
+            int(deception)
+            history = int_mod
+            int(history)
+            insight = wis_mod
+            int(insight)
+            intimidation = cha_mod
+            int(intimidation)
+            investigation = int_mod
+            int(investigation)
+            medicine = wis_mod
+            int(medicine)
+            nature = int_mod
+            int(nature)
+            perception = wis_mod
+            int(perception)
+            performance = cha_mod
+            int(performance)
+            persuasion = cha_mod
+            int(persuasion)
+            religion = int_mod
+            int(religion)
+            slight_of_hand = dex_mod
+            int(slight_of_hand)
+            stealth = dex_mod
+            int(stealth)
+            survival = wis_mod
+            int(survival)
+            speed = "30ft"
+            professionlist.append("Language: Common")
+            professionlist.append("Language: Elvish")
+            featurelist.append("Darkvision")
+            featurelist.append("Fey Ancestry")
+            break
     else:
         print("Choose a number.")
         continue
