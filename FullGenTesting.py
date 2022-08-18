@@ -276,7 +276,7 @@ while True:
     print("2.Dwarf")
     print("3.Elf")
     print("4.Half-Elf")
-    # print("5.Half-Orc")
+    print("5.Half-Orc")
     # print("6.Halfing")
     # print("7.Gnome")
     # print("8.Dragonborn")
@@ -924,6 +924,94 @@ while True:
             featurelist.append("Darkvision")
             featurelist.append("Fey Ancestry")
             break
+    elif race_input == "5":
+        print("Ability Score Increase: Your Strength score increases by 2, and your Constitution score increases by 1.")
+        print("========================")
+        print("Age: Half-orcs mature a little faster than humans, reaching adulthood around age 14. They age noticeably"
+        "faster and rarely live longer than 75 years.")
+        print("========================")
+        print("Alignment: Half-orcs inherit a tendency toward chaos from their orc parents and are not strongly"
+        "inclined toward good. Half-orcs raised among orcs and willing to live out their lives"
+        "among them are usually evil.")
+        print("========================")
+        print(
+            "Size: Half-orcs are somewhat larger and bulkier than humans, and they range from 5 to well"
+            "over 6 feet tall. Your size is Medium.")
+        print("========================")
+        print("Speed: Your base walking speed is 30 feet.")
+        print("========================")
+        print("Darkvision: Thanks to your orc blood, you have superior vision in dark and dim conditions."
+            "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it"
+            "were dim light. You can’t discern color in darkness, only shades of gray.")
+        print("========================")
+        print("Menacing: You gain proficiency in the Intimidation skill.")
+        print("========================")
+        print("Relentless Endurance: When you are reduced to 0 hit points but not killed outright,"
+        "you can drop to 1 hit point instead. You can’t use this feature again until you finish a long rest.")
+        print("========================")
+        print("Savage Attacks: When you score a critical hit with a melee weapon attack,"
+        "you can roll one of the weapon’s damage dice one additional time and add it to the "
+        "extra damage of the critical hit.")
+        print("========================")
+        print("Languages: You can speak, read, and write Common and Orc. Orc is a harsh, grating language"
+        "with hard consonants. It has no script of its own but is written in the Dwarvish script.")
+        race_choice = input("Do you want to be a Half-Orc? Yes or No?: ")
+        if race_choice.lower() in ["y", "yes"]:
+            race = "Half-Orc"
+            strength += 2
+            str_mod = Modcal.Modcal(strength)
+            STstr = str_mod
+            constitution += 1
+            con_mod = Modcal.Modcal(constitution)
+            STcon = con_mod
+            speed = "30ft"
+            acrobatics = dex_mod
+            int(acrobatics)
+            animal_handling = wis_mod
+            int(animal_handling)
+            arcana = int_mod
+            int(arcana)
+            athletics = str_mod
+            int(athletics)
+            deception = cha_mod
+            int(deception)
+            history = int_mod
+            int(history)
+            insight = wis_mod
+            int(insight)
+            intimidation = cha_mod
+            int(intimidation)
+            investigation = int_mod
+            int(investigation)
+            medicine = wis_mod
+            int(medicine)
+            nature = int_mod
+            int(nature)
+            perception = wis_mod
+            int(perception)
+            performance = cha_mod
+            int(performance)
+            persuasion = cha_mod
+            int(persuasion)
+            religion = int_mod
+            int(religion)
+            slight_of_hand = dex_mod
+            int(slight_of_hand)
+            stealth = dex_mod
+            int(stealth)
+            survival = wis_mod
+            int(survival)
+            intimidation += 2
+            intimidation_box = True
+            professionlist.append("Language: Common")
+            professionlist.append("Language: Orcish")
+            featurelist.append("Darkvision")
+            featurelist.append("Menacing")
+            featurelist.append("Relentless Endurance")
+            featurelist.append("Savage Attacks")
+            break
+        else:
+            continue
     else:
         print("Choose a number.")
         continue
