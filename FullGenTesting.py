@@ -2815,6 +2815,38 @@ while True:
         print("Please choose Yes or No.")
         continue
 print("Alright, now that we know what your character looks like, lets flesh out WHO they are.")
+personality_traits = input("Please describe your Character in one sentence.\nEnter sentence choice: ")
+ideals = input("Please describe your Character's ideal. This can be anything your Character aspires to be or obtain."
+               "\nEnter your Ideal: ")
+bonds = input("Please describe your Character's bond. This can be some kind of personal quest or objective your "
+              "Character is trying to complete.\nEnter your Bond: ")
+flaws = input("Please describe your Character's flaw. This is something negative about your character that THEY know "
+              "about and are trying to overcome.\nEnter your Flaw: ")
+print("Please describe your Character's alignment. Your choices are :")
+print("==========================================================================================================")
+print("Lawful Good - Acts with compassion and always with honor and a sense of duty.")
+print("==========================================================================================================")
+print("Neutral Good - Acts altruistically, without regard for or against lawful precepts such as rules or tradition.")
+print("==========================================================================================================")
+print("Chaotic Good - Does what is necessary to bring about change for the better.")
+print("==========================================================================================================")
+print("Lawful Neutral - A lawful neutral character typically believes strongly in lawful concepts such")
+print("as honor, order, rules, and tradition, but often follows a personal code.")
+print("==========================================================================================================")
+print("True Neutral - Tends not to feel strongly towards any alignment, or actively seeks their balance.")
+print("==========================================================================================================")
+print("Chaotic Neutral - A chaotic neutral character is an individualist who follows their own heart")
+print("==========================================================================================================")
+print("Lawful Evil - A lawful evil character sees a well-ordered system as being easier to exploit than")
+print("to necessarily follow.")
+print("==========================================================================================================")
+print("Neutral Evil - A neutral evil character is typically selfish and has no qualms about turning on")
+print("allies-of-the-moment, and usually makes allies primarily to further their own goals.")
+print("============================================================================================================")
+print("Chaotic Evil - A chaotic evil character tends to have no respect for rules, other people's")
+print("lives, or anything but their own desires, which are typically selfish and cruel.")
+alignment = input("Enter your Alignment: ")
+experience = "0"
 background = input(
     "Please enter what your character was BEFORE they became an adventurer, This can be anything from a humble Miner "
     "to a holy Priest, or even a homeless Vagabond. The choice is yours!\nEnter Background: ")
@@ -3058,7 +3090,7 @@ data_dict = {
     'WISmod': wis_mod,
     'CHA': charisma,
     'CHamod': cha_mod,
-    'PersonalityTraits ': "PlaceHolder",
+    'PersonalityTraits ': personality_traits,
     'Features and Traits': ',\n '.join(featurelist),
     'ProficienciesLang': ',\n '.join(professionlist),
     'HD': hitdie,
@@ -3114,6 +3146,11 @@ data_dict = {
     'Stealth ': stealth,
     'Check Box 40': survival_box,
     'Background': background,
+    'Alignment': alignment,
+    'Experience': experience,
+    'Ideals': ideals,
+    'Bonds': bonds,
+    'Flaws': flaws,
     'Age': age,
     'Height': height,
     'Weight': weight,
