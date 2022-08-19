@@ -83,9 +83,9 @@ while True:
     Stat = startstats()
     stats.append(Stat)
     print("Please assign the stats to the following stats:")
-    print("Strength: Your physcial power")
+    print("Strength: Your physical power")
     print("Dexterity: Your agility and swiftness")
-    print("Consitution: Your endurance")
+    print("Constitution: Your endurance")
     print("Intelligence: Your reasoning and memory")
     print("Wisdom: Your perception and insight")
     print("Charisma: Your force of personality")
@@ -279,7 +279,7 @@ while True:
     print("5.Half-Orc")
     print("6.Halfing")
     print("7.Gnome")
-    # print("8.Dragonborn")
+    print("8.Dragonborn")
     # print("9.Tiefling")
 
     race_input = input("Race Choice: ")
@@ -1109,7 +1109,7 @@ while True:
               "conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness "
               "as if it were dim light. You can’t discern color in darkness, only shades of gray.")
         print("========================")
-        print("Gnome Cunning: You have advantage on all Intelligence, Wisdom, and"
+        print("Gnome Cunning: You have advantage on all Intelligence, Wisdom, and "
               "Charisma saving throws against magic.")
         print("========================")
         print("Languages: You can speak, read, and write Common and Gnomish. The Gnomish language, which uses the "
@@ -1165,6 +1165,148 @@ while True:
             break
         else:
             continue
+    elif race_input == "8":
+        print("Ability Score Increase: Your Strength score increases by 2, and your Charisma score increases by 1.")
+        print("========================")
+        print("Age: Young dragonborn grow quickly. They walk hours after hatching, attain the size and development of "
+              "a 10-year-old human child by the age of 3, and reach adulthood by 15. They live to be around 80.")
+        print("========================")
+        print("Alignment: Dragonborn tend to extremes, making a conscious choice for one side or the other in the "
+              "cosmic war between good and evil. Most dragonborn are good, but those who side with evil can be "
+              "terrible villains.")
+        print("========================")
+        print(
+            "Size: Dragonborn are taller and heavier than humans, standing well over 6 feet tall and averaging almost "
+            "250 pounds. Your size is Medium.")
+        print("========================")
+        print("Speed: Your base walking speed is 30 feet.")
+        print("========================")
+        print("Breath Weapon: You can use your action to exhale destructive energy. Your draconic ancestry determines "
+              "the size, shape, and damage type of the exhalation.")
+        print("========================")
+        print("Damage Resistance: You have resistance to the damage type associated with your draconic ancestry.")
+        print("========================")
+        print("Languages: You can speak, read, and write Common and Draconic. Draconic is thought to be one of the "
+              "oldest languages and is often used in the study of magic. The language sounds harsh to most other "
+              "creatures and includes numerous hard consonants and sibilants.")
+        race_choice = input("Do you want to be a Dragonborn? Yes or No?: ")
+        if race_choice.lower() in ["y", "yes"]:
+            race = "Dragonborn"
+            strength += 2
+            str_mod = Modcal.Modcal(strength)
+            STstr = str_mod
+            charisma += 1
+            cha_mod = Modcal.Modcal(charisma)
+            STcha = cha_mod
+            speed = "30ft"
+            acrobatics = dex_mod
+            int(acrobatics)
+            animal_handling = wis_mod
+            int(animal_handling)
+            arcana = int_mod
+            int(arcana)
+            athletics = str_mod
+            int(athletics)
+            deception = cha_mod
+            int(deception)
+            history = int_mod
+            int(history)
+            insight = wis_mod
+            int(insight)
+            intimidation = cha_mod
+            int(intimidation)
+            investigation = int_mod
+            int(investigation)
+            medicine = wis_mod
+            int(medicine)
+            nature = int_mod
+            int(nature)
+            perception = wis_mod
+            int(perception)
+            performance = cha_mod
+            int(performance)
+            persuasion = cha_mod
+            int(persuasion)
+            religion = int_mod
+            int(religion)
+            slight_of_hand = dex_mod
+            int(slight_of_hand)
+            stealth = dex_mod
+            int(stealth)
+            survival = wis_mod
+            int(survival)
+            print("Please choose a dragon type:")
+            print("1. Black - Damage Type: Acid - Breath Weapon: 5 by 30 ft. line (Dex. save)")
+            print("2. Blue - Damage Type: Lightning - Breath Weapon: 5 by 30 ft. line (Dex. save)")
+            print("3. Brass - Damage Type: Fire - Breath Weapon: 5 by 30 ft. line (Dex. save)")
+            print("4. Bronze - Damage Type: Lightning - Breath Weapon: 5 by 30 ft. line (Dex. save)")
+            print("5. Copper - Damage Type: Acid - Breath Weapon: 5 by 30 ft. line (Dex. save)")
+            print("6. Gold - Damage Type: Fire - Breath Weapon: 15 ft. cone (Dex. save)")
+            print("7. Green - Damage Type: Poison - Breath Weapon: 15 ft. cone (Con. save)")
+            print("8. Red - Damage Type: Fire - Breath Weapon: 15 ft. cone (Dex. save)")
+            print("9. Silver - Damage Type: Cold - Breath Weapon: 15 ft. cone (Con. save)")
+            print("10. White - Damage Type: Cold - Breath Weapon: 15 ft. cone (Con. save)")
+            while True:
+                dragon_input = input("Please choose a dragon type: ")
+                if dragon_input == "1":
+                    dragon_type = "Black"
+                    featurelist.append("Acid Breath Weapon - 5 by 30 ft. line (Dex. save)")
+                    featurelist.append("Damage Resistance: Acid")
+                    break
+                elif dragon_input == "2":
+                    dragon_type = "Blue"
+                    featurelist.append("Lightning Breath Weapon - 5 by 30 ft. line (Dex. save)")
+                    featurelist.append("Damage Resistance: Lightning")
+                    break
+                elif dragon_input == "3":
+                    dragon_type = "Brass"
+                    featurelist.append("Fire Breath Weapon - 5 by 30 ft. line (Dex. save)")
+                    featurelist.append("Damage Resistance: Fire")
+                    break
+                elif dragon_input == "4":
+                    dragon_type = "Bronze"
+                    featurelist.append("Lightning Breath Weapon - 5 by 30 ft. line (Dex. save)")
+                    featurelist.append("Damage Resistance: Lightning")
+                    break
+                elif dragon_input == "5":
+                    dragon_type = "Copper"
+                    featurelist.append("Acid Breath Weapon - 5 by 30 ft. line (Dex. save)")
+                    featurelist.append("Damage Resistance: Acid")
+                    break
+                elif dragon_input == "6":
+                    dragon_type = "Gold"
+                    featurelist.append("Fire Breath Weapon - 15 ft. cone (Dex. save)")
+                    featurelist.append("Damage Resistance: Fire")
+                    break
+                elif dragon_input == "7":
+                    dragon_type = "Green"
+                    featurelist.append("Poison Breath Weapon - 15 ft. cone (Con. save)")
+                    featurelist.append("Damage Resistance: Poison")
+                    break
+                elif dragon_input == "8":
+                    dragon_type = "Red"
+                    featurelist.append("Fire Breath Weapon - 15 ft. cone (Dex. save)")
+                    featurelist.append("Damage Resistance: Fire")
+                    break
+                elif dragon_input == "9":
+                    dragon_type = "Silver"
+                    featurelist.append("Cold Breath Weapon - 15 ft. cone (Con. save)")
+                    featurelist.append("Damage Resistance: Cold")
+                    break
+                elif dragon_input == "10":
+                    dragon_type = "White"
+                    featurelist.append("Cold Breath Weapon - 15 ft. cone (Con. save)")
+                    featurelist.append("Damage Resistance: Cold")
+                    break
+                else:
+                    print("Please choose a valid dragon type.")
+                    continue
+            professionlist.append("Language: Common")
+            professionlist.append("Language: Draconic")
+            break
+        else:
+            continue
+
 
     else:
         print("Choose a number.")
