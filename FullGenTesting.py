@@ -2772,6 +2772,43 @@ while True:
         else:
             print("Invalid Input")
             continue
+    # Cleric Class Gen Start
+    elif class_input == "3":
+        print("[HIT POINTS]")
+        print("Your Hit Dice is 1d8 per Cleric level")
+        print("Your Hit Points at 1st Level is: 8 + your Constitution modifier")
+        print("Your Hit points at Higher Levels is: 1d8 + Constitution modifier per level")
+        print("========================")
+        print("[PROFICIENCIES]")
+        print("Armor: Light, Medium, Shields")
+        print("Weapons: Simple Weapons")
+        print("Tools: None")
+        print("Saving Throws: Wisdom, Charisma")
+        print("Skills: Choose two from History, Insight, Medicine, Persuasion, and Religion")
+        print("========================")
+        print("[EQUIPMENT]")
+        print("(a) a mace or (b) a warhammer (if proficient)")
+        print("(a) scale mail, (b) leather armor, or (c) chain mail (if proficient)")
+        print("(a) a light crossbow and 20 bolts or (b) any simple weapon")
+        print("A shield and a holy symbol")
+        print("========================")
+        class_choice = input("Are you sure you want to be a Cleric? Yes or No?: ")
+        if class_choice.lower() in ["y", "yes"]:
+            dndclass = "Cleric"
+            hit_points = 8 + con_mod
+            STwis += 2
+            STwis_box = True
+            STcha += 2
+            STcha_box = True
+            featurelist.append("Spellcasing(Cleric)")
+            professionlist.append("Armor: Light")
+            professionlist.append("Armor: Medium")
+            professionlist.append("Armor: Shields")
+            professionlist.append("Weapon: Simple")
+            hitdie = "1d8"
+            hitdietotal = "1d8"
+            equipmentlist.append("Shield")
+            equipmentlist.append("Holy Symbol")
     else:
         print("Invalid Input")
         continue
