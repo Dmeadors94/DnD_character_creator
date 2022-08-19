@@ -47,7 +47,10 @@ skill_list = ["Acrobatics", "Animal Handling", "Arcana", "Athletics", "Deception
               "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion",
               "Sleight of Hand", "Stealth", "Survival"]
 barb_skill_list = ["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"]
-spells = None
+spell_list_cantrip = ["Acid Splash","Chill Touch","Dancing Lights","Druidcraft","Eldritch Blast","Fire Bolt",
+                      "Guidance","Light","Mage Hand","Mending","Message","Minor Illusion","Poison Spray",
+                      "Prestidigitation","Produce Flame","Ray of Frost","Sacred Flame","Shillelagh","Shocking Grasp",
+                      "Spare the Dying","Thaumaturgy","True Strike","Vicious Mockery","Resistance (Spell)"]
 # Define all variables needed for PDFconverter
 pdf_template = "template.pdf"
 pdf_output = "output.pdf"
@@ -1306,6 +1309,87 @@ while True:
             break
         else:
             continue
+    elif race_input == "9":
+        print("Ability Score Increase: Your Intelligence score increases by 1, and your Charisma score increases by 2.")
+        print("========================")
+        print("Age: Tieflings mature at the same rate as humans but live a few years longer.")
+        print("========================")
+        print("Alignment: Tieflings might not have an innate tendency toward evil, but many of them end up there. "
+              "Evil or not, an independent nature inclines many tieflings toward a chaotic alignment.")
+        print("========================")
+        print(
+            "Size: Tieflings are about the same size and build as humans. Your size is Medium.")
+        print("========================")
+        print("Speed: Your base walking speed is 30 feet.")
+        print("========================")
+        print("Darkvision: Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You "
+              "can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were "
+              "dim light. You can’t discern color in darkness, only shades of gray.")
+        print("========================")
+        print("Hellish Resistance: You have resistance to fire damage.")
+        print("========================")
+        print("Infernal Legacy. You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the hellish "
+              "rebuke spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish "
+              "a long rest. When you reach 5th level, you can cast the darkness spell once with this trait and regain "
+              "the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these "
+              "spells.")
+        print("========================")
+        print("Languages: You can speak, read, and write Common and Infernal.")
+        race_choice = input("Do you want to be a Tiefling? Yes or No?: ")
+        if race_choice.lower() in ["y", "yes"]:
+            race = "Tiefling"
+            intelligence += 1
+            int_mod = Modcal.Modcal(intelligence)
+            STint = int_mod
+            charisma += 2
+            cha_mod = Modcal.Modcal(charisma)
+            STcha = cha_mod
+            speed = "30ft"
+            acrobatics = dex_mod
+            int(acrobatics)
+            animal_handling = wis_mod
+            int(animal_handling)
+            arcana = int_mod
+            int(arcana)
+            athletics = str_mod
+            int(athletics)
+            deception = cha_mod
+            int(deception)
+            history = int_mod
+            int(history)
+            insight = wis_mod
+            int(insight)
+            intimidation = cha_mod
+            int(intimidation)
+            investigation = int_mod
+            int(investigation)
+            medicine = wis_mod
+            int(medicine)
+            nature = int_mod
+            int(nature)
+            perception = wis_mod
+            int(perception)
+            performance = cha_mod
+            int(performance)
+            persuasion = cha_mod
+            int(persuasion)
+            religion = int_mod
+            int(religion)
+            slight_of_hand = dex_mod
+            int(slight_of_hand)
+            stealth = dex_mod
+            int(stealth)
+            survival = wis_mod
+            int(survival)
+            professionlist.append("Language: Common")
+            professionlist.append("Language: Infernal")
+            featurelist.append("Infernal Legacy")
+            featurelist.append("Hellish Resistance")
+            featurelist.append("Darkvision")
+            break
+        else:
+            continue
+
 
 
     else:
