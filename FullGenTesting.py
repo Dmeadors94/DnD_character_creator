@@ -278,7 +278,7 @@ while True:
     print("4.Half-Elf")
     print("5.Half-Orc")
     print("6.Halfing")
-    # print("7.Gnome")
+    print("7.Gnome")
     # print("8.Dragonborn")
     # print("9.Tiefling")
 
@@ -1087,6 +1087,81 @@ while True:
             featurelist.append("Lucky")
             featurelist.append("Brave")
             featurelist.append("Halfling Nimbleness")
+            break
+        else:
+            continue
+    elif race_input == "7":
+        print("Ability Score Increase: Your Intelligence score increases by 2.")
+        print("========================")
+        print("Age: Gnomes mature at the same rate humans do, and most are expected to settle down into an adult life "
+              "by around age 40. They can live 350 to almost 500 years.")
+        print("========================")
+        print("Alignment: Gnomes are most often good. Those who tend toward law are sages, engineers, researchers, "
+              "scholars, investigators, or inventors. Those who tend toward chaos are minstrels, tricksters, "
+              "wanderers, or fanciful jewelers. Gnomes are good-hearted, and even the tricksters among them are more "
+              "playful than vicious.")
+        print("========================")
+        print("Size: Gnomes are between 3 and 4 feet tall and average about 40 pounds. Your size is Small.")
+        print("========================")
+        print("Speed: Your base walking speed is 25 feet.")
+        print("========================")
+        print("Darkvision:Darkvision: Accustomed to life underground, you have superior vision in dark and dim "
+              "conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness "
+              "as if it were dim light. You can’t discern color in darkness, only shades of gray.")
+        print("========================")
+        print("Gnome Cunning: You have advantage on all Intelligence, Wisdom, and"
+              "Charisma saving throws against magic.")
+        print("========================")
+        print("Languages: You can speak, read, and write Common and Gnomish. The Gnomish language, which uses the "
+              "Dwarvish script, is renowned for its technical treatises and its catalogs of knowledge about the "
+              "natural world.")
+        race_choice = input("Do you want to be a Gnome? Yes or No?: ")
+        if race_choice.lower() in ["y", "yes"]:
+            race = "Gnome"
+            intelligence += 2
+            int_mod = Modcal.Modcal(intelligence)
+            STint = int_mod
+            speed = "25ft"
+            acrobatics = dex_mod
+            int(acrobatics)
+            animal_handling = wis_mod
+            int(animal_handling)
+            arcana = int_mod
+            int(arcana)
+            athletics = str_mod
+            int(athletics)
+            deception = cha_mod
+            int(deception)
+            history = int_mod
+            int(history)
+            insight = wis_mod
+            int(insight)
+            intimidation = cha_mod
+            int(intimidation)
+            investigation = int_mod
+            int(investigation)
+            medicine = wis_mod
+            int(medicine)
+            nature = int_mod
+            int(nature)
+            perception = wis_mod
+            int(perception)
+            performance = cha_mod
+            int(performance)
+            persuasion = cha_mod
+            int(persuasion)
+            religion = int_mod
+            int(religion)
+            slight_of_hand = dex_mod
+            int(slight_of_hand)
+            stealth = dex_mod
+            int(stealth)
+            survival = wis_mod
+            int(survival)
+            professionlist.append("Language: Common")
+            professionlist.append("Language: Gnomish")
+            featurelist.append("Darkvision")
+            featurelist.append("Gnome Cunning")
             break
         else:
             continue
