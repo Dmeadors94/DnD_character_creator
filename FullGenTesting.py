@@ -277,7 +277,7 @@ while True:
     print("3.Elf")
     print("4.Half-Elf")
     print("5.Half-Orc")
-    # print("6.Halfing")
+    print("6.Halfing")
     # print("7.Gnome")
     # print("8.Dragonborn")
     # print("9.Tiefling")
@@ -571,7 +571,7 @@ while True:
             continue
     elif race_input == "4":
         print("Ability Score Increase: Your Charisma score increases by 2, and two other ability scores of your choice"
-        "increase by 1.")
+              "increase by 1.")
         print("========================")
         print(
             "Age: Half-elves mature at the same rate humans do and reach adulthood around the age of 20."
@@ -928,11 +928,11 @@ while True:
         print("Ability Score Increase: Your Strength score increases by 2, and your Constitution score increases by 1.")
         print("========================")
         print("Age: Half-orcs mature a little faster than humans, reaching adulthood around age 14. They age noticeably"
-        "faster and rarely live longer than 75 years.")
+              "faster and rarely live longer than 75 years.")
         print("========================")
         print("Alignment: Half-orcs inherit a tendency toward chaos from their orc parents and are not strongly"
-        "inclined toward good. Half-orcs raised among orcs and willing to live out their lives"
-        "among them are usually evil.")
+              "inclined toward good. Half-orcs raised among orcs and willing to live out their lives"
+              "among them are usually evil.")
         print("========================")
         print(
             "Size: Half-orcs are somewhat larger and bulkier than humans, and they range from 5 to well"
@@ -941,20 +941,20 @@ while True:
         print("Speed: Your base walking speed is 30 feet.")
         print("========================")
         print("Darkvision: Thanks to your orc blood, you have superior vision in dark and dim conditions."
-            "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it"
-            "were dim light. You can’t discern color in darkness, only shades of gray.")
+              "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it"
+              "were dim light. You can’t discern color in darkness, only shades of gray.")
         print("========================")
         print("Menacing: You gain proficiency in the Intimidation skill.")
         print("========================")
         print("Relentless Endurance: When you are reduced to 0 hit points but not killed outright,"
-        "you can drop to 1 hit point instead. You can’t use this feature again until you finish a long rest.")
+              "you can drop to 1 hit point instead. You can’t use this feature again until you finish a long rest.")
         print("========================")
         print("Savage Attacks: When you score a critical hit with a melee weapon attack,"
-        "you can roll one of the weapon’s damage dice one additional time and add it to the "
-        "extra damage of the critical hit.")
+              "you can roll one of the weapon’s damage dice one additional time and add it to the "
+              "extra damage of the critical hit.")
         print("========================")
         print("Languages: You can speak, read, and write Common and Orc. Orc is a harsh, grating language"
-        "with hard consonants. It has no script of its own but is written in the Dwarvish script.")
+              "with hard consonants. It has no script of its own but is written in the Dwarvish script.")
         race_choice = input("Do you want to be a Half-Orc? Yes or No?: ")
         if race_choice.lower() in ["y", "yes"]:
             race = "Half-Orc"
@@ -1012,6 +1012,85 @@ while True:
             break
         else:
             continue
+    elif race_input == "6":
+        print("Ability Score Increase: Your Dexterity score increases by 2.")
+        print("========================")
+        print("Age: A halfling reaches adulthood at the age of 20 and generally lives into the middle of"
+              "his or her second century.")
+        print("========================")
+        print("Alignment: Most Halflings are lawful good. As a rule, they are good-hearted and kind, hate to see"
+              "others in pain, and have no tolerance for oppression. They are also very orderly and traditional, "
+              "leaning "
+              "heavily on the support of their community and the comfort of their old ways.")
+        print("========================")
+        print("Size: Halflings average about 3 feet tall and weigh about 40 pounds. Your size is Small.")
+        print("========================")
+        print("Speed: Your base walking speed is 25 feet.")
+        print("========================")
+        print("Lucky: When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll"
+              "the die and must use the new roll.")
+        print("========================")
+        print("Brave: You have advantage on saving throws against being frightened.")
+        print("========================")
+        print("Halfling Nimbleness: You can move through the space of any creature that is of a size"
+              "larger than yours.")
+        print("========================")
+        print("Languages: You can speak, read, and write Common and Halfling. The Halfling language isn’t secret, "
+              "but halflings are loath to share it with others. They write very little, so they don’t have a rich "
+              "body of literature. Their oral tradition, however, is very strong. Almost all halflings speak Common "
+              "to converse with the people in whose lands they dwell or through which they are traveling.")
+        race_choice = input("Do you want to be a Halfling? Yes or No?: ")
+        if race_choice.lower() in ["y", "yes"]:
+            race = "Halfling"
+            dexterity += 2
+            dex_mod = Modcal.Modcal(dexterity)
+            STdex = dex_mod
+            speed = "25ft"
+            acrobatics = dex_mod
+            int(acrobatics)
+            animal_handling = wis_mod
+            int(animal_handling)
+            arcana = int_mod
+            int(arcana)
+            athletics = str_mod
+            int(athletics)
+            deception = cha_mod
+            int(deception)
+            history = int_mod
+            int(history)
+            insight = wis_mod
+            int(insight)
+            intimidation = cha_mod
+            int(intimidation)
+            investigation = int_mod
+            int(investigation)
+            medicine = wis_mod
+            int(medicine)
+            nature = int_mod
+            int(nature)
+            perception = wis_mod
+            int(perception)
+            performance = cha_mod
+            int(performance)
+            persuasion = cha_mod
+            int(persuasion)
+            religion = int_mod
+            int(religion)
+            slight_of_hand = dex_mod
+            int(slight_of_hand)
+            stealth = dex_mod
+            int(stealth)
+            survival = wis_mod
+            int(survival)
+            professionlist.append("Language: Common")
+            professionlist.append("Language: Halfling")
+            featurelist.append("Lucky")
+            featurelist.append("Brave")
+            featurelist.append("Halfling Nimbleness")
+            break
+        else:
+            continue
+
     else:
         print("Choose a number.")
         continue
