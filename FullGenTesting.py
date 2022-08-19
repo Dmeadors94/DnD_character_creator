@@ -47,10 +47,13 @@ skill_list = ["Acrobatics", "Animal Handling", "Arcana", "Athletics", "Deception
               "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion",
               "Sleight of Hand", "Stealth", "Survival"]
 barb_skill_list = ["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"]
-spell_list_cantrip = ["Acid Splash","Chill Touch","Dancing Lights","Druidcraft","Eldritch Blast","Fire Bolt",
-                      "Guidance","Light","Mage Hand","Mending","Message","Minor Illusion","Poison Spray",
-                      "Prestidigitation","Produce Flame","Ray of Frost","Sacred Flame","Shillelagh","Shocking Grasp",
-                      "Spare the Dying","Thaumaturgy","True Strike","Vicious Mockery","Resistance (Spell)"]
+spell_list_cantrip = ["Acid Splash", "Chill Touch", "Dancing Lights", "Druidcraft", "Eldritch Blast", "Fire Bolt",
+                      "Guidance", "Light", "Mage Hand", "Mending", "Message", "Minor Illusion", "Poison Spray",
+                      "Prestidigitation", "Produce Flame", "Ray of Frost", "Sacred Flame", "Shillelagh",
+                      "Shocking Grasp",
+                      "Spare the Dying", "Thaumaturgy", "True Strike", "Vicious Mockery", "Resistance (Spell)"]
+bard_cantrip_spell_list = ["Dancing Lights", "Light", "Mage Hand", "Mending", "Message", "Minor Illusion",
+                           "Vicious Mockery", "Prestidigitation", "True Strike"]
 # Define all variables needed for PDFconverter
 pdf_template = "template.pdf"
 pdf_output = "output.pdf"
@@ -58,6 +61,7 @@ playername = input("What is your Player Name?: ")
 charactername = input("What is your Character's Name?: ")
 featurelist = []
 professionlist = []
+cantrip_list = []
 
 
 # Run StatGen
@@ -1448,6 +1452,8 @@ while True:
             professionlist.append("Armor: Shields")
             professionlist.append("Weapon: Simple")
             professionlist.append("Weapon: Martial")
+            cantrip_list.append("")
+            cantrip_list.append("")
             hitdie = "1d12"
             hitdietotal = "1d12"
             equipmentlist.append("Four Javelin")
@@ -1461,91 +1467,109 @@ while True:
                         acrobatics += 2
                         acrobatics_box = True
                         skill_list.remove(skill_choice_three)
+                        barb_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Animal Handling":
                         animal_handling += 2
                         animal_handling_box = True
                         skill_list.remove(skill_choice_three)
+                        barb_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Arcana":
                         arcana += 2
                         arcana_box = True
                         skill_list.remove(skill_choice_three)
+                        barb_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Athletics":
                         athletics += 2
                         athletics_box = True
                         skill_list.remove(skill_choice_three)
+                        barb_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Deception":
                         deception += 2
                         deception_box = True
                         skill_list.remove(skill_choice_three)
+                        barb_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "History":
                         history += 2
                         history_box = True
                         skill_list.remove(skill_choice_three)
+                        barb_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Insight":
                         insight += 2
                         insight_box = True
                         skill_list.remove(skill_choice_three)
+                        barb_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Intimidation":
                         intimidation += 2
                         intimidation_box = True
                         skill_list.remove(skill_choice_three)
+                        barb_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Investigation":
                         investigation += 2
                         investigation_box = True
                         skill_list.remove(skill_choice_three)
+                        barb_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Medicine":
                         medicine += 2
                         medicine_box = True
                         skill_list.remove(skill_choice_three)
+                        barb_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Nature":
                         nature += 2
                         nature_box = True
                         skill_list.remove(skill_choice_three)
+                        barb_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Perception":
                         perception += 2
                         perception_box = True
                         skill_list.remove(skill_choice_three)
+                        barb_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Performance":
                         performance += 2
                         performance_box = True
                         skill_list.remove(skill_choice_three)
+                        barb_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Persuasion":
                         persuasion += 2
                         persuasion_box = True
                         skill_list.remove(skill_choice_three)
+                        barb_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Religion":
                         religion += 2
                         religion_box = True
                         skill_list.remove(skill_choice_three)
+                        barb_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Sleight of Hand":
                         slight_of_hand += 2
                         slight_of_hand_box = True
                         skill_list.remove(skill_choice_three)
+                        barb_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Stealth":
                         stealth += 2
                         stealth_box = True
                         skill_list.remove(skill_choice_three)
+                        barb_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Survival":
                         survival += 2
                         survival_box = True
                         skill_list.remove(skill_choice_three)
+                        barb_skill_list.remove(skill_choice_three)
                         break
                     else:
                         print("Invalid input")
@@ -2143,7 +2167,7 @@ while True:
                     continue
             break
         else:
-            pass
+            continue
     # Barbarian Class Gen End
     # Bard Class Gen Start
     elif class_input == "2":
@@ -2720,10 +2744,41 @@ while True:
             print("Please name any musical instrument to add it to your equipment.")
             instrument_choice = input("Instrument Choice: ")
             equipmentlist.append(instrument_choice)
-        break
-    # Bard Class Gen End
+            print("Please choose two cantrips from the following list: ")
+            for index, item in enumerate(bard_cantrip_spell_list, start=1):
+                print(index, item)
+            while True:
+                print("Please enter the number of the cantrip you want to add: ")
+                cantrip_choice_one_input = int(input("Cantrip Choice One: "))
+                cantrip_choice_one = bard_cantrip_spell_list[cantrip_choice_one_input - 1]
+                if cantrip_choice_one in bard_cantrip_spell_list:
+                    cantrip_list.append(cantrip_choice_one)
+                    bard_cantrip_spell_list.remove(cantrip_choice_one)
+                    break
+                else:
+                    print("Invalid Input")
+                    continue
+            for index, item in enumerate(bard_cantrip_spell_list, start=1):
+                print(index, item)
+            while True:
+                print("Please enter the number of the cantrip you want to add: ")
+                cantrip_choice_two_input = int(input("Cantrip Choice Two: "))
+                cantrip_choice_two = bard_cantrip_spell_list[cantrip_choice_two_input - 1]
+                if cantrip_choice_two in bard_cantrip_spell_list:
+                    cantrip_list.append(cantrip_choice_two)
+                    bard_cantrip_spell_list.remove(cantrip_choice_two)
+                    break
+                else:
+                    print("Invalid Input")
+                    continue
+            break
+        else:
+            print("Invalid Input")
+            continue
     else:
+        print("Invalid Input")
         continue
+# Bard Class Gen End
 # Work on adding skills to character sheet
 
 print("==========================================================")
@@ -2972,7 +3027,6 @@ while True:
     else:
         print("Invalid Input")
         continue
-
 # RunPDFconverter - This code section deals with transfering the character data to a PDF
 
 template_pdf = pdfrw.PdfReader(pdf_template)  # create a pdfrw object from our template.pdf
@@ -3071,6 +3125,8 @@ data_dict = {
     'Wpn Name 2': wpn_name_2,
     'Wpn2 Damage ': wpn2_damage,
     'Equipment': ', '.join(equipmentlist),
+    'Spells 1014': cantrip_list[0],
+    'Spells 1016': cantrip_list[1],
 
     'Feat+Traits': "PlaceHolder"
 }
