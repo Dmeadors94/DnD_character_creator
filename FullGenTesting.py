@@ -120,7 +120,7 @@ while True:
         else:
             print("Please enter one of your stats")
         continue
-    except:
+    except ValueError:
         print("Please enter one of your stats")
     continue
 while True:
@@ -137,7 +137,7 @@ while True:
         else:
             print("Please enter one of your stats")
         continue
-    except:
+    except ValueError:
         print("Please enter one of your stats")
     continue
 while True:
@@ -153,7 +153,7 @@ while True:
         else:
             print("Please enter one of your stats")
         continue
-    except:
+    except ValueError:
         print("Please enter one of your stats")
     continue
 while True:
@@ -169,7 +169,7 @@ while True:
         else:
             print("Please enter one of your stats")
         continue
-    except:
+    except ValueError:
         print("Please enter one of your stats")
     continue
 while True:
@@ -185,7 +185,7 @@ while True:
         else:
             print("Please enter one of your stats")
         continue
-    except:
+    except ValueError:
         print("Please enter one of your stats")
 while True:
     charisma = input("Out of your stats, which one should be Charisma?\n")
@@ -199,7 +199,7 @@ while True:
         else:
             print("Please enter one of your stats")
         continue
-    except:
+    except ValueError:
         print("Please enter on of your stats")
 
 print("Your final stats are: ")
@@ -1393,9 +1393,6 @@ while True:
             break
         else:
             continue
-
-
-
     else:
         print("Choose a number.")
         continue
