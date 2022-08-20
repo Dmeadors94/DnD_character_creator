@@ -47,13 +47,21 @@ skill_list = ["Acrobatics", "Animal Handling", "Arcana", "Athletics", "Deception
               "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion",
               "Sleight of Hand", "Stealth", "Survival"]
 barb_skill_list = ["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"]
+cleric_skill_list = ["History", "Insight", "Medicine", "Persuasion", "Religion"]
+knowledge_cleric_skill_list = ["Arcana", "History", "Nature", "Religion"]
 spell_list_cantrip = ["Acid Splash", "Chill Touch", "Dancing Lights", "Druidcraft", "Eldritch Blast", "Fire Bolt",
                       "Guidance", "Light", "Mage Hand", "Mending", "Message", "Minor Illusion", "Poison Spray",
                       "Prestidigitation", "Produce Flame", "Ray of Frost", "Sacred Flame", "Shillelagh",
                       "Shocking Grasp",
                       "Spare the Dying", "Thaumaturgy", "True Strike", "Vicious Mockery", "Resistance (Spell)"]
+cleric_spell_list_1 = ["Bane", "Bless", "Command", "Create or Destroy Water", "Cure Wounds", "Detect Evil and Good",
+                       "Detect Magic", "Detect Poison and Disease", "Guiding Bolt", "Healing Word", "Inflict Wounds",
+                       "Protection from Evil and Good", "Purify Food and Drink", "Sanctuary", "Shield of Faith"]
+druid_cantrip_spell_list = ["Druidcraft", "Guidance", "Mending", "Poison Spray", "Produce Flame", "Resistance (Spell)",
+                            "Shillelagh"]
 bard_cantrip_spell_list = ["Dancing Lights", "Light", "Mage Hand", "Mending", "Message", "Minor Illusion",
                            "Vicious Mockery", "Prestidigitation", "True Strike"]
+cleric_cantrip_spell_list = ["Guidance", "Light", "Mending", "Resistance (Spell)", "Sacred Flame", "Thaumaturgy"]
 # Define all variables needed for PDFconverter
 pdf_template = "template.pdf"
 pdf_output = "output.pdf"
@@ -62,6 +70,7 @@ charactername = input("What is your Character's Name?: ")
 featurelist = []
 professionlist = []
 cantrip_list = []
+first_level_spell_list = []
 
 
 # Run StatGen
@@ -287,7 +296,7 @@ while True:
     print("6.Halfing")
     print("7.Gnome")
     print("8.Dragonborn")
-    # print("9.Tiefling")
+    print("9.Tiefling")
 
     race_input = input("Race Choice: ")
 
@@ -1402,7 +1411,7 @@ while True:
     print("Please select a class from the following list: ")
     print("1.Barbarian")
     print("2.Bard")
-    # print("3.Cleric")
+    print("3.Cleric")
     # print("4.Druid")
     # print("5.Fighter")
     # print("6.Monk")
@@ -2772,6 +2781,7 @@ while True:
         else:
             print("Invalid Input")
             continue
+    # Bard Class Gen End
     # Cleric Class Gen Start
     elif class_input == "3":
         print("[HIT POINTS]")
@@ -2809,10 +2819,1310 @@ while True:
             hitdietotal = "1d8"
             equipmentlist.append("Shield")
             equipmentlist.append("Holy Symbol")
+            print("Please choose two of the following skills: ")
+            for index, item in enumerate(cleric_skill_list, start=1):
+                print(index, item)
+            while True:
+                skill_choice_he_input = int(input("Enter what skill you want first: "))
+                skill_choice_three = cleric_skill_list[skill_choice_he_input - 1]
+                if skill_choice_three in skill_list:
+                    if skill_choice_three == "Acrobatics":
+                        acrobatics += 2
+                        acrobatics_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Animal Handling":
+                        animal_handling += 2
+                        animal_handling_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Arcana":
+                        arcana += 2
+                        arcana_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Athletics":
+                        athletics += 2
+                        athletics_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Deception":
+                        deception += 2
+                        deception_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "History":
+                        history += 2
+                        history_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Insight":
+                        insight += 2
+                        insight_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Intimidation":
+                        intimidation += 2
+                        intimidation_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Investigation":
+                        investigation += 2
+                        investigation_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Medicine":
+                        medicine += 2
+                        medicine_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Nature":
+                        nature += 2
+                        nature_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Perception":
+                        perception += 2
+                        perception_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Performance":
+                        performance += 2
+                        performance_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Persuasion":
+                        persuasion += 2
+                        persuasion_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Religion":
+                        religion += 2
+                        religion_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Sleight of Hand":
+                        slight_of_hand += 2
+                        slight_of_hand_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Stealth":
+                        stealth += 2
+                        stealth_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Survival":
+                        survival += 2
+                        survival_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        break
+                    else:
+                        print("Invalid input")
+                        continue
+                else:
+                    print("Invalid Input")
+                    continue
+            for index, item in enumerate(cleric_skill_list, start=1):
+                print(index, item)
+            while True:
+                try:
+                    skill_choice_he_input = int(input("Enter what skill you want second: "))
+                    skill_choice_three = cleric_skill_list[skill_choice_he_input - 1]
+                    if skill_choice_three in skill_list:
+                        if skill_choice_three == "Acrobatics":
+                            acrobatics += 2
+                            acrobatics_box = True
+                            skill_list.remove(skill_choice_three)
+                            cleric_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Animal Handling":
+                            animal_handling += 2
+                            animal_handling_box = True
+                            skill_list.remove(skill_choice_three)
+                            cleric_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Arcana":
+                            arcana += 2
+                            arcana_box = True
+                            skill_list.remove(skill_choice_three)
+                            cleric_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Athletics":
+                            athletics += 2
+                            athletics_box = True
+                            skill_list.remove(skill_choice_three)
+                            cleric_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Deception":
+                            deception += 2
+                            deception_box = True
+                            skill_list.remove(skill_choice_three)
+                            cleric_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "History":
+                            history += 2
+                            history_box = True
+                            skill_list.remove(skill_choice_three)
+                            cleric_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Insight":
+                            insight += 2
+                            insight_box = True
+                            skill_list.remove(skill_choice_three)
+                            cleric_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Intimidation":
+                            intimidation += 2
+                            intimidation_box = True
+                            skill_list.remove(skill_choice_three)
+                            cleric_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Investigation":
+                            investigation += 2
+                            investigation_box = True
+                            skill_list.remove(skill_choice_three)
+                            cleric_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Medicine":
+                            medicine += 2
+                            medicine_box = True
+                            skill_list.remove(skill_choice_three)
+                            cleric_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Nature":
+                            nature += 2
+                            nature_box = True
+                            skill_list.remove(skill_choice_three)
+                            cleric_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Perception":
+                            perception += 2
+                            perception_box = True
+                            skill_list.remove(skill_choice_three)
+                            cleric_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Performance":
+                            performance += 2
+                            performance_box = True
+                            skill_list.remove(skill_choice_three)
+                            cleric_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Persuasion":
+                            persuasion += 2
+                            persuasion_box = True
+                            skill_list.remove(skill_choice_three)
+                            cleric_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Religion":
+                            religion += 2
+                            religion_box = True
+                            skill_list.remove(skill_choice_three)
+                            cleric_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Sleight of Hand":
+                            slight_of_hand += 2
+                            slight_of_hand_box = True
+                            skill_list.remove(skill_choice_three)
+                            cleric_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Stealth":
+                            stealth += 2
+                            stealth_box = True
+                            skill_list.remove(skill_choice_three)
+                            cleric_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Survival":
+                            survival += 2
+                            survival_box = True
+                            skill_list.remove(skill_choice_three)
+                            cleric_skill_list.remove(skill_choice_three)
+                            break
+                        else:
+                            print("Invalid input")
+                            continue
+                    else:
+                        print("Invalid Input")
+                        continue
+                except IndexError:
+                    print("Invalid Input")
+                    continue
+            print("As a Cleric, you must choose a God to follow. This will give you additional powers.")
+            print("Please choose a god from the following list:")
+            print("1. Leven - The God of Life. Their domain focuses on healing.")
+            print("2. Ohen - The God of Light. Their domain focuses on the sun and fire")
+            print("3. Raiz - The God of Nature. Their domain focuses on the animals and plants")
+            print("4. Tempest - The God of Storms. Their domain focuses on the weather and the elements")
+            print("5. Viden - The God of Knowledge. Their domain focuses on the accumulation of knowledge")
+            print("6. Komik - The God of Trickery. Their domain focuses on the use of thievery and trickery")
+            print("7. Slag - The God of War. Their domain focuses on the use of weapons and combat")
+            print("8. Opas - The God of Death. Their domain focuses on the use of death, darkness, and blight")
+            while True:
+                try:
+                    god_choice_input = int(input("Enter your choice: "))
+                    if god_choice_input == 1:
+                        while True:
+                            print("You have chosen Leven. You have the following powers:")
+                            print("=================================================================================")
+                            print("You gain Proficiency in Heavy Armor.")
+                            print("=================================================================================")
+                            print("You gain the Class Feature: starting at 1st level, your healing spells are more")
+                            print("effective. Whenever you use a spell of 1st level or higher to restore hit points "
+                                  "to a")
+                            print("creature, the creature regains additional hit points equal to 2 + the spell's level.")
+                            print("=================================================================================")
+                            print("Are you sure you want to choose this god? Yes or No?")
+                            god_choice_input = input("Enter your choice: ")
+                            if god_choice_input.lower() == "yes" or god_choice_input.lower() == "y":
+                                print("You have chosen Leven.")
+                                god_choice = "Leven"
+                                professionlist.append("Armor: Heavy")
+                                featurelist.append("Divine Domain: Life")
+                                featurelist.append("Disciple of Life")
+                                first_level_spell_list.append("Cure Wounds")
+                                first_level_spell_list.append("Bless")
+                                break
+                            else:
+                                print("Please Choose a God.")
+                                continue
+                    elif god_choice_input == 2:
+                        while True:
+                            print("You have chosen Ohen. You have the following powers:")
+                            print("=================================================================================")
+                            print("You gain the light cantrip.")
+                            print("=================================================================================")
+                            print("You gain the Class Feature: Warding Flare")
+                            print("At 1st level, you can interpose divine light between yourself and an attacking")
+                            print("enemy. When you are attacked by a creature within 30 feet of you that you can see,")
+                            print("you can use your reaction to impose disadvantage on the attack roll, causing light "
+                                  "to")
+                            print("flare before the attacker before it hits or misses. An attacker that can't be "
+                                  "blinded")
+                            print("is immune to this feature. You can use this feature a number of times equal to your")
+                            print("Wisdom modifier (a minimum of once). You regain all expended uses when you finish a")
+                            print("long rest.")
+                            print("=================================================================================")
+                            print("Are you sure you want to choose this god? Yes or No?")
+                            god_choice_input = input("Enter your choice: ")
+                            if god_choice_input.lower() == "yes" or god_choice_input.lower() == "y":
+                                print("You have chosen Ohen.")
+                                god_choice = "Ohen"
+                                featurelist.append("Divine Domain: Light")
+                                featurelist.append("Warding Flare")
+                                cantrip_list.append("Light")
+                                cleric_cantrip_spell_list.remove("Light")
+                                first_level_spell_list.append("Burning Hands")
+                                first_level_spell_list.append("Faire Fire")
+                                break
+                            else:
+                                print("Please Choose a God.")
+                                continue
+                    elif god_choice_input == 3:
+                        while True:
+                            print("You have chosen Raiz. You have the following powers:")
+                            print("=================================================================================")
+                            print("Acolyte of Nature: At 1st level, you learn one cantrip of your choice from the druid")
+                            print("spell list. This cantrip counts as a cleric cantrip for you, but it doesn’t count")
+                            print("against the number of cleric cantrips you know. You also gain proficiency in one of")
+                            print("the following skills of your choice: Animal Handling, Nature, or Survival.")
+                            print("=================================================================================")
+                            print("You gain proficiency in Heavy Armor.")
+                            print("=================================================================================")
+                            print("Are you sure you want to choose this god? Yes or No?")
+                            god_choice_input = input("Enter your choice: ")
+                            if god_choice_input.lower() == "yes" or god_choice_input.lower() == "y":
+                                print("You have chosen Raiz.")
+                                god_choice = "Raiz"
+                                featurelist.append("Divine Domain: Nature")
+                                professionlist.append("Armor: Heavy")
+                                first_level_spell_list.append("Animal Friendship")
+                                first_level_spell_list.append("Speak with Animals")
+                                while True:
+                                    skill_choice_input = input("Please choose a skill from the following list: ")
+                                    if skill_choice_input == "Animal Handling":
+                                        animal_handling += 2
+                                        animal_handling_box = True
+                                        skill_list.remove(skill_choice_input)
+                                        break
+                                    elif skill_choice_input == "Nature":
+                                        nature += 2
+                                        nature_box = True
+                                        skill_list.remove(skill_choice_input)
+                                        break
+                                    elif skill_choice_input == "Survival":
+                                        survival += 2
+                                        survival_box = True
+                                        skill_list.remove(skill_choice_input)
+                                        break
+                                    else:
+                                        print("Invalid Input")
+                                        continue
+                                print("Please choose a cantrip from the following list: ")
+                                for index, item in enumerate(druid_cantrip_spell_list, start=1):
+                                    print(index, item)
+                                while True:
+                                    cantrip_choice_input = int(input("Enter your choice: "))
+                                    if cantrip_choice_input == 1:
+                                        cantrip_list.append("Druidcraft")
+                                        break
+                                    elif cantrip_choice_input == 2:
+                                        cantrip_list.append("Guidance")
+                                        break
+                                    elif cantrip_choice_input == 3:
+                                        cantrip_list.append("Mending")
+                                        break
+                                    elif cantrip_choice_input == 4:
+                                        cantrip_list.append("Poison Spray")
+                                        break
+                                    elif cantrip_choice_input == 5:
+                                        cantrip_list.append("Produce Flame")
+                                        break
+                                    elif cantrip_choice_input == 6:
+                                        cantrip_list.append("Resistance")
+                                        break
+                                    elif cantrip_choice_input == 7:
+                                        cantrip_list.append("Shillelagh")
+                                        break
+                                    else:
+                                        print("Invalid Input")
+                                        continue
+
+                                break
+                            else:
+                                print("Please Choose a God.")
+                                continue
+                    elif god_choice_input == 4:
+                        while True:
+                            print("You have chosen Viden. You have the following powers:")
+                            print("=================================================================================")
+                            print("You gain proficiency with martial weapons and heavy armor.")
+                            print("=================================================================================")
+                            print("You gain the Class Feature: Wrath of the Storm")
+                            print("Also at 1st level, you can thunderously rebuke attackers. When a creature within 5")
+                            print("feet of you that you can see hits you with an attack, you can use your reaction to")
+                            print("cause the creature to make a Dexterity saving throw. The creature takes 2d8 lightning")
+                            print("or thunder damage (your choice) on a failed saving throw, and half as much damage on a")
+                            print("successful one. You can use this feature a number of times equal to your Wisdom")
+                            print("modifier (a minimum of once). You regain all expended uses when you finish a long rest.")
+                            print("=================================================================================")
+                            print("Are you sure you want to choose this god? Yes or No?")
+                            god_choice_input = input("Enter your choice: ")
+                            if god_choice_input.lower() == "yes" or god_choice_input.lower() == "y":
+                                print("You have chosen Viden.")
+                                god_choice = "Viden"
+                                featurelist.append("Divine Domain: Tempest")
+                                professionlist.append("Armor: Heavy")
+                                professionlist.append("Weapon: Martial")
+                                first_level_spell_list.append("Fog Cloud")
+                                first_level_spell_list.append("Thunderwave")
+                                break
+                            else:
+                                print("Please Choose a God.")
+                                continue
+                    elif god_choice_input == 5:
+                        while True:
+                            print("You have chosen Viden. You have the following powers:")
+                            print("=================================================================================")
+                            print("You gain the Class Feature: Blessings of Knowledge")
+                            print("At 1st level, you learn two languages of your choice. You also become proficient in")
+                            print("your choice of two of the following skills: Arcana, History, Nature, or Religion. Your")
+                            print("proficiency bonus is doubled for any ability check you make that uses either of those")
+                            print("skills.")
+                            print("=================================================================================")
+                            print("Are you sure you want to choose this god? Yes or No?")
+                            god_choice_input = input("Enter your choice: ")
+                            if god_choice_input.lower() == "yes" or god_choice_input.lower() == "y":
+                                print("You have chosen Viden.")
+                                god_choice = "Viden"
+                                featurelist.append("Divine Domain: Knowledge")
+                                featurelist.append("Blessings of Knowledge")
+                                first_level_spell_list.append("Identify")
+                                first_level_spell_list.append("Command")
+                                print("Please choose two of the following skills: ")
+                                for index, item in enumerate(knowledge_cleric_skill_list, start=1):
+                                    print(index, item)
+                                while True:
+                                    skill_choice_input = input("Please choose a skill from the above list: ")
+                                    if skill_choice_input == "Arcana":
+                                        arcana += 4
+                                        arcana_box = True
+                                        skill_list.remove(skill_choice_input)
+                                        knowledge_cleric_skill_list.remove(skill_choice_input)
+                                        break
+                                    elif skill_choice_input == "History":
+                                        history += 4
+                                        history_box = True
+                                        skill_list.remove(skill_choice_input)
+                                        knowledge_cleric_skill_list.remove(skill_choice_input)
+                                        break
+                                    elif skill_choice_input == "Nature":
+                                        nature += 4
+                                        nature_box = True
+                                        skill_list.remove(skill_choice_input)
+                                        knowledge_cleric_skill_list.remove(skill_choice_input)
+                                        break
+                                    elif skill_choice_input == "Religion":
+                                        religion += 4
+                                        religion_box = True
+                                        skill_list.remove(skill_choice_input)
+                                        knowledge_cleric_skill_list.remove(skill_choice_input)
+                                        break
+                                    else:
+                                        print("Invalid Input")
+                                        continue
+                                print("Please choose a second skill from the following list: ")
+                                for index, item in enumerate(knowledge_cleric_skill_list, start=1):
+                                    print(index, item)
+                                while True:
+                                    skill_choice_input = input("Please choose a skill from the above list: ")
+                                    if skill_choice_input == "Arcana":
+                                        arcana += 4
+                                        arcana_box = True
+                                        skill_list.remove(skill_choice_input)
+                                        knowledge_cleric_skill_list.remove(skill_choice_input)
+                                        break
+                                    elif skill_choice_input == "History":
+                                        history += 4
+                                        history_box = True
+                                        skill_list.remove(skill_choice_input)
+                                        knowledge_cleric_skill_list.remove(skill_choice_input)
+                                        break
+                                    elif skill_choice_input == "Nature":
+                                        nature += 4
+                                        nature_box = True
+                                        skill_list.remove(skill_choice_input)
+                                        knowledge_cleric_skill_list.remove(skill_choice_input)
+                                        break
+                                    elif skill_choice_input == "Religion":
+                                        religion += 4
+                                        religion_box = True
+                                        skill_list.remove(skill_choice_input)
+                                        knowledge_cleric_skill_list.remove(skill_choice_input)
+                                        break
+                                    else:
+                                        print("Invalid Input")
+                                        continue
+                                break
+                            else:
+                                print("Please Choose a God.")
+                                continue
+                    elif god_choice_input == 6:
+                        while True:
+                            print("You have chosen Komik. You have the following powers:")
+                            print("=================================================================================")
+                            print("You gain the Class Feature: Blessing of the Trickster")
+                            print("Starting when you choose this domain at 1st level, you can use your action to touch a")
+                            print("willing creature other than yourself to give it advantage on Dexterity (Stealth)")
+                            print("checks. This blessing lasts for 1 hour or until you use this feature again.")
+                            print("=================================================================================")
+                            print("Are you sure you want to choose this god? Yes or No?")
+                            god_choice_input = input("Enter your choice: ")
+                            if god_choice_input.lower() == "yes" or god_choice_input.lower() == "y":
+                                print("You have chosen Komik.")
+                                god_choice = "Komik"
+                                featurelist.append("Divine Domain: Trickery")
+                                featurelist.append("Blessing of the Trickster")
+                                first_level_spell_list.append("Charm Person")
+                                first_level_spell_list.append("Disguise Self")
+                                break
+                            else:
+                                print("Please Choose a God.")
+                                continue
+                    elif god_choice_input == 7:
+                        while True:
+                            print("You have chosen Slag. You have the following powers:")
+                            print("=================================================================================")
+                            print("You gain proficiency in martial weapons and heavy armor.")
+                            print("=================================================================================")
+                            print("You gain the Class Feature: War Priest")
+                            print("From 1st level, your god delivers bolts of inspiration to you while you are engaged in")
+                            print("battle. When you use the Attack action, you can make one weapon attack as a bonus")
+                            print("action. You can use this feature a number of times equal to your Wisdom modifier")
+                            print("(a minimum of once). You regain all expended uses when you finish a long rest.")
+                            print("=================================================================================")
+                            print("Are you sure you want to choose this god? Yes or No?")
+                            god_choice_input = input("Enter your choice: ")
+                            if god_choice_input.lower() == "yes" or god_choice_input.lower() == "y":
+                                print("You have chosen Slag.")
+                                god_choice = "Slag"
+                                featurelist.append("Divine Domain: War")
+                                featurelist.append("War Priest")
+                                professionlist.append("Weapon: Martial")
+                                professionlist.append("Armor: Heavy")
+                                first_level_spell_list.append("Divine Favor")
+                                first_level_spell_list.append("Shield of Faith")
+                                break
+                            else:
+                                print("Please Choose a God.")
+                                continue
+                    elif god_choice_input == 8:
+                        while True:
+                            print("You have chosen Opas. You have the following powers:")
+                            print("=================================================================================")
+                            print("You gain proficiency in martial weapons.")
+                            print("=================================================================================")
+                            print("You gain the Class Feature: Reaper")
+                            print("At 1st level, you learn one necromancy cantrip of your choice from any spell list.")
+                            print("When you cast a necromancy cantrip that normally targets only one creature,")
+                            print("the spell can instead target two creatures within range and within 5 feet of each")
+                            print("other.")
+                            print("=================================================================================")
+                            print("Are you sure you want to choose this god? Yes or No?")
+                            god_choice_input = input("Enter your choice: ")
+                            if god_choice_input.lower() == "yes" or god_choice_input.lower() == "y":
+                                print("You have chosen Opas.")
+                                god_choice = "Opas"
+                                featurelist.append("Divine Domain: Death")
+                                featurelist.append("Reaper")
+                                professionlist.append("Weapon: Martial")
+                                first_level_spell_list.append("False Life")
+                                first_level_spell_list.append("Ray of Sickness")
+                                break
+                            else:
+                                print("Please Choose a God.")
+                                continue
+                    else:
+                        print("Invalid input")
+                        continue
+                except ValueError:
+                    print("Invalid input")
+                    continue
+                break
+            print("Please choose your first piece of equipment: ")
+            print("1. A Mace")
+            print("2. A Warhammer (ONLY CHOOSE IF YOU ARE PROFECIENT IN MARTIAL WEAPONS)")
+            while True:
+                equipment_choice_input = input("Enter your choice: ")
+                if equipment_choice_input == "1":
+                    print("The Mace does 1d6 Bludgeoning Damage.")
+                    print("It has a range of Zero.")
+                    equip_choice = input("Are you sure you want the Mace? Yes or No\n")
+                    if equip_choice.lower() in ["y", "yes"]:
+                        wpn_name = "Mace"
+                        wpn1_damage = "1d6"
+                        equipmentlist.append("Mace")
+                        break
+                    else:
+                        continue
+                elif equipment_choice_input == "2":
+                    print("The Warhammer does 1d8 Bludgeoning Damage.")
+                    print("It has a Range of Zero")
+                    print("It has the special properties: ")
+                    print(
+                        "Versatile: This weapon can be used with two hands. If you do, the damage is 1d10 instead")
+                    equip_choice = input("Are you sure you want the Warhammer? Yes or No\n")
+                    if equip_choice.lower() in ["y", "yes"]:
+                        wpn_name = "Warhammer"
+                        wpn1_damage = "1d8"
+                        equipmentlist.append("Warhammer")
+                        break
+                    else:
+                        continue
+                else:
+                    print("Invalid Input")
+                    continue
+            print("Please choose your second piece of equipment: ")
+            print("1. Scale Mail")
+            print("2. Leather Armor")
+            print("3. Chain Mail (ONLY CHOOSE IF YOU ARE PROFECIENT IN HEAVY ARMOR)")
+            while True:
+                equipment_choice_input = input("Enter your choice: ")
+                if equipment_choice_input == "1":
+                    print("The Scale Mail has an Armor Class of 13.")
+                    equip_choice = input("Are you sure you want the Scale Mail? Yes or No\n")
+                    if equip_choice.lower() in ["y", "yes"]:
+                        armor_name = "Scale Mail"
+                        armor_ac = "13"
+                        equipmentlist.append("Scale Mail")
+                        break
+                    else:
+                        continue
+                elif equipment_choice_input == "2":
+                    print("The Leather Armor has an Armor Class of 11.")
+                    equip_choice = input("Are you sure you want the Leather Armor? Yes or No\n")
+                    if equip_choice.lower() in ["y", "yes"]:
+                        armor_name = "Leather Armor"
+                        armor_ac = "11"
+                        equipmentlist.append("Leather Armor")
+                        break
+                    else:
+                        continue
+                elif equipment_choice_input == "3":
+                    print("The Chain Mail has Armor Class of 16.")
+                    equip_choice = input("Are you sure you want the Chain Mail? Yes or No\n")
+                    if equip_choice.lower() in ["y", "yes"]:
+                        armor_name = "Chain Mail"
+                        armor_ac = "16"
+                        equipmentlist.append("Chain Mail")
+                        break
+                    else:
+                        continue
+                else:
+                    print("Invalid Input")
+                    continue
+            print("Please choose your third piece of equipment: ")
+            print("1. A light crossbow and 20 bolts ")
+            print("2. any simple weapon")
+            while True:
+                equipment_choice_input = input("Enter your choice: ")
+                if equipment_choice_input == "1":
+                    print("The light crossbow has a range of 120 feet.")
+                    equip_choice = input("Are you sure you want the light crossbow? Yes or No\n")
+                    if equip_choice.lower() in ["y", "yes"]:
+                        weapon_name = "Light Crossbow"
+                        weapon_range = "120"
+                        equipmentlist.append("Light Crossbow")
+                        break
+                    else:
+                        continue
+                elif equipment_choice_input == "2":
+                    print("Please choose a simple weapon: ")
+                    for index, item in enumerate(simple_weapon_list, start=1):
+                        print(index, item)
+                    while True:
+                        start_equip_one = int(input("Simple Weapon Choice: "))
+                        start_equip_one = simple_weapon_list[start_equip_one - 1]
+                        if start_equip_one in simple_weapon_list:
+                            if start_equip_one == "Club":
+                                print("The Club does 1d4 Bludgeoning Damage.")
+                                print("It has a Range of Zero")
+                                print("It has the special properties: ")
+                                print(
+                                    "Light: A light weapon is small and easy to handle, making it ideal for use when "
+                                    "fighting "
+                                    "with two weapons.")
+                                equip_choice = input("Are you sure you want the Club? Yes or No\n")
+                                if equip_choice.lower() in ["y", "yes"]:
+                                    wpn_name_2 = "Club"
+                                    wpn2_damage = "1d4"
+                                    equipmentlist.append("Club")
+                                    break
+                                else:
+                                    continue
+                            elif start_equip_one == "Dagger":
+                                print("The Dagger does 1d4 Piercing Damage.")
+                                print("It has a Range of 20 ft for short range. 60 ft for long range.")
+                                print("It has the special properties: ")
+                                print(
+                                    "Finesse: When making an attack with a finesse weapon, you use your choice of your "
+                                    "Strength or Dexterity modifier for the attack and damage rolls. You must use the "
+                                    "same "
+                                    "modifier for both rolls.")
+                                print(
+                                    "Light: A light weapon is small and easy to handle, making it ideal for use when "
+                                    "fighting "
+                                    "with two weapons.")
+                                print(
+                                    "Thrown: If a weapon has the thrown property, you can throw the weapon to make a "
+                                    "ranged "
+                                    "attack. If the weapon is a melee weapon, you use the same ability modifier for "
+                                    "that "
+                                    "attack roll and damage roll that you would use for a melee attack with the "
+                                    "weapon. For "
+                                    "example, if you throw a handaxe, you use your Strength, but if you throw a "
+                                    "dagger, "
+                                    "you can use either your Strength or your Dexterity, since the dagger has the "
+                                    "finesse "
+                                    "property.")
+                                equip_choice = input("Are you sure you want the Dagger? Yes or No\n")
+                                if equip_choice.lower() in ["y", "yes"]:
+                                    wpn_name_2 = "Dagger"
+                                    wpn2_damage = "1d4"
+                                    equipmentlist.append("Dagger")
+                                    break
+                                else:
+                                    continue
+                            elif start_equip_one == "Greatclub":
+                                print("The Greatclub does 1d8 Bludgeoning Damage.")
+                                print("It has a Range of Zero.")
+                                print("It has the special properties: ")
+                                print("Two-Handed: This weapon requires two hands when you attack with it.")
+                                equip_choice = input("Are you sure you want the Greatclub? Yes or No\n")
+                                if equip_choice.lower() in ["y", "yes"]:
+                                    wpn_name_2 = "Greatclub"
+                                    wpn2_damage = "1d8"
+                                    equipmentlist.append("Greatclub")
+                                    break
+                                else:
+                                    continue
+                            elif start_equip_one == "Handaxe":
+                                print("The Handaxe does 1d6 Slashing Damage.")
+                                print("It has a Range of 20 ft for short range, and 60 ft for long range.")
+                                print("It has the special properties: ")
+                                print(
+                                    "Light: A light weapon is small and easy to handle, making it ideal for use when "
+                                    "fighting "
+                                    "with two weapons.")
+                                print(
+                                    "Thrown: If a weapon has the thrown property, you can throw the weapon to make a "
+                                    "ranged "
+                                    "attack. If the weapon is a melee weapon, you use the same ability modifier for "
+                                    "that "
+                                    "attack roll and damage roll that you would use for a melee attack with the "
+                                    "weapon. For "
+                                    "example, if you throw a handaxe, you use your Strength, but if you throw a "
+                                    "dagger, "
+                                    "you can use either your Strength or your Dexterity, since the dagger has the "
+                                    "finesse "
+                                    "property.")
+                                equip_choice = input("Are you sure you want the Handaxe? Yes or No\n")
+                                if equip_choice.lower() in ["y", "yes"]:
+                                    wpn_name_2 = "Handaxe"
+                                    wpn2_damage = "1d6"
+                                    equipmentlist.append("Handaxe")
+                                    equipmentlist.append("Handaxe")
+                                    break
+                                else:
+                                    continue
+                            elif start_equip_one == "Javelin":
+                                print("The Javelin does 1d6 Piercing Damage.")
+                                print("It has a short range of 30 ft, and a long range of 120 ft.")
+                                print("It has the special properties: ")
+                                print(
+                                    "Thrown: If a weapon has the thrown property, you can throw the weapon to make a "
+                                    "ranged "
+                                    "attack. If the weapon is a melee weapon, you use the same ability modifier for "
+                                    "that "
+                                    "attack roll and damage roll that you would use for a melee attack with the "
+                                    "weapon. For "
+                                    "example, if you throw a handaxe, you use your Strength, but if you throw a "
+                                    "dagger, "
+                                    "you can use either your Strength or your Dexterity, since the dagger has the "
+                                    "finesse "
+                                    "property.")
+                                equip_choice = input("Are you sure you want the Javelin? Yes or No\n")
+                                if equip_choice.lower() in ["y", "yes"]:
+                                    wpn_name_2 = "Javelin"
+                                    wpn2_damage = "1d6"
+                                    equipmentlist.append("Javelin")
+                                    break
+                                else:
+                                    continue
+                            elif start_equip_one == "Light hammer":
+                                print("The Light hammer does 1d4 Bludgeoning Damage.")
+                                print("It has a short range of 20 ft, and a long range of 60 ft.")
+                                print("It has the special properties: ")
+                                print(
+                                    "Light: A light weapon is small and easy to handle, making it ideal for use when "
+                                    "fighting "
+                                    "with two weapons.")
+                                print(
+                                    "Thrown: If a weapon has the thrown property, you can throw the weapon to make a "
+                                    "ranged "
+                                    "attack. If the weapon is a melee weapon, you use the same ability modifier for "
+                                    "that "
+                                    "attack roll and damage roll that you would use for a melee attack with the "
+                                    "weapon. For "
+                                    "example, if you throw a handaxe, you use your Strength, but if you throw a "
+                                    "dagger, "
+                                    "you can use either your Strength or your Dexterity, since the dagger has the "
+                                    "finesse "
+                                    "property.")
+                                equip_choice = input("Are you sure you want the Light hammer? Yes or No\n")
+                                if equip_choice.lower() in ["y", "yes"]:
+                                    wpn_name_2 = "Light hammer"
+                                    wpn2_damage = "1d4"
+                                    equipmentlist.append("Light hammer")
+                                    break
+                                else:
+                                    continue
+                            elif start_equip_one == "Mace":
+                                print("The Mace does 1d6 Bludgeoning Damage.")
+                                print("It has a range of Zero.")
+                                equip_choice = input("Are you sure you want the Mace? Yes or No\n")
+                                if equip_choice.lower() in ["y", "yes"]:
+                                    wpn_name_2 = "Mace"
+                                    wpn2_damage = "1d6"
+                                    equipmentlist.append("Mace")
+                                    break
+                                else:
+                                    continue
+                            elif start_equip_one == "Quarterstaff":
+                                print("The Quarterstaff does 1d6 Bludgeoning Damage.")
+                                print("It has a range of Zero.")
+                                print("It has the special properties: ")
+                                print(
+                                    "Versatile: This weapon can be used with two hands, if you do so, then the damage "
+                                    "is 1d8 "
+                                    "instead")
+                                equip_choice = input("Are you sure you want the Quarterstaff? Yes or No\n")
+                                if equip_choice.lower() in ["y", "yes"]:
+                                    wpn_name_2 = "Quarterstaff"
+                                    wpn2_damage = "1d6"
+                                    equipmentlist.append("Quarterstaff")
+                                    break
+                                else:
+                                    continue
+                            elif start_equip_one == "Sickle":
+                                print("The Sickle does 1d4 Slashing Damage.")
+                                print("It has a range of Zero.")
+                                print("It has the special properties: ")
+                                print(
+                                    "Light: A light weapon is small and easy to handle, making it ideal for use when "
+                                    "fighting "
+                                    "with two weapons.")
+                                equip_choice = input("Are you sure you want the Sickle? Yes or No\n")
+                                if equip_choice.lower() in ["y", "yes"]:
+                                    wpn_name_2 = "Sickle"
+                                    wpn2_damage = "1d4"
+                                    equipmentlist.append("Sickle")
+                                    break
+                                else:
+                                    continue
+                            elif start_equip_one == "Spear":
+                                print("The Spear does 1d6 Piercing Damage.")
+                                print("It has a short range of 20 ft and a long range of 60 ft.")
+                                print("It has the special properties: ")
+                                print(
+                                    "Thrown: If a weapon has the thrown property, you can throw the weapon to make a "
+                                    "ranged "
+                                    "attack. If the weapon is a melee weapon, you use the same ability modifier for "
+                                    "that "
+                                    "attack roll and damage roll that you would use for a melee attack with the "
+                                    "weapon. For "
+                                    "example, if you throw a handaxe, you use your Strength, but if you throw a "
+                                    "dagger, "
+                                    "you can use either your Strength or your Dexterity, since the dagger has the "
+                                    "finesse "
+                                    "property.")
+                                print(
+                                    "Versatile: This weapon can be used with both hands. If you do, the damage is 1d8 "
+                                    "instead.")
+                                equip_choice = input("Are you sure you want the Spear? Yes or No\n")
+                                if equip_choice.lower() in ["y", "yes"]:
+                                    wpn_name_2 = "Spear"
+                                    wpn2_damage = "1d6"
+                                    equipmentlist.append("Spear")
+                                    break
+                                else:
+                                    continue
+            print("Please choose Three Cantrips from the following list:")
+            for index, item in enumerate(cleric_cantrip_spell_list, start=1):
+                print(index, item)
+            while True:
+                try:
+                    cantrip_choice = int(input("Please enter the number of the cantrip you want to add: "))
+                    if cantrip_choice in range(1, len(cleric_cantrip_spell_list) + 1):
+                        cantrip_choice -= 1
+                        cantrip_list.append(cleric_cantrip_spell_list[cantrip_choice])
+                        cleric_cantrip_spell_list.remove(cleric_cantrip_spell_list[cantrip_choice])
+                        break
+                    else:
+                        print("Please enter a valid number")
+                        continue
+                except ValueError:
+                    print("Please enter a valid number")
+                    continue
+            for index, item in enumerate(cleric_cantrip_spell_list, start=1):
+                print(index, item)
+            while True:
+                try:
+                    cantrip_choice = int(input("Please enter the number of the second cantrip you want to add: "))
+                    if cantrip_choice in range(1, len(cleric_cantrip_spell_list) + 1):
+                        cantrip_choice -= 1
+                        cantrip_list.append(cleric_cantrip_spell_list[cantrip_choice])
+                        cleric_cantrip_spell_list.remove(cleric_cantrip_spell_list[cantrip_choice])
+                        break
+                    else:
+                        print("Please enter a valid number")
+                        continue
+                except ValueError:
+                    print("Please enter a valid number")
+                    continue
+            for index, item in enumerate(cleric_cantrip_spell_list, start=1):
+                print(index, item)
+            while True:
+                try:
+                    cantrip_choice = int(input("Please enter the number of the third cantrip you want to add: "))
+                    if cantrip_choice in range(1, len(cleric_cantrip_spell_list) + 1):
+                        cantrip_choice -= 1
+                        cantrip_list.append(cleric_cantrip_spell_list[cantrip_choice])
+                        cleric_cantrip_spell_list.remove(cleric_cantrip_spell_list[cantrip_choice])
+                        break
+                    else:
+                        print("Please enter a valid number")
+                        continue
+                except ValueError:
+                    print("Please enter a valid number")
+                    continue
+            x = wis_mod + 1
+            print("You are able to prepare ",x," First level spells")
+            if x < 2:
+                print("Please choose a spell from the following list:")
+                for index, item in enumerate(cleric_spell_list_1, start=1):
+                    print(index, item)
+                while True:
+                    try:
+                        spell_choice = int(input("Please enter the number of the spell you want to add: "))
+                        if spell_choice in range(1, len(cleric_spell_list_1) + 1):
+                            spell_choice -= 1
+                            first_level_spell_list.append(cleric_spell_list_1[spell_choice])
+                            cleric_spell_list_1.remove(cleric_spell_list_1[spell_choice])
+                            break
+                        else:
+                            print("Please enter a valid number")
+                            continue
+                    except ValueError:
+                        print("Please enter a valid number")
+                        continue
+            elif x == 2:
+                print("Please choose two spells from the following list:")
+                for index, item in enumerate(cleric_spell_list_1, start=1):
+                    print(index, item)
+                while True:
+                    try:
+                        spell_choice = int(input("Please enter the number of the first spell you want to add: "))
+                        if spell_choice in range(1, len(cleric_spell_list_1) + 1):
+                            spell_choice -= 1
+                            first_level_spell_list.append(cleric_spell_list_1[spell_choice])
+                            cleric_spell_list_1.remove(cleric_spell_list_1[spell_choice])
+                            break
+                        else:
+                            print("Please enter a valid number")
+                            continue
+                    except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                for index, item in enumerate(cleric_spell_list_1, start=1):
+                    print(index, item)
+                while True:
+                    try:
+                        spell_choice = int(input("Please enter the number of the second spell you want to add: "))
+                        if spell_choice in range(1, len(cleric_spell_list_1) + 1):
+                            spell_choice -= 1
+                            first_level_spell_list.append(cleric_spell_list_1[spell_choice])
+                            cleric_spell_list_1.remove(cleric_spell_list_1[spell_choice])
+                            break
+                        else:
+                            print("Please enter a valid number")
+                            continue
+                    except ValueError:
+                        print("Please enter a valid number")
+                        continue
+            elif x == 3:
+                print("Please choose three spells from the following list:")
+                for index, item in enumerate(cleric_spell_list_1, start=1):
+                    print(index, item)
+                while True:
+                    try:
+                        spell_choice = int(input("Please enter the number of the first spell you want to add: "))
+                        if spell_choice in range(1, len(cleric_spell_list_1) + 1):
+                            spell_choice -= 1
+                            first_level_spell_list.append(cleric_spell_list_1[spell_choice])
+                            cleric_spell_list_1.remove(cleric_spell_list_1[spell_choice])
+                            break
+                        else:
+                            print("Please enter a valid number")
+                            continue
+                    except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                for index, item in enumerate(cleric_spell_list_1, start=1):
+                    print(index, item)
+                while True:
+                    try:
+                        spell_choice = int(input("Please enter the number of the second spell you want to add: "))
+                        if spell_choice in range(1, len(cleric_spell_list_1) + 1):
+                            spell_choice -= 1
+                            first_level_spell_list.append(cleric_spell_list_1[spell_choice])
+                            cleric_spell_list_1.remove(cleric_spell_list_1[spell_choice])
+                            break
+                        else:
+                            print("Please enter a valid number")
+                            continue
+                    except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                for index, item in enumerate(cleric_spell_list_1, start=1):
+                    print(index, item)
+                while True:
+                    try:
+                        spell_choice = int(input("Please enter the number of the third spell you want to add: "))
+                        if spell_choice in range(1, len(cleric_spell_list_1) + 1):
+                            spell_choice -= 1
+                            first_level_spell_list.append(cleric_spell_list_1[spell_choice])
+                            cleric_spell_list_1.remove(cleric_spell_list_1[spell_choice])
+                            break
+                        else:
+                            print("Please enter a valid number")
+                            continue
+                    except ValueError:
+                        print("Please enter a valid number")
+                        continue
+            elif x == 4:
+                print("Please choose four spells from the following list:")
+                for index, item in enumerate(cleric_spell_list_1, start=1):
+                    print(index, item)
+                while True:
+                    try:
+                        spell_choice = int(input("Please enter the number of the first spell you want to add: "))
+                        if spell_choice in range(1, len(cleric_spell_list_1) + 1):
+                            spell_choice -= 1
+                            first_level_spell_list.append(cleric_spell_list_1[spell_choice])
+                            cleric_spell_list_1.remove(cleric_spell_list_1[spell_choice])
+                            break
+                        else:
+                            print("Please enter a valid number")
+                            continue
+                    except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                for index, item in enumerate(cleric_spell_list_1, start=1):
+                    print(index, item)
+                while True:
+                    try:
+                        spell_choice = int(input("Please enter the number of the second spell you want to add: "))
+                        if spell_choice in range(1, len(cleric_spell_list_1) + 1):
+                            spell_choice -= 1
+                            first_level_spell_list.append(cleric_spell_list_1[spell_choice])
+                            cleric_spell_list_1.remove(cleric_spell_list_1[spell_choice])
+                            break
+                        else:
+                            print("Please enter a valid number")
+                            continue
+                    except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                for index, item in enumerate(cleric_spell_list_1, start=1):
+                    print(index, item)
+                while True:
+                    try:
+                        spell_choice = int(input("Please enter the number of the third spell you want to add: "))
+                        if spell_choice in range(1, len(cleric_spell_list_1) + 1):
+                            spell_choice -= 1
+                            first_level_spell_list.append(cleric_spell_list_1[spell_choice])
+                            cleric_spell_list_1.remove(cleric_spell_list_1[spell_choice])
+                            break
+                        else:
+                            print("Please enter a valid number")
+                            continue
+                    except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                for index, item in enumerate(cleric_spell_list_1, start=1):
+                    print(index, item)
+                while True:
+                    try:
+                        spell_choice = int(input("Please enter the number of the fourth spell you want to add: "))
+                        if spell_choice in range(1, len(cleric_spell_list_1) + 1):
+                            spell_choice -= 1
+                            first_level_spell_list.append(cleric_spell_list_1[spell_choice])
+                            cleric_spell_list_1.remove(cleric_spell_list_1[spell_choice])
+                            break
+                        else:
+                            print("Please enter a valid number")
+                            continue
+                    except ValueError:
+                        print("Please enter a valid number")
+                        continue
+            elif x == 5:
+                print("Please choose five spells from the following list:")
+                for index, item in enumerate(cleric_spell_list_1, start=1):
+                    print(index, item)
+                while True:
+                    try:
+                        spell_choice = int(input("Please enter the number of the first spell you want to add: "))
+                        if spell_choice in range(1, len(cleric_spell_list_1) + 1):
+                            spell_choice -= 1
+                            first_level_spell_list.append(cleric_spell_list_1[spell_choice])
+                            cleric_spell_list_1.remove(cleric_spell_list_1[spell_choice])
+                            break
+                        else:
+                            print("Please enter a valid number")
+                            continue
+                    except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                for index, item in enumerate(cleric_spell_list_1, start=1):
+                    print(index, item)
+                while True:
+                    try:
+                        spell_choice = int(input("Please enter the number of the second spell you want to add: "))
+                        if spell_choice in range(1, len(cleric_spell_list_1) + 1):
+                            spell_choice -= 1
+                            first_level_spell_list.append(cleric_spell_list_1[spell_choice])
+                            cleric_spell_list_1.remove(cleric_spell_list_1[spell_choice])
+                            break
+                        else:
+                            print("Please enter a valid number")
+                            continue
+                    except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                for index, item in enumerate(cleric_spell_list_1, start=1):
+                    print(index, item)
+                while True:
+                    try:
+                        spell_choice = int(input("Please enter the number of the third spell you want to add: "))
+                        if spell_choice in range(1, len(cleric_spell_list_1) + 1):
+                            spell_choice -= 1
+                            first_level_spell_list.append(cleric_spell_list_1[spell_choice])
+                            cleric_spell_list_1.remove(cleric_spell_list_1[spell_choice])
+                            break
+                        else:
+                            print("Please enter a valid number")
+                            continue
+                    except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                for index, item in enumerate(cleric_spell_list_1, start=1):
+                    print(index, item)
+                while True:
+                    try:
+                        spell_choice = int(input("Please enter the number of the fourth spell you want to add: "))
+                        if spell_choice in range(1, len(cleric_spell_list_1) + 1):
+                            spell_choice -= 1
+                            first_level_spell_list.append(cleric_spell_list_1[spell_choice])
+                            cleric_spell_list_1.remove(cleric_spell_list_1[spell_choice])
+                            break
+                        else:
+                            print("Please enter a valid number")
+                            continue
+                    except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                for index, item in enumerate(cleric_spell_list_1, start=1):
+                    print(index, item)
+                while True:
+                    try:
+                        spell_choice = int(input("Please enter the number of the fifth spell you want to add: "))
+                        if spell_choice in range(1, len(cleric_spell_list_1) + 1):
+                            spell_choice -= 1
+                            first_level_spell_list.append(cleric_spell_list_1[spell_choice])
+                            cleric_spell_list_1.remove(cleric_spell_list_1[spell_choice])
+                            break
+                        else:
+                            print("Please enter a valid number")
+                            continue
+                    except ValueError:
+                        print("Please enter a valid number")
+                        continue
+            elif x == 6:
+                print("Please choose five spells from the following list:")
+                for index, item in enumerate(cleric_spell_list_1, start=1):
+                    print(index, item)
+                while True:
+                    try:
+                        spell_choice = int(input("Please enter the number of the first spell you want to add: "))
+                        if spell_choice in range(1, len(cleric_spell_list_1) + 1):
+                            spell_choice -= 1
+                            first_level_spell_list.append(cleric_spell_list_1[spell_choice])
+                            cleric_spell_list_1.remove(cleric_spell_list_1[spell_choice])
+                            break
+                        else:
+                            print("Please enter a valid number")
+                            continue
+                    except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                for index, item in enumerate(cleric_spell_list_1, start=1):
+                    print(index, item)
+                while True:
+                    try:
+                        spell_choice = int(input("Please enter the number of the second spell you want to add: "))
+                        if spell_choice in range(1, len(cleric_spell_list_1) + 1):
+                            spell_choice -= 1
+                            first_level_spell_list.append(cleric_spell_list_1[spell_choice])
+                            cleric_spell_list_1.remove(cleric_spell_list_1[spell_choice])
+                            break
+                        else:
+                            print("Please enter a valid number")
+                            continue
+                    except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                for index, item in enumerate(cleric_spell_list_1, start=1):
+                    print(index, item)
+                while True:
+                    try:
+                        spell_choice = int(input("Please enter the number of the third spell you want to add: "))
+                        if spell_choice in range(1, len(cleric_spell_list_1) + 1):
+                            spell_choice -= 1
+                            first_level_spell_list.append(cleric_spell_list_1[spell_choice])
+                            cleric_spell_list_1.remove(cleric_spell_list_1[spell_choice])
+                            break
+                        else:
+                            print("Please enter a valid number")
+                            continue
+                    except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                for index, item in enumerate(cleric_spell_list_1, start=1):
+                    print(index, item)
+                while True:
+                    try:
+                        spell_choice = int(input("Please enter the number of the fourth spell you want to add: "))
+                        if spell_choice in range(1, len(cleric_spell_list_1) + 1):
+                            spell_choice -= 1
+                            first_level_spell_list.append(cleric_spell_list_1[spell_choice])
+                            cleric_spell_list_1.remove(cleric_spell_list_1[spell_choice])
+                            break
+                        else:
+                            print("Please enter a valid number")
+                            continue
+                    except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                for index, item in enumerate(cleric_spell_list_1, start=1):
+                    print(index, item)
+                while True:
+                    try:
+                        spell_choice = int(input("Please enter the number of the fifth spell you want to add: "))
+                        if spell_choice in range(1, len(cleric_spell_list_1) + 1):
+                            spell_choice -= 1
+                            first_level_spell_list.append(cleric_spell_list_1[spell_choice])
+                            cleric_spell_list_1.remove(cleric_spell_list_1[spell_choice])
+                            break
+                        else:
+                            print("Please enter a valid number")
+                            continue
+                    except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                for index, item in enumerate(cleric_spell_list_1, start=1):
+                    print(index, item)
+                while True:
+                    try:
+                        spell_choice = int(input("Please enter the number of the sixth spell you want to add: "))
+                        if spell_choice in range(1, len(cleric_spell_list_1) + 1):
+                            spell_choice -= 1
+                            first_level_spell_list.append(cleric_spell_list_1[spell_choice])
+                            cleric_spell_list_1.remove(cleric_spell_list_1[spell_choice])
+                            break
+                        else:
+                            print("Please enter a valid number")
+                            continue
+                    except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                
+
+
+        else:
+            print("Invalid Input")
+            continue
+        break
+    # Cleric Class Gen End
     else:
         print("Invalid Input")
         continue
-# Bard Class Gen End
 # Work on adding skills to character sheet
 
 print("==========================================================")
