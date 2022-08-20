@@ -51,6 +51,7 @@ cleric_skill_list = ["History", "Insight", "Medicine", "Persuasion", "Religion"]
 druid_skill_list = ["Arcana", "Animal Handling", "Insight", "Medicine", "Nature", "Perception", "Religion", "Survival"]
 fighter_skill_list = ["Acrobatics", "Animal Handling", "Athletics", "History", "Insight", "Intimidation", "Perception",
                       "Survival"]
+monk_skill_list = ["Acrobatics", "Athletics", "History", "Insight", "Religion", "Stealth"]
 knowledge_cleric_skill_list = ["Arcana", "History", "Nature", "Religion"]
 spell_list_cantrip = ["Acid Splash", "Chill Touch", "Dancing Lights", "Druidcraft", "Eldritch Blast", "Fire Bolt",
                       "Guidance", "Light", "Mage Hand", "Mending", "Message", "Minor Illusion", "Poison Spray",
@@ -6856,6 +6857,22 @@ while True:
         print("(a) a shortsword or (b) any simple weapon")
         print("10 darts")
         print("========================")
+        print("[FEATURES]")
+        print("Unarmored Defense: While you are not wearing any armor, your Armor Class equals 10 + your Dexterity "
+              "modifier + your Wisdom modifier.")
+        print(
+            "Martial Arts: At 1st level, your practice of martial arts gives you mastery of combat styles that use "
+            "\nunarmed strikes and monk weapons, which are shortswords and any simple melee weapons that don’t have "
+            "\n the two- handed or heavy property. You gain the following benefits while you are unarmed or wielding "
+            "\nonly monk weapons and you aren’t wearing armor or wielding a shield: ")
+        print("You can use Dexterity instead of Strength for the attack and damage rolls of your unarmed strikes and "
+              "monk weapons.")
+        print("You can roll a d4 in place of the normal damage of your unarmed strike or monk weapon.")
+        print("When you use the Attack action with an unarmed strike or a monk weapon on your turn, you can make one "
+              "\nunarmed strike as a bonus action. For example, if you take the Attack action and attack with a "
+              "\nquarterstaff, you can also make an unarmed strike as a bonus action, assuming you haven’t already "
+              "\ntaken a bonus action this turn.") 
+        print("========================")
         class_choice = input("Are you sure you want to be a Monk? Yes or No?: ")
         if class_choice.lower() in ["y", "yes"]:
             dndclass = "Monk"
@@ -6864,25 +6881,506 @@ while True:
             STstr_box = True
             STdex += 2
             STdex_box = True
-            featurelist.append("Second Wind")
-            professionlist.append("Armor: Light")
-            professionlist.append("Armor: Medium")
-            professionlist.append("Armor: Heavy")
-            professionlist.append("Armor: Shields")
+            featurelist.append("Unarmored Defense")
+            featurelist.append("Martial Arts")
             professionlist.append("Weapon: Simple")
-            professionlist.append("Weapon: Martial")
+            professionlist.append("Weapon: Shortsword")
             cantrip_list.append("")
             cantrip_list.append("")
             cantrip_list.append("")
             cantrip_list.append("")
             cantrip_list.append("")
             cantrip_list.append("")
-            hitdie = "1d10"
-            hitdietotal = "1d10"
+            hitdie = "1d8"
+            hitdietotal = "1d8"
+            print("Please enter a Tool or Instrument to be proficient with: ")
+            monk_tool_choice = input("Enter your choice: ")
+            professionlist.append("Tool: ",monk_tool_choice)
+            print("Please choose two skills from the following list:")
+            for index, item in enumerate(monk_skill_list, start=1):
+                print(index, item)
+            while True:
+                skill_choice_he_input = int(input("Enter what skill you want first: "))
+                skill_choice_three = monk_skill_list[skill_choice_he_input - 1]
+                if skill_choice_three in skill_list:
+                    if skill_choice_three == "Acrobatics":
+                        acrobatics += 2
+                        acrobatics_box = True
+                        skill_list.remove(skill_choice_three)
+                        monk_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Animal Handling":
+                        animal_handling += 2
+                        animal_handling_box = True
+                        skill_list.remove(skill_choice_three)
+                        monk_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Arcana":
+                        arcana += 2
+                        arcana_box = True
+                        skill_list.remove(skill_choice_three)
+                        monk_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Athletics":
+                        athletics += 2
+                        athletics_box = True
+                        skill_list.remove(skill_choice_three)
+                        monk_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Deception":
+                        deception += 2
+                        deception_box = True
+                        skill_list.remove(skill_choice_three)
+                        monk_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "History":
+                        history += 2
+                        history_box = True
+                        skill_list.remove(skill_choice_three)
+                        monk_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Insight":
+                        insight += 2
+                        insight_box = True
+                        skill_list.remove(skill_choice_three)
+                        monk_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Intimidation":
+                        intimidation += 2
+                        intimidation_box = True
+                        skill_list.remove(skill_choice_three)
+                        monk_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Investigation":
+                        investigation += 2
+                        investigation_box = True
+                        skill_list.remove(skill_choice_three)
+                        monk_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Medicine":
+                        medicine += 2
+                        medicine_box = True
+                        skill_list.remove(skill_choice_three)
+                        monk_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Nature":
+                        nature += 2
+                        nature_box = True
+                        skill_list.remove(skill_choice_three)
+                        monk_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Perception":
+                        perception += 2
+                        perception_box = True
+                        skill_list.remove(skill_choice_three)
+                        monk_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Performance":
+                        performance += 2
+                        performance_box = True
+                        skill_list.remove(skill_choice_three)
+                        monk_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Persuasion":
+                        persuasion += 2
+                        persuasion_box = True
+                        skill_list.remove(skill_choice_three)
+                        monk_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Religion":
+                        religion += 2
+                        religion_box = True
+                        skill_list.remove(skill_choice_three)
+                        monk_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Sleight of Hand":
+                        slight_of_hand += 2
+                        slight_of_hand_box = True
+                        skill_list.remove(skill_choice_three)
+                        monk_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Stealth":
+                        stealth += 2
+                        stealth_box = True
+                        skill_list.remove(skill_choice_three)
+                        monk_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Survival":
+                        survival += 2
+                        survival_box = True
+                        skill_list.remove(skill_choice_three)
+                        monk_skill_list.remove(skill_choice_three)
+                        break
+                    else:
+                        print("Invalid input")
+                        continue
+                else:
+                    print("Invalid Input")
+                    continue
+            for index, item in enumerate(monk_skill_list, start=1):
+                print(index, item)
+            while True:
+                try:
+                    skill_choice_he_input = int(input("Enter what skill you want second: "))
+                    skill_choice_three = monk_skill_list[skill_choice_he_input - 1]
+                    if skill_choice_three in skill_list:
+                        if skill_choice_three == "Acrobatics":
+                            acrobatics += 2
+                            acrobatics_box = True
+                            skill_list.remove(skill_choice_three)
+                            monk_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Animal Handling":
+                            animal_handling += 2
+                            animal_handling_box = True
+                            skill_list.remove(skill_choice_three)
+                            monk_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Arcana":
+                            arcana += 2
+                            arcana_box = True
+                            skill_list.remove(skill_choice_three)
+                            monk_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Athletics":
+                            athletics += 2
+                            athletics_box = True
+                            skill_list.remove(skill_choice_three)
+                            monk_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Deception":
+                            deception += 2
+                            deception_box = True
+                            skill_list.remove(skill_choice_three)
+                            monk_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "History":
+                            history += 2
+                            history_box = True
+                            skill_list.remove(skill_choice_three)
+                            monk_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Insight":
+                            insight += 2
+                            insight_box = True
+                            skill_list.remove(skill_choice_three)
+                            monk_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Intimidation":
+                            intimidation += 2
+                            intimidation_box = True
+                            skill_list.remove(skill_choice_three)
+                            monk_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Investigation":
+                            investigation += 2
+                            investigation_box = True
+                            skill_list.remove(skill_choice_three)
+                            monk_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Medicine":
+                            medicine += 2
+                            medicine_box = True
+                            skill_list.remove(skill_choice_three)
+                            monk_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Nature":
+                            nature += 2
+                            nature_box = True
+                            skill_list.remove(skill_choice_three)
+                            monk_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Perception":
+                            perception += 2
+                            perception_box = True
+                            skill_list.remove(skill_choice_three)
+                            monk_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Performance":
+                            performance += 2
+                            performance_box = True
+                            skill_list.remove(skill_choice_three)
+                            monk_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Persuasion":
+                            persuasion += 2
+                            persuasion_box = True
+                            skill_list.remove(skill_choice_three)
+                            monk_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Religion":
+                            religion += 2
+                            religion_box = True
+                            skill_list.remove(skill_choice_three)
+                            monk_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Sleight of Hand":
+                            slight_of_hand += 2
+                            slight_of_hand_box = True
+                            skill_list.remove(skill_choice_three)
+                            monk_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Stealth":
+                            stealth += 2
+                            stealth_box = True
+                            skill_list.remove(skill_choice_three)
+                            monk_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Survival":
+                            survival += 2
+                            survival_box = True
+                            skill_list.remove(skill_choice_three)
+                            monk_skill_list.remove(skill_choice_three)
+                            break
+                        else:
+                            print("Invalid input")
+                            continue
+                    else:
+                        print("Invalid Input")
+                        continue
+                except IndexError:
+                    print("Invalid Input")
+                    continue
+            print("Please choose what equipment you want: ")
+            print("1. A short sword")
+            print("2. Any simple weapon")
+            while True:
+                equipment_choice_input = input("Enter your choice: ")
+                if equipment_choice_input == "1":
+                    print("The Shortsword has a damage die of 1d6 and a damage type of piercing")
+                    equip_choice = input("Are you sure you want the Shortsword? Yes or No\n")
+                    if equip_choice.lower() in ["y", "yes"]:
+                        weapon_name = "Shortsword"
+                        weapon_range = "None"
+                        equipmentlist.append("Shortsword")
+                        break
+                    else:
+                        continue
+                elif equipment_choice_input == "2":
+                    print("Please choose a simple weapon: ")
+                    for index, item in enumerate(simple_weapon_list, start=1):
+                        print(index, item)
+                    while True:
+                        start_equip_one = int(input("Simple Weapon Choice: "))
+                        start_equip_one = simple_weapon_list[start_equip_one - 1]
+                        if start_equip_one in simple_weapon_list:
+                            if start_equip_one == "Club":
+                                print("The Club does 1d4 Bludgeoning Damage.")
+                                print("It has a Range of Zero")
+                                print("It has the special properties: ")
+                                print(
+                                    "Light: A light weapon is small and easy to handle, making it ideal for use when "
+                                    "fighting "
+                                    "with two weapons.")
+                                equip_choice = input("Are you sure you want the Club? Yes or No\n")
+                                if equip_choice.lower() in ["y", "yes"]:
+                                    wpn_name_2 = "Club"
+                                    wpn2_damage = "1d4"
+                                    equipmentlist.append("Club")
+                                    break
+                                else:
+                                    continue
+                            elif start_equip_one == "Dagger":
+                                print("The Dagger does 1d4 Piercing Damage.")
+                                print("It has a Range of 20 ft for short range. 60 ft for long range.")
+                                print("It has the special properties: ")
+                                print(
+                                    "Finesse: When making an attack with a finesse weapon, you use your choice of your "
+                                    "Strength or Dexterity modifier for the attack and damage rolls. You must use the "
+                                    "same "
+                                    "modifier for both rolls.")
+                                print(
+                                    "Light: A light weapon is small and easy to handle, making it ideal for use when "
+                                    "fighting "
+                                    "with two weapons.")
+                                print(
+                                    "Thrown: If a weapon has the thrown property, you can throw the weapon to make a "
+                                    "ranged "
+                                    "attack. If the weapon is a melee weapon, you use the same ability modifier for "
+                                    "that "
+                                    "attack roll and damage roll that you would use for a melee attack with the "
+                                    "weapon. For "
+                                    "example, if you throw a handaxe, you use your Strength, but if you throw a "
+                                    "dagger, "
+                                    "you can use either your Strength or your Dexterity, since the dagger has the "
+                                    "finesse "
+                                    "property.")
+                                equip_choice = input("Are you sure you want the Dagger? Yes or No\n")
+                                if equip_choice.lower() in ["y", "yes"]:
+                                    wpn_name_2 = "Dagger"
+                                    wpn2_damage = "1d4"
+                                    equipmentlist.append("Dagger")
+                                    break
+                                else:
+                                    continue
+                            elif start_equip_one == "Greatclub":
+                                print("The Greatclub does 1d8 Bludgeoning Damage.")
+                                print("It has a Range of Zero.")
+                                print("It has the special properties: ")
+                                print("Two-Handed: This weapon requires two hands when you attack with it.")
+                                equip_choice = input("Are you sure you want the Greatclub? Yes or No\n")
+                                if equip_choice.lower() in ["y", "yes"]:
+                                    wpn_name_2 = "Greatclub"
+                                    wpn2_damage = "1d8"
+                                    equipmentlist.append("Greatclub")
+                                    break
+                                else:
+                                    continue
+                            elif start_equip_one == "Handaxe":
+                                print("The Handaxe does 1d6 Slashing Damage.")
+                                print("It has a Range of 20 ft for short range, and 60 ft for long range.")
+                                print("It has the special properties: ")
+                                print(
+                                    "Light: A light weapon is small and easy to handle, making it ideal for use when "
+                                    "fighting "
+                                    "with two weapons.")
+                                print(
+                                    "Thrown: If a weapon has the thrown property, you can throw the weapon to make a "
+                                    "ranged "
+                                    "attack. If the weapon is a melee weapon, you use the same ability modifier for "
+                                    "that "
+                                    "attack roll and damage roll that you would use for a melee attack with the "
+                                    "weapon. For "
+                                    "example, if you throw a handaxe, you use your Strength, but if you throw a "
+                                    "dagger, "
+                                    "you can use either your Strength or your Dexterity, since the dagger has the "
+                                    "finesse "
+                                    "property.")
+                                equip_choice = input("Are you sure you want the Handaxe? Yes or No\n")
+                                if equip_choice.lower() in ["y", "yes"]:
+                                    wpn_name_2 = "Handaxe"
+                                    wpn2_damage = "1d6"
+                                    equipmentlist.append("Handaxe")
+                                    equipmentlist.append("Handaxe")
+                                    break
+                                else:
+                                    continue
+                            elif start_equip_one == "Javelin":
+                                print("The Javelin does 1d6 Piercing Damage.")
+                                print("It has a short range of 30 ft, and a long range of 120 ft.")
+                                print("It has the special properties: ")
+                                print(
+                                    "Thrown: If a weapon has the thrown property, you can throw the weapon to make a "
+                                    "ranged "
+                                    "attack. If the weapon is a melee weapon, you use the same ability modifier for "
+                                    "that "
+                                    "attack roll and damage roll that you would use for a melee attack with the "
+                                    "weapon. For "
+                                    "example, if you throw a handaxe, you use your Strength, but if you throw a "
+                                    "dagger, "
+                                    "you can use either your Strength or your Dexterity, since the dagger has the "
+                                    "finesse "
+                                    "property.")
+                                equip_choice = input("Are you sure you want the Javelin? Yes or No\n")
+                                if equip_choice.lower() in ["y", "yes"]:
+                                    wpn_name_2 = "Javelin"
+                                    wpn2_damage = "1d6"
+                                    equipmentlist.append("Javelin")
+                                    break
+                                else:
+                                    continue
+                            elif start_equip_one == "Light hammer":
+                                print("The Light hammer does 1d4 Bludgeoning Damage.")
+                                print("It has a short range of 20 ft, and a long range of 60 ft.")
+                                print("It has the special properties: ")
+                                print(
+                                    "Light: A light weapon is small and easy to handle, making it ideal for use when "
+                                    "fighting "
+                                    "with two weapons.")
+                                print(
+                                    "Thrown: If a weapon has the thrown property, you can throw the weapon to make a "
+                                    "ranged "
+                                    "attack. If the weapon is a melee weapon, you use the same ability modifier for "
+                                    "that "
+                                    "attack roll and damage roll that you would use for a melee attack with the "
+                                    "weapon. For "
+                                    "example, if you throw a handaxe, you use your Strength, but if you throw a "
+                                    "dagger, "
+                                    "you can use either your Strength or your Dexterity, since the dagger has the "
+                                    "finesse "
+                                    "property.")
+                                equip_choice = input("Are you sure you want the Light hammer? Yes or No\n")
+                                if equip_choice.lower() in ["y", "yes"]:
+                                    wpn_name_2 = "Light hammer"
+                                    wpn2_damage = "1d4"
+                                    equipmentlist.append("Light hammer")
+                                    break
+                                else:
+                                    continue
+                            elif start_equip_one == "Mace":
+                                print("The Mace does 1d6 Bludgeoning Damage.")
+                                print("It has a range of Zero.")
+                                equip_choice = input("Are you sure you want the Mace? Yes or No\n")
+                                if equip_choice.lower() in ["y", "yes"]:
+                                    wpn_name_2 = "Mace"
+                                    wpn2_damage = "1d6"
+                                    equipmentlist.append("Mace")
+                                    break
+                                else:
+                                    continue
+                            elif start_equip_one == "Quarterstaff":
+                                print("The Quarterstaff does 1d6 Bludgeoning Damage.")
+                                print("It has a range of Zero.")
+                                print("It has the special properties: ")
+                                print(
+                                    "Versatile: This weapon can be used with two hands, if you do so, then the damage "
+                                    "is 1d8 "
+                                    "instead")
+                                equip_choice = input("Are you sure you want the Quarterstaff? Yes or No\n")
+                                if equip_choice.lower() in ["y", "yes"]:
+                                    wpn_name_2 = "Quarterstaff"
+                                    wpn2_damage = "1d6"
+                                    equipmentlist.append("Quarterstaff")
+                                    break
+                                else:
+                                    continue
+                            elif start_equip_one == "Sickle":
+                                print("The Sickle does 1d4 Slashing Damage.")
+                                print("It has a range of Zero.")
+                                print("It has the special properties: ")
+                                print(
+                                    "Light: A light weapon is small and easy to handle, making it ideal for use when "
+                                    "fighting "
+                                    "with two weapons.")
+                                equip_choice = input("Are you sure you want the Sickle? Yes or No\n")
+                                if equip_choice.lower() in ["y", "yes"]:
+                                    wpn_name_2 = "Sickle"
+                                    wpn2_damage = "1d4"
+                                    equipmentlist.append("Sickle")
+                                    break
+                                else:
+                                    continue
+                            elif start_equip_one == "Spear":
+                                print("The Spear does 1d6 Piercing Damage.")
+                                print("It has a short range of 20 ft and a long range of 60 ft.")
+                                print("It has the special properties: ")
+                                print(
+                                    "Thrown: If a weapon has the thrown property, you can throw the weapon to make a "
+                                    "ranged "
+                                    "attack. If the weapon is a melee weapon, you use the same ability modifier for "
+                                    "that "
+                                    "attack roll and damage roll that you would use for a melee attack with the "
+                                    "weapon. For "
+                                    "example, if you throw a handaxe, you use your Strength, but if you throw a "
+                                    "dagger, "
+                                    "you can use either your Strength or your Dexterity, since the dagger has the "
+                                    "finesse "
+                                    "property.")
+                                print(
+                                    "Versatile: This weapon can be used with both hands. If you do, the damage is 1d8 "
+                                    "instead.")
+                                equip_choice = input("Are you sure you want the Spear? Yes or No\n")
+                                if equip_choice.lower() in ["y", "yes"]:
+                                    wpn_name_2 = "Spear"
+                                    wpn2_damage = "1d6"
+                                    equipmentlist.append("Spear")
+                                    break
+                                else:
+                                    continue
+        break
     else:
         print("Invalid Input")
         continue
-
 
 # Work on adding skills to character sheet
 
