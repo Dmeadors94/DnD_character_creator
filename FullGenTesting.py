@@ -1420,7 +1420,7 @@ while True:
     print("3.Cleric")
     print("4.Druid")
     print("5.Fighter")
-    # print("6.Monk")
+    print("6.Monk")
     # print("7.Paladin")
     # print("8.Ranger")
     # print("9.Rouge")
@@ -4944,9 +4944,11 @@ while True:
                                         break
                                     else:
                                         continue
+                        break
                 except ValueError:
                     print("Please enter a valid number.")
                     continue
+                break
             print("Please choose Two Cantrips from the following list:")
             for index, item in enumerate(druid_cantrip_spell_list, start=1):
                 print(index, item)
@@ -6835,9 +6837,53 @@ while True:
                     continue
                 break
         break
+    # Fighter Gen End
+    # Monk Gen Start
+    elif class_input == "6":
+        print("[HIT POINTS]")
+        print("Your Hit Dice is 1d8 per Monk level")
+        print("Your Hit Points at 1st Level is: 8 + your Constitution modifier")
+        print("Your Hit points at Higher Levels is: 1d8 + Constitution modifier per level")
+        print("========================")
+        print("[PROFICIENCIES]")
+        print("Armor: None")
+        print("Weapons: Simple weapons and Shortswords")
+        print("Tools: Choose One type of Artisan's tools or one musical instrument")
+        print("Saving Throws: Strength, Dexterity")
+        print("Skills: Choose two skills from Acrobatics, Athletics, History, Insight, Religion, and Stealth")
+        print("========================")
+        print("[EQUIPMENT]")
+        print("(a) a shortsword or (b) any simple weapon")
+        print("10 darts")
+        print("========================")
+        class_choice = input("Are you sure you want to be a Monk? Yes or No?: ")
+        if class_choice.lower() in ["y", "yes"]:
+            dndclass = "Monk"
+            hit_points = 8 + con_mod
+            STstr += 2
+            STstr_box = True
+            STdex += 2
+            STdex_box = True
+            featurelist.append("Second Wind")
+            professionlist.append("Armor: Light")
+            professionlist.append("Armor: Medium")
+            professionlist.append("Armor: Heavy")
+            professionlist.append("Armor: Shields")
+            professionlist.append("Weapon: Simple")
+            professionlist.append("Weapon: Martial")
+            cantrip_list.append("")
+            cantrip_list.append("")
+            cantrip_list.append("")
+            cantrip_list.append("")
+            cantrip_list.append("")
+            cantrip_list.append("")
+            hitdie = "1d10"
+            hitdietotal = "1d10"
     else:
         print("Invalid Input")
         continue
+
+
 # Work on adding skills to character sheet
 
 print("==========================================================")
