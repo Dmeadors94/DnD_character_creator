@@ -3226,10 +3226,12 @@ while True:
                             print(
                                 "cause the creature to make a Dexterity saving throw. The creature takes 2d8 lightning")
                             print(
-                                "or thunder damage (your choice) on a failed saving throw, and half as much damage on a")
+                                "or thunder damage (your choice) on a failed saving throw, and "
+                                "half as much damage on a")
                             print("successful one. You can use this feature a number of times equal to your Wisdom")
                             print(
-                                "modifier (a minimum of once). You regain all expended uses when you finish a long rest.")
+                                "modifier (a minimum of once). You regain all expended uses when you finish a "
+                                "long rest.")
                             print("=================================================================================")
                             print("Are you sure you want to choose this god? Yes or No?")
                             god_choice_input = input("Enter your choice: ")
@@ -3252,7 +3254,8 @@ while True:
                             print("You gain the Class Feature: Blessings of Knowledge")
                             print("At 1st level, you learn two languages of your choice. You also become proficient in")
                             print(
-                                "your choice of two of the following skills: Arcana, History, Nature, or Religion. Your")
+                                "your choice of two of the following skills: Arcana, History, Nature, or "
+                                "Religion. Your")
                             print(
                                 "proficiency bonus is doubled for any ability check you make that uses either of those")
                             print("skills.")
@@ -3365,7 +3368,8 @@ while True:
                             print("=================================================================================")
                             print("You gain the Class Feature: War Priest")
                             print(
-                                "From 1st level, your god delivers bolts of inspiration to you while you are engaged in")
+                                "From 1st level, your god delivers bolts of inspiration to you while "
+                                "you are engaged in")
                             print("battle. When you use the Attack action, you can make one weapon attack as a bonus")
                             print("action. You can use this feature a number of times equal to your Wisdom modifier")
                             print("(a minimum of once). You regain all expended uses when you finish a long rest.")
@@ -4434,7 +4438,8 @@ while True:
                                     print("It has a Range of Zero")
                                     print("It has the special properties: ")
                                     print(
-                                        "Light: A light weapon is small and easy to handle, making it ideal for use when "
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use "
+                                        "when "
                                         "fighting "
                                         "with two weapons.")
                                     equip_choice = input("Are you sure you want the Club? Yes or No\n")
@@ -4450,18 +4455,23 @@ while True:
                                     print("It has a Range of 20 ft for short range. 60 ft for long range.")
                                     print("It has the special properties: ")
                                     print(
-                                        "Finesse: When making an attack with a finesse weapon, you use your choice of your "
-                                        "Strength or Dexterity modifier for the attack and damage rolls. You must use the "
+                                        "Finesse: When making an attack with a finesse weapon, you use your choice of "
+                                        "your "
+                                        "Strength or Dexterity modifier for the attack and damage rolls. You must use "
+                                        "the "
                                         "same "
                                         "modifier for both rolls.")
                                     print(
-                                        "Light: A light weapon is small and easy to handle, making it ideal for use when "
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use "
+                                        "when "
                                         "fighting "
                                         "with two weapons.")
                                     print(
-                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to make a "
+                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to "
+                                        "make a "
                                         "ranged "
-                                        "attack. If the weapon is a melee weapon, you use the same ability modifier for "
+                                        "attack. If the weapon is a melee weapon, you use the same ability modifier "
+                                        "for "
                                         "that "
                                         "attack roll and damage roll that you would use for a melee attack with the "
                                         "weapon. For "
@@ -4496,13 +4506,16 @@ while True:
                                     print("It has a Range of 20 ft for short range, and 60 ft for long range.")
                                     print("It has the special properties: ")
                                     print(
-                                        "Light: A light weapon is small and easy to handle, making it ideal for use when "
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use "
+                                        "when "
                                         "fighting "
                                         "with two weapons.")
                                     print(
-                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to make a "
+                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to "
+                                        "make a "
                                         "ranged "
-                                        "attack. If the weapon is a melee weapon, you use the same ability modifier for "
+                                        "attack. If the weapon is a melee weapon, you use the same ability modifier "
+                                        "for "
                                         "that "
                                         "attack roll and damage roll that you would use for a melee attack with the "
                                         "weapon. For "
@@ -4525,9 +4538,11 @@ while True:
                                     print("It has a short range of 30 ft, and a long range of 120 ft.")
                                     print("It has the special properties: ")
                                     print(
-                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to make a "
+                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to "
+                                        "make a "
                                         "ranged "
-                                        "attack. If the weapon is a melee weapon, you use the same ability modifier for "
+                                        "attack. If the weapon is a melee weapon, you use the same ability modifier "
+                                        "for "
                                         "that "
                                         "attack roll and damage roll that you would use for a melee attack with the "
                                         "weapon. For "
@@ -4549,13 +4564,16 @@ while True:
                                     print("It has a short range of 20 ft, and a long range of 60 ft.")
                                     print("It has the special properties: ")
                                     print(
-                                        "Light: A light weapon is small and easy to handle, making it ideal for use when "
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use "
+                                        "when "
                                         "fighting "
                                         "with two weapons.")
                                     print(
-                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to make a "
+                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to "
+                                        "make a "
                                         "ranged "
-                                        "attack. If the weapon is a melee weapon, you use the same ability modifier for "
+                                        "attack. If the weapon is a melee weapon, you use the same ability modifier "
+                                        "for "
                                         "that "
                                         "attack roll and damage roll that you would use for a melee attack with the "
                                         "weapon. For "
@@ -4588,7 +4606,8 @@ while True:
                                     print("It has a range of Zero.")
                                     print("It has the special properties: ")
                                     print(
-                                        "Versatile: This weapon can be used with two hands, if you do so, then the damage "
+                                        "Versatile: This weapon can be used with two hands, if you do so, then the "
+                                        "damage "
                                         "is 1d8 "
                                         "instead")
                                     equip_choice = input("Are you sure you want the Quarterstaff? Yes or No\n")
@@ -4604,7 +4623,8 @@ while True:
                                     print("It has a range of Zero.")
                                     print("It has the special properties: ")
                                     print(
-                                        "Light: A light weapon is small and easy to handle, making it ideal for use when "
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use "
+                                        "when "
                                         "fighting "
                                         "with two weapons.")
                                     equip_choice = input("Are you sure you want the Sickle? Yes or No\n")
@@ -4620,9 +4640,11 @@ while True:
                                     print("It has a short range of 20 ft and a long range of 60 ft.")
                                     print("It has the special properties: ")
                                     print(
-                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to make a "
+                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to "
+                                        "make a "
                                         "ranged "
-                                        "attack. If the weapon is a melee weapon, you use the same ability modifier for "
+                                        "attack. If the weapon is a melee weapon, you use the same ability modifier "
+                                        "for "
                                         "that "
                                         "attack roll and damage roll that you would use for a melee attack with the "
                                         "weapon. For "
@@ -4632,7 +4654,8 @@ while True:
                                         "finesse "
                                         "property.")
                                     print(
-                                        "Versatile: This weapon can be used with both hands. If you do, the damage is 1d8 "
+                                        "Versatile: This weapon can be used with both hands. If you do, the damage is "
+                                        "1d8 "
                                         "instead.")
                                     equip_choice = input("Are you sure you want the Spear? Yes or No\n")
                                     if equip_choice.lower() in ["y", "yes"]:
@@ -4688,7 +4711,8 @@ while True:
                                     print("It has a Range of Zero")
                                     print("It has the special properties: ")
                                     print(
-                                        "Light: A light weapon is small and easy to handle, making it ideal for use when "
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use "
+                                        "when "
                                         "fighting "
                                         "with two weapons.")
                                     equip_choice = input("Are you sure you want the Club? Yes or No\n")
@@ -4704,18 +4728,23 @@ while True:
                                     print("It has a Range of 20 ft for short range. 60 ft for long range.")
                                     print("It has the special properties: ")
                                     print(
-                                        "Finesse: When making an attack with a finesse weapon, you use your choice of your "
-                                        "Strength or Dexterity modifier for the attack and damage rolls. You must use the "
+                                        "Finesse: When making an attack with a finesse weapon, you use your choice of "
+                                        "your "
+                                        "Strength or Dexterity modifier for the attack and damage rolls. You must use "
+                                        "the "
                                         "same "
                                         "modifier for both rolls.")
                                     print(
-                                        "Light: A light weapon is small and easy to handle, making it ideal for use when "
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use "
+                                        "when "
                                         "fighting "
                                         "with two weapons.")
                                     print(
-                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to make a "
+                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to "
+                                        "make a "
                                         "ranged "
-                                        "attack. If the weapon is a melee weapon, you use the same ability modifier for "
+                                        "attack. If the weapon is a melee weapon, you use the same ability modifier "
+                                        "for "
                                         "that "
                                         "attack roll and damage roll that you would use for a melee attack with the "
                                         "weapon. For "
@@ -4750,13 +4779,16 @@ while True:
                                     print("It has a Range of 20 ft for short range, and 60 ft for long range.")
                                     print("It has the special properties: ")
                                     print(
-                                        "Light: A light weapon is small and easy to handle, making it ideal for use when "
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use "
+                                        "when "
                                         "fighting "
                                         "with two weapons.")
                                     print(
-                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to make a "
+                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to "
+                                        "make a "
                                         "ranged "
-                                        "attack. If the weapon is a melee weapon, you use the same ability modifier for "
+                                        "attack. If the weapon is a melee weapon, you use the same ability modifier "
+                                        "for "
                                         "that "
                                         "attack roll and damage roll that you would use for a melee attack with the "
                                         "weapon. For "
@@ -4779,9 +4811,11 @@ while True:
                                     print("It has a short range of 30 ft, and a long range of 120 ft.")
                                     print("It has the special properties: ")
                                     print(
-                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to make a "
+                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to "
+                                        "make a "
                                         "ranged "
-                                        "attack. If the weapon is a melee weapon, you use the same ability modifier for "
+                                        "attack. If the weapon is a melee weapon, you use the same ability modifier "
+                                        "for "
                                         "that "
                                         "attack roll and damage roll that you would use for a melee attack with the "
                                         "weapon. For "
@@ -4803,13 +4837,16 @@ while True:
                                     print("It has a short range of 20 ft, and a long range of 60 ft.")
                                     print("It has the special properties: ")
                                     print(
-                                        "Light: A light weapon is small and easy to handle, making it ideal for use when "
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use "
+                                        "when "
                                         "fighting "
                                         "with two weapons.")
                                     print(
-                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to make a "
+                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to "
+                                        "make a "
                                         "ranged "
-                                        "attack. If the weapon is a melee weapon, you use the same ability modifier for "
+                                        "attack. If the weapon is a melee weapon, you use the same ability modifier "
+                                        "for "
                                         "that "
                                         "attack roll and damage roll that you would use for a melee attack with the "
                                         "weapon. For "
@@ -4842,7 +4879,8 @@ while True:
                                     print("It has a range of Zero.")
                                     print("It has the special properties: ")
                                     print(
-                                        "Versatile: This weapon can be used with two hands, if you do so, then the damage "
+                                        "Versatile: This weapon can be used with two hands, if you do so, then the "
+                                        "damage "
                                         "is 1d8 "
                                         "instead")
                                     equip_choice = input("Are you sure you want the Quarterstaff? Yes or No\n")
@@ -4858,7 +4896,8 @@ while True:
                                     print("It has a range of Zero.")
                                     print("It has the special properties: ")
                                     print(
-                                        "Light: A light weapon is small and easy to handle, making it ideal for use when "
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use "
+                                        "when "
                                         "fighting "
                                         "with two weapons.")
                                     equip_choice = input("Are you sure you want the Sickle? Yes or No\n")
@@ -4874,9 +4913,11 @@ while True:
                                     print("It has a short range of 20 ft and a long range of 60 ft.")
                                     print("It has the special properties: ")
                                     print(
-                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to make a "
+                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to "
+                                        "make a "
                                         "ranged "
-                                        "attack. If the weapon is a melee weapon, you use the same ability modifier for "
+                                        "attack. If the weapon is a melee weapon, you use the same ability modifier "
+                                        "for "
                                         "that "
                                         "attack roll and damage roll that you would use for a melee attack with the "
                                         "weapon. For "
@@ -4886,7 +4927,8 @@ while True:
                                         "finesse "
                                         "property.")
                                     print(
-                                        "Versatile: This weapon can be used with both hands. If you do, the damage is 1d8 "
+                                        "Versatile: This weapon can be used with both hands. If you do, the damage is "
+                                        "1d8 "
                                         "instead.")
                                     equip_choice = input("Are you sure you want the Spear? Yes or No\n")
                                     if equip_choice.lower() in ["y", "yes"]:
