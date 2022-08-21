@@ -52,6 +52,7 @@ druid_skill_list = ["Arcana", "Animal Handling", "Insight", "Medicine", "Nature"
 fighter_skill_list = ["Acrobatics", "Animal Handling", "Athletics", "History", "Insight", "Intimidation", "Perception",
                       "Survival"]
 monk_skill_list = ["Acrobatics", "Athletics", "History", "Insight", "Religion", "Stealth"]
+paladin_skill_list = ["Athletics", "Insight", "Intimidation", "Medicine", "Persuasion", "Religion"]
 knowledge_cleric_skill_list = ["Arcana", "History", "Nature", "Religion"]
 spell_list_cantrip = ["Acid Splash", "Chill Touch", "Dancing Lights", "Druidcraft", "Eldritch Blast", "Fire Bolt",
                       "Guidance", "Light", "Mage Hand", "Mending", "Message", "Minor Illusion", "Poison Spray",
@@ -7399,6 +7400,7 @@ while True:
         print("Chain mail and a holy symbol")
         print("========================")
         print("[FEATURES]")
+        print("Divine Sense:")
         print("The presence of strong evil registers on your senses like a noxious odor, and powerful good rings like "
               "\nheavenly music in your ears. As an action, you can open your awareness to detect such forces. Until "
               "\nthe end of your next turn, you know the location of any celestial, fiend, or undead within 60 feet of "
@@ -7408,6 +7410,15 @@ while True:
               "\nplace or object that has been consecrated or desecrated, as with the hallow spell. You can use this "
               "\nfeature a number of times equal to 1 + your Charisma modifier. When you finish a long rest, "
               "\nyou regain all expended uses.")
+        print("Lay on Hands:")
+        print("Your blessed touch can heal wounds. You have a pool of healing power that replenishes when you take a "
+              "\nlong rest. With that pool, you can restore a total number of hit points equal to your paladin level × "
+              "5. \nAs an action, you can touch a creature and draw power from the pool to restore a number of hit "
+              "\npoints to that creature, up to the maximum amount remaining in your pool. Alternatively, "
+              "\nyou can expend 5 hit points from your pool of healing to cure the target of one disease or neutralize "
+              "\none poison affecting it. You can cure multiple diseases and neutralize multiple poisons with a single "
+              "\nuse of Lay on Hands, expending hit points separately for each one. This feature has no effect on "
+              "\nundead and constructs.")
         print("========================")
         class_choice = input("Are you sure you want to be a Paladin? Yes or No?: ")
         if class_choice.lower() in ["y", "yes"]:
@@ -7417,10 +7428,10 @@ while True:
             STwis_box = True
             STcha += 2
             STcha_box = True
-            featurelist.append("Unarmored Defense")
-            featurelist.append("Martial Arts")
+            featurelist.append("Divine Sense")
+            featurelist.append("Lay on Hands")
             professionlist.append("Weapon: Simple")
-            professionlist.append("Weapon: Shortsword")
+            professionlist.append("Weapon: Martial")
             cantrip_list.append("")
             cantrip_list.append("")
             cantrip_list.append("")
@@ -7429,9 +7440,1445 @@ while True:
             cantrip_list.append("")
             hitdie = "1d8"
             hitdietotal = "1d8"
-    else:
-        print("Invalid Input")
-        continue
+            print("Please choose two skills from the following list:")
+            for index, item in enumerate(paladin_skill_list, start=1):
+                print(index, item)
+            while True:
+                skill_choice_he_input = int(input("Enter what skill you want first: "))
+                skill_choice_three = paladin_skill_list[skill_choice_he_input - 1]
+                if skill_choice_three in skill_list:
+                    if skill_choice_three == "Acrobatics":
+                        acrobatics += 2
+                        acrobatics_box = True
+                        skill_list.remove(skill_choice_three)
+                        paladin_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Animal Handling":
+                        animal_handling += 2
+                        animal_handling_box = True
+                        skill_list.remove(skill_choice_three)
+                        paladin_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Arcana":
+                        arcana += 2
+                        arcana_box = True
+                        skill_list.remove(skill_choice_three)
+                        paladin_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Athletics":
+                        athletics += 2
+                        athletics_box = True
+                        skill_list.remove(skill_choice_three)
+                        paladin_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Deception":
+                        deception += 2
+                        deception_box = True
+                        skill_list.remove(skill_choice_three)
+                        paladin_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "History":
+                        history += 2
+                        history_box = True
+                        skill_list.remove(skill_choice_three)
+                        paladin_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Insight":
+                        insight += 2
+                        insight_box = True
+                        skill_list.remove(skill_choice_three)
+                        paladin_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Intimidation":
+                        intimidation += 2
+                        intimidation_box = True
+                        skill_list.remove(skill_choice_three)
+                        paladin_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Investigation":
+                        investigation += 2
+                        investigation_box = True
+                        skill_list.remove(skill_choice_three)
+                        paladin_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Medicine":
+                        medicine += 2
+                        medicine_box = True
+                        skill_list.remove(skill_choice_three)
+                        paladin_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Nature":
+                        nature += 2
+                        nature_box = True
+                        skill_list.remove(skill_choice_three)
+                        paladin_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Perception":
+                        perception += 2
+                        perception_box = True
+                        skill_list.remove(skill_choice_three)
+                        paladin_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Performance":
+                        performance += 2
+                        performance_box = True
+                        skill_list.remove(skill_choice_three)
+                        paladin_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Persuasion":
+                        persuasion += 2
+                        persuasion_box = True
+                        skill_list.remove(skill_choice_three)
+                        paladin_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Religion":
+                        religion += 2
+                        religion_box = True
+                        skill_list.remove(skill_choice_three)
+                        paladin_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Sleight of Hand":
+                        slight_of_hand += 2
+                        slight_of_hand_box = True
+                        skill_list.remove(skill_choice_three)
+                        paladin_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Stealth":
+                        stealth += 2
+                        stealth_box = True
+                        skill_list.remove(skill_choice_three)
+                        paladin_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Survival":
+                        survival += 2
+                        survival_box = True
+                        skill_list.remove(skill_choice_three)
+                        paladin_skill_list.remove(skill_choice_three)
+                        break
+                    else:
+                        print("Invalid input")
+                        continue
+                else:
+                    print("Invalid Input")
+                    continue
+            for index, item in enumerate(paladin_skill_list, start=1):
+                print(index, item)
+            while True:
+                try:
+                    skill_choice_he_input = int(input("Enter what skill you want second: "))
+                    skill_choice_three = paladin_skill_list[skill_choice_he_input - 1]
+                    if skill_choice_three in skill_list:
+                        if skill_choice_three == "Acrobatics":
+                            acrobatics += 2
+                            acrobatics_box = True
+                            skill_list.remove(skill_choice_three)
+                            paladin_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Animal Handling":
+                            animal_handling += 2
+                            animal_handling_box = True
+                            skill_list.remove(skill_choice_three)
+                            paladin_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Arcana":
+                            arcana += 2
+                            arcana_box = True
+                            skill_list.remove(skill_choice_three)
+                            paladin_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Athletics":
+                            athletics += 2
+                            athletics_box = True
+                            skill_list.remove(skill_choice_three)
+                            paladin_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Deception":
+                            deception += 2
+                            deception_box = True
+                            skill_list.remove(skill_choice_three)
+                            paladin_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "History":
+                            history += 2
+                            history_box = True
+                            skill_list.remove(skill_choice_three)
+                            paladin_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Insight":
+                            insight += 2
+                            insight_box = True
+                            skill_list.remove(skill_choice_three)
+                            paladin_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Intimidation":
+                            intimidation += 2
+                            intimidation_box = True
+                            skill_list.remove(skill_choice_three)
+                            paladin_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Investigation":
+                            investigation += 2
+                            investigation_box = True
+                            skill_list.remove(skill_choice_three)
+                            paladin_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Medicine":
+                            medicine += 2
+                            medicine_box = True
+                            skill_list.remove(skill_choice_three)
+                            paladin_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Nature":
+                            nature += 2
+                            nature_box = True
+                            skill_list.remove(skill_choice_three)
+                            paladin_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Perception":
+                            perception += 2
+                            perception_box = True
+                            skill_list.remove(skill_choice_three)
+                            paladin_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Performance":
+                            performance += 2
+                            performance_box = True
+                            skill_list.remove(skill_choice_three)
+                            paladin_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Persuasion":
+                            persuasion += 2
+                            persuasion_box = True
+                            skill_list.remove(skill_choice_three)
+                            paladin_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Religion":
+                            religion += 2
+                            religion_box = True
+                            skill_list.remove(skill_choice_three)
+                            paladin_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Sleight of Hand":
+                            slight_of_hand += 2
+                            slight_of_hand_box = True
+                            skill_list.remove(skill_choice_three)
+                            paladin_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Stealth":
+                            stealth += 2
+                            stealth_box = True
+                            skill_list.remove(skill_choice_three)
+                            paladin_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Survival":
+                            survival += 2
+                            survival_box = True
+                            skill_list.remove(skill_choice_three)
+                            paladin_skill_list.remove(skill_choice_three)
+                            break
+                        else:
+                            print("Invalid input")
+                            continue
+                    else:
+                        print("Invalid Input")
+                        continue
+                except IndexError:
+                    print("Invalid Input")
+                    continue
+            print("Please Choose your first piece of equipment: ")
+            print("1. A Martial Weapon and a Shield")
+            print("2. Two Martial Weapons")
+            while True:
+                try:
+                    equipment_choice_input = int(input("Enter your choice: "))
+                    if equipment_choice_input == 1:
+                        for index, item in enumerate(martial_weapon_list, start=1):
+                            print(index, item)
+                        print("Please Choose a weapon from the above list")
+                        while True:
+                            start_equip_one = int(input("Martial Weapon Choice: "))
+                            start_equip_one = martial_weapon_list[start_equip_one - 1]
+                            if start_equip_one in martial_weapon_list:
+                                if start_equip_one == "Battleaxe":
+                                    print(
+                                        "The Battleaxe does 1d8 Slashing Damage.\nIt has a Range of Zero.\nIt has the "
+                                        "special "
+                                        "trait 'Versitile', which means you can use it with both hands, if you do, "
+                                        "then the damage is 1d10 Slashing Damage.")
+                                    equip_choice = input("Are you sure you want the Battleaxe? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Battleaxe"
+                                        wpn1_damage = "1d8"
+                                        equipmentlist.append("Battleaxe")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Flail":
+                                    print("The Flail does 1d8 Bludgeoning Damage.\nIt has a Range of Zero.")
+                                    equip_choice = input("Are you sure you want the Flail? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Flail"
+                                        wpn1_damage = "1d8"
+                                        equipmentlist.append("Flail")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Glaive":
+                                    print("The Glaive does 1d10 Slashing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print("Heavy: Small creatures have a disadvantage on attack rolls")
+                                    print(
+                                        "Reach: This weapon adds 5 feet to your reach when you attack with it, "
+                                        "as well as when "
+                                        "determining your reach for opportunity attacks with it.")
+                                    print("Two-Handed: This weapon requires two hands when you attack with it.")
+                                    equip_choice = input("Are you sure you want the Glaive? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Glaive"
+                                        wpn1_damage = "1d10"
+                                        equipmentlist.append("Glaive")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Greataxe":
+                                    print("The Greataxe does 1d12 Slashing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print("Heavy: Small creatures have a disadvantage on attack rolls")
+                                    print("Two-Handed: This weapon requires two hands when you attack with it.")
+                                    equip_choice = input("Are you sure you want the Greataxe? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Greataxe"
+                                        wpn1_damage = "1d12"
+                                        equipmentlist.append("Greataxe")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Greatsword":
+                                    print("The Greatsword does 2d6 Slashing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print("Heavy: Small creatures have a disadvantage on attack rolls")
+                                    print("Two-Handed: This weapon requires two hands when you attack with it.")
+                                    equip_choice = input("Are you sure you want the Greatsword? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Greatsword"
+                                        wpn1_damage = "1d12"
+                                        equipmentlist.append("Greatsword")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Halberd":
+                                    print("The Halberd does 1d10 Slashing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print("Heavy: Small creatures have a disadvantage on attack rolls")
+                                    print(
+                                        "Reach: This weapon adds 5 feet to your reach when you attack with it, "
+                                        "as well as when "
+                                        "determining your reach for opportunity attacks with it.")
+                                    print("Two-Handed: This weapon requires two hands when you attack with it.")
+                                    equip_choice = input("Are you sure you want the Halberd? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Halberd"
+                                        wpn1_damage = "1d10"
+                                        equipmentlist.append("Halberd")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Lance":
+                                    print("The Lance does 1d12 Piercing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Reach: This weapon adds 5 feet to your reach when you attack with it, "
+                                        "as well as when "
+                                        "determining your reach for opportunity attacks with it.")
+                                    print(
+                                        "Special: You have disadvantage when you use a lance to attack a target "
+                                        "within 5 feet of "
+                                        "you. Also, a lance requires two hands to wield when you aren’t mounted.")
+                                    equip_choice = input("Are you sure you want the Lance? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Lance"
+                                        wpn1_damage = "1d12"
+                                        equipmentlist.append("Lance")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Longsword":
+                                    print("The Longsword does 1d8 Slashing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Versatile: This weapon can be used with two hands. If you do, the damage is "
+                                        "1d10 instead.")
+                                    equip_choice = input("Are you sure you want the Longsword? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Longsword"
+                                        wpn1_damage = "1d8"
+                                        equipmentlist.append("Longsword")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Maul":
+                                    print("The Maul does 2d6 Bludgeoning Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print("Heavy: Small creatures have a disadvantage on attack rolls")
+                                    print("Two-Handed: This weapon requires two hands when you attack with it.")
+                                    equip_choice = input("Are you sure you want the Maul? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Maul"
+                                        wpn1_damage = "2d6"
+                                        equipmentlist.append("Maul")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Morningstar":
+                                    print("The Morningstar does 1d8 Piercing Damage.")
+                                    print("It has a Range of Zero.")
+                                    equip_choice = input("Are you sure you want the Morningstar? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Morningstar"
+                                        wpn1_damage = "1d8"
+                                        equipmentlist.append("Morningstar")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Pike":
+                                    print("The Pike does 1d10 Piercing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print("Heavy: Small creatures have a disadvantage on attack rolls")
+                                    print(
+                                        "Reach: This weapon adds 5 feet to your reach when you attack with it, "
+                                        "as well as when "
+                                        "determining your reach for opportunity attacks with it.")
+                                    print("Two-Handed: This weapon requires two hands when you attack with it.")
+                                    equip_choice = input("Are you sure you want the Pike? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Pike"
+                                        wpn1_damage = "1d10"
+                                        equipmentlist.append("Pike")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Rapier":
+                                    print("The Rapier does 1d8 Piercing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Finesse: When making an attack with a finesse weapon, you use your choice of "
+                                        "your "
+                                        "Strength or Dexterity modifier for the attack and damage rolls. You must use "
+                                        "the same "
+                                        "modifier for both rolls.")
+                                    equip_choice = input("Are you sure you want the Rapier? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Rapier"
+                                        wpn1_damage = "1d8"
+                                        equipmentlist.append("Rapier")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Scimitar":
+                                    print("The Scimitar does 1d6 Slashing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Finesse: When making an attack with a finesse weapon, you use your choice of "
+                                        "your "
+                                        "Strength or Dexterity modifier for the attack and damage rolls. You must use "
+                                        "the same "
+                                        "modifier for both rolls.")
+                                    print(
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use "
+                                        "when fighting "
+                                        "with two weapons.")
+                                    equip_choice = input("Are you sure you want the Scimitar? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Scimitar"
+                                        wpn1_damage = "1d6"
+                                        equipmentlist.append("Scimitar")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Shortsword":
+                                    print("The Shortsword does 1d6 Piercing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Finesse: When making an attack with a finesse weapon, you use your choice of "
+                                        "your "
+                                        "Strength or Dexterity modifier for the attack and damage rolls. You must use "
+                                        "the same "
+                                        "modifier for both rolls.")
+                                    print(
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use "
+                                        "when fighting "
+                                        "with two weapons.")
+                                    equip_choice = input("Are you sure you want the Shortsword? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Shortsword"
+                                        wpn1_damage = "1d6"
+                                        equipmentlist.append("Shortsword")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Trident":
+                                    print("The Trident does 1d6 Piercing Damage.")
+                                    print("It has a Range of 20 ft for short ranged attacks and 60 for long ranged "
+                                          "attacks.")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to "
+                                        "make a ranged "
+                                        "attack. If the weapon is a melee weapon, you use the same ability modifier "
+                                        "for that "
+                                        "attack roll and damage roll that you would use for a melee attack with the "
+                                        "weapon. For "
+                                        "example, if you throw a handaxe, you use your Strength, but if you throw a "
+                                        "dagger, "
+                                        "you can use either your Strength or your Dexterity, since the dagger has the "
+                                        "finesse "
+                                        "property.")
+                                    print(
+                                        "Versatile: This weapon can be used with two hands. If you do, the damage is "
+                                        "1d8 instead")
+                                    equip_choice = input("Are you sure you want the Trident? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Trident"
+                                        wpn1_damage = "1d6"
+                                        equipmentlist.append("Trident")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "War pick":
+                                    print("The War pick does 1d8 Piercing Damage.")
+                                    print("It has a Range of zero")
+                                    equip_choice = input("Are you sure you want the War pick? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "War pick"
+                                        wpn1_damage = "1d8"
+                                        equipmentlist.append("War pick")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Warhammer":
+                                    print("The Warhammer does 1d8 Bludgeoning Damage.")
+                                    print("It has a Range of Zero")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Versatile: This weapon can be used with two hands. If you do, the damage is "
+                                        "1d10 instead")
+                                    equip_choice = input("Are you sure you want the Warhammer? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Warhammer"
+                                        wpn1_damage = "1d8"
+                                        equipmentlist.append("Warhammer")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Whip":
+                                    print("The Whip does 1d4 Slashing Damage.")
+                                    print("It has a Range of Zero")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Finesse: When making an attack with a finesse weapon, you use your choice of "
+                                        "your "
+                                        "Strength or Dexterity modifier for the attack and damage rolls. You must use "
+                                        "the same "
+                                        "modifier for both rolls.")
+                                    print(
+                                        "Reach: This weapon adds 5 feet to your reach when you attack with it, "
+                                        "as well as when "
+                                        "determining your reach for opportunity attacks with it.")
+                                    equip_choice = input("Are you sure you want the Whip? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Whip"
+                                        wpn1_damage = "1d4"
+                                        equipmentlist.append("Whip")
+                                        break
+                                    else:
+                                        continue
+                                else:
+                                    continue
+                            else:
+                                print("Not a valid option")
+                                continue
+                        equipmentlist.append("Shield")
+                        break
+                    elif equipment_choice_input == 2:
+                        for index, item in enumerate(martial_weapon_list, start=1):
+                            print(index, item)
+                        print("Please choose your First Martial Weapon from the list above.")
+                        while True:
+                            start_equip_one = int(input("First Equipment Choice: "))
+                            start_equip_one = martial_weapon_list[start_equip_one - 1]
+                            if start_equip_one in martial_weapon_list:
+                                if start_equip_one == "Battleaxe":
+                                    print(
+                                        "The Battleaxe does 1d8 Slashing Damage.\nIt has a Range of Zero.\nIt has the "
+                                        "special "
+                                        "trait 'Versitile', which means you can use it with both hands, if you do, "
+                                        "then the damage is 1d10 Slashing Damage.")
+                                    equip_choice = input("Are you sure you want the Battleaxe? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Battleaxe"
+                                        wpn1_damage = "1d8"
+                                        equipmentlist.append("Battleaxe")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Flail":
+                                    print("The Flail does 1d8 Bludgeoning Damage.\nIt has a Range of Zero.")
+                                    equip_choice = input("Are you sure you want the Flail? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Flail"
+                                        wpn1_damage = "1d8"
+                                        equipmentlist.append("Flail")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Glaive":
+                                    print("The Glaive does 1d10 Slashing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print("Heavy: Small creatures have a disadvantage on attack rolls")
+                                    print(
+                                        "Reach: This weapon adds 5 feet to your reach when you attack with it, "
+                                        "as well as when "
+                                        "determining your reach for opportunity attacks with it.")
+                                    print("Two-Handed: This weapon requires two hands when you attack with it.")
+                                    equip_choice = input("Are you sure you want the Glaive? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Glaive"
+                                        wpn1_damage = "1d10"
+                                        equipmentlist.append("Glaive")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Greataxe":
+                                    print("The Greataxe does 1d12 Slashing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print("Heavy: Small creatures have a disadvantage on attack rolls")
+                                    print("Two-Handed: This weapon requires two hands when you attack with it.")
+                                    equip_choice = input("Are you sure you want the Greataxe? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Greataxe"
+                                        wpn1_damage = "1d12"
+                                        equipmentlist.append("Greataxe")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Greatsword":
+                                    print("The Greatsword does 2d6 Slashing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print("Heavy: Small creatures have a disadvantage on attack rolls")
+                                    print("Two-Handed: This weapon requires two hands when you attack with it.")
+                                    equip_choice = input("Are you sure you want the Greatsword? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Greatsword"
+                                        wpn1_damage = "1d12"
+                                        equipmentlist.append("Greatsword")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Halberd":
+                                    print("The Halberd does 1d10 Slashing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print("Heavy: Small creatures have a disadvantage on attack rolls")
+                                    print(
+                                        "Reach: This weapon adds 5 feet to your reach when you attack with it, "
+                                        "as well as when "
+                                        "determining your reach for opportunity attacks with it.")
+                                    print("Two-Handed: This weapon requires two hands when you attack with it.")
+                                    equip_choice = input("Are you sure you want the Halberd? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Halberd"
+                                        wpn1_damage = "1d10"
+                                        equipmentlist.append("Halberd")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Lance":
+                                    print("The Lance does 1d12 Piercing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Reach: This weapon adds 5 feet to your reach when you attack with it, "
+                                        "as well as when "
+                                        "determining your reach for opportunity attacks with it.")
+                                    print(
+                                        "Special: You have disadvantage when you use a lance to attack a target "
+                                        "within 5 feet of "
+                                        "you. Also, a lance requires two hands to wield when you aren’t mounted.")
+                                    equip_choice = input("Are you sure you want the Lance? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Lance"
+                                        wpn1_damage = "1d12"
+                                        equipmentlist.append("Lance")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Longsword":
+                                    print("The Longsword does 1d8 Slashing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Versatile: This weapon can be used with two hands. If you do, the damage is "
+                                        "1d10 instead.")
+                                    equip_choice = input("Are you sure you want the Longsword? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Longsword"
+                                        wpn1_damage = "1d8"
+                                        equipmentlist.append("Longsword")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Maul":
+                                    print("The Maul does 2d6 Bludgeoning Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print("Heavy: Small creatures have a disadvantage on attack rolls")
+                                    print("Two-Handed: This weapon requires two hands when you attack with it.")
+                                    equip_choice = input("Are you sure you want the Maul? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Maul"
+                                        wpn1_damage = "2d6"
+                                        equipmentlist.append("Maul")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Morningstar":
+                                    print("The Morningstar does 1d8 Piercing Damage.")
+                                    print("It has a Range of Zero.")
+                                    equip_choice = input("Are you sure you want the Morningstar? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Morningstar"
+                                        wpn1_damage = "1d8"
+                                        equipmentlist.append("Morningstar")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Pike":
+                                    print("The Pike does 1d10 Piercing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print("Heavy: Small creatures have a disadvantage on attack rolls")
+                                    print(
+                                        "Reach: This weapon adds 5 feet to your reach when you attack with it, "
+                                        "as well as when "
+                                        "determining your reach for opportunity attacks with it.")
+                                    print("Two-Handed: This weapon requires two hands when you attack with it.")
+                                    equip_choice = input("Are you sure you want the Pike? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Pike"
+                                        wpn1_damage = "1d10"
+                                        equipmentlist.append("Pike")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Rapier":
+                                    print("The Rapier does 1d8 Piercing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Finesse: When making an attack with a finesse weapon, you use your choice of "
+                                        "your "
+                                        "Strength or Dexterity modifier for the attack and damage rolls. You must use "
+                                        "the same "
+                                        "modifier for both rolls.")
+                                    equip_choice = input("Are you sure you want the Rapier? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Rapier"
+                                        wpn1_damage = "1d8"
+                                        equipmentlist.append("Rapier")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Scimitar":
+                                    print("The Scimitar does 1d6 Slashing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Finesse: When making an attack with a finesse weapon, you use your choice of "
+                                        "your "
+                                        "Strength or Dexterity modifier for the attack and damage rolls. You must use "
+                                        "the same "
+                                        "modifier for both rolls.")
+                                    print(
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use "
+                                        "when fighting "
+                                        "with two weapons.")
+                                    equip_choice = input("Are you sure you want the Scimitar? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Scimitar"
+                                        wpn1_damage = "1d6"
+                                        equipmentlist.append("Scimitar")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Shortsword":
+                                    print("The Shortsword does 1d6 Piercing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Finesse: When making an attack with a finesse weapon, you use your choice of "
+                                        "your "
+                                        "Strength or Dexterity modifier for the attack and damage rolls. You must use "
+                                        "the same "
+                                        "modifier for both rolls.")
+                                    print(
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use "
+                                        "when fighting "
+                                        "with two weapons.")
+                                    equip_choice = input("Are you sure you want the Shortsword? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Shortsword"
+                                        wpn1_damage = "1d6"
+                                        equipmentlist.append("Shortsword")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Trident":
+                                    print("The Trident does 1d6 Piercing Damage.")
+                                    print("It has a Range of 20 ft for short ranged attacks and 60 for long ranged "
+                                          "attacks.")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to "
+                                        "make a ranged "
+                                        "attack. If the weapon is a melee weapon, you use the same ability modifier "
+                                        "for that "
+                                        "attack roll and damage roll that you would use for a melee attack with the "
+                                        "weapon. For "
+                                        "example, if you throw a handaxe, you use your Strength, but if you throw a "
+                                        "dagger, "
+                                        "you can use either your Strength or your Dexterity, since the dagger has the "
+                                        "finesse "
+                                        "property.")
+                                    print(
+                                        "Versatile: This weapon can be used with two hands. If you do, the damage is "
+                                        "1d8 instead")
+                                    equip_choice = input("Are you sure you want the Trident? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Trident"
+                                        wpn1_damage = "1d6"
+                                        equipmentlist.append("Trident")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "War pick":
+                                    print("The War pick does 1d8 Piercing Damage.")
+                                    print("It has a Range of zero")
+                                    equip_choice = input("Are you sure you want the War pick? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "War pick"
+                                        wpn1_damage = "1d8"
+                                        equipmentlist.append("War pick")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Warhammer":
+                                    print("The Warhammer does 1d8 Bludgeoning Damage.")
+                                    print("It has a Range of Zero")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Versatile: This weapon can be used with two hands. If you do, the damage is "
+                                        "1d10 instead")
+                                    equip_choice = input("Are you sure you want the Warhammer? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Warhammer"
+                                        wpn1_damage = "1d8"
+                                        equipmentlist.append("Warhammer")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Whip":
+                                    print("The Whip does 1d4 Slashing Damage.")
+                                    print("It has a Range of Zero")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Finesse: When making an attack with a finesse weapon, you use your choice of "
+                                        "your "
+                                        "Strength or Dexterity modifier for the attack and damage rolls. You must use "
+                                        "the same "
+                                        "modifier for both rolls.")
+                                    print(
+                                        "Reach: This weapon adds 5 feet to your reach when you attack with it, "
+                                        "as well as when "
+                                        "determining your reach for opportunity attacks with it.")
+                                    equip_choice = input("Are you sure you want the Whip? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Whip"
+                                        wpn1_damage = "1d4"
+                                        equipmentlist.append("Whip")
+                                        break
+                                    else:
+                                        continue
+                                else:
+                                    continue
+                            else:
+                                print("Not a valid option")
+                                continue
+                        for index, item in enumerate(martial_weapon_list, start=1):
+                            print(index, item)
+                        print("Please choose your Second Martial Weapon from the list above.")
+                        while True:
+                            start_equip_one = int(input("Second Equipment Choice: "))
+                            start_equip_one = martial_weapon_list[start_equip_one - 1]
+                            if start_equip_one in martial_weapon_list:
+                                if start_equip_one == "Battleaxe":
+                                    print(
+                                        "The Battleaxe does 1d8 Slashing Damage.\nIt has a Range of Zero.\nIt has the "
+                                        "special "
+                                        "trait 'Versitile', which means you can use it with both hands, if you do, "
+                                        "then the damage is 1d10 Slashing Damage.")
+                                    equip_choice = input("Are you sure you want the Battleaxe? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Battleaxe"
+                                        wpn1_damage = "1d8"
+                                        equipmentlist.append("Battleaxe")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Flail":
+                                    print("The Flail does 1d8 Bludgeoning Damage.\nIt has a Range of Zero.")
+                                    equip_choice = input("Are you sure you want the Flail? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Flail"
+                                        wpn1_damage = "1d8"
+                                        equipmentlist.append("Flail")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Glaive":
+                                    print("The Glaive does 1d10 Slashing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print("Heavy: Small creatures have a disadvantage on attack rolls")
+                                    print(
+                                        "Reach: This weapon adds 5 feet to your reach when you attack with it, "
+                                        "as well as when "
+                                        "determining your reach for opportunity attacks with it.")
+                                    print("Two-Handed: This weapon requires two hands when you attack with it.")
+                                    equip_choice = input("Are you sure you want the Glaive? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Glaive"
+                                        wpn1_damage = "1d10"
+                                        equipmentlist.append("Glaive")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Greataxe":
+                                    print("The Greataxe does 1d12 Slashing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print("Heavy: Small creatures have a disadvantage on attack rolls")
+                                    print("Two-Handed: This weapon requires two hands when you attack with it.")
+                                    equip_choice = input("Are you sure you want the Greataxe? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Greataxe"
+                                        wpn1_damage = "1d12"
+                                        equipmentlist.append("Greataxe")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Greatsword":
+                                    print("The Greatsword does 2d6 Slashing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print("Heavy: Small creatures have a disadvantage on attack rolls")
+                                    print("Two-Handed: This weapon requires two hands when you attack with it.")
+                                    equip_choice = input("Are you sure you want the Greatsword? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Greatsword"
+                                        wpn1_damage = "1d12"
+                                        equipmentlist.append("Greatsword")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Halberd":
+                                    print("The Halberd does 1d10 Slashing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print("Heavy: Small creatures have a disadvantage on attack rolls")
+                                    print(
+                                        "Reach: This weapon adds 5 feet to your reach when you attack with it, "
+                                        "as well as when "
+                                        "determining your reach for opportunity attacks with it.")
+                                    print("Two-Handed: This weapon requires two hands when you attack with it.")
+                                    equip_choice = input("Are you sure you want the Halberd? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Halberd"
+                                        wpn1_damage = "1d10"
+                                        equipmentlist.append("Halberd")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Lance":
+                                    print("The Lance does 1d12 Piercing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Reach: This weapon adds 5 feet to your reach when you attack with it, "
+                                        "as well as when "
+                                        "determining your reach for opportunity attacks with it.")
+                                    print(
+                                        "Special: You have disadvantage when you use a lance to attack a target "
+                                        "within 5 feet of "
+                                        "you. Also, a lance requires two hands to wield when you aren’t mounted.")
+                                    equip_choice = input("Are you sure you want the Lance? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Lance"
+                                        wpn1_damage = "1d12"
+                                        equipmentlist.append("Lance")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Longsword":
+                                    print("The Longsword does 1d8 Slashing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Versatile: This weapon can be used with two hands. If you do, the damage is "
+                                        "1d10 instead.")
+                                    equip_choice = input("Are you sure you want the Longsword? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Longsword"
+                                        wpn1_damage = "1d8"
+                                        equipmentlist.append("Longsword")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Maul":
+                                    print("The Maul does 2d6 Bludgeoning Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print("Heavy: Small creatures have a disadvantage on attack rolls")
+                                    print("Two-Handed: This weapon requires two hands when you attack with it.")
+                                    equip_choice = input("Are you sure you want the Maul? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Maul"
+                                        wpn1_damage = "2d6"
+                                        equipmentlist.append("Maul")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Morningstar":
+                                    print("The Morningstar does 1d8 Piercing Damage.")
+                                    print("It has a Range of Zero.")
+                                    equip_choice = input("Are you sure you want the Morningstar? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Morningstar"
+                                        wpn1_damage = "1d8"
+                                        equipmentlist.append("Morningstar")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Pike":
+                                    print("The Pike does 1d10 Piercing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print("Heavy: Small creatures have a disadvantage on attack rolls")
+                                    print(
+                                        "Reach: This weapon adds 5 feet to your reach when you attack with it, "
+                                        "as well as when "
+                                        "determining your reach for opportunity attacks with it.")
+                                    print("Two-Handed: This weapon requires two hands when you attack with it.")
+                                    equip_choice = input("Are you sure you want the Pike? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Pike"
+                                        wpn1_damage = "1d10"
+                                        equipmentlist.append("Pike")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Rapier":
+                                    print("The Rapier does 1d8 Piercing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Finesse: When making an attack with a finesse weapon, you use your choice of "
+                                        "your "
+                                        "Strength or Dexterity modifier for the attack and damage rolls. You must use "
+                                        "the same "
+                                        "modifier for both rolls.")
+                                    equip_choice = input("Are you sure you want the Rapier? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Rapier"
+                                        wpn1_damage = "1d8"
+                                        equipmentlist.append("Rapier")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Scimitar":
+                                    print("The Scimitar does 1d6 Slashing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Finesse: When making an attack with a finesse weapon, you use your choice of "
+                                        "your "
+                                        "Strength or Dexterity modifier for the attack and damage rolls. You must use "
+                                        "the same "
+                                        "modifier for both rolls.")
+                                    print(
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use "
+                                        "when fighting "
+                                        "with two weapons.")
+                                    equip_choice = input("Are you sure you want the Scimitar? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Scimitar"
+                                        wpn1_damage = "1d6"
+                                        equipmentlist.append("Scimitar")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Shortsword":
+                                    print("The Shortsword does 1d6 Piercing Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Finesse: When making an attack with a finesse weapon, you use your choice of "
+                                        "your "
+                                        "Strength or Dexterity modifier for the attack and damage rolls. You must use "
+                                        "the same "
+                                        "modifier for both rolls.")
+                                    print(
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use "
+                                        "when fighting "
+                                        "with two weapons.")
+                                    equip_choice = input("Are you sure you want the Shortsword? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Shortsword"
+                                        wpn1_damage = "1d6"
+                                        equipmentlist.append("Shortsword")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Trident":
+                                    print("The Trident does 1d6 Piercing Damage.")
+                                    print("It has a Range of 20 ft for short ranged attacks and 60 for long ranged "
+                                          "attacks.")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to "
+                                        "make a ranged "
+                                        "attack. If the weapon is a melee weapon, you use the same ability modifier "
+                                        "for that "
+                                        "attack roll and damage roll that you would use for a melee attack with the "
+                                        "weapon. For "
+                                        "example, if you throw a handaxe, you use your Strength, but if you throw a "
+                                        "dagger, "
+                                        "you can use either your Strength or your Dexterity, since the dagger has the "
+                                        "finesse "
+                                        "property.")
+                                    print(
+                                        "Versatile: This weapon can be used with two hands. If you do, the damage is "
+                                        "1d8 instead")
+                                    equip_choice = input("Are you sure you want the Trident? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Trident"
+                                        wpn1_damage = "1d6"
+                                        equipmentlist.append("Trident")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "War pick":
+                                    print("The War pick does 1d8 Piercing Damage.")
+                                    print("It has a Range of zero")
+                                    equip_choice = input("Are you sure you want the War pick? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "War pick"
+                                        wpn1_damage = "1d8"
+                                        equipmentlist.append("War pick")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Warhammer":
+                                    print("The Warhammer does 1d8 Bludgeoning Damage.")
+                                    print("It has a Range of Zero")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Versatile: This weapon can be used with two hands. If you do, the damage is "
+                                        "1d10 instead")
+                                    equip_choice = input("Are you sure you want the Warhammer? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Warhammer"
+                                        wpn1_damage = "1d8"
+                                        equipmentlist.append("Warhammer")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Whip":
+                                    print("The Whip does 1d4 Slashing Damage.")
+                                    print("It has a Range of Zero")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Finesse: When making an attack with a finesse weapon, you use your choice of "
+                                        "your "
+                                        "Strength or Dexterity modifier for the attack and damage rolls. You must use "
+                                        "the same "
+                                        "modifier for both rolls.")
+                                    print(
+                                        "Reach: This weapon adds 5 feet to your reach when you attack with it, "
+                                        "as well as when "
+                                        "determining your reach for opportunity attacks with it.")
+                                    equip_choice = input("Are you sure you want the Whip? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name = "Whip"
+                                        wpn1_damage = "1d4"
+                                        equipmentlist.append("Whip")
+                                        break
+                                    else:
+                                        continue
+                                else:
+                                    continue
+                            else:
+                                print("Not a valid option")
+                                continue
+
+                    else:
+                        print("Not a valid option")
+                        continue
+                except ValueError:
+                    print("Not a valid option")
+                    continue
+                break
+            print("Please Choose your second piece of equipment")
+            print("1. Five Javelins")
+            print("2. A Simple Weapon")
+            while True:
+                try:
+                    equipment_choice_input = int(input("Please choose an option: "))
+                    if equipment_choice_input == 1:
+                        print("The Five Javelins do 1d8 Piercing Damage.")
+                        print("It has a Range of 20 ft for short ranged attacks and 60 for long ranged attacks.")
+                        print("It has the special properties: ")
+                        print(
+                            "\nThrown: If a weapon has the thrown property, you can throw the weapon to make a ranged "
+                            "\nattack. If the weapon is a melee weapon, you use the same ability modifier for that "
+                            "\nattack roll and damage roll that you would use for a melee attack with the weapon. For "
+                            "\nexample, if you throw a handaxe, you use your Strength, but if you throw a dagger, you "
+                            "\ncan use either your Strength or your Dexterity, since the dagger has the finesse "
+                            "\nproperty.")
+                        print(
+                            "Versatile: This weapon can be used with two hands. If you do, the damage is 1d10 instead")
+                        equip_choice = input("Are you sure you want the Five Javelins? Yes or No?\nEnter your Choice: ")
+                        if equip_choice.lower() in ["y", "yes"]:
+                            equipmentlist.append("Five Javelins")
+                        else:
+                            continue
+                        break
+                    elif equipment_choice_input == 2:
+                        for index, item in enumerate(simple_weapon_list, start=1):
+                            print(index, item)
+                        while True:
+                            start_equip_one = int(input("Equipment Choice: "))
+                            start_equip_one = simple_weapon_list[start_equip_one - 1]
+                            if start_equip_one in simple_weapon_list:
+                                if start_equip_one == "Club":
+                                    print("The Club does 1d4 Bludgeoning Damage.")
+                                    print("It has a Range of Zero")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use when fighting "
+                                        "with two weapons.")
+                                    equip_choice = input("Are you sure you want the Club? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name_2 = "Club"
+                                        wpn2_damage = "1d4"
+                                        equipmentlist.append("Club")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Dagger":
+                                    print("The Dagger does 1d4 Piercing Damage.")
+                                    print("It has a Range of 20 ft for short range. 60 ft for long range.")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Finesse: When making an attack with a finesse weapon, you use your choice of your "
+                                        "Strength or Dexterity modifier for the attack and damage rolls. You must use the same "
+                                        "modifier for both rolls.")
+                                    print(
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use when fighting "
+                                        "with two weapons.")
+                                    print(
+                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to make a ranged "
+                                        "attack. If the weapon is a melee weapon, you use the same ability modifier for that "
+                                        "attack roll and damage roll that you would use for a melee attack with the weapon. For "
+                                        "example, if you throw a handaxe, you use your Strength, but if you throw a dagger, "
+                                        "you can use either your Strength or your Dexterity, since the dagger has the finesse "
+                                        "property.")
+                                    equip_choice = input("Are you sure you want the Dagger? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name_2 = "Dagger"
+                                        wpn2_damage = "1d4"
+                                        equipmentlist.append("Dagger")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Greatclub":
+                                    print("The Greatclub does 1d8 Bludgeoning Damage.")
+                                    print("It has a Range of Zero.")
+                                    print("It has the special properties: ")
+                                    print("Two-Handed: This weapon requires two hands when you attack with it.")
+                                    equip_choice = input("Are you sure you want the Greatclub? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name_2 = "Greatclub"
+                                        wpn2_damage = "1d8"
+                                        equipmentlist.append("Greatclub")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Handaxe":
+                                    print("The Handaxe does 1d6 Slashing Damage.")
+                                    print("It has a Range of 20 ft for short range, and 60 ft for long range.")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use when fighting "
+                                        "with two weapons.")
+                                    print(
+                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to make a ranged "
+                                        "attack. If the weapon is a melee weapon, you use the same ability modifier for that "
+                                        "attack roll and damage roll that you would use for a melee attack with the weapon. For "
+                                        "example, if you throw a handaxe, you use your Strength, but if you throw a dagger, "
+                                        "you can use either your Strength or your Dexterity, since the dagger has the finesse "
+                                        "property.")
+                                    equip_choice = input("Are you sure you want the Handaxe? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name_2 = "Handaxe"
+                                        wpn2_damage = "1d6"
+                                        equipmentlist.append("Handaxe")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Javelin":
+                                    print("The Javelin does 1d6 Piercing Damage.")
+                                    print("It has a short range of 30 ft, and a long range of 120 ft.")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to make a ranged "
+                                        "attack. If the weapon is a melee weapon, you use the same ability modifier for that "
+                                        "attack roll and damage roll that you would use for a melee attack with the weapon. For "
+                                        "example, if you throw a handaxe, you use your Strength, but if you throw a dagger, "
+                                        "you can use either your Strength or your Dexterity, since the dagger has the finesse "
+                                        "property.")
+                                    equip_choice = input("Are you sure you want the Javelin? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name_2 = "Javelin"
+                                        wpn2_damage = "1d6"
+                                        equipmentlist.append("Javelin")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Light hammer":
+                                    print("The Light hammer does 1d4 Bludgeoning Damage.")
+                                    print("It has a short range of 20 ft, and a long range of 60 ft.")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use when fighting "
+                                        "with two weapons.")
+                                    print(
+                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to make a ranged "
+                                        "attack. If the weapon is a melee weapon, you use the same ability modifier for that "
+                                        "attack roll and damage roll that you would use for a melee attack with the weapon. For "
+                                        "example, if you throw a handaxe, you use your Strength, but if you throw a dagger, "
+                                        "you can use either your Strength or your Dexterity, since the dagger has the finesse "
+                                        "property.")
+                                    equip_choice = input("Are you sure you want the Light hammer? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name_2 = "Light hammer"
+                                        wpn2_damage = "1d4"
+                                        equipmentlist.append("Light hammer")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Mace":
+                                    print("The Mace does 1d6 Bludgeoning Damage.")
+                                    print("It has a range of Zero.")
+                                    equip_choice = input("Are you sure you want the Mace? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name_2 = "Mace"
+                                        wpn2_damage = "1d6"
+                                        equipmentlist.append("Mace")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Quarterstaff":
+                                    print("The Quarterstaff does 1d6 Bludgeoning Damage.")
+                                    print("It has a range of Zero.")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Versatile: This weapon can be used with two hands, if you do so, then the damage is 1d8 "
+                                        "instead")
+                                    equip_choice = input("Are you sure you want the Quarterstaff? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name_2 = "Quarterstaff"
+                                        wpn2_damage = "1d6"
+                                        equipmentlist.append("Quarterstaff")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Sickle":
+                                    print("The Sickle does 1d4 Slashing Damage.")
+                                    print("It has a range of Zero.")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use when fighting "
+                                        "with two weapons.")
+                                    equip_choice = input("Are you sure you want the Sickle? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name_2 = "Sickle"
+                                        wpn2_damage = "1d4"
+                                        equipmentlist.append("Sickle")
+                                        break
+                                    else:
+                                        continue
+                                elif start_equip_one == "Spear":
+                                    print("The Spear does 1d6 Piercing Damage.")
+                                    print("It has a short range of 20 ft and a long range of 60 ft.")
+                                    print("It has the special properties: ")
+                                    print(
+                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to make a ranged "
+                                        "attack. If the weapon is a melee weapon, you use the same ability modifier for that "
+                                        "attack roll and damage roll that you would use for a melee attack with the weapon. For "
+                                        "example, if you throw a handaxe, you use your Strength, but if you throw a dagger, "
+                                        "you can use either your Strength or your Dexterity, since the dagger has the finesse "
+                                        "property.")
+                                    print(
+                                        "Versatile: This weapon can be used with both hands. If you do, the damage is 1d8 instead.")
+                                    equip_choice = input("Are you sure you want the Spear? Yes or No\n")
+                                    if equip_choice.lower() in ["y", "yes"]:
+                                        wpn_name_2 = "Spear"
+                                        wpn2_damage = "1d6"
+                                        equipmentlist.append("Spear")
+                                        break
+                                    else:
+                                        continue
+                                else:
+                                    continue
+                            else:
+                                print("Not a valid choice")
+                                continue
+                    else:
+                        print("Not a valid choice")
+                        continue
+                except ValueError:
+                    print("Not a valid choice")
+                    continue
+                break
+        else:
+            print("Invalid Input")
+            continue
+        break
+    break
 
 # Work on adding skills to character sheet
 
