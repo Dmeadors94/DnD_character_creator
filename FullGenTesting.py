@@ -6895,7 +6895,8 @@ while True:
             hitdietotal = "1d8"
             print("Please enter a Tool or Instrument to be proficient with: ")
             monk_tool_choice = input("Enter your choice: ")
-            professionlist.append("Tool: ",monk_tool_choice)
+            monk_tool_choice = ("Tool: " + monk_tool_choice)
+            professionlist.append(monk_tool_choice)
             print("Please choose two skills from the following list:")
             for index, item in enumerate(monk_skill_list, start=1):
                 print(index, item)
@@ -7377,6 +7378,7 @@ while True:
                                     break
                                 else:
                                     continue
+                break
         break
     else:
         print("Invalid Input")
