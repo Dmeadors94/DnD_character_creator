@@ -1422,7 +1422,7 @@ while True:
     print("4.Druid")
     print("5.Fighter")
     print("6.Monk")
-    # print("7.Paladin")
+    print("7.Paladin")
     # print("8.Ranger")
     # print("9.Rouge")
     # print("10.Sorcerer")
@@ -7380,6 +7380,55 @@ while True:
                                     continue
                 break
         break
+    elif class_input == "7":
+        print("[HIT POINTS]")
+        print("Your Hit Dice is 1d8 per Paladin level")
+        print("Your Hit Points at 1st Level is: 10 + your Constitution modifier")
+        print("Your Hit points at Higher Levels is: 1d10 + Constitution modifier per level")
+        print("========================")
+        print("[PROFICIENCIES]")
+        print("Armor: Light Armor, Medium Armor,Heavy Armor, Shields")
+        print("Weapons: Simple Weapons and Martial Weapons")
+        print("Tools: None")
+        print("Saving Throws: Wisdom, Charisma")
+        print("Skills: Choose two skills from Athletics, Insight, Intimidation, Medicine, Persuasion, and Religion")
+        print("========================")
+        print("[EQUIPMENT]")
+        print("(a) a martial weapon and a shield or (b) two martial weapons")
+        print("(a) five javelins or (b) any simple melee weapon")
+        print("Chain mail and a holy symbol")
+        print("========================")
+        print("[FEATURES]")
+        print("The presence of strong evil registers on your senses like a noxious odor, and powerful good rings like "
+              "\nheavenly music in your ears. As an action, you can open your awareness to detect such forces. Until "
+              "\nthe end of your next turn, you know the location of any celestial, fiend, or undead within 60 feet of "
+              "\nyou that is not behind total cover. You know the type (celestial, fiend, or undead) of any being "
+              "\nwhose presence you sense, but not its identity. Within the same radius, you also detect the presence "
+              "of any "
+              "\nplace or object that has been consecrated or desecrated, as with the hallow spell. You can use this "
+              "\nfeature a number of times equal to 1 + your Charisma modifier. When you finish a long rest, "
+              "\nyou regain all expended uses.")
+        print("========================")
+        class_choice = input("Are you sure you want to be a Paladin? Yes or No?: ")
+        if class_choice.lower() in ["y", "yes"]:
+            dndclass = "Paladin"
+            hit_points = 10 + con_mod
+            STwis += 2
+            STwis_box = True
+            STcha += 2
+            STcha_box = True
+            featurelist.append("Unarmored Defense")
+            featurelist.append("Martial Arts")
+            professionlist.append("Weapon: Simple")
+            professionlist.append("Weapon: Shortsword")
+            cantrip_list.append("")
+            cantrip_list.append("")
+            cantrip_list.append("")
+            cantrip_list.append("")
+            cantrip_list.append("")
+            cantrip_list.append("")
+            hitdie = "1d8"
+            hitdietotal = "1d8"
     else:
         print("Invalid Input")
         continue
