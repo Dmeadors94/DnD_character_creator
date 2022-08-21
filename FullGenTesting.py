@@ -9642,7 +9642,8 @@ while True:
                                     print("It has a Range of Zero")
                                     print("It has the special properties: ")
                                     print(
-                                        "Light: A light weapon is small and easy to handle, making it ideal for use when fighting "
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use "
+                                        "when fighting "
                                         "with two weapons.")
                                     equip_choice = input("Are you sure you want the Club? Yes or No\n")
                                     if equip_choice.lower() in ["y", "yes"]:
@@ -9657,18 +9658,26 @@ while True:
                                     print("It has a Range of 20 ft for short range. 60 ft for long range.")
                                     print("It has the special properties: ")
                                     print(
-                                        "Finesse: When making an attack with a finesse weapon, you use your choice of your "
-                                        "Strength or Dexterity modifier for the attack and damage rolls. You must use the same "
+                                        "Finesse: When making an attack with a finesse weapon, you use your choice of "
+                                        "your "
+                                        "Strength or Dexterity modifier for the attack and damage rolls. You must use "
+                                        "the same "
                                         "modifier for both rolls.")
                                     print(
-                                        "Light: A light weapon is small and easy to handle, making it ideal for use when fighting "
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use "
+                                        "when fighting "
                                         "with two weapons.")
                                     print(
-                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to make a ranged "
-                                        "attack. If the weapon is a melee weapon, you use the same ability modifier for that "
-                                        "attack roll and damage roll that you would use for a melee attack with the weapon. For "
-                                        "example, if you throw a handaxe, you use your Strength, but if you throw a dagger, "
-                                        "you can use either your Strength or your Dexterity, since the dagger has the finesse "
+                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to "
+                                        "make a ranged "
+                                        "attack. If the weapon is a melee weapon, you use the same ability modifier "
+                                        "for that "
+                                        "attack roll and damage roll that you would use for a melee attack with the "
+                                        "weapon. For "
+                                        "example, if you throw a handaxe, you use your Strength, but if you throw a "
+                                        "dagger, "
+                                        "you can use either your Strength or your Dexterity, since the dagger has the "
+                                        "finesse "
                                         "property.")
                                     equip_choice = input("Are you sure you want the Dagger? Yes or No\n")
                                     if equip_choice.lower() in ["y", "yes"]:
@@ -9696,14 +9705,20 @@ while True:
                                     print("It has a Range of 20 ft for short range, and 60 ft for long range.")
                                     print("It has the special properties: ")
                                     print(
-                                        "Light: A light weapon is small and easy to handle, making it ideal for use when fighting "
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use "
+                                        "when fighting "
                                         "with two weapons.")
                                     print(
-                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to make a ranged "
-                                        "attack. If the weapon is a melee weapon, you use the same ability modifier for that "
-                                        "attack roll and damage roll that you would use for a melee attack with the weapon. For "
-                                        "example, if you throw a handaxe, you use your Strength, but if you throw a dagger, "
-                                        "you can use either your Strength or your Dexterity, since the dagger has the finesse "
+                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to "
+                                        "make a ranged "
+                                        "attack. If the weapon is a melee weapon, you use the same ability modifier "
+                                        "for that "
+                                        "attack roll and damage roll that you would use for a melee attack with the "
+                                        "weapon. For "
+                                        "example, if you throw a handaxe, you use your Strength, but if you throw a "
+                                        "dagger, "
+                                        "you can use either your Strength or your Dexterity, since the dagger has the "
+                                        "finesse "
                                         "property.")
                                     equip_choice = input("Are you sure you want the Handaxe? Yes or No\n")
                                     if equip_choice.lower() in ["y", "yes"]:
@@ -9718,11 +9733,16 @@ while True:
                                     print("It has a short range of 30 ft, and a long range of 120 ft.")
                                     print("It has the special properties: ")
                                     print(
-                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to make a ranged "
-                                        "attack. If the weapon is a melee weapon, you use the same ability modifier for that "
-                                        "attack roll and damage roll that you would use for a melee attack with the weapon. For "
-                                        "example, if you throw a handaxe, you use your Strength, but if you throw a dagger, "
-                                        "you can use either your Strength or your Dexterity, since the dagger has the finesse "
+                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to "
+                                        "make a ranged "
+                                        "attack. If the weapon is a melee weapon, you use the same ability modifier "
+                                        "for that "
+                                        "attack roll and damage roll that you would use for a melee attack with the "
+                                        "weapon. For "
+                                        "example, if you throw a handaxe, you use your Strength, but if you throw a "
+                                        "dagger, "
+                                        "you can use either your Strength or your Dexterity, since the dagger has the "
+                                        "finesse "
                                         "property.")
                                     equip_choice = input("Are you sure you want the Javelin? Yes or No\n")
                                     if equip_choice.lower() in ["y", "yes"]:
@@ -9737,14 +9757,20 @@ while True:
                                     print("It has a short range of 20 ft, and a long range of 60 ft.")
                                     print("It has the special properties: ")
                                     print(
-                                        "Light: A light weapon is small and easy to handle, making it ideal for use when fighting "
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use "
+                                        "when fighting "
                                         "with two weapons.")
                                     print(
-                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to make a ranged "
-                                        "attack. If the weapon is a melee weapon, you use the same ability modifier for that "
-                                        "attack roll and damage roll that you would use for a melee attack with the weapon. For "
-                                        "example, if you throw a handaxe, you use your Strength, but if you throw a dagger, "
-                                        "you can use either your Strength or your Dexterity, since the dagger has the finesse "
+                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to "
+                                        "make a ranged "
+                                        "attack. If the weapon is a melee weapon, you use the same ability modifier "
+                                        "for that "
+                                        "attack roll and damage roll that you would use for a melee attack with the "
+                                        "weapon. For "
+                                        "example, if you throw a handaxe, you use your Strength, but if you throw a "
+                                        "dagger, "
+                                        "you can use either your Strength or your Dexterity, since the dagger has the "
+                                        "finesse "
                                         "property.")
                                     equip_choice = input("Are you sure you want the Light hammer? Yes or No\n")
                                     if equip_choice.lower() in ["y", "yes"]:
@@ -9770,7 +9796,8 @@ while True:
                                     print("It has a range of Zero.")
                                     print("It has the special properties: ")
                                     print(
-                                        "Versatile: This weapon can be used with two hands, if you do so, then the damage is 1d8 "
+                                        "Versatile: This weapon can be used with two hands, if you do so, then the "
+                                        "damage is 1d8 "
                                         "instead")
                                     equip_choice = input("Are you sure you want the Quarterstaff? Yes or No\n")
                                     if equip_choice.lower() in ["y", "yes"]:
@@ -9785,7 +9812,8 @@ while True:
                                     print("It has a range of Zero.")
                                     print("It has the special properties: ")
                                     print(
-                                        "Light: A light weapon is small and easy to handle, making it ideal for use when fighting "
+                                        "Light: A light weapon is small and easy to handle, making it ideal for use "
+                                        "when fighting "
                                         "with two weapons.")
                                     equip_choice = input("Are you sure you want the Sickle? Yes or No\n")
                                     if equip_choice.lower() in ["y", "yes"]:
@@ -9800,14 +9828,20 @@ while True:
                                     print("It has a short range of 20 ft and a long range of 60 ft.")
                                     print("It has the special properties: ")
                                     print(
-                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to make a ranged "
-                                        "attack. If the weapon is a melee weapon, you use the same ability modifier for that "
-                                        "attack roll and damage roll that you would use for a melee attack with the weapon. For "
-                                        "example, if you throw a handaxe, you use your Strength, but if you throw a dagger, "
-                                        "you can use either your Strength or your Dexterity, since the dagger has the finesse "
+                                        "Thrown: If a weapon has the thrown property, you can throw the weapon to "
+                                        "make a ranged "
+                                        "attack. If the weapon is a melee weapon, you use the same ability modifier "
+                                        "for that "
+                                        "attack roll and damage roll that you would use for a melee attack with the "
+                                        "weapon. For "
+                                        "example, if you throw a handaxe, you use your Strength, but if you throw a "
+                                        "dagger, "
+                                        "you can use either your Strength or your Dexterity, since the dagger has the "
+                                        "finesse "
                                         "property.")
                                     print(
-                                        "Versatile: This weapon can be used with both hands. If you do, the damage is 1d8 instead.")
+                                        "Versatile: This weapon can be used with both hands. If you do, the damage is "
+                                        "1d8 instead.")
                                     equip_choice = input("Are you sure you want the Spear? Yes or No\n")
                                     if equip_choice.lower() in ["y", "yes"]:
                                         wpn_name_2 = "Spear"
