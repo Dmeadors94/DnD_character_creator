@@ -55,6 +55,8 @@ monk_skill_list = ["Acrobatics", "Athletics", "History", "Insight", "Religion", 
 paladin_skill_list = ["Athletics", "Insight", "Intimidation", "Medicine", "Persuasion", "Religion"]
 ranger_skill_list = ["Animal Handling", "Athletics", "Insight", "Investigation", "Nature", "Perception", "Stealth",
                      "Survival"]
+rogue_skill_list = ["Acrobatics", "Athletics", "Deception", "Insight", "Intimidation", "Investigation", "Perception",
+                    "Performance", "Persuasion", "Sleight of Hand", "Stealth"]
 knowledge_cleric_skill_list = ["Arcana", "History", "Nature", "Religion"]
 spell_list_cantrip = ["Acid Splash", "Chill Touch", "Dancing Lights", "Druidcraft", "Eldritch Blast", "Fire Bolt",
                       "Guidance", "Light", "Mage Hand", "Mending", "Message", "Minor Illusion", "Poison Spray",
@@ -1427,7 +1429,7 @@ while True:
     print("6.Monk")
     print("7.Paladin")
     print("8.Ranger")
-    # print("9.Rouge")
+    print("9.Rouge")
     # print("10.Sorcerer")
     # print("11.Warlock")
     # print("12.Wizard")
@@ -9857,6 +9859,641 @@ while True:
                                 continue
                 except ValueError:
                     print("Not a valid choice")
+                    continue
+                break
+    elif class_input == "9":
+        print("[HIT POINTS]")
+        print("Your Hit Dice is 1d8 per Rogue level")
+        print("Your Hit Points at 1st Level is: 8 + your Constitution modifier")
+        print("Your Hit points at Higher Levels is: 1d8 + Constitution modifier per level")
+        print("========================")
+        print("[PROFICIENCIES]")
+        print("Armor: Light")
+        print("Weapons: Simple weapons, Hand crossbows, Longswords, Rapiers, Shortswords")
+        print("Tools: Thieves’ tools")
+        print("Saving Throws: Dexterity, Intelligence")
+        print("Choose four skills: Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, "
+              "Perception, Performance, Persuasion, Sleight of Hand, and Stealth")
+        print("========================")
+        print("[EQUIPMENT]")
+        print("(a) a rapier or (b) a shortsword")
+        print("(a) a shortbow and quiver of 20 arrows or (b) a shortsword")
+        print("Leather armor, two daggers, and thieves’ tools")
+        print("========================")
+        print("[FEATURES]")
+        print("Expertise: ")
+        print("At 1st level, choose two of your skill proficiencies, or one of your skill proficiencies and your "
+              "proficiency with thieves’ tools. Your proficiency bonus is doubled for any ability check you make that "
+              "uses either of the chosen proficiencies.")
+        print("\n")
+        print("Sneak Attack: ")
+        print("Beginning at 1st level, you know how to strike subtly and exploit a foe’s distraction. Once per turn, "
+                "\nyou can deal an extra 1d6 damage to one creature you hit with an attack if you have advantage on "
+              "the "
+                "\nattack roll. The attack must use a finesse or a ranged weapon. You don’t need advantage on the "
+              "attack "
+                "\nroll if another enemy of the target is within 5 feet of it, that enemy isn’t incapacitated, and you "
+                "\ndon’t have disadvantage on the attack roll.")
+        print("\n")
+        print("Thieves’ Cant: ")
+        print("During your rogue training you learned thieves’ cant, a secret mix of dialect, jargon, and code that "
+              "\nallows you to hide messages in seemingly normal conversation. Only another creature that knows "
+              "\nthieves’ cant understands such messages. It takes four times longer to convey such a message than it "
+              "\ndoes to speak the same idea plainly. In addition, you understand a set of secret signs and symbols "
+              "\nused to convey short, simple messages, such as whether an area is dangerous or the territory of a "
+              "\nthieves’ guild, whether loot is nearby, or whether the people in an area are easy marks or will "
+              "\nprovide a safe house for thieves on the run.")
+        print("========================")
+        class_choice = input("Are you sure you want to be a Rogue? Yes or No?: ")
+        if class_choice.lower() in ["y", "yes"]:
+            dndclass = "Rogue"
+            hit_points = 8 + con_mod
+            STdex += 2
+            STdex_box = True
+            STint += 2
+            STint_box = True
+            featurelist.append("Rage")
+            professionlist.append("Armor: Light")
+            professionlist.append("Weapon: Simple")
+            professionlist.append("Tools: Thieves’ tools")
+            professionlist.append("Weapon: Hand crossbows")
+            professionlist.append("Weapon: Longswords")
+            professionlist.append("Weapon: Rapiers")
+            professionlist.append("Weapon: Shortswords")
+            cantrip_list.append("")
+            cantrip_list.append("")
+            cantrip_list.append("")
+            cantrip_list.append("")
+            cantrip_list.append("")
+            cantrip_list.append("")
+            hitdie = "1d8"
+            hitdietotal = "1d8"
+            print("Please choose Four skills from the following list:")
+            for index, item in enumerate(rogue_skill_list, start=1):
+                print(index, item)
+            while True:
+                skill_choice_he_input = int(input("Enter what skill you want first: "))
+                skill_choice_three = rogue_skill_list[skill_choice_he_input - 1]
+                if skill_choice_three in skill_list:
+                    if skill_choice_three == "Acrobatics":
+                        acrobatics += 2
+                        acrobatics_box = True
+                        skill_list.remove(skill_choice_three)
+                        rogue_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Animal Handling":
+                        animal_handling += 2
+                        animal_handling_box = True
+                        skill_list.remove(skill_choice_three)
+                        rogue_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Arcana":
+                        arcana += 2
+                        arcana_box = True
+                        skill_list.remove(skill_choice_three)
+                        rogue_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Athletics":
+                        athletics += 2
+                        athletics_box = True
+                        skill_list.remove(skill_choice_three)
+                        rogue_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Deception":
+                        deception += 2
+                        deception_box = True
+                        skill_list.remove(skill_choice_three)
+                        rogue_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "History":
+                        history += 2
+                        history_box = True
+                        skill_list.remove(skill_choice_three)
+                        rogue_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Insight":
+                        insight += 2
+                        insight_box = True
+                        skill_list.remove(skill_choice_three)
+                        rogue_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Intimidation":
+                        intimidation += 2
+                        intimidation_box = True
+                        skill_list.remove(skill_choice_three)
+                        rogue_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Investigation":
+                        investigation += 2
+                        investigation_box = True
+                        skill_list.remove(skill_choice_three)
+                        rogue_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Medicine":
+                        medicine += 2
+                        medicine_box = True
+                        skill_list.remove(skill_choice_three)
+                        rogue_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Nature":
+                        nature += 2
+                        nature_box = True
+                        skill_list.remove(skill_choice_three)
+                        rogue_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Perception":
+                        perception += 2
+                        perception_box = True
+                        skill_list.remove(skill_choice_three)
+                        rogue_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Performance":
+                        performance += 2
+                        performance_box = True
+                        skill_list.remove(skill_choice_three)
+                        rogue_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Persuasion":
+                        persuasion += 2
+                        persuasion_box = True
+                        skill_list.remove(skill_choice_three)
+                        rogue_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Religion":
+                        religion += 2
+                        religion_box = True
+                        skill_list.remove(skill_choice_three)
+                        rogue_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Sleight of Hand":
+                        slight_of_hand += 2
+                        slight_of_hand_box = True
+                        skill_list.remove(skill_choice_three)
+                        rogue_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Stealth":
+                        stealth += 2
+                        stealth_box = True
+                        skill_list.remove(skill_choice_three)
+                        rogue_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Survival":
+                        survival += 2
+                        survival_box = True
+                        skill_list.remove(skill_choice_three)
+                        rogue_skill_list.remove(skill_choice_three)
+                        break
+                    else:
+                        print("Invalid input")
+                        continue
+                else:
+                    print("Invalid Input")
+                    continue
+            for index, item in enumerate(rogue_skill_list, start=1):
+                print(index, item)
+            while True:
+                try:
+                    skill_choice_he_input = int(input("Enter what skill you want second: "))
+                    skill_choice_three = rogue_skill_list[skill_choice_he_input - 1]
+                    if skill_choice_three in skill_list:
+                        if skill_choice_three == "Acrobatics":
+                            acrobatics += 2
+                            acrobatics_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Animal Handling":
+                            animal_handling += 2
+                            animal_handling_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Arcana":
+                            arcana += 2
+                            arcana_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Athletics":
+                            athletics += 2
+                            athletics_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Deception":
+                            deception += 2
+                            deception_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "History":
+                            history += 2
+                            history_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Insight":
+                            insight += 2
+                            insight_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Intimidation":
+                            intimidation += 2
+                            intimidation_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Investigation":
+                            investigation += 2
+                            investigation_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Medicine":
+                            medicine += 2
+                            medicine_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Nature":
+                            nature += 2
+                            nature_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Perception":
+                            perception += 2
+                            perception_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Performance":
+                            performance += 2
+                            performance_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Persuasion":
+                            persuasion += 2
+                            persuasion_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Religion":
+                            religion += 2
+                            religion_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Sleight of Hand":
+                            slight_of_hand += 2
+                            slight_of_hand_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Stealth":
+                            stealth += 2
+                            stealth_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Survival":
+                            survival += 2
+                            survival_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        else:
+                            print("Invalid input")
+                            continue
+                    else:
+                        print("Invalid Input")
+                        continue
+                except IndexError:
+                    print("Invalid Input")
+                    continue
+            for index, item in enumerate(rogue_skill_list, start=1):
+                print(index, item)
+            while True:
+                try:
+                    skill_choice_he_input = int(input("Enter what skill you want second: "))
+                    skill_choice_three = rogue_skill_list[skill_choice_he_input - 1]
+                    if skill_choice_three in skill_list:
+                        if skill_choice_three == "Acrobatics":
+                            acrobatics += 2
+                            acrobatics_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Animal Handling":
+                            animal_handling += 2
+                            animal_handling_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Arcana":
+                            arcana += 2
+                            arcana_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Athletics":
+                            athletics += 2
+                            athletics_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Deception":
+                            deception += 2
+                            deception_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "History":
+                            history += 2
+                            history_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Insight":
+                            insight += 2
+                            insight_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Intimidation":
+                            intimidation += 2
+                            intimidation_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Investigation":
+                            investigation += 2
+                            investigation_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Medicine":
+                            medicine += 2
+                            medicine_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Nature":
+                            nature += 2
+                            nature_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Perception":
+                            perception += 2
+                            perception_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Performance":
+                            performance += 2
+                            performance_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Persuasion":
+                            persuasion += 2
+                            persuasion_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Religion":
+                            religion += 2
+                            religion_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Sleight of Hand":
+                            slight_of_hand += 2
+                            slight_of_hand_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Stealth":
+                            stealth += 2
+                            stealth_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Survival":
+                            survival += 2
+                            survival_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        else:
+                            print("Invalid input")
+                            continue
+                    else:
+                        print("Invalid Input")
+                        continue
+                except IndexError:
+                    print("Invalid Input")
+                    continue
+            for index, item in enumerate(rogue_skill_list, start=1):
+                print(index, item)
+            while True:
+                try:
+                    skill_choice_he_input = int(input("Enter what skill you want second: "))
+                    skill_choice_three = rogue_skill_list[skill_choice_he_input - 1]
+                    if skill_choice_three in skill_list:
+                        if skill_choice_three == "Acrobatics":
+                            acrobatics += 2
+                            acrobatics_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Animal Handling":
+                            animal_handling += 2
+                            animal_handling_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Arcana":
+                            arcana += 2
+                            arcana_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Athletics":
+                            athletics += 2
+                            athletics_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Deception":
+                            deception += 2
+                            deception_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "History":
+                            history += 2
+                            history_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Insight":
+                            insight += 2
+                            insight_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Intimidation":
+                            intimidation += 2
+                            intimidation_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Investigation":
+                            investigation += 2
+                            investigation_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Medicine":
+                            medicine += 2
+                            medicine_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Nature":
+                            nature += 2
+                            nature_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Perception":
+                            perception += 2
+                            perception_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Performance":
+                            performance += 2
+                            performance_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Persuasion":
+                            persuasion += 2
+                            persuasion_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Religion":
+                            religion += 2
+                            religion_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Sleight of Hand":
+                            slight_of_hand += 2
+                            slight_of_hand_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Stealth":
+                            stealth += 2
+                            stealth_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Survival":
+                            survival += 2
+                            survival_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        else:
+                            print("Invalid input")
+                            continue
+                    else:
+                        print("Invalid Input")
+                        continue
+                except IndexError:
+                    print("Invalid Input")
+                    continue
+            print("Please choose your piece of equipment: ")
+            print("1. A Rapier")
+            print("2. A Shortsword")
+            while True:
+                try:
+                    equipment_choice_input = int(input("Enter your choice: "))
+                    if equipment_choice_input == 1:
+                        print("The Rapier does 1d8 Piercing Damage.")
+                        print("It has a Range of Zero.")
+                        print("It has the special properties: ")
+                        print(
+                            "Finesse: When making an attack with a finesse weapon, you use your choice of your "
+                            "Strength or Dexterity modifier for the attack and damage rolls. You must use the same "
+                            "modifier for both rolls.")
+                        equip_choice = input("Are you sure you want the Rapier? Yes or No\n")
+                        if equip_choice.lower() in ["y", "yes"]:
+                            equipmentlist.append("Rapier")
+                            break
+                    elif equipment_choice_input == 2:
+                        print("The Shortsword does 1d6 Piercing Damage.")
+                        print("It has a Range of Zero.")
+                        print("It has the special properties: ")
+                        print(
+                            "Finesse: When making an attack with a finesse weapon, you use your choice of your "
+                            "Strength or Dexterity modifier for the attack and damage rolls. You must use the same "
+                            "modifier for both rolls.")
+                        print(
+                            "Light: A light weapon is small and easy to handle, making it ideal for use when fighting "
+                            "with two weapons.")
+                        equip_choice = input("Are you sure you want the Shortsword? Yes or No\n")
+                        if equip_choice.lower() in ["y", "yes"]:
+                            equipmentlist.append("Shortsword")
+                            break
+                    else:
+                        continue
+                except ValueError:
+                    print("Invalid Input")
+                    continue
+                break
+            print("Please choose your second piece of equipment: ")
+            print("1. A Shortbow and 20 arrows")
+            print("2. A Shortsword")
+            while True:
+                try:
+                    equipment_choice_input = int(input("Enter your choice: "))
+                    if equipment_choice_input == 1:
+                        print("The Shortbow does 1d6 Piercing Damage and has a range of 80ft")
+                        equip_choice = input("Are you sure you want the Shortbow? Yes or No\n")
+                        if equip_choice.lower() in ["y", "yes"]:
+                            equipmentlist.append("Shortbow")
+                            equipmentlist.append("20 Arrows")
+                            break
+                        else:
+                            continue
+                    elif equipment_choice_input == 2:
+                        print("The Shortsword does 1d6 Piercing Damage.")
+                        print("It has a Range of Zero.")
+                        print("It has the special properties: ")
+                        print(
+                            "Finesse: When making an attack with a finesse weapon, you use your choice of your "
+                            "Strength or Dexterity modifier for the attack and damage rolls. You must use the same "
+                            "modifier for both rolls.")
+                        print(
+                            "Light: A light weapon is small and easy to handle, making it ideal for use when fighting "
+                            "with two weapons.")
+                        equip_choice = input("Are you sure you want the Shortsword? Yes or No\n")
+                        if equip_choice.lower() in ["y", "yes"]:
+                            equipmentlist.append("Shortsword")
+                            break
+                    else:
+                        continue
+                except ValueError:
+                    print("Invalid Input")
                     continue
                 break
     else:
