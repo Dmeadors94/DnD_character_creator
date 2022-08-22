@@ -33,7 +33,7 @@ cha_mod = None
 race = None
 dndclass = None
 hit_points = None
-AC = None
+armor_class = None
 gold = None
 martial_weapon_list = ["Battleaxe", "Flail", "Glaive", "Greataxe", "Greatsword", "Halberd", "Lance", "Longsword",
                        "Maul", "Morningstar", "Pike", "Rapier", "Scimitar", "Shortsword", "Trident", "War pick",
@@ -1440,6 +1440,7 @@ while True:
         continue
 
 # Start Class Choice
+armor_class = 10 + dex_mod
 while True:
     print("Please select a class from the following list: ")
     print("1.Barbarian")
@@ -1453,7 +1454,7 @@ while True:
     print("9.Rouge")
     print("10.Sorcerer")
     print("11.Warlock")
-    # print("12.Wizard")
+    print("12.Wizard")
 
     class_input = input("Class Choice: ")
     # Barbarian Class Gen Start
@@ -1485,6 +1486,7 @@ while True:
             STstr_box = True
             STcon += 2
             STcon_box = True
+            armor_class = 10 + dex_mod + con_mod
             featurelist.append("Rage")
             professionlist.append("Armor: Light")
             professionlist.append("Armor: Medium")
@@ -2239,6 +2241,7 @@ while True:
             STdex_box = True
             STcha += 2
             STcha_box = True
+            armor_class = 11 + dex_mod
             featurelist.append("Spellcasing(Bard)")
             featurelist.append("Bardic Inspiration")
             professionlist.append("Armor: Light")
@@ -3499,7 +3502,7 @@ while True:
                     equip_choice = input("Are you sure you want the Scale Mail? Yes or No\n")
                     if equip_choice.lower() in ["y", "yes"]:
                         armor_name = "Scale Mail"
-                        armor_ac = "13"
+                        armor_class = 13 + dex_mod
                         equipmentlist.append("Scale Mail")
                         break
                     else:
@@ -3509,7 +3512,7 @@ while True:
                     equip_choice = input("Are you sure you want the Leather Armor? Yes or No\n")
                     if equip_choice.lower() in ["y", "yes"]:
                         armor_name = "Leather Armor"
-                        armor_ac = "11"
+                        armor_class = 11 + dex_mod
                         equipmentlist.append("Leather Armor")
                         break
                     else:
@@ -3519,7 +3522,7 @@ while True:
                     equip_choice = input("Are you sure you want the Chain Mail? Yes or No\n")
                     if equip_choice.lower() in ["y", "yes"]:
                         armor_name = "Chain Mail"
-                        armor_ac = "16"
+                        armor_class = 16 + dex_mod
                         equipmentlist.append("Chain Mail")
                         break
                     else:
@@ -4195,6 +4198,7 @@ while True:
             STwis_box = True
             STint += 2
             STint_box = True
+            armor_class = 11 + dex_mod
             featurelist.append("Spellcasing(Druid)")
             professionlist.append("Armor: Light")
             professionlist.append("Armor: Medium")
@@ -5785,6 +5789,7 @@ while True:
                                 equipment_choice_one_input = input("Please enter Yes or No: ")
                                 if equipment_choice_one_input.lower() in ["y", "yes"]:
                                     equipmentlist.append("Chainmail")
+                                    armor_class = 16 + dex_mod
                                     break
                                 else:
                                     print("Invalid Input")
@@ -5801,6 +5806,7 @@ while True:
                                 equipment_choice_one_input = input("Please enter Yes or No: ")
                                 if equipment_choice_one_input.lower() in ["y", "yes"]:
                                     equipmentlist.append("Leather Armor")
+                                    armor_class = 11 + dex_mod
                                     equipmentlist.append("Longbow")
                                     equipmentlist.append("20 Arrows")
                                     break
@@ -6907,6 +6913,7 @@ while True:
             STstr_box = True
             STdex += 2
             STdex_box = True
+            armor_class = 10 + dex_mod + wis_mod
             featurelist.append("Unarmored Defense")
             featurelist.append("Martial Arts")
             professionlist.append("Weapon: Simple")
@@ -7453,6 +7460,7 @@ while True:
             STwis_box = True
             STcha += 2
             STcha_box = True
+            armor_class = 16 + dex_mod
             featurelist.append("Divine Sense")
             featurelist.append("Lay on Hands")
             professionlist.append("Weapon: Simple")
@@ -9256,7 +9264,7 @@ while True:
                 print(index, item)
             while True:
                 try:
-                    skill_choice_he_input = int(input("Enter what skill you want second: "))
+                    skill_choice_he_input = int(input("Enter what skill you want third: "))
                     skill_choice_three = ranger_skill_list[skill_choice_he_input - 1]
                     if skill_choice_three in skill_list:
                         if skill_choice_three == "Acrobatics":
@@ -9387,6 +9395,7 @@ while True:
                         equip_choice = input("Are you sure you want the Scale Mail? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             equipmentlist.append("Scale Mail")
+                            armor_class = 13 + dex_mod
                             break
                         else:
                             continue
@@ -9395,6 +9404,7 @@ while True:
                         equip_choice = input("Are you sure you want the Leather Armor? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             equipmentlist.append("Leather Armor")
+                            armor_class = 11 + dex_mod
                             break
                         else:
                             continue
@@ -9933,6 +9943,7 @@ while True:
             STdex_box = True
             STint += 2
             STint_box = True
+            armor_class = 11 + dex_mod
             featurelist.append("Rage")
             professionlist.append("Armor: Light")
             professionlist.append("Weapon: Simple")
@@ -11183,6 +11194,7 @@ while True:
             STwis_box = True
             STcha += 2
             STcha_box = True
+            armor_class = 11 + dex_mod
             featurelist.append("Pact: Fiend")
             featurelist.append("Dark One's Blessing")
             professionlist.append("Armor: Light")
@@ -12710,7 +12722,8 @@ while True:
         print("Invalid Input")
         continue
 # RunPDFconverter - This code section deals with transfering the character data to a PDF
-
+# Define stuff that runs before the final PDF print
+hit_points_current = hit_points
 template_pdf = pdfrw.PdfReader(pdf_template)  # create a pdfrw object from our template.pdf
 # template_pdf  # uncomment to see all the data captured from this PDF.
 
@@ -12727,6 +12740,8 @@ data_dict = {
     'CharacterName': charactername,
     'Race ': race,
     'HPMax': hit_points,
+    'HPCurrent': hit_points_current,
+    'AC': armor_class,
     'Speed': speed,
     'STR': strength,
     'STRmod': str_mod,

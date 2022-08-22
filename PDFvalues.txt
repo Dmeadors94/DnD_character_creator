@@ -1,4 +1,3 @@
- 
 ClassLevel
 Background
 PlayerName
@@ -14,40 +13,29 @@ Initiative
 Speed
 PersonalityTraits
 STRmod
-HPMax
-ST Strength
 DEX
-HPCurrent
 Ideals
 DEXmod
-HPTemp
 Bonds
 CON
 HDTotal
-=death saving throws
 Check Box 12
 Check Box 13
 Check Box 14
 CONmod
-=death saving throws
 Check Box 15
 Check Box 16
 Check Box 17
 HD
 Flaws
 INT
-ST Dexterity
-ST Constitution
-ST Intelligence
-ST Wisdom
-ST Charisma
-Acrobatics
-Animal
-Athletics
-Deception
-History
-Insight
-Intimidation
+Wpn Name
+Wpn1 AtkBonus
+Wpn1 Damage
+Wpn Name 2
+Wpn2 AtkBonus
+Wpn Name 3
+Wpn3 AtkBonus
 =check boxes for saving throws=
 Check Box 11
 Check Box 18
@@ -55,27 +43,11 @@ Check Box 19
 Check Box 20
 Check Box 21
 Check Box 22
-Wpn Name
-Wpn1 AtkBonus
-Wpn1 Damage
 INTmod
-Wpn Name 2
-Wpn2 AtkBonus
 Wpn2 Damage
-Investigation
 WIS
-Wpn Name 3
-Wpn3 AtkBonus
-Arcana
-Wpn3 Damage
-Perception
 WISmod
 CHA
-Nature
-Performance
-Medicine
-Religion
-Stealth
 =Check boxes for skills=
 Check Box 23
 Check Box 24
@@ -95,10 +67,11 @@ Check Box 37
 Check Box 38
 Check Box 39
 Check Box 40
-Persuasion
-SleightofHand
+HPMax
+HPCurrent
+HPTemp
+Wpn3 Damage
 CHamod
-Survival
 AttacksSpellcasting
 Passive
 CP
@@ -109,6 +82,30 @@ GP
 PP
 Equipment
 Features and Traits
+ST Strength
+ST Dexterity
+ST Constitution
+ST Intelligence
+ST Wisdom
+ST Charisma
+Acrobatics
+Animal
+Arcana
+Athletics
+Deception
+History
+Insight
+Intimidation
+Investigation
+Medicine
+Nature
+Perception
+Performance
+Persuasion
+Religion
+SleightofHand
+Stealth
+Survival
 CharacterName 2
 Age
 Height
