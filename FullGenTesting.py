@@ -6,7 +6,9 @@ import Modcal
 
 # ============================================
 # TO-DO LIST
-# Explain tool profs
+# TODO - Add weapons properly to PDF
+# TODO - Add spells and spell casting information to third page of PDF
+# TODO - Launch Beta with executable
 # ============================================
 # Define all undefined variable
 speed = None
@@ -14,8 +16,13 @@ hitdie = None
 hitdietotal = None
 wpn_name = None
 wpn1_damage = None
+wpn1_attack_bonus = None
 wpn_name_2 = None
+wpn2_attack_bonus = None
 wpn2_damage = None
+wpn_name_3 = None
+wpn3_attack_bonus = None
+wpn3_damage = None
 # Define all variables needed for StatGen
 strength = None
 str_mod = None
@@ -1502,6 +1509,9 @@ while True:
             hitdie = "1d12"
             hitdietotal = "1d12"
             equipmentlist.append("Four Javelin")
+            wpn3_name = "Javelin"
+            wpn3_attack_bonus = 2 + str_mod
+            wpn3_damage = "1d6"
             for index, item in enumerate(barb_skill_list, start=1):
                 print(index, item)
             while True:
@@ -1742,6 +1752,7 @@ while True:
                         equip_choice = input("Are you sure you want the Battleaxe? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Battleaxe"
+                            wpn1_attack_bonus = 2 + str_mod
                             wpn1_damage = "1d8"
                             equipmentlist.append("Battleaxe")
                             break
@@ -1752,6 +1763,7 @@ while True:
                         equip_choice = input("Are you sure you want the Flail? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Flail"
+                            wpn1_attack_bonus = 2 + str_mod
                             wpn1_damage = "1d8"
                             equipmentlist.append("Flail")
                             break
@@ -1769,6 +1781,7 @@ while True:
                         equip_choice = input("Are you sure you want the Glaive? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Glaive"
+                            wpn1_attack_bonus = 2 + str_mod
                             wpn1_damage = "1d10"
                             equipmentlist.append("Glaive")
                             break
@@ -1783,6 +1796,7 @@ while True:
                         equip_choice = input("Are you sure you want the Greataxe? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Greataxe"
+                            wpn1_attack_bonus = 2 + str_mod
                             wpn1_damage = "1d12"
                             equipmentlist.append("Greataxe")
                             break
@@ -1797,6 +1811,7 @@ while True:
                         equip_choice = input("Are you sure you want the Greatsword? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Greatsword"
+                            wpn1_attack_bonus = 2 + str_mod
                             wpn1_damage = "1d12"
                             equipmentlist.append("Greatsword")
                             break
@@ -1814,6 +1829,7 @@ while True:
                         equip_choice = input("Are you sure you want the Halberd? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Halberd"
+                            wpn1_attack_bonus = 2 + str_mod
                             wpn1_damage = "1d10"
                             equipmentlist.append("Halberd")
                             break
@@ -1833,6 +1849,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Lance"
                             wpn1_damage = "1d12"
+                            wpn1_attack_bonus = 2 + str_mod
                             equipmentlist.append("Lance")
                             break
                         else:
@@ -1846,6 +1863,7 @@ while True:
                         equip_choice = input("Are you sure you want the Longsword? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Longsword"
+                            wpn1_attack_bonus = 2 + str_mod
                             wpn1_damage = "1d8"
                             equipmentlist.append("Longsword")
                             break
@@ -1861,6 +1879,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Maul"
                             wpn1_damage = "2d6"
+                            wpn1_attack_bonus = 2 + str_mod
                             equipmentlist.append("Maul")
                             break
                         else:
@@ -1871,6 +1890,7 @@ while True:
                         equip_choice = input("Are you sure you want the Morningstar? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Morningstar"
+                            wpn1_attack_bonus = 2 + str_mod
                             wpn1_damage = "1d8"
                             equipmentlist.append("Morningstar")
                             break
@@ -1889,6 +1909,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Pike"
                             wpn1_damage = "1d10"
+                            wpn1_attack_bonus = 2 + str_mod
                             equipmentlist.append("Pike")
                             break
                         else:
@@ -1904,6 +1925,7 @@ while True:
                         equip_choice = input("Are you sure you want the Rapier? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Rapier"
+                            wpn1_attack_bonus = 2 + str_mod
                             wpn1_damage = "1d8"
                             equipmentlist.append("Rapier")
                             break
@@ -1923,6 +1945,7 @@ while True:
                         equip_choice = input("Are you sure you want the Scimitar? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Scimitar"
+                            wpn1_attack_bonus = 2 + str_mod
                             wpn1_damage = "1d6"
                             equipmentlist.append("Scimitar")
                             break
@@ -1942,6 +1965,7 @@ while True:
                         equip_choice = input("Are you sure you want the Shortsword? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Shortsword"
+                            wpn1_attack_bonus = 2 + str_mod
                             wpn1_damage = "1d6"
                             equipmentlist.append("Shortsword")
                             break
@@ -1962,6 +1986,7 @@ while True:
                         equip_choice = input("Are you sure you want the Trident? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Trident"
+                            wpn1_attack_bonus = 2 + str_mod
                             wpn1_damage = "1d6"
                             equipmentlist.append("Trident")
                             break
@@ -1973,6 +1998,7 @@ while True:
                         equip_choice = input("Are you sure you want the War pick? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "War pick"
+                            wpn1_attack_bonus = 2 + str_mod
                             wpn1_damage = "1d8"
                             equipmentlist.append("War pick")
                             break
@@ -1987,6 +2013,7 @@ while True:
                         equip_choice = input("Are you sure you want the Warhammer? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Warhammer"
+                            wpn1_attack_bonus = 2 + str_mod
                             wpn1_damage = "1d8"
                             equipmentlist.append("Warhammer")
                             break
@@ -2006,6 +2033,7 @@ while True:
                         equip_choice = input("Are you sure you want the Whip? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Whip"
+                            wpn1_attack_bonus = 2 + str_mod
                             wpn1_damage = "1d4"
                             equipmentlist.append("Whip")
                             break
@@ -2018,7 +2046,7 @@ while True:
                     continue
             print(
                 "Please choose your second piece of starting equipment from the following, NOTE: If you choose "
-                "'Handaxe' you recive TWO of them.")
+                "'Handaxe' you receive TWO of them.")
             for index, item in enumerate(simple_weapon_list, start=1):
                 print(index, item)
             while True:
@@ -2035,6 +2063,7 @@ while True:
                         equip_choice = input("Are you sure you want the Club? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name_2 = "Club"
+                            wpn2_attack_bonus = 2 + str_mod
                             wpn2_damage = "1d4"
                             equipmentlist.append("Club")
                             break
@@ -2061,6 +2090,7 @@ while True:
                         equip_choice = input("Are you sure you want the Dagger? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name_2 = "Dagger"
+                            wpn2_attack_bonus = 2 + str_mod
                             wpn2_damage = "1d4"
                             equipmentlist.append("Dagger")
                             break
@@ -2074,6 +2104,7 @@ while True:
                         equip_choice = input("Are you sure you want the Greatclub? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name_2 = "Greatclub"
+                            wpn2_attack_bonus = 2 + str_mod
                             wpn2_damage = "1d8"
                             equipmentlist.append("Greatclub")
                             break
@@ -2096,6 +2127,7 @@ while True:
                         equip_choice = input("Are you sure you want the Handaxe? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name_2 = "Handaxe"
+                            wpn2_attack_bonus = 2 + str_mod
                             wpn2_damage = "1d6"
                             equipmentlist.append("Handaxe")
                             equipmentlist.append("Handaxe")
@@ -2116,6 +2148,7 @@ while True:
                         equip_choice = input("Are you sure you want the Javelin? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name_2 = "Javelin"
+                            wpn2_attack_bonus = 2 + str_mod
                             wpn2_damage = "1d6"
                             equipmentlist.append("Javelin")
                             break
@@ -2138,6 +2171,7 @@ while True:
                         equip_choice = input("Are you sure you want the Light hammer? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name_2 = "Light hammer"
+                            wpn2_attack_bonus = 2 + str_mod
                             wpn2_damage = "1d4"
                             equipmentlist.append("Light hammer")
                             break
@@ -2149,6 +2183,7 @@ while True:
                         equip_choice = input("Are you sure you want the Mace? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name_2 = "Mace"
+                            wpn2_attack_bonus = 2 + str_mod
                             wpn2_damage = "1d6"
                             equipmentlist.append("Mace")
                             break
@@ -2164,6 +2199,7 @@ while True:
                         equip_choice = input("Are you sure you want the Quarterstaff? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name_2 = "Quarterstaff"
+                            wpn2_attack_bonus = 2 + str_mod
                             wpn2_damage = "1d6"
                             equipmentlist.append("Quarterstaff")
                             break
@@ -2179,6 +2215,7 @@ while True:
                         equip_choice = input("Are you sure you want the Sickle? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name_2 = "Sickle"
+                            wpn2_attack_bonus = 2 + str_mod
                             wpn2_damage = "1d4"
                             equipmentlist.append("Sickle")
                             break
@@ -2200,6 +2237,7 @@ while True:
                         equip_choice = input("Are you sure you want the Spear? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name_2 = "Spear"
+                            wpn2_attack_bonus = 2 + str_mod
                             wpn2_damage = "1d6"
                             equipmentlist.append("Spear")
                             break
@@ -12738,6 +12776,7 @@ data_dict = {
     'ClassLevel': dndclass,
     'PlayerName': playername,
     'CharacterName': charactername,
+    'CharacterName 2': charactername,
     'Race ': race,
     'HPMax': hit_points,
     'HPCurrent': hit_points_current,
@@ -12823,9 +12862,14 @@ data_dict = {
     'Skin': skin_color,
     'Hair': hair_color,
     'Wpn Name': wpn_name,
+    'Wpn1 AtkBonus': wpn1_attack_bonus,
     'Wpn1 Damage': wpn1_damage,
     'Wpn Name 2': wpn_name_2,
+    'Wpn2 AtkBonus ': wpn2_attack_bonus,
     'Wpn2 Damage ': wpn2_damage,
+    'Wpn Name 3': wpn_name_3,
+    'Wpn3 AtkBonus  ': wpn3_attack_bonus,
+    'Wpn3 Damage ': wpn3_damage,
     'Equipment': ', '.join(equipmentlist),
     'Spells 1014': cantrip_list[0],
     'Spells 1016': cantrip_list[1],
