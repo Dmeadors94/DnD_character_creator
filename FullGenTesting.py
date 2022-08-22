@@ -171,6 +171,9 @@ while True:
         continue
     except ValueError:
         print("Please enter one of your stats")
+    except IndexError:
+        print("Please enter one of your stats")
+
     continue
 while True:
     dexterity = input("Out of your stats, which one should be Dexterity?\n")
@@ -188,6 +191,8 @@ while True:
         continue
     except ValueError:
         print("Please enter one of your stats")
+    except IndexError:
+        print("Please enter one of your stats")
     continue
 while True:
     constitution = input("Out of your stats, which one should be Constitution?\n")
@@ -203,6 +208,8 @@ while True:
             print("Please enter one of your stats")
         continue
     except ValueError:
+        print("Please enter one of your stats")
+    except IndexError:
         print("Please enter one of your stats")
     continue
 while True:
@@ -220,6 +227,8 @@ while True:
         continue
     except ValueError:
         print("Please enter one of your stats")
+    except IndexError:
+        print("Please enter one of your stats")
     continue
 while True:
     wisdom = input("Out of your stats, which one should be Wisdom?\n")
@@ -236,6 +245,8 @@ while True:
         continue
     except ValueError:
         print("Please enter one of your stats")
+    except IndexError:
+        print("Please enter one of your stats")
 while True:
     charisma = input("Out of your stats, which one should be Charisma?\n")
     try:
@@ -250,6 +261,8 @@ while True:
         continue
     except ValueError:
         print("Please enter on of your stats")
+    except IndexError:
+        print("Please enter one of your stats")
 
 print("Your final stats are: ")
 print("Strength: ", strength)
@@ -3893,6 +3906,9 @@ while True:
                 except ValueError:
                     print("Please enter a valid number")
                     continue
+                except IndexError:
+                    print("Please enter a valid number")
+                    continue
             for index, item in enumerate(cleric_cantrip_spell_list, start=1):
                 print(index, item)
             while True:
@@ -3909,6 +3925,9 @@ while True:
                 except ValueError:
                     print("Please enter a valid number")
                     continue
+                except IndexError:
+                    print("Please enter a valid number")
+                    continue
             for index, item in enumerate(cleric_cantrip_spell_list, start=1):
                 print(index, item)
             while True:
@@ -3923,6 +3942,9 @@ while True:
                         print("Please enter a valid number")
                         continue
                 except ValueError:
+                    print("Please enter a valid number")
+                    continue
+                except IndexError:
                     print("Please enter a valid number")
                     continue
             x = wis_mod + 1
@@ -3945,6 +3967,9 @@ while True:
                     except ValueError:
                         print("Please enter a valid number")
                         continue
+                    except IndexError:
+                        print("Please enter a valid number")
+                        continue
             elif x == 2:
                 print("Please choose two spells from the following list:")
                 for index, item in enumerate(cleric_spell_list_1, start=1):
@@ -3963,6 +3988,9 @@ while True:
                     except ValueError:
                         print("Please enter a valid number")
                         continue
+                    except IndexError:
+                        print("Please enter a valid number")
+                        continue
                 for index, item in enumerate(cleric_spell_list_1, start=1):
                     print(index, item)
                 while True:
@@ -3977,6 +4005,9 @@ while True:
                             print("Please enter a valid number")
                             continue
                     except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                    except IndexError:
                         print("Please enter a valid number")
                         continue
             elif x == 3:
@@ -3997,6 +4028,9 @@ while True:
                     except ValueError:
                         print("Please enter a valid number")
                         continue
+                    except IndexError:
+                        print("Please enter a valid number")
+                        continue
                 for index, item in enumerate(cleric_spell_list_1, start=1):
                     print(index, item)
                 while True:
@@ -4013,6 +4047,9 @@ while True:
                     except ValueError:
                         print("Please enter a valid number")
                         continue
+                    except IndexError:
+                        print("Please enter a valid number")
+                        continue
                 for index, item in enumerate(cleric_spell_list_1, start=1):
                     print(index, item)
                 while True:
@@ -4027,6 +4064,9 @@ while True:
                             print("Please enter a valid number")
                             continue
                     except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                    except IndexError:
                         print("Please enter a valid number")
                         continue
             elif x == 4:
@@ -4047,6 +4087,9 @@ while True:
                     except ValueError:
                         print("Please enter a valid number")
                         continue
+                    except IndexError:
+                        print("Please enter a valid number")
+                        continue
                 for index, item in enumerate(cleric_spell_list_1, start=1):
                     print(index, item)
                 while True:
@@ -4061,6 +4104,9 @@ while True:
                             print("Please enter a valid number")
                             continue
                     except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                    except IndexError:
                         print("Please enter a valid number")
                         continue
                 for index, item in enumerate(cleric_spell_list_1, start=1):
@@ -4079,6 +4125,9 @@ while True:
                     except ValueError:
                         print("Please enter a valid number")
                         continue
+                    except IndexError:
+                        print("Please enter a valid number")
+                        continue
                 for index, item in enumerate(cleric_spell_list_1, start=1):
                     print(index, item)
                 while True:
@@ -4093,6 +4142,9 @@ while True:
                             print("Please enter a valid number")
                             continue
                     except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                    except IndexError:
                         print("Please enter a valid number")
                         continue
             elif x == 5:
@@ -4113,6 +4165,9 @@ while True:
                     except ValueError:
                         print("Please enter a valid number")
                         continue
+                    except IndexError:
+                        print("Please enter a valid number")
+                        continue
                 for index, item in enumerate(cleric_spell_list_1, start=1):
                     print(index, item)
                 while True:
@@ -4127,6 +4182,9 @@ while True:
                             print("Please enter a valid number")
                             continue
                     except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                    except IndexError:
                         print("Please enter a valid number")
                         continue
                 for index, item in enumerate(cleric_spell_list_1, start=1):
@@ -4145,6 +4203,9 @@ while True:
                     except ValueError:
                         print("Please enter a valid number")
                         continue
+                    except IndexError:
+                        print("Please enter a valid number")
+                        continue
                 for index, item in enumerate(cleric_spell_list_1, start=1):
                     print(index, item)
                 while True:
@@ -4161,6 +4222,9 @@ while True:
                     except ValueError:
                         print("Please enter a valid number")
                         continue
+                    except IndexError:
+                        print("Please enter a valid number")
+                        continue
                 for index, item in enumerate(cleric_spell_list_1, start=1):
                     print(index, item)
                 while True:
@@ -4175,6 +4239,9 @@ while True:
                             print("Please enter a valid number")
                             continue
                     except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                    except IndexError:
                         print("Please enter a valid number")
                         continue
             elif x == 6:
@@ -4195,6 +4262,9 @@ while True:
                     except ValueError:
                         print("Please enter a valid number")
                         continue
+                    except IndexError:
+                        print("Please enter a valid number")
+                        continue
                 for index, item in enumerate(cleric_spell_list_1, start=1):
                     print(index, item)
                 while True:
@@ -4209,6 +4279,9 @@ while True:
                             print("Please enter a valid number")
                             continue
                     except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                    except IndexError:
                         print("Please enter a valid number")
                         continue
                 for index, item in enumerate(cleric_spell_list_1, start=1):
@@ -4227,6 +4300,9 @@ while True:
                     except ValueError:
                         print("Please enter a valid number")
                         continue
+                    except IndexError:
+                        print("Please enter a valid number")
+                        continue
                 for index, item in enumerate(cleric_spell_list_1, start=1):
                     print(index, item)
                 while True:
@@ -4243,6 +4319,9 @@ while True:
                     except ValueError:
                         print("Please enter a valid number")
                         continue
+                    except IndexError:
+                        print("Please enter a valid number")
+
                 for index, item in enumerate(cleric_spell_list_1, start=1):
                     print(index, item)
                 while True:
