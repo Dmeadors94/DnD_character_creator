@@ -59,6 +59,7 @@ rogue_skill_list = ["Acrobatics", "Athletics", "Deception", "Insight", "Intimida
                     "Performance", "Persuasion", "Sleight of Hand", "Stealth"]
 sorcerer_skill_list = ["Arcana", "Deception", "Insight", "Intimidation", "Persuasion", "Religion"]
 warlock_skill_list = ["Arcana", "Deception", "History", "Intimidation", "Investigation", "Nature", "Religion"]
+wizard_skill_list = ["Arcana", "History", "Insight", "Investigation", "Medicine", "Religion"]
 knowledge_cleric_skill_list = ["Arcana", "History", "Nature", "Religion"]
 spell_list_cantrip = ["Acid Splash", "Chill Touch", "Dancing Lights", "Druidcraft", "Eldritch Blast", "Fire Bolt",
                       "Guidance", "Light", "Mage Hand", "Mending", "Message", "Minor Illusion", "Poison Spray",
@@ -76,6 +77,11 @@ sorcerer_spell_list_1 = ["Burning Hands", "Charm Person", "Color Spray", "Compre
                          "Jump", "Mage Armor", "Magic Missile", "Shield", "Silent Image", "Sleep", "Thunderwave"]
 warlock_spell_list_1 = ["Burning Hands", "Command", "Charm Person", "Comprehend Languages", "Expeditious Retreat",
                         "Hellish Rebuke", "Illusory Script", "Protection from Evil and Good", "Unseen Servant"]
+wizard_spell_list_1 = ["Alarm", "Burning Hands", "Charm Person", "Color Spray", "Comprehend Languages", "Detect Magic",
+                       "Disguise Self", "Expeditious Retour", "False Life", "Feather Fall", "Find Familiar",
+                       "Floating Disk", "Fog Cloud", "Grease", "Hideous Laughter", "Identify", "Illusory Script",
+                       "Jump", "Longstrider", "Mage Armor", "Magic Missile", "Protection from Evil and Good",
+                       "Shield", "Silent Image", "Sleep", "Thunderwave", "Unseen Servant"]
 druid_cantrip_spell_list = ["Druidcraft", "Guidance", "Mending", "Poison Spray", "Produce Flame", "Resistance (Spell)",
                             "Shillelagh"]
 warlock_cantrip_spell_list = ["Eldritch Blast", "Chill Touch", "Mage Hand", "Minor Illusion", "Poison Spray",
@@ -83,6 +89,9 @@ warlock_cantrip_spell_list = ["Eldritch Blast", "Chill Touch", "Mage Hand", "Min
 sorcerer_cantrip_spell_list = ["Acid Splash", "Chill Touch", "Dancing Lights", "Fire Bolt", "Light", "Mage Hand",
                                "Mending", "Message", "Minor Illusion", "Poison Spray", "Prestidigitation",
                                "Ray of Frost", "Shocking Grasp", "True Strike"]
+wizard_cantrip_spell_list = ["Acid Splash", "Chill Touch", "Dancing Lights", "Fire Bolt", "Light", "Mage Hand",
+                             "Mending", "Message", "Minor Illusion", "Poison Spray", "Prestidigitation", "Ray of Frost",
+                             "Shocking Grasp", "True Strike"]
 bard_cantrip_spell_list = ["Dancing Lights", "Light", "Mage Hand", "Mending", "Message", "Minor Illusion",
                            "Vicious Mockery", "Prestidigitation", "True Strike"]
 cleric_cantrip_spell_list = ["Guidance", "Light", "Mending", "Resistance (Spell)", "Sacred Flame", "Thaumaturgy"]
@@ -11866,7 +11875,7 @@ while True:
                 else:
                     print("Not a valid choice")
                     continue
-            break
+
             print("Please choose Two Cantrips from the following list:")
             for index, item in enumerate(warlock_cantrip_spell_list, start=1):
                 print(index, item)
@@ -11933,6 +11942,489 @@ while True:
                 except ValueError:
                     print("Please enter a valid number")
                     continue
+    elif class_input == "12":
+        print("[HIT POINTS]")
+        print("Your Hit Dice is 1d12 per Wizard level")
+        print("Your Hit Points at 1st Level is: 12 + your Constitution modifier")
+        print("Your Hit points at Higher Levels is: 1d12 + Constitution modifier per level")
+        print("========================")
+        print("[PROFICIENCIES]")
+        print("Armor: None")
+        print("Weapons: Daggers, Darts, Slings, Quarterstaffs, Light Crossbows")
+        print("Tools: None")
+        print("Saving Throws: Intelligence, Wisdom")
+        print("Skills: Choose two from Arcana, History, Insight, Investigation, Medicine, and Religion ")
+        print("========================")
+        print("[EQUIPMENT]")
+        print("(a) a quarterstaff or (b) a dagger ")
+        print("A component pouch and an arcane focus")
+        print("A Spellbook")
+        print("========================")
+        print("[FEATURES]")
+        print("Arcane Recovery: You have learned to regain some of your magical energy by studying your spellbook. "
+              "\nOnce per day when you finish a short rest, you can choose expended spell slots to recover. The spell "
+              "\nslots can have a combined level that is equal to or less than half your wizard level (rounded up), "
+              "\nand none of the slots can be 6th level or higher. For example, if you're a 4th-level wizard, "
+              "\nyou can recover up to two levels worth of spell slots. You can recover either a 2nd-level spell slot "
+              "\nor two 1st-level spell slots. ")
+        print("========================")
+        class_choice = input("Are you sure you want to be a Wizard? Yes or No?: ")
+        if class_choice.lower() in ["y", "yes"]:
+            dndclass = "Wizard"
+            hit_points = 6 + con_mod
+            STint += 2
+            STint_box = True
+            STwis += 2
+            STwis_box = True
+            featurelist.append("Arcane Recovery")
+            professionlist.append("Weapon: Daggers")
+            professionlist.append("Weapon: Darts")
+            professionlist.append("Weapon: Slings")
+            professionlist.append("Weapon: Quarterstaffs")
+            professionlist.append("Weapon: Light Crossbows")
+            hitdie = "1d6"
+            hitdietotal = "1d6"
+            print("Please choose two skills from the following list:")
+            for index, item in enumerate(wizard_skill_list, start=1):
+                print(index, item)
+            while True:
+                skill_choice_he_input = int(input("Enter what skill you want first: "))
+                skill_choice_three = wizard_skill_list[skill_choice_he_input - 1]
+                if skill_choice_three in skill_list:
+                    if skill_choice_three == "Acrobatics":
+                        acrobatics += 2
+                        acrobatics_box = True
+                        skill_list.remove(skill_choice_three)
+                        wizard_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Animal Handling":
+                        animal_handling += 2
+                        animal_handling_box = True
+                        skill_list.remove(skill_choice_three)
+                        wizard_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Arcana":
+                        arcana += 2
+                        arcana_box = True
+                        skill_list.remove(skill_choice_three)
+                        wizard_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Athletics":
+                        athletics += 2
+                        athletics_box = True
+                        skill_list.remove(skill_choice_three)
+                        wizard_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Deception":
+                        deception += 2
+                        deception_box = True
+                        skill_list.remove(skill_choice_three)
+                        wizard_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "History":
+                        history += 2
+                        history_box = True
+                        skill_list.remove(skill_choice_three)
+                        wizard_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Insight":
+                        insight += 2
+                        insight_box = True
+                        skill_list.remove(skill_choice_three)
+                        wizard_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Intimidation":
+                        intimidation += 2
+                        intimidation_box = True
+                        skill_list.remove(skill_choice_three)
+                        wizard_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Investigation":
+                        investigation += 2
+                        investigation_box = True
+                        skill_list.remove(skill_choice_three)
+                        wizard_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Medicine":
+                        medicine += 2
+                        medicine_box = True
+                        skill_list.remove(skill_choice_three)
+                        wizard_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Nature":
+                        nature += 2
+                        nature_box = True
+                        skill_list.remove(skill_choice_three)
+                        wizard_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Perception":
+                        perception += 2
+                        perception_box = True
+                        skill_list.remove(skill_choice_three)
+                        wizard_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Performance":
+                        performance += 2
+                        performance_box = True
+                        skill_list.remove(skill_choice_three)
+                        wizard_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Persuasion":
+                        persuasion += 2
+                        persuasion_box = True
+                        skill_list.remove(skill_choice_three)
+                        wizard_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Religion":
+                        religion += 2
+                        religion_box = True
+                        skill_list.remove(skill_choice_three)
+                        wizard_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Sleight of Hand":
+                        slight_of_hand += 2
+                        slight_of_hand_box = True
+                        skill_list.remove(skill_choice_three)
+                        wizard_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Stealth":
+                        stealth += 2
+                        stealth_box = True
+                        skill_list.remove(skill_choice_three)
+                        wizard_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Survival":
+                        survival += 2
+                        survival_box = True
+                        skill_list.remove(skill_choice_three)
+                        wizard_skill_list.remove(skill_choice_three)
+                        break
+                    else:
+                        print("Invalid input")
+                        continue
+                else:
+                    print("Invalid Input")
+                    continue
+            for index, item in enumerate(wizard_skill_list, start=1):
+                print(index, item)
+            while True:
+                try:
+                    skill_choice_he_input = int(input("Enter what skill you want second: "))
+                    skill_choice_three = wizard_skill_list[skill_choice_he_input - 1]
+                    if skill_choice_three in skill_list:
+                        if skill_choice_three == "Acrobatics":
+                            acrobatics += 2
+                            acrobatics_box = True
+                            skill_list.remove(skill_choice_three)
+                            wizard_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Animal Handling":
+                            animal_handling += 2
+                            animal_handling_box = True
+                            skill_list.remove(skill_choice_three)
+                            wizard_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Arcana":
+                            arcana += 2
+                            arcana_box = True
+                            skill_list.remove(skill_choice_three)
+                            wizard_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Athletics":
+                            athletics += 2
+                            athletics_box = True
+                            skill_list.remove(skill_choice_three)
+                            wizard_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Deception":
+                            deception += 2
+                            deception_box = True
+                            skill_list.remove(skill_choice_three)
+                            wizard_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "History":
+                            history += 2
+                            history_box = True
+                            skill_list.remove(skill_choice_three)
+                            wizard_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Insight":
+                            insight += 2
+                            insight_box = True
+                            skill_list.remove(skill_choice_three)
+                            wizard_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Intimidation":
+                            intimidation += 2
+                            intimidation_box = True
+                            skill_list.remove(skill_choice_three)
+                            wizard_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Investigation":
+                            investigation += 2
+                            investigation_box = True
+                            skill_list.remove(skill_choice_three)
+                            wizard_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Medicine":
+                            medicine += 2
+                            medicine_box = True
+                            skill_list.remove(skill_choice_three)
+                            wizard_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Nature":
+                            nature += 2
+                            nature_box = True
+                            skill_list.remove(skill_choice_three)
+                            wizard_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Perception":
+                            perception += 2
+                            perception_box = True
+                            skill_list.remove(skill_choice_three)
+                            wizard_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Performance":
+                            performance += 2
+                            performance_box = True
+                            skill_list.remove(skill_choice_three)
+                            wizard_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Persuasion":
+                            persuasion += 2
+                            persuasion_box = True
+                            skill_list.remove(skill_choice_three)
+                            wizard_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Religion":
+                            religion += 2
+                            religion_box = True
+                            skill_list.remove(skill_choice_three)
+                            wizard_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Sleight of Hand":
+                            slight_of_hand += 2
+                            slight_of_hand_box = True
+                            skill_list.remove(skill_choice_three)
+                            wizard_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Stealth":
+                            stealth += 2
+                            stealth_box = True
+                            skill_list.remove(skill_choice_three)
+                            wizard_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Survival":
+                            survival += 2
+                            survival_box = True
+                            skill_list.remove(skill_choice_three)
+                            wizard_skill_list.remove(skill_choice_three)
+                            break
+                        else:
+                            print("Invalid input")
+                            continue
+                    else:
+                        print("Invalid Input")
+                        continue
+                except IndexError:
+                    print("Invalid Input")
+                    continue
+            print("Please choose a piece of equipment: ")
+            print("1. A Quarterstaff")
+            print("2. A Dagger")
+            while True:
+                try:
+                    equipment_choice_input = int(input("Enter your choice: "))
+                    if equipment_choice_input == 1:
+                        print("The Quarterstaff does 1d6 Bludgeoning Damage.")
+                        print("It has a range of Zero.")
+                        print("It has the special properties: ")
+                        print(
+                            "Versatile: This weapon can be used with two hands, if you do so, then the damage is 1d8 "
+                            "instead")
+                        equip_choice = input("Are you sure you want the Quarterstaff? Yes or No\n")
+                        if equip_choice.lower() in ["y", "yes"]:
+                            equipmentlist.append("Quarterstaff")
+                            break
+                        else:
+                            continue
+                    elif equipment_choice_input == 2:
+                        print("The Dagger does 1d4 Piercing Damage.")
+                        print("It has a Range of 20 ft for short range. 60 ft for long range.")
+                        print("It has the special properties: ")
+                        print(
+                            "Finesse: When making an attack with a finesse weapon, you use your choice of your "
+                            "Strength or Dexterity modifier for the attack and damage rolls. You must use the same "
+                            "modifier for both rolls.")
+                        print(
+                            "Light: A light weapon is small and easy to handle, making it ideal for use when fighting "
+                            "with two weapons.")
+                        print(
+                            "Thrown: If a weapon has the thrown property, you can throw the weapon to make a ranged "
+                            "attack. If the weapon is a melee weapon, you use the same ability modifier for that "
+                            "attack roll and damage roll that you would use for a melee attack with the weapon. For "
+                            "example, if you throw a handaxe, you use your Strength, but if you throw a dagger, "
+                            "you can use either your Strength or your Dexterity, since the dagger has the finesse "
+                            "property.")
+                        equip_choice = input("Are you sure you want the Dagger? Yes or No\n")
+                        if equip_choice.lower() in ["y", "yes"]:
+                            equipmentlist.append("Dagger")
+                            break
+                        else:
+                            continue
+                    else:
+                        print("Invalid Input")
+                        continue
+                except IndexError:
+                    print("Invalid Input")
+                    continue
+            print("Please choose Three Cantrips from the following list:")
+            for index, item in enumerate(wizard_cantrip_spell_list, start=1):
+                print(index, item)
+            while True:
+                try:
+                    cantrip_choice = int(input("Please enter the number of the cantrip you want to add: "))
+                    if cantrip_choice in range(1, len(wizard_cantrip_spell_list) + 1):
+                        cantrip_choice -= 1
+                        cantrip_list.append(wizard_cantrip_spell_list[cantrip_choice])
+                        wizard_cantrip_spell_list.remove(wizard_cantrip_spell_list[cantrip_choice])
+                        break
+                    else:
+                        print("Please enter a valid number")
+                        continue
+                except ValueError:
+                    print("Please enter a valid number")
+                    continue
+            for index, item in enumerate(wizard_cantrip_spell_list, start=1):
+                print(index, item)
+            while True:
+                try:
+                    cantrip_choice = int(input("Please enter the number of the third cantrip you want to add: "))
+                    if cantrip_choice in range(1, len(wizard_cantrip_spell_list) + 1):
+                        cantrip_choice -= 1
+                        cantrip_list.append(wizard_cantrip_spell_list[cantrip_choice])
+                        wizard_cantrip_spell_list.remove(wizard_cantrip_spell_list[cantrip_choice])
+                        break
+                    else:
+                        print("Please enter a valid number")
+                        continue
+                except ValueError:
+                    print("Please enter a valid number")
+                    continue
+            for index, item in enumerate(wizard_cantrip_spell_list, start=1):
+                print(index, item)
+            while True:
+                try:
+                    cantrip_choice = int(input("Please enter the number of the forth cantrip you want to add: "))
+                    if cantrip_choice in range(1, len(wizard_cantrip_spell_list) + 1):
+                        cantrip_choice -= 1
+                        cantrip_list.append(wizard_cantrip_spell_list[cantrip_choice])
+                        wizard_cantrip_spell_list.remove(wizard_cantrip_spell_list[cantrip_choice])
+                        break
+                    else:
+                        print("Please enter a valid number")
+                        continue
+                except ValueError:
+                    print("Please enter a valid number")
+                    continue
+            print("Please choose six spells from the following list:")
+            for index, item in enumerate(wizard_spell_list_1, start=1):
+                print(index, item)
+            while True:
+                try:
+                    spell_choice = int(input("Please enter the number of the spell you want to add: "))
+                    if spell_choice in range(1, len(wizard_spell_list_1) + 1):
+                        spell_choice -= 1
+                        first_level_spell_list.append(wizard_spell_list_1[spell_choice])
+                        wizard_spell_list_1.remove(wizard_spell_list_1[spell_choice])
+                        break
+                    else:
+                        print("Please enter a valid number")
+                        continue
+                except ValueError:
+                    print("Please enter a valid number")
+                    continue
+            for index, item in enumerate(wizard_spell_list_1, start=1):
+                print(index, item)
+            while True:
+                try:
+                    spell_choice = int(input("Please enter the number of the spell you want to add: "))
+                    if spell_choice in range(1, len(wizard_spell_list_1) + 1):
+                        spell_choice -= 1
+                        first_level_spell_list.append(wizard_spell_list_1[spell_choice])
+                        wizard_spell_list_1.remove(wizard_spell_list_1[spell_choice])
+                        break
+                    else:
+                        print("Please enter a valid number")
+                        continue
+                except ValueError:
+                    print("Please enter a valid number")
+                    continue
+            for index, item in enumerate(wizard_spell_list_1, start=1):
+                print(index, item)
+            while True:
+                try:
+                    spell_choice = int(input("Please enter the number of the spell you want to add: "))
+                    if spell_choice in range(1, len(wizard_spell_list_1) + 1):
+                        spell_choice -= 1
+                        first_level_spell_list.append(wizard_spell_list_1[spell_choice])
+                        wizard_spell_list_1.remove(wizard_spell_list_1[spell_choice])
+                        break
+                    else:
+                        print("Please enter a valid number")
+                        continue
+                except ValueError:
+                    print("Please enter a valid number")
+                    continue
+            for index, item in enumerate(wizard_spell_list_1, start=1):
+                print(index, item)
+            while True:
+                try:
+                    spell_choice = int(input("Please enter the number of the spell you want to add: "))
+                    if spell_choice in range(1, len(wizard_spell_list_1) + 1):
+                        spell_choice -= 1
+                        first_level_spell_list.append(wizard_spell_list_1[spell_choice])
+                        wizard_spell_list_1.remove(wizard_spell_list_1[spell_choice])
+                        break
+                    else:
+                        print("Please enter a valid number")
+                        continue
+                except ValueError:
+                    print("Please enter a valid number")
+                    continue
+            for index, item in enumerate(wizard_spell_list_1, start=1):
+                print(index, item)
+            while True:
+                try:
+                    spell_choice = int(input("Please enter the number of the spell you want to add: "))
+                    if spell_choice in range(1, len(wizard_spell_list_1) + 1):
+                        spell_choice -= 1
+                        first_level_spell_list.append(wizard_spell_list_1[spell_choice])
+                        wizard_spell_list_1.remove(wizard_spell_list_1[spell_choice])
+                        break
+                    else:
+                        print("Please enter a valid number")
+                        continue
+                except ValueError:
+                    print("Please enter a valid number")
+                    continue
+            for index, item in enumerate(wizard_spell_list_1, start=1):
+                print(index, item)
+            while True:
+                try:
+                    spell_choice = int(input("Please enter the number of the spell you want to add: "))
+                    if spell_choice in range(1, len(wizard_spell_list_1) + 1):
+                        spell_choice -= 1
+                        first_level_spell_list.append(wizard_spell_list_1[spell_choice])
+                        wizard_spell_list_1.remove(wizard_spell_list_1[spell_choice])
+                        break
+                    else:
+                        print("Please enter a valid number")
+                        continue
+                except ValueError:
+                    print("Please enter a valid number")
+                    continue
+
     else:
         print("Invalid Input")
         continue
