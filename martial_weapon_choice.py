@@ -333,3 +333,4 @@ print("Please choose your martial weapon: ")
                             else:
                                 print("Not a valid option")
                                 continue
+                            break

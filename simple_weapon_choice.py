@@ -252,3 +252,4 @@ print("Please choose a simple weapon: ")
                             else:
                                 print("That is not a valid choice.")
                                 continue
+                            break
