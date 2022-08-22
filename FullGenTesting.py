@@ -6,7 +6,7 @@ import Modcal
 
 # ============================================
 # TO-DO LIST
-# TODO - Add weapons properly to PDF
+# TODO - Add weapons properly to PDF (Barbarian, Bard, and Cleric Fixed)
 # TODO - Add spells and spell casting information to third page of PDF
 # TODO - Launch Beta with executable
 # ============================================
@@ -14,15 +14,15 @@ import Modcal
 speed = None
 hitdie = None
 hitdietotal = None
-wpn_name = None
-wpn1_damage = None
-wpn1_attack_bonus = None
-wpn_name_2 = None
-wpn2_attack_bonus = None
-wpn2_damage = None
-wpn_name_3 = None
-wpn3_attack_bonus = None
-wpn3_damage = None
+wpn_name = ""
+wpn1_damage = ""
+wpn1_attack_bonus = ""
+wpn_name_2 = ""
+wpn2_attack_bonus = ""
+wpn2_damage = ""
+wpn_name_3 = ""
+wpn3_attack_bonus = ""
+wpn3_damage = ""
 # Define all variables needed for StatGen
 strength = None
 str_mod = None
@@ -1509,9 +1509,9 @@ while True:
             hitdie = "1d12"
             hitdietotal = "1d12"
             equipmentlist.append("Four Javelin")
-            wpn3_name = "Javelin"
+            wpn_name_3 = "Javelin"
             wpn3_attack_bonus = 2 + str_mod
-            wpn3_damage = "1d6"
+            wpn3_damage = "1d6/P"
             for index, item in enumerate(barb_skill_list, start=1):
                 print(index, item)
             while True:
@@ -1753,7 +1753,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Battleaxe"
                             wpn1_attack_bonus = 2 + str_mod
-                            wpn1_damage = "1d8"
+                            wpn1_damage = "1d8/S"
                             equipmentlist.append("Battleaxe")
                             break
                         else:
@@ -1764,7 +1764,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Flail"
                             wpn1_attack_bonus = 2 + str_mod
-                            wpn1_damage = "1d8"
+                            wpn1_damage = "1d8/B"
                             equipmentlist.append("Flail")
                             break
                         else:
@@ -1782,7 +1782,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Glaive"
                             wpn1_attack_bonus = 2 + str_mod
-                            wpn1_damage = "1d10"
+                            wpn1_damage = "1d10/S"
                             equipmentlist.append("Glaive")
                             break
                         else:
@@ -1797,7 +1797,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Greataxe"
                             wpn1_attack_bonus = 2 + str_mod
-                            wpn1_damage = "1d12"
+                            wpn1_damage = "1d12/S"
                             equipmentlist.append("Greataxe")
                             break
                         else:
@@ -1812,7 +1812,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Greatsword"
                             wpn1_attack_bonus = 2 + str_mod
-                            wpn1_damage = "1d12"
+                            wpn1_damage = "1d12/S"
                             equipmentlist.append("Greatsword")
                             break
                         else:
@@ -1830,7 +1830,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Halberd"
                             wpn1_attack_bonus = 2 + str_mod
-                            wpn1_damage = "1d10"
+                            wpn1_damage = "1d10/S"
                             equipmentlist.append("Halberd")
                             break
                         else:
@@ -1848,7 +1848,7 @@ while True:
                         equip_choice = input("Are you sure you want the Lance? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Lance"
-                            wpn1_damage = "1d12"
+                            wpn1_damage = "1d12/P"
                             wpn1_attack_bonus = 2 + str_mod
                             equipmentlist.append("Lance")
                             break
@@ -1864,7 +1864,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Longsword"
                             wpn1_attack_bonus = 2 + str_mod
-                            wpn1_damage = "1d8"
+                            wpn1_damage = "1d8/S"
                             equipmentlist.append("Longsword")
                             break
                         else:
@@ -1878,7 +1878,7 @@ while True:
                         equip_choice = input("Are you sure you want the Maul? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Maul"
-                            wpn1_damage = "2d6"
+                            wpn1_damage = "2d6/B"
                             wpn1_attack_bonus = 2 + str_mod
                             equipmentlist.append("Maul")
                             break
@@ -1891,7 +1891,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Morningstar"
                             wpn1_attack_bonus = 2 + str_mod
-                            wpn1_damage = "1d8"
+                            wpn1_damage = "1d8/P"
                             equipmentlist.append("Morningstar")
                             break
                         else:
@@ -1908,7 +1908,7 @@ while True:
                         equip_choice = input("Are you sure you want the Pike? Yes or No\n")
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Pike"
-                            wpn1_damage = "1d10"
+                            wpn1_damage = "1d10/P"
                             wpn1_attack_bonus = 2 + str_mod
                             equipmentlist.append("Pike")
                             break
@@ -1926,7 +1926,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Rapier"
                             wpn1_attack_bonus = 2 + str_mod
-                            wpn1_damage = "1d8"
+                            wpn1_damage = "1d8/P"
                             equipmentlist.append("Rapier")
                             break
                         else:
@@ -1946,7 +1946,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Scimitar"
                             wpn1_attack_bonus = 2 + str_mod
-                            wpn1_damage = "1d6"
+                            wpn1_damage = "1d6/S"
                             equipmentlist.append("Scimitar")
                             break
                         else:
@@ -1966,7 +1966,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Shortsword"
                             wpn1_attack_bonus = 2 + str_mod
-                            wpn1_damage = "1d6"
+                            wpn1_damage = "1d6/P"
                             equipmentlist.append("Shortsword")
                             break
                         else:
@@ -1987,7 +1987,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Trident"
                             wpn1_attack_bonus = 2 + str_mod
-                            wpn1_damage = "1d6"
+                            wpn1_damage = "1d6/P"
                             equipmentlist.append("Trident")
                             break
                         else:
@@ -1999,7 +1999,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "War pick"
                             wpn1_attack_bonus = 2 + str_mod
-                            wpn1_damage = "1d8"
+                            wpn1_damage = "1d8/P"
                             equipmentlist.append("War pick")
                             break
                         else:
@@ -2014,7 +2014,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Warhammer"
                             wpn1_attack_bonus = 2 + str_mod
-                            wpn1_damage = "1d8"
+                            wpn1_damage = "1d8/B"
                             equipmentlist.append("Warhammer")
                             break
                         else:
@@ -2034,7 +2034,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name = "Whip"
                             wpn1_attack_bonus = 2 + str_mod
-                            wpn1_damage = "1d4"
+                            wpn1_damage = "1d4/S"
                             equipmentlist.append("Whip")
                             break
                         else:
@@ -2064,7 +2064,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name_2 = "Club"
                             wpn2_attack_bonus = 2 + str_mod
-                            wpn2_damage = "1d4"
+                            wpn2_damage = "1d4/B"
                             equipmentlist.append("Club")
                             break
                         else:
@@ -2091,7 +2091,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name_2 = "Dagger"
                             wpn2_attack_bonus = 2 + str_mod
-                            wpn2_damage = "1d4"
+                            wpn2_damage = "1d4/P"
                             equipmentlist.append("Dagger")
                             break
                         else:
@@ -2105,7 +2105,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name_2 = "Greatclub"
                             wpn2_attack_bonus = 2 + str_mod
-                            wpn2_damage = "1d8"
+                            wpn2_damage = "1d8/B"
                             equipmentlist.append("Greatclub")
                             break
                         else:
@@ -2128,7 +2128,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name_2 = "Handaxe"
                             wpn2_attack_bonus = 2 + str_mod
-                            wpn2_damage = "1d6"
+                            wpn2_damage = "1d6/S"
                             equipmentlist.append("Handaxe")
                             equipmentlist.append("Handaxe")
                             break
@@ -2149,7 +2149,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name_2 = "Javelin"
                             wpn2_attack_bonus = 2 + str_mod
-                            wpn2_damage = "1d6"
+                            wpn2_damage = "1d6/P"
                             equipmentlist.append("Javelin")
                             break
                         else:
@@ -2172,7 +2172,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name_2 = "Light hammer"
                             wpn2_attack_bonus = 2 + str_mod
-                            wpn2_damage = "1d4"
+                            wpn2_damage = "1d4/B"
                             equipmentlist.append("Light hammer")
                             break
                         else:
@@ -2184,7 +2184,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name_2 = "Mace"
                             wpn2_attack_bonus = 2 + str_mod
-                            wpn2_damage = "1d6"
+                            wpn2_damage = "1d6/B"
                             equipmentlist.append("Mace")
                             break
                         else:
@@ -2200,7 +2200,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name_2 = "Quarterstaff"
                             wpn2_attack_bonus = 2 + str_mod
-                            wpn2_damage = "1d6"
+                            wpn2_damage = "1d6/B"
                             equipmentlist.append("Quarterstaff")
                             break
                         else:
@@ -2216,7 +2216,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name_2 = "Sickle"
                             wpn2_attack_bonus = 2 + str_mod
-                            wpn2_damage = "1d4"
+                            wpn2_damage = "1d4/S"
                             equipmentlist.append("Sickle")
                             break
                         else:
@@ -2238,7 +2238,7 @@ while True:
                         if equip_choice.lower() in ["y", "yes"]:
                             wpn_name_2 = "Spear"
                             wpn2_attack_bonus = 2 + str_mod
-                            wpn2_damage = "1d6"
+                            wpn2_damage = "1d6/P"
                             equipmentlist.append("Spear")
                             break
                         else:
@@ -2293,7 +2293,8 @@ while True:
             equipmentlist.append("Leather Armor")
             equipmentlist.append("Dagger")
             wpn_name_2 = "Dagger"
-            wpn2_damage = "1d4"
+            wpn2_attack_bonus = 2 + dex_mod
+            wpn2_damage = "1d4/P"
             while True:
                 print("Please choose your first piece of starting equipment: ")
                 print("1.Rapier")
@@ -2311,7 +2312,8 @@ while True:
                     equip_choice = input("Are you sure you want the Rapier? Yes or No\n")
                     if equip_choice.lower() in ["y", "yes"]:
                         wpn_name = "Rapier"
-                        wpn1_damage = "1d8"
+                        wpn_attack_bonus = 2 + dex_mod
+                        wpn1_damage = "1d8/P"
                         equipmentlist.append("Rapier")
                         break
                 elif equip_choice == "2":
@@ -2322,7 +2324,8 @@ while True:
                     equip_choice = input("Are you sure you want the Longsword? Yes or No\n")
                     if equip_choice.lower() in ["y", "yes"]:
                         wpn_name = "Longsword"
-                        wpn1_damage = "1d8"
+                        wpn_attack_bonus = 2 + str_mod
+                        wpn1_damage = "1d8/S"
                         equipmentlist.append("Longsword")
                         break
                 elif equip_choice == "3":
@@ -2342,7 +2345,8 @@ while True:
                                 equip_choice = input("Are you sure you want the Club? Yes or No\n")
                                 if equip_choice.lower() in ["y", "yes"]:
                                     wpn_name = "Club"
-                                    wpn1_damage = "1d4"
+                                    wpn_attack_bonus = 2 + str_mod
+                                    wpn1_damage = "1d4/B"
                                     equipmentlist.append("Club")
                                     break
                                 else:
@@ -2368,7 +2372,8 @@ while True:
                                 equip_choice = input("Are you sure you want the Dagger? Yes or No\n")
                                 if equip_choice.lower() in ["y", "yes"]:
                                     wpn_name = "Dagger"
-                                    wpn1_damage = "1d4"
+                                    wpn_attack_bonus = 2 + dex_mod
+                                    wpn1_damage = "1d4/P"
                                     equipmentlist.append("Dagger")
                                     break
                                 else:
@@ -2381,7 +2386,8 @@ while True:
                                 equip_choice = input("Are you sure you want the Greatclub? Yes or No\n")
                                 if equip_choice.lower() in ["y", "yes"]:
                                     wpn_name = "Greatclub"
-                                    wpn1_damage = "1d8"
+                                    wpn_attack_bonus = 2 + str_mod
+                                    wpn1_damage = "1d8/B"
                                     equipmentlist.append("Greatclub")
                                     break
                                 else:
@@ -2403,7 +2409,8 @@ while True:
                                 equip_choice = input("Are you sure you want the Handaxe? Yes or No\n")
                                 if equip_choice.lower() in ["y", "yes"]:
                                     wpn_name = "Handaxe"
-                                    wpn1_damage = "1d6"
+                                    wpn_attack_bonus = 2 + str_mod
+                                    wpn1_damage = "1d6/S"
                                     equipmentlist.append("Handaxe")
                                     break
                                 else:
@@ -2422,7 +2429,8 @@ while True:
                                 equip_choice = input("Are you sure you want the Javelin? Yes or No\n")
                                 if equip_choice.lower() in ["y", "yes"]:
                                     wpn_name = "Javelin"
-                                    wpn1_damage = "1d6"
+                                    wpn_attack_bonus = 2 + str_mod
+                                    wpn1_damage = "1d6/P"
                                     equipmentlist.append("Javelin")
                                     break
                                 else:
@@ -2444,7 +2452,8 @@ while True:
                                 equip_choice = input("Are you sure you want the Light hammer? Yes or No\n")
                                 if equip_choice.lower() in ["y", "yes"]:
                                     wpn_name = "Light hammer"
-                                    wpn1_damage = "1d4"
+                                    wpn_attack_bonus = 2 + str_mod
+                                    wpn1_damage = "1d4/B"
                                     equipmentlist.append("Light hammer")
                                     break
                                 else:
@@ -2455,7 +2464,8 @@ while True:
                                 equip_choice = input("Are you sure you want the Mace? Yes or No\n")
                                 if equip_choice.lower() in ["y", "yes"]:
                                     wpn_name = "Mace"
-                                    wpn1_damage = "1d6"
+                                    wpn_attack_bonus = 2 + str_mod
+                                    wpn1_damage = "1d6/B"
                                     equipmentlist.append("Mace")
                                     break
                                 else:
@@ -2470,7 +2480,8 @@ while True:
                                 equip_choice = input("Are you sure you want the Quarterstaff? Yes or No\n")
                                 if equip_choice.lower() in ["y", "yes"]:
                                     wpn_name = "Quarterstaff"
-                                    wpn1_damage = "1d6"
+                                    wpn_attack_bonus = 2 + str_mod
+                                    wpn1_damage = "1d6/B"
                                     equipmentlist.append("Quarterstaff")
                                     break
                                 else:
@@ -2485,7 +2496,8 @@ while True:
                                 equip_choice = input("Are you sure you want the Sickle? Yes or No\n")
                                 if equip_choice.lower() in ["y", "yes"]:
                                     wpn_name = "Sickle"
-                                    wpn1_damage = "1d4"
+                                    wpn_attack_bonus = 2 + str_mod
+                                    wpn1_damage = "1d4/S"
                                     equipmentlist.append("Sickle")
                                     break
                                 else:
@@ -2507,7 +2519,8 @@ while True:
                                 equip_choice = input("Are you sure you want the Spear? Yes or No\n")
                                 if equip_choice.lower() in ["y", "yes"]:
                                     wpn_name = "Spear"
-                                    wpn1_damage = "1d6"
+                                    wpn_attack_bonus = 2 + str_mod
+                                    wpn1_damage = "1d6/P"
                                     equipmentlist.append("Spear")
                                     break
                                 else:
@@ -2909,108 +2922,126 @@ while True:
                         acrobatics_box = True
                         skill_list.remove(skill_choice_three)
                         cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Animal Handling":
                         animal_handling += 2
                         animal_handling_box = True
                         skill_list.remove(skill_choice_three)
                         cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Arcana":
                         arcana += 2
                         arcana_box = True
                         skill_list.remove(skill_choice_three)
                         cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Athletics":
                         athletics += 2
                         athletics_box = True
                         skill_list.remove(skill_choice_three)
                         cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Deception":
                         deception += 2
                         deception_box = True
                         skill_list.remove(skill_choice_three)
                         cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "History":
                         history += 2
                         history_box = True
                         skill_list.remove(skill_choice_three)
                         cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Insight":
                         insight += 2
                         insight_box = True
                         skill_list.remove(skill_choice_three)
                         cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Intimidation":
                         intimidation += 2
                         intimidation_box = True
                         skill_list.remove(skill_choice_three)
                         cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Investigation":
                         investigation += 2
                         investigation_box = True
                         skill_list.remove(skill_choice_three)
                         cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Medicine":
                         medicine += 2
                         medicine_box = True
                         skill_list.remove(skill_choice_three)
                         cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Nature":
                         nature += 2
                         nature_box = True
                         skill_list.remove(skill_choice_three)
                         cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Perception":
                         perception += 2
                         perception_box = True
                         skill_list.remove(skill_choice_three)
                         cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Performance":
                         performance += 2
                         performance_box = True
                         skill_list.remove(skill_choice_three)
                         cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Persuasion":
                         persuasion += 2
                         persuasion_box = True
                         skill_list.remove(skill_choice_three)
                         cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Religion":
                         religion += 2
                         religion_box = True
                         skill_list.remove(skill_choice_three)
                         cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Sleight of Hand":
                         slight_of_hand += 2
                         slight_of_hand_box = True
                         skill_list.remove(skill_choice_three)
                         cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Stealth":
                         stealth += 2
                         stealth_box = True
                         skill_list.remove(skill_choice_three)
                         cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
                         break
                     elif skill_choice_three == "Survival":
                         survival += 2
                         survival_box = True
                         skill_list.remove(skill_choice_three)
                         cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
                         break
                     else:
                         print("Invalid input")
@@ -3021,125 +3052,139 @@ while True:
             for index, item in enumerate(cleric_skill_list, start=1):
                 print(index, item)
             while True:
-                try:
-                    skill_choice_he_input = int(input("Enter what skill you want second: "))
-                    skill_choice_three = cleric_skill_list[skill_choice_he_input - 1]
-                    if skill_choice_three in skill_list:
-                        if skill_choice_three == "Acrobatics":
-                            acrobatics += 2
-                            acrobatics_box = True
-                            skill_list.remove(skill_choice_three)
-                            cleric_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Animal Handling":
-                            animal_handling += 2
-                            animal_handling_box = True
-                            skill_list.remove(skill_choice_three)
-                            cleric_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Arcana":
-                            arcana += 2
-                            arcana_box = True
-                            skill_list.remove(skill_choice_three)
-                            cleric_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Athletics":
-                            athletics += 2
-                            athletics_box = True
-                            skill_list.remove(skill_choice_three)
-                            cleric_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Deception":
-                            deception += 2
-                            deception_box = True
-                            skill_list.remove(skill_choice_three)
-                            cleric_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "History":
-                            history += 2
-                            history_box = True
-                            skill_list.remove(skill_choice_three)
-                            cleric_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Insight":
-                            insight += 2
-                            insight_box = True
-                            skill_list.remove(skill_choice_three)
-                            cleric_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Intimidation":
-                            intimidation += 2
-                            intimidation_box = True
-                            skill_list.remove(skill_choice_three)
-                            cleric_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Investigation":
-                            investigation += 2
-                            investigation_box = True
-                            skill_list.remove(skill_choice_three)
-                            cleric_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Medicine":
-                            medicine += 2
-                            medicine_box = True
-                            skill_list.remove(skill_choice_three)
-                            cleric_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Nature":
-                            nature += 2
-                            nature_box = True
-                            skill_list.remove(skill_choice_three)
-                            cleric_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Perception":
-                            perception += 2
-                            perception_box = True
-                            skill_list.remove(skill_choice_three)
-                            cleric_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Performance":
-                            performance += 2
-                            performance_box = True
-                            skill_list.remove(skill_choice_three)
-                            cleric_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Persuasion":
-                            persuasion += 2
-                            persuasion_box = True
-                            skill_list.remove(skill_choice_three)
-                            cleric_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Religion":
-                            religion += 2
-                            religion_box = True
-                            skill_list.remove(skill_choice_three)
-                            cleric_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Sleight of Hand":
-                            slight_of_hand += 2
-                            slight_of_hand_box = True
-                            skill_list.remove(skill_choice_three)
-                            cleric_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Stealth":
-                            stealth += 2
-                            stealth_box = True
-                            skill_list.remove(skill_choice_three)
-                            cleric_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Survival":
-                            survival += 2
-                            survival_box = True
-                            skill_list.remove(skill_choice_three)
-                            cleric_skill_list.remove(skill_choice_three)
-                            break
-                        else:
-                            print("Invalid input")
-                            continue
+                skill_choice_he_input = int(input("Enter what skill you want second: "))
+                skill_choice_three = cleric_skill_list[skill_choice_he_input - 1]
+                if skill_choice_three in skill_list:
+                    if skill_choice_three == "Acrobatics":
+                        acrobatics += 2
+                        acrobatics_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Animal Handling":
+                        animal_handling += 2
+                        animal_handling_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Arcana":
+                        arcana += 2
+                        arcana_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Athletics":
+                        athletics += 2
+                        athletics_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Deception":
+                        deception += 2
+                        deception_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "History":
+                        history += 2
+                        history_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Insight":
+                        insight += 2
+                        insight_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Intimidation":
+                        intimidation += 2
+                        intimidation_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Investigation":
+                        investigation += 2
+                        investigation_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Medicine":
+                        medicine += 2
+                        medicine_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Nature":
+                        nature += 2
+                        nature_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Perception":
+                        perception += 2
+                        perception_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Performance":
+                        performance += 2
+                        performance_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Persuasion":
+                        persuasion += 2
+                        persuasion_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Religion":
+                        religion += 2
+                        religion_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Sleight of Hand":
+                        slight_of_hand += 2
+                        slight_of_hand_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Stealth":
+                        stealth += 2
+                        stealth_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
+                        break
+                    elif skill_choice_three == "Survival":
+                        survival += 2
+                        survival_box = True
+                        skill_list.remove(skill_choice_three)
+                        cleric_skill_list.remove(skill_choice_three)
+                        knowledge_cleric_skill_list.remove(skill_choice_three)
+                        break
                     else:
-                        print("Invalid Input")
+                        print("Invalid input")
                         continue
-                except IndexError:
+                else:
                     print("Invalid Input")
                     continue
             print("As a Cleric, you must choose a God to follow. This will give you additional powers.")
@@ -3156,7 +3201,6 @@ while True:
                 try:
                     god_choice_input = int(input("Enter your choice: "))
                     if god_choice_input == 1:
-                        while True:
                             print("You have chosen Leven. You have the following powers:")
                             print("=================================================================================")
                             print("You gain Proficiency in Heavy Armor.")
@@ -3182,7 +3226,6 @@ while True:
                                 print("Please Choose a God.")
                                 continue
                     elif god_choice_input == 2:
-                        while True:
                             print("You have chosen Ohen. You have the following powers:")
                             print("=================================================================================")
                             print("You gain the light cantrip.")
@@ -3214,7 +3257,6 @@ while True:
                                 print("Please Choose a God.")
                                 continue
                     elif god_choice_input == 3:
-                        while True:
                             print("You have chosen Raiz. You have the following powers:")
                             print("=================================================================================")
                             print(
@@ -3289,8 +3331,7 @@ while True:
                                 print("Please Choose a God.")
                                 continue
                     elif god_choice_input == 4:
-                        while True:
-                            print("You have chosen Viden. You have the following powers:")
+                            print("You have chosen Tempest. You have the following powers:")
                             print("=================================================================================")
                             print("You gain proficiency with martial weapons and heavy armor.")
                             print("=================================================================================")
@@ -3322,7 +3363,6 @@ while True:
                                 print("Please Choose a God.")
                                 continue
                     elif god_choice_input == 5:
-                        while True:
                             print("You have chosen Viden. You have the following powers:")
                             print("=================================================================================")
                             print("You gain the Class Feature: Blessings of Knowledge")
@@ -3347,72 +3387,83 @@ while True:
                                 for index, item in enumerate(knowledge_cleric_skill_list, start=1):
                                     print(index, item)
                                 while True:
-                                    skill_choice_input = input("Please choose a skill from the above list: ")
-                                    if skill_choice_input == "Arcana":
-                                        arcana += 4
-                                        arcana_box = True
-                                        skill_list.remove(skill_choice_input)
-                                        knowledge_cleric_skill_list.remove(skill_choice_input)
-                                        break
-                                    elif skill_choice_input == "History":
-                                        history += 4
-                                        history_box = True
-                                        skill_list.remove(skill_choice_input)
-                                        knowledge_cleric_skill_list.remove(skill_choice_input)
-                                        break
-                                    elif skill_choice_input == "Nature":
-                                        nature += 4
-                                        nature_box = True
-                                        skill_list.remove(skill_choice_input)
-                                        knowledge_cleric_skill_list.remove(skill_choice_input)
-                                        break
-                                    elif skill_choice_input == "Religion":
-                                        religion += 4
-                                        religion_box = True
-                                        skill_list.remove(skill_choice_input)
-                                        knowledge_cleric_skill_list.remove(skill_choice_input)
-                                        break
-                                    else:
+                                    try:
+                                        skill_choice_input = int(input("Please choose a skill from the above list: "))
+                                        skill_choice_three = knowledge_cleric_skill_list[skill_choice_input - 1]
+                                        if skill_choice_three in skill_list:
+                                            if skill_choice_three == "Arcana":
+                                                arcana += 4
+                                                arcana_box = True
+                                                skill_list.remove(skill_choice_three)
+                                                knowledge_cleric_skill_list.remove(skill_choice_three)
+                                                break
+                                            elif skill_choice_three == "History":
+                                                history += 4
+                                                history_box = True
+                                                skill_list.remove(skill_choice_three)
+                                                knowledge_cleric_skill_list.remove(skill_choice_three)
+                                                break
+                                            elif skill_choice_three == "Nature":
+                                                nature += 4
+                                                nature_box = True
+                                                skill_list.remove(skill_choice_three)
+                                                knowledge_cleric_skill_list.remove(skill_choice_three)
+                                                break
+                                            elif skill_choice_three == "Religion":
+                                                religion += 4
+                                                religion_box = True
+                                                skill_list.remove(skill_choice_three)
+                                                knowledge_cleric_skill_list.remove(skill_choice_three)
+                                                break
+                                            else:
+                                                print("Invalid Input")
+                                                continue
+                                    except ValueError:
                                         print("Invalid Input")
                                         continue
                                 print("Please choose a second skill from the following list: ")
                                 for index, item in enumerate(knowledge_cleric_skill_list, start=1):
                                     print(index, item)
                                 while True:
-                                    skill_choice_input = input("Please choose a skill from the above list: ")
-                                    if skill_choice_input == "Arcana":
-                                        arcana += 4
-                                        arcana_box = True
-                                        skill_list.remove(skill_choice_input)
-                                        knowledge_cleric_skill_list.remove(skill_choice_input)
-                                        break
-                                    elif skill_choice_input == "History":
-                                        history += 4
-                                        history_box = True
-                                        skill_list.remove(skill_choice_input)
-                                        knowledge_cleric_skill_list.remove(skill_choice_input)
-                                        break
-                                    elif skill_choice_input == "Nature":
-                                        nature += 4
-                                        nature_box = True
-                                        skill_list.remove(skill_choice_input)
-                                        knowledge_cleric_skill_list.remove(skill_choice_input)
-                                        break
-                                    elif skill_choice_input == "Religion":
-                                        religion += 4
-                                        religion_box = True
-                                        skill_list.remove(skill_choice_input)
-                                        knowledge_cleric_skill_list.remove(skill_choice_input)
-                                        break
-                                    else:
+                                    try:
+                                        skill_choice_input = int(input("Please choose a skill from the above list: "))
+                                        skill_choice_three = knowledge_cleric_skill_list[skill_choice_input - 1]
+                                        if skill_choice_three in skill_list:
+                                            if skill_choice_three == "Arcana":
+                                                arcana += 4
+                                                arcana_box = True
+                                                skill_list.remove(skill_choice_three)
+                                                knowledge_cleric_skill_list.remove(skill_choice_three)
+                                                break
+                                            elif skill_choice_three == "History":
+                                                history += 4
+                                                history_box = True
+                                                skill_list.remove(skill_choice_three)
+                                                knowledge_cleric_skill_list.remove(skill_choice_three)
+                                                break
+                                            elif skill_choice_three == "Nature":
+                                                nature += 4
+                                                nature_box = True
+                                                skill_list.remove(skill_choice_three)
+                                                knowledge_cleric_skill_list.remove(skill_choice_three)
+                                                break
+                                            elif skill_choice_three == "Religion":
+                                                religion += 4
+                                                religion_box = True
+                                                skill_list.remove(skill_choice_three)
+                                                knowledge_cleric_skill_list.remove(skill_choice_three)
+                                                break
+                                            else:
+                                                print("Invalid Input")
+                                                continue
+                                    except ValueError:
                                         print("Invalid Input")
                                         continue
-                                break
+                                    break
                             else:
                                 print("Please Choose a God.")
                                 continue
                     elif god_choice_input == 6:
-                        while True:
                             print("You have chosen Komik. You have the following powers:")
                             print("=================================================================================")
                             print("You gain the Class Feature: Blessing of the Trickster")
@@ -3435,7 +3486,6 @@ while True:
                                 print("Please Choose a God.")
                                 continue
                     elif god_choice_input == 7:
-                        while True:
                             print("You have chosen Slag. You have the following powers:")
                             print("=================================================================================")
                             print("You gain proficiency in martial weapons and heavy armor.")
@@ -3464,7 +3514,6 @@ while True:
                                 print("Please Choose a God.")
                                 continue
                     elif god_choice_input == 8:
-                        while True:
                             print("You have chosen Opas. You have the following powers:")
                             print("=================================================================================")
                             print("You gain proficiency in martial weapons.")
@@ -3507,12 +3556,13 @@ while True:
                     equip_choice = input("Are you sure you want the Mace? Yes or No\n")
                     if equip_choice.lower() in ["y", "yes"]:
                         wpn_name = "Mace"
-                        wpn1_damage = "1d6"
+                        wpn1_attack_bonus = 2 + str_mod
+                        wpn1_damage = "1d6/B"
                         equipmentlist.append("Mace")
                         break
                     else:
                         continue
-                elif equipment_choice_input == "2":
+                elif equipment_choice_input == "2" and "Weapon: Martial" in professionlist:
                     print("The Warhammer does 1d8 Bludgeoning Damage.")
                     print("It has a Range of Zero")
                     print("It has the special properties: ")
@@ -3521,7 +3571,8 @@ while True:
                     equip_choice = input("Are you sure you want the Warhammer? Yes or No\n")
                     if equip_choice.lower() in ["y", "yes"]:
                         wpn_name = "Warhammer"
-                        wpn1_damage = "1d8"
+                        wpn1_attack_bonus = 2 + str_mod
+                        wpn1_damage = "1d8/B"
                         equipmentlist.append("Warhammer")
                         break
                     else:
@@ -3555,7 +3606,7 @@ while True:
                         break
                     else:
                         continue
-                elif equipment_choice_input == "3":
+                elif equipment_choice_input == "3" and "Armor: Heavy" in professionlist:
                     print("The Chain Mail has Armor Class of 16.")
                     equip_choice = input("Are you sure you want the Chain Mail? Yes or No\n")
                     if equip_choice.lower() in ["y", "yes"]:
@@ -3574,11 +3625,12 @@ while True:
             while True:
                 equipment_choice_input = input("Enter your choice: ")
                 if equipment_choice_input == "1":
-                    print("The light crossbow has a range of 120 feet.")
+                    print("The light crossbow does 1d8 pirceing damage and has a range of 120 feet.")
                     equip_choice = input("Are you sure you want the light crossbow? Yes or No\n")
                     if equip_choice.lower() in ["y", "yes"]:
-                        weapon_name = "Light Crossbow"
-                        weapon_range = "120"
+                        wpn_name_2 = "Light Crossbow"
+                        wpn2_attack_bonus = 2 + dex_mod
+                        wpn2_damage = "1d8/P"
                         equipmentlist.append("Light Crossbow")
                         break
                     else:
@@ -3601,8 +3653,9 @@ while True:
                                     "with two weapons.")
                                 equip_choice = input("Are you sure you want the Club? Yes or No\n")
                                 if equip_choice.lower() in ["y", "yes"]:
-                                    wpn_name_2 = "Club"
-                                    wpn2_damage = "1d4"
+                                    wpn2_name = "Club"
+                                    wpn2_attack_bonus = 2 + str_mod
+                                    wpn2_damage = "1d4/B"
                                     equipmentlist.append("Club")
                                     break
                                 else:
@@ -3635,7 +3688,8 @@ while True:
                                 equip_choice = input("Are you sure you want the Dagger? Yes or No\n")
                                 if equip_choice.lower() in ["y", "yes"]:
                                     wpn_name_2 = "Dagger"
-                                    wpn2_damage = "1d4"
+                                    wpn2_attack_bonus = 2 + str_mod
+                                    wpn2_damage = "1d4/P"
                                     equipmentlist.append("Dagger")
                                     break
                                 else:
@@ -3648,7 +3702,8 @@ while True:
                                 equip_choice = input("Are you sure you want the Greatclub? Yes or No\n")
                                 if equip_choice.lower() in ["y", "yes"]:
                                     wpn_name_2 = "Greatclub"
-                                    wpn2_damage = "1d8"
+                                    wpn2_attack_bonus = 2 + str_mod
+                                    wpn2_damage = "1d8/B"
                                     equipmentlist.append("Greatclub")
                                     break
                                 else:
@@ -3676,8 +3731,8 @@ while True:
                                 equip_choice = input("Are you sure you want the Handaxe? Yes or No\n")
                                 if equip_choice.lower() in ["y", "yes"]:
                                     wpn_name_2 = "Handaxe"
-                                    wpn2_damage = "1d6"
-                                    equipmentlist.append("Handaxe")
+                                    wpn2_attack_bonus = 2 + str_mod
+                                    wpn2_damage = "1d6/S"
                                     equipmentlist.append("Handaxe")
                                     break
                                 else:
@@ -3701,7 +3756,8 @@ while True:
                                 equip_choice = input("Are you sure you want the Javelin? Yes or No\n")
                                 if equip_choice.lower() in ["y", "yes"]:
                                     wpn_name_2 = "Javelin"
-                                    wpn2_damage = "1d6"
+                                    wpn2_attack_bonus = 2 + str_mod
+                                    wpn2_damage = "1d6/P"
                                     equipmentlist.append("Javelin")
                                     break
                                 else:
@@ -3729,7 +3785,8 @@ while True:
                                 equip_choice = input("Are you sure you want the Light hammer? Yes or No\n")
                                 if equip_choice.lower() in ["y", "yes"]:
                                     wpn_name_2 = "Light hammer"
-                                    wpn2_damage = "1d4"
+                                    wpn2_attack_bonus = 2 + str_mod
+                                    wpn2_damage = "1d4/B"
                                     equipmentlist.append("Light hammer")
                                     break
                                 else:
@@ -3740,7 +3797,8 @@ while True:
                                 equip_choice = input("Are you sure you want the Mace? Yes or No\n")
                                 if equip_choice.lower() in ["y", "yes"]:
                                     wpn_name_2 = "Mace"
-                                    wpn2_damage = "1d6"
+                                    wpn2_attack_bonus = 2 + str_mod
+                                    wpn2_damage = "1d6/B"
                                     equipmentlist.append("Mace")
                                     break
                                 else:
@@ -3756,7 +3814,8 @@ while True:
                                 equip_choice = input("Are you sure you want the Quarterstaff? Yes or No\n")
                                 if equip_choice.lower() in ["y", "yes"]:
                                     wpn_name_2 = "Quarterstaff"
-                                    wpn2_damage = "1d6"
+                                    wpn2_attack_bonus = 2 + str_mod
+                                    wpn2_damage = "1d6/B"
                                     equipmentlist.append("Quarterstaff")
                                     break
                                 else:
@@ -3772,7 +3831,8 @@ while True:
                                 equip_choice = input("Are you sure you want the Sickle? Yes or No\n")
                                 if equip_choice.lower() in ["y", "yes"]:
                                     wpn_name_2 = "Sickle"
-                                    wpn2_damage = "1d4"
+                                    wpn2_attack_bonus = 2 + str_mod
+                                    wpn2_damage = "1d4/S"
                                     equipmentlist.append("Sickle")
                                     break
                                 else:
@@ -3799,7 +3859,8 @@ while True:
                                 equip_choice = input("Are you sure you want the Spear? Yes or No\n")
                                 if equip_choice.lower() in ["y", "yes"]:
                                     wpn_name_2 = "Spear"
-                                    wpn2_damage = "1d6"
+                                    wpn2_attack_bonus = 2 + str_mod
+                                    wpn2_damage = "1d6/P"
                                     equipmentlist.append("Spear")
                                     break
                                 else:
