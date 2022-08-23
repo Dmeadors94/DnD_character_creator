@@ -744,208 +744,221 @@ while True:
             for index, item in enumerate(skill_list, start=1):
                 print(index, item)
             while True:
-                skill_choice_he_input = int(input("Enter what skill you want first: "))
-                skill_choice_three = skill_list[skill_choice_he_input - 1]
-                if skill_choice_three in skill_list:
-                    if skill_choice_three == "Acrobatics":
-                        acrobatics += 2
-                        acrobatics_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Animal Handling":
-                        animal_handling += 2
-                        animal_handling_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Arcana":
-                        arcana += 2
-                        arcana_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Athletics":
-                        athletics += 2
-                        athletics_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Deception":
-                        deception += 2
-                        deception_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "History":
-                        history += 2
-                        history_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Insight":
-                        insight += 2
-                        insight_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Intimidation":
-                        intimidation += 2
-                        intimidation_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Investigation":
-                        investigation += 2
-                        investigation_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Medicine":
-                        medicine += 2
-                        medicine_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Nature":
-                        nature += 2
-                        nature_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Perception":
-                        perception += 2
-                        perception_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Performance":
-                        performance += 2
-                        performance_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Persuasion":
-                        persuasion += 2
-                        persuasion_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Religion":
-                        religion += 2
-                        religion_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Sleight of Hand":
-                        slight_of_hand += 2
-                        slight_of_hand_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Stealth":
-                        stealth += 2
-                        stealth_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Survival":
-                        survival += 2
-                        survival_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
+                try:
+                    skill_choice_he_input = int(input("Enter what skill you want first: "))
+                    skill_choice_three = skill_list[skill_choice_he_input - 1]
+                    if skill_choice_three in skill_list:
+                        if skill_choice_three == "Acrobatics":
+                            acrobatics += 2
+                            acrobatics_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Animal Handling":
+                            animal_handling += 2
+                            animal_handling_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Arcana":
+                            arcana += 2
+                            arcana_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Athletics":
+                            athletics += 2
+                            athletics_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Deception":
+                            deception += 2
+                            deception_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "History":
+                            history += 2
+                            history_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Insight":
+                            insight += 2
+                            insight_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Intimidation":
+                            intimidation += 2
+                            intimidation_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Investigation":
+                            investigation += 2
+                            investigation_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Medicine":
+                            medicine += 2
+                            medicine_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Nature":
+                            nature += 2
+                            nature_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Perception":
+                            perception += 2
+                            perception_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Performance":
+                            performance += 2
+                            performance_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Persuasion":
+                            persuasion += 2
+                            persuasion_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Religion":
+                            religion += 2
+                            religion_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Sleight of Hand":
+                            slight_of_hand += 2
+                            slight_of_hand_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Stealth":
+                            stealth += 2
+                            stealth_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Survival":
+                            survival += 2
+                            survival_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        else:
+                            print("Invalid input")
+                            continue
                     else:
-                        print("Invalid input")
+                        print("Invalid Input")
                         continue
-                else:
+                except ValueError:
+                    print("Invalid Input")
+                    continue
+                except IndexError:
                     print("Invalid Input")
                     continue
             for index, item in enumerate(skill_list, start=1):
                 print(index, item)
             while True:
-                skill_choice_he_input = int(input("Enter what skill you want second: "))
-                skill_choice_four = skill_list[skill_choice_he_input - 1]
-                if skill_choice_four in skill_list:
-                    if skill_choice_four == "Acrobatics":
-                        acrobatics += 2
-                        acrobatics_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Animal Handling":
-                        animal_handling += 2
-                        animal_handling_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Arcana":
-                        arcana += 2
-                        arcana_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Athletics":
-                        athletics += 2
-                        athletics_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Deception":
-                        deception += 2
-                        deception_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "History":
-                        history += 2
-                        history_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Insight":
-                        insight += 2
-                        insight_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Intimidation":
-                        intimidation += 2
-                        intimidation_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Investigation":
-                        investigation += 2
-                        investigation_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Medicine":
-                        medicine += 2
-                        medicine_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Nature":
-                        nature += 2
-                        nature_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Perception":
-                        perception += 2
-                        perception_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Performance":
-                        performance += 2
-                        performance_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Persuasion":
-                        persuasion += 2
-                        persuasion_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Religion":
-                        religion += 2
-                        religion_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Sleight of Hand":
-                        slight_of_hand += 2
-                        slight_of_hand_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Stealth":
-                        stealth += 2
-                        stealth_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Survival":
-                        survival += 2
-                        survival_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
+                try:
+                    skill_choice_he_input = int(input("Enter what skill you want second: "))
+                    skill_choice_four = skill_list[skill_choice_he_input - 1]
+                    if skill_choice_four in skill_list:
+                        if skill_choice_four == "Acrobatics":
+                            acrobatics += 2
+                            acrobatics_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Animal Handling":
+                            animal_handling += 2
+                            animal_handling_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Arcana":
+                            arcana += 2
+                            arcana_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Athletics":
+                            athletics += 2
+                            athletics_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Deception":
+                            deception += 2
+                            deception_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "History":
+                            history += 2
+                            history_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Insight":
+                            insight += 2
+                            insight_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Intimidation":
+                            intimidation += 2
+                            intimidation_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Investigation":
+                            investigation += 2
+                            investigation_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Medicine":
+                            medicine += 2
+                            medicine_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Nature":
+                            nature += 2
+                            nature_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Perception":
+                            perception += 2
+                            perception_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Performance":
+                            performance += 2
+                            performance_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Persuasion":
+                            persuasion += 2
+                            persuasion_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Religion":
+                            religion += 2
+                            religion_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Sleight of Hand":
+                            slight_of_hand += 2
+                            slight_of_hand_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Stealth":
+                            stealth += 2
+                            stealth_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Survival":
+                            survival += 2
+                            survival_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        else:
+                            print("Invalid input")
+                            continue
                     else:
-                        print("Invalid input")
+                        print("Invalid Input")
                         continue
-                else:
+                except ValueError:
                     print("Invalid Input")
                     continue
-
+                except IndexError:
+                    print("Invalid Input")
+                    continue
             print("Please choose any language to learn.")
             he_lang = input("Language Choice: ")
             cha_mod = Modcal.Modcal(charisma)
@@ -1528,226 +1541,239 @@ while True:
             for index, item in enumerate(barb_skill_list, start=1):
                 print(index, item)
             while True:
-                skill_choice_he_input = int(input("Enter what skill you want first: "))
-                skill_choice_three = barb_skill_list[skill_choice_he_input - 1]
-                if skill_choice_three in skill_list:
-                    if skill_choice_three == "Acrobatics":
-                        acrobatics += 2
-                        acrobatics_box = True
-                        skill_list.remove(skill_choice_three)
-                        barb_skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Animal Handling":
-                        animal_handling += 2
-                        animal_handling_box = True
-                        skill_list.remove(skill_choice_three)
-                        barb_skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Arcana":
-                        arcana += 2
-                        arcana_box = True
-                        skill_list.remove(skill_choice_three)
-                        barb_skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Athletics":
-                        athletics += 2
-                        athletics_box = True
-                        skill_list.remove(skill_choice_three)
-                        barb_skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Deception":
-                        deception += 2
-                        deception_box = True
-                        skill_list.remove(skill_choice_three)
-                        barb_skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "History":
-                        history += 2
-                        history_box = True
-                        skill_list.remove(skill_choice_three)
-                        barb_skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Insight":
-                        insight += 2
-                        insight_box = True
-                        skill_list.remove(skill_choice_three)
-                        barb_skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Intimidation":
-                        intimidation += 2
-                        intimidation_box = True
-                        skill_list.remove(skill_choice_three)
-                        barb_skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Investigation":
-                        investigation += 2
-                        investigation_box = True
-                        skill_list.remove(skill_choice_three)
-                        barb_skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Medicine":
-                        medicine += 2
-                        medicine_box = True
-                        skill_list.remove(skill_choice_three)
-                        barb_skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Nature":
-                        nature += 2
-                        nature_box = True
-                        skill_list.remove(skill_choice_three)
-                        barb_skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Perception":
-                        perception += 2
-                        perception_box = True
-                        skill_list.remove(skill_choice_three)
-                        barb_skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Performance":
-                        performance += 2
-                        performance_box = True
-                        skill_list.remove(skill_choice_three)
-                        barb_skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Persuasion":
-                        persuasion += 2
-                        persuasion_box = True
-                        skill_list.remove(skill_choice_three)
-                        barb_skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Religion":
-                        religion += 2
-                        religion_box = True
-                        skill_list.remove(skill_choice_three)
-                        barb_skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Sleight of Hand":
-                        slight_of_hand += 2
-                        slight_of_hand_box = True
-                        skill_list.remove(skill_choice_three)
-                        barb_skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Stealth":
-                        stealth += 2
-                        stealth_box = True
-                        skill_list.remove(skill_choice_three)
-                        barb_skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Survival":
-                        survival += 2
-                        survival_box = True
-                        skill_list.remove(skill_choice_three)
-                        barb_skill_list.remove(skill_choice_three)
-                        break
+                try:
+                    skill_choice_he_input = int(input("Enter what skill you want first: "))
+                    skill_choice_three = barb_skill_list[skill_choice_he_input - 1]
+                    if skill_choice_three in skill_list:
+                        if skill_choice_three == "Acrobatics":
+                            acrobatics += 2
+                            acrobatics_box = True
+                            skill_list.remove(skill_choice_three)
+                            barb_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Animal Handling":
+                            animal_handling += 2
+                            animal_handling_box = True
+                            skill_list.remove(skill_choice_three)
+                            barb_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Arcana":
+                            arcana += 2
+                            arcana_box = True
+                            skill_list.remove(skill_choice_three)
+                            barb_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Athletics":
+                            athletics += 2
+                            athletics_box = True
+                            skill_list.remove(skill_choice_three)
+                            barb_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Deception":
+                            deception += 2
+                            deception_box = True
+                            skill_list.remove(skill_choice_three)
+                            barb_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "History":
+                            history += 2
+                            history_box = True
+                            skill_list.remove(skill_choice_three)
+                            barb_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Insight":
+                            insight += 2
+                            insight_box = True
+                            skill_list.remove(skill_choice_three)
+                            barb_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Intimidation":
+                            intimidation += 2
+                            intimidation_box = True
+                            skill_list.remove(skill_choice_three)
+                            barb_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Investigation":
+                            investigation += 2
+                            investigation_box = True
+                            skill_list.remove(skill_choice_three)
+                            barb_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Medicine":
+                            medicine += 2
+                            medicine_box = True
+                            skill_list.remove(skill_choice_three)
+                            barb_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Nature":
+                            nature += 2
+                            nature_box = True
+                            skill_list.remove(skill_choice_three)
+                            barb_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Perception":
+                            perception += 2
+                            perception_box = True
+                            skill_list.remove(skill_choice_three)
+                            barb_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Performance":
+                            performance += 2
+                            performance_box = True
+                            skill_list.remove(skill_choice_three)
+                            barb_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Persuasion":
+                            persuasion += 2
+                            persuasion_box = True
+                            skill_list.remove(skill_choice_three)
+                            barb_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Religion":
+                            religion += 2
+                            religion_box = True
+                            skill_list.remove(skill_choice_three)
+                            barb_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Sleight of Hand":
+                            slight_of_hand += 2
+                            slight_of_hand_box = True
+                            skill_list.remove(skill_choice_three)
+                            barb_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Stealth":
+                            stealth += 2
+                            stealth_box = True
+                            skill_list.remove(skill_choice_three)
+                            barb_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Survival":
+                            survival += 2
+                            survival_box = True
+                            skill_list.remove(skill_choice_three)
+                            barb_skill_list.remove(skill_choice_three)
+                            break
+                        else:
+                            print("Invalid input")
+                            continue
                     else:
-                        print("Invalid input")
+                        print("Invalid Input")
                         continue
-                else:
+                except ValueError:
                     print("Invalid Input")
                     continue
+                except IndexError:
+                    print("Invalid Input")
             for index, item in enumerate(barb_skill_list, start=1):
                 print(index, item)
             while True:
-                skill_choice_four_input = int(input("Enter what skill you want for your second: "))
-                skill_choice_four = barb_skill_list[skill_choice_four_input - 1]
-                if skill_choice_four == skill_choice_three:
-                    print("You can not choose the came skill twice.")
-                    continue
-                elif skill_choice_four in skill_list:
-                    if skill_choice_four == "Acrobatics":
-                        acrobatics += 2
-                        acrobatics_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Animal Handling":
-                        animal_handling += 2
-                        animal_handling_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Arcana":
-                        arcana += 2
-                        arcana_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Athletics":
-                        athletics += 2
-                        athletics_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Deception":
-                        deception += 2
-                        deception_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "History":
-                        history += 2
-                        history_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Insight":
-                        insight += 2
-                        insight_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Intimidation":
-                        intimidation += 2
-                        intimidation_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Investigation":
-                        investigation += 2
-                        investigation_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Medicine":
-                        medicine += 2
-                        medicine_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Nature":
-                        nature += 2
-                        nature_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Perception":
-                        perception += 2
-                        perception_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Performance":
-                        performance += 2
-                        performance_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Persuasion":
-                        persuasion += 2
-                        persuasion_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Religion":
-                        religion += 2
-                        religion_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Sleight of Hand":
-                        slight_of_hand += 2
-                        slight_of_hand_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Stealth":
-                        stealth += 2
-                        stealth_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    elif skill_choice_four == "Survival":
-                        survival += 2
-                        survival_box = True
-                        skill_list.remove(skill_choice_four)
-                        break
-                    else:
-                        print("Invalid input")
+                try:
+                    skill_choice_four_input = int(input("Enter what skill you want for your second: "))
+                    skill_choice_four = barb_skill_list[skill_choice_four_input - 1]
+                    if skill_choice_four == skill_choice_three:
+                        print("You can not choose the came skill twice.")
                         continue
-                else:
+                    elif skill_choice_four in skill_list:
+                        if skill_choice_four == "Acrobatics":
+                            acrobatics += 2
+                            acrobatics_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Animal Handling":
+                            animal_handling += 2
+                            animal_handling_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Arcana":
+                            arcana += 2
+                            arcana_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Athletics":
+                            athletics += 2
+                            athletics_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Deception":
+                            deception += 2
+                            deception_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "History":
+                            history += 2
+                            history_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Insight":
+                            insight += 2
+                            insight_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Intimidation":
+                            intimidation += 2
+                            intimidation_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Investigation":
+                            investigation += 2
+                            investigation_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Medicine":
+                            medicine += 2
+                            medicine_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Nature":
+                            nature += 2
+                            nature_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Perception":
+                            perception += 2
+                            perception_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Performance":
+                            performance += 2
+                            performance_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Persuasion":
+                            persuasion += 2
+                            persuasion_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Religion":
+                            religion += 2
+                            religion_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Sleight of Hand":
+                            slight_of_hand += 2
+                            slight_of_hand_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Stealth":
+                            stealth += 2
+                            stealth_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        elif skill_choice_four == "Survival":
+                            survival += 2
+                            survival_box = True
+                            skill_list.remove(skill_choice_four)
+                            break
+                        else:
+                            print("Invalid input")
+                            continue
+                    else:
+                        print("Invalid Input")
+                        continue
+                except ValueError:
+                    print("Invalid Input")
+                    continue
+                except IndexError:
                     print("Invalid Input")
                     continue
             print("Please choose your starting equipment from the following: ")
@@ -2548,309 +2574,330 @@ while True:
             for index, item in enumerate(skill_list, start=1):
                 print(index, item)
             while True:
-                skill_choice_three_input = int(input("Enter what skill you want first: "))
-                skill_choice_three = skill_list[skill_choice_three_input - 1]
-                if skill_choice_three in skill_list:
-                    if skill_choice_three == "Acrobatics":
-                        acrobatics += 2
-                        acrobatics_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Animal Handling":
-                        animal_handling += 2
-                        animal_handling_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Arcana":
-                        arcana += 2
-                        arcana_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Athletics":
-                        athletics += 2
-                        athletics_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Deception":
-                        deception += 2
-                        deception_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "History":
-                        history += 2
-                        history_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Insight":
-                        insight += 2
-                        insight_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Intimidation":
-                        intimidation += 2
-                        intimidation_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Investigation":
-                        investigation += 2
-                        investigation_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Medicine":
-                        medicine += 2
-                        medicine_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Nature":
-                        nature += 2
-                        nature_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Perception":
-                        perception += 2
-                        perception_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Performance":
-                        performance += 2
-                        performance_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Persuasion":
-                        persuasion += 2
-                        persuasion_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Religion":
-                        religion += 2
-                        religion_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Sleight of Hand":
-                        slight_of_hand += 2
-                        slight_of_hand_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Stealth":
-                        stealth += 2
-                        stealth_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Survival":
-                        survival += 2
-                        survival_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
+                try:
+                    skill_choice_three_input = int(input("Enter what skill you want first: "))
+                    skill_choice_three = skill_list[skill_choice_three_input - 1]
+                    if skill_choice_three in skill_list:
+                        if skill_choice_three == "Acrobatics":
+                            acrobatics += 2
+                            acrobatics_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Animal Handling":
+                            animal_handling += 2
+                            animal_handling_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Arcana":
+                            arcana += 2
+                            arcana_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Athletics":
+                            athletics += 2
+                            athletics_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Deception":
+                            deception += 2
+                            deception_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "History":
+                            history += 2
+                            history_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Insight":
+                            insight += 2
+                            insight_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Intimidation":
+                            intimidation += 2
+                            intimidation_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Investigation":
+                            investigation += 2
+                            investigation_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Medicine":
+                            medicine += 2
+                            medicine_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Nature":
+                            nature += 2
+                            nature_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Perception":
+                            perception += 2
+                            perception_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Performance":
+                            performance += 2
+                            performance_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Persuasion":
+                            persuasion += 2
+                            persuasion_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Religion":
+                            religion += 2
+                            religion_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Sleight of Hand":
+                            slight_of_hand += 2
+                            slight_of_hand_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Stealth":
+                            stealth += 2
+                            stealth_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Survival":
+                            survival += 2
+                            survival_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        else:
+                            print("Invalid input")
+                            continue
                     else:
-                        print("Invalid input")
+                        print("Invalid Input")
                         continue
-                else:
+                except ValueError:
+                    print("Invalid Input")
+                    continue
+                except IndexError:
                     print("Invalid Input")
                     continue
             for index, item in enumerate(skill_list, start=1):
                 print(index, item)
             while True:
-                skill_choice_three_input = int(input("Enter what skill you want second: "))
-                skill_choice_three = skill_list[skill_choice_three_input - 1]
-                if skill_choice_three in skill_list:
-                    if skill_choice_three == "Acrobatics":
-                        acrobatics += 2
-                        acrobatics_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Animal Handling":
-                        animal_handling += 2
-                        animal_handling_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Arcana":
-                        arcana += 2
-                        arcana_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Athletics":
-                        athletics += 2
-                        athletics_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Deception":
-                        deception += 2
-                        deception_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "History":
-                        history += 2
-                        history_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Insight":
-                        insight += 2
-                        insight_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Intimidation":
-                        intimidation += 2
-                        intimidation_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Investigation":
-                        investigation += 2
-                        investigation_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Medicine":
-                        medicine += 2
-                        medicine_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Nature":
-                        nature += 2
-                        nature_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Perception":
-                        perception += 2
-                        perception_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Performance":
-                        performance += 2
-                        performance_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Persuasion":
-                        persuasion += 2
-                        persuasion_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Religion":
-                        religion += 2
-                        religion_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Sleight of Hand":
-                        slight_of_hand += 2
-                        slight_of_hand_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Stealth":
-                        stealth += 2
-                        stealth_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Survival":
-                        survival += 2
-                        survival_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
+                try:
+                    skill_choice_three_input = int(input("Enter what skill you want second: "))
+                    skill_choice_three = skill_list[skill_choice_three_input - 1]
+                    if skill_choice_three in skill_list:
+                        if skill_choice_three == "Acrobatics":
+                            acrobatics += 2
+                            acrobatics_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Animal Handling":
+                            animal_handling += 2
+                            animal_handling_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Arcana":
+                            arcana += 2
+                            arcana_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Athletics":
+                            athletics += 2
+                            athletics_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Deception":
+                            deception += 2
+                            deception_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "History":
+                            history += 2
+                            history_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Insight":
+                            insight += 2
+                            insight_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Intimidation":
+                            intimidation += 2
+                            intimidation_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Investigation":
+                            investigation += 2
+                            investigation_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Medicine":
+                            medicine += 2
+                            medicine_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Nature":
+                            nature += 2
+                            nature_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Perception":
+                            perception += 2
+                            perception_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Performance":
+                            performance += 2
+                            performance_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Persuasion":
+                            persuasion += 2
+                            persuasion_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Religion":
+                            religion += 2
+                            religion_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Sleight of Hand":
+                            slight_of_hand += 2
+                            slight_of_hand_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Stealth":
+                            stealth += 2
+                            stealth_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Survival":
+                            survival += 2
+                            survival_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        else:
+                            print("Invalid input")
+                            continue
                     else:
-                        print("Invalid input")
+                        print("Invalid Input")
                         continue
-                else:
+                except ValueError:
+                    print("Invalid Input")
+                    continue
+                except IndexError:
                     print("Invalid Input")
                     continue
             for index, item in enumerate(skill_list, start=1):
                 print(index, item)
             while True:
-                skill_choice_three_input = int(input("Enter what skill you want third: "))
-                skill_choice_three = skill_list[skill_choice_three_input - 1]
-                if skill_choice_three in skill_list:
-                    if skill_choice_three == "Acrobatics":
-                        acrobatics += 2
-                        acrobatics_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Animal Handling":
-                        animal_handling += 2
-                        animal_handling_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Arcana":
-                        arcana += 2
-                        arcana_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Athletics":
-                        athletics += 2
-                        athletics_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Deception":
-                        deception += 2
-                        deception_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "History":
-                        history += 2
-                        history_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Insight":
-                        insight += 2
-                        insight_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Intimidation":
-                        intimidation += 2
-                        intimidation_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Investigation":
-                        investigation += 2
-                        investigation_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Medicine":
-                        medicine += 2
-                        medicine_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Nature":
-                        nature += 2
-                        nature_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Perception":
-                        perception += 2
-                        perception_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Performance":
-                        performance += 2
-                        performance_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Persuasion":
-                        persuasion += 2
-                        persuasion_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Religion":
-                        religion += 2
-                        religion_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Sleight of Hand":
-                        slight_of_hand += 2
-                        slight_of_hand_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Stealth":
-                        stealth += 2
-                        stealth_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
-                    elif skill_choice_three == "Survival":
-                        survival += 2
-                        survival_box = True
-                        skill_list.remove(skill_choice_three)
-                        break
+                try:
+                    skill_choice_three_input = int(input("Enter what skill you want third: "))
+                    skill_choice_three = skill_list[skill_choice_three_input - 1]
+                    if skill_choice_three in skill_list:
+                        if skill_choice_three == "Acrobatics":
+                            acrobatics += 2
+                            acrobatics_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Animal Handling":
+                            animal_handling += 2
+                            animal_handling_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Arcana":
+                            arcana += 2
+                            arcana_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Athletics":
+                            athletics += 2
+                            athletics_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Deception":
+                            deception += 2
+                            deception_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "History":
+                            history += 2
+                            history_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Insight":
+                            insight += 2
+                            insight_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Intimidation":
+                            intimidation += 2
+                            intimidation_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Investigation":
+                            investigation += 2
+                            investigation_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Medicine":
+                            medicine += 2
+                            medicine_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Nature":
+                            nature += 2
+                            nature_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Perception":
+                            perception += 2
+                            perception_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Performance":
+                            performance += 2
+                            performance_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Persuasion":
+                            persuasion += 2
+                            persuasion_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Religion":
+                            religion += 2
+                            religion_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Sleight of Hand":
+                            slight_of_hand += 2
+                            slight_of_hand_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Stealth":
+                            stealth += 2
+                            stealth_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Survival":
+                            survival += 2
+                            survival_box = True
+                            skill_list.remove(skill_choice_three)
+                            break
+                        else:
+                            print("Invalid input")
+                            continue
                     else:
-                        print("Invalid input")
+                        print("Invalid Input")
                         continue
-                else:
+                except ValueError:
                     print("Invalid Input")
                     continue
+                except IndexError:
+                    print("Invalid Input")
+
             print("Please name any musical instrument to add it to your equipment.")
             instrument_choice = input("Instrument Choice: ")
             equipmentlist.append(instrument_choice)
@@ -4338,6 +4385,9 @@ while True:
                     except ValueError:
                         print("Please enter a valid number")
                         continue
+                    except IndexError:
+                        print("Please enter a valid number")
+                        continue
                 for index, item in enumerate(cleric_spell_list_1, start=1):
                     print(index, item)
                 while True:
@@ -4352,6 +4402,9 @@ while True:
                             print("Please enter a valid number")
                             continue
                     except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                    except IndexError:
                         print("Please enter a valid number")
                         continue
         else:
@@ -4642,6 +4695,9 @@ while True:
                 except IndexError:
                     print("Invalid Input")
                     continue
+                except ValueError:
+                    print("Invalid Input")
+                    continue
             print("Please choose your first piece of equipment: ")
             print("1. Wooden Shield")
             print("2. Any simple weapon")
@@ -4912,6 +4968,9 @@ while True:
                         print("Invalid Input")
                         continue
                 except ValueError:
+                    print("Invalid Input")
+                    continue
+                except IndexError:
                     print("Invalid Input")
                     continue
             print("Please choose your second piece of equipment: ")
@@ -5193,6 +5252,9 @@ while True:
                 except ValueError:
                     print("Please enter a valid number.")
                     continue
+                except IndexError:
+                    print("Please enter a valid number.")
+                    continue
                 break
             print("Please choose Two Cantrips from the following list:")
             for index, item in enumerate(druid_cantrip_spell_list, start=1):
@@ -5211,6 +5273,9 @@ while True:
                 except ValueError:
                     print("Please enter a valid number")
                     continue
+                except IndexError:
+                    print("Please enter a valid number")
+                    continue
             for index, item in enumerate(druid_cantrip_spell_list, start=1):
                 print(index, item)
             while True:
@@ -5225,6 +5290,9 @@ while True:
                         print("Please enter a valid number")
                         continue
                 except ValueError:
+                    print("Please enter a valid number")
+                    continue
+                except IndexError:
                     print("Please enter a valid number")
                     continue
             x = wis_mod + 1
@@ -5247,6 +5315,9 @@ while True:
                     except ValueError:
                         print("Please enter a valid number")
                         continue
+                    except IndexError:
+                        print("Please enter a valid number")
+                        continue
             elif x == 2:
                 print("Please choose two spells from the following list:")
                 for index, item in enumerate(druid_spell_list_1, start=1):
@@ -5265,6 +5336,9 @@ while True:
                     except ValueError:
                         print("Please enter a valid number")
                         continue
+                    except IndexError:
+                        print("Please enter a valid number")
+                        continue
                 for index, item in enumerate(druid_spell_list_1, start=1):
                     print(index, item)
                 while True:
@@ -5279,6 +5353,9 @@ while True:
                             print("Please enter a valid number")
                             continue
                     except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                    except IndexError:
                         print("Please enter a valid number")
                         continue
             elif x == 3:
@@ -5299,6 +5376,9 @@ while True:
                     except ValueError:
                         print("Please enter a valid number")
                         continue
+                    except IndexError:
+                        print("Please enter a valid number")
+                        continue
                 for index, item in enumerate(druid_spell_list_1, start=1):
                     print(index, item)
                 while True:
@@ -5315,6 +5395,9 @@ while True:
                     except ValueError:
                         print("Please enter a valid number")
                         continue
+                    except IndexError:
+                        print("Please enter a valid number")
+                        continue
                 for index, item in enumerate(druid_spell_list_1, start=1):
                     print(index, item)
                 while True:
@@ -5329,6 +5412,9 @@ while True:
                             print("Please enter a valid number")
                             continue
                     except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                    except IndexError:
                         print("Please enter a valid number")
                         continue
             elif x == 4:
@@ -5349,6 +5435,9 @@ while True:
                     except ValueError:
                         print("Please enter a valid number")
                         continue
+                    except IndexError:
+                        print("Please enter a valid number")
+                        continue
                 for index, item in enumerate(druid_spell_list_1, start=1):
                     print(index, item)
                 while True:
@@ -5363,6 +5452,9 @@ while True:
                             print("Please enter a valid number")
                             continue
                     except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                    except IndexError:
                         print("Please enter a valid number")
                         continue
                 for index, item in enumerate(druid_spell_list_1, start=1):
@@ -5381,6 +5473,9 @@ while True:
                     except ValueError:
                         print("Please enter a valid number")
                         continue
+                    except IndexError:
+                        print("Please enter a valid number")
+                        continue
                 for index, item in enumerate(druid_spell_list_1, start=1):
                     print(index, item)
                 while True:
@@ -5395,6 +5490,9 @@ while True:
                             print("Please enter a valid number")
                             continue
                     except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                    except IndexError:
                         print("Please enter a valid number")
                         continue
             elif x == 5:
@@ -5415,6 +5513,9 @@ while True:
                     except ValueError:
                         print("Please enter a valid number")
                         continue
+                    except IndexError:
+                        print("Please enter a valid number")
+                        continue
                 for index, item in enumerate(druid_spell_list_1, start=1):
                     print(index, item)
                 while True:
@@ -5429,6 +5530,9 @@ while True:
                             print("Please enter a valid number")
                             continue
                     except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                    except IndexError:
                         print("Please enter a valid number")
                         continue
                 for index, item in enumerate(druid_spell_list_1, start=1):
@@ -5447,6 +5551,9 @@ while True:
                     except ValueError:
                         print("Please enter a valid number")
                         continue
+                    except IndexError:
+                        print("Please enter a valid number")
+                        continue
                 for index, item in enumerate(druid_spell_list_1, start=1):
                     print(index, item)
                 while True:
@@ -5463,6 +5570,9 @@ while True:
                     except ValueError:
                         print("Please enter a valid number")
                         continue
+                    except IndexError:
+                        print("Please enter a valid number")
+                        continue
                 for index, item in enumerate(druid_spell_list_1, start=1):
                     print(index, item)
                 while True:
@@ -5477,6 +5587,9 @@ while True:
                             print("Please enter a valid number")
                             continue
                     except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                    except IndexError:
                         print("Please enter a valid number")
                         continue
             elif x == 6:
@@ -5497,6 +5610,9 @@ while True:
                     except ValueError:
                         print("Please enter a valid number")
                         continue
+                    except IndexError:
+                        print("Please enter a valid number")
+                        continue
                 for index, item in enumerate(druid_spell_list_1, start=1):
                     print(index, item)
                 while True:
@@ -5511,6 +5627,9 @@ while True:
                             print("Please enter a valid number")
                             continue
                     except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                    except IndexError:
                         print("Please enter a valid number")
                         continue
                 for index, item in enumerate(druid_spell_list_1, start=1):
@@ -5529,6 +5648,9 @@ while True:
                     except ValueError:
                         print("Please enter a valid number")
                         continue
+                    except IndexError:
+                        print("Please enter a valid number")
+                        continue
                 for index, item in enumerate(druid_spell_list_1, start=1):
                     print(index, item)
                 while True:
@@ -5543,6 +5665,9 @@ while True:
                             print("Please enter a valid number")
                             continue
                     except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                    except IndexError:
                         print("Please enter a valid number")
                         continue
                 for index, item in enumerate(druid_spell_list_1, start=1):
@@ -5561,6 +5686,9 @@ while True:
                     except ValueError:
                         print("Please enter a valid number")
                         continue
+                    except IndexError:
+                        print("Please enter a valid number")
+                        continue
                 for index, item in enumerate(druid_spell_list_1, start=1):
                     print(index, item)
                 while True:
@@ -5575,6 +5703,9 @@ while True:
                             print("Please enter a valid number")
                             continue
                     except ValueError:
+                        print("Please enter a valid number")
+                        continue
+                    except IndexError:
                         print("Please enter a valid number")
                         continue
 
@@ -5871,6 +6002,9 @@ while True:
                 except IndexError:
                     print("Invalid Input")
                     continue
+                except ValueError:
+                    print("Invalid Input")
+                    continue
             print("You must choose a Fighting Style as part of your Class. Please choose from the following: ")
             print("1. Archery")
             print("2. Defense")
@@ -5898,6 +6032,9 @@ while True:
                                 except ValueError:
                                     print("Invalid Input")
                                     continue
+                                except IndexError:
+                                    print("Invalid Input")
+                                    continue
                         elif style_choice == 2:
                             print("While you are wearing armor, you gain a +1 bonus to AC.")
                             print("Are you sure you want to choose this style? Yes or No?: ")
@@ -5912,6 +6049,9 @@ while True:
                                         print("Invalid Input")
                                         continue
                                 except ValueError:
+                                    print("Invalid Input")
+                                    continue
+                                except IndexError:
                                     print("Invalid Input")
                                     continue
                         elif style_choice == 3:
@@ -5929,6 +6069,9 @@ while True:
                                         print("Invalid Input")
                                         continue
                                 except ValueError:
+                                    print("Invalid Input")
+                                    continue
+                                except IndexError:
                                     print("Invalid Input")
                                     continue
                         elif style_choice == 4:
@@ -5950,6 +6093,9 @@ while True:
                                 except ValueError:
                                     print("Invalid Input")
                                     continue
+                                except IndexError:
+                                    print("Invalid Input")
+                                    continue
                         elif style_choice == 5:
                             print("When a creature you can see attacks a target other than you that is within 5 feet "
                                   "of you, you can use your reaction to impose disadvantage on the attack roll. \nYou "
@@ -5966,6 +6112,9 @@ while True:
                                         print("Invalid Input")
                                         continue
                                 except ValueError:
+                                    print("Invalid Input")
+                                    continue
+                                except IndexError:
                                     print("Invalid Input")
                                     continue
                         elif style_choice == 6:
@@ -5985,7 +6134,13 @@ while True:
                                 except ValueError:
                                     print("Invalid Input")
                                     continue
+                                except IndexError:
+                                    print("Invalid Input")
+                                    continue
                 except ValueError:
+                    print("Please enter a valid number")
+                    continue
+                except IndexError:
                     print("Please enter a valid number")
                     continue
                 break
@@ -6011,6 +6166,9 @@ while True:
                             except ValueError:
                                 print("Invalid Input")
                                 continue
+                            except IndexError:
+                                print("Invalid Input")
+                                continue
                     elif equipment_choice_one_input == 2:
                         print("Leather armor has a Armor Class of 11")
                         print("A Longbow has a range of 150 feet and a damage die of 1d8")
@@ -6033,7 +6191,13 @@ while True:
                             except ValueError:
                                 print("Invalid Input")
                                 continue
+                            except IndexError:
+                                print("Invalid Input")
+                                continue
                 except ValueError:
+                    print("Please enter a valid number")
+                    continue
+                except IndexError:
                     print("Please enter a valid number")
                     continue
                 break
@@ -6392,6 +6556,9 @@ while True:
                                     print("Invalid Input")
                                     continue
                             except ValueError:
+                                print("Invalid Input")
+                                continue
+                            except IndexError:
                                 print("Invalid Input")
                                 continue
                     elif equipment_choice_two_input == 2:
@@ -7380,6 +7547,9 @@ while True:
                 except ValueError:
                     print("Please enter a valid number")
                     continue
+                except IndexError:
+                    print("Please enter a valid number")
+                    continue
                 break
             print("Please choose your third piece of equipment: ")
             print("1. A Light Crossbow with 20 bolts")
@@ -7404,6 +7574,9 @@ while True:
                                     print("Invalid Input")
                                     continue
                             except ValueError:
+                                print("Invalid Input")
+                                continue
+                            except IndexError:
                                 print("Invalid Input")
                                 continue
                     elif equipment_choice_one_input == 2:
@@ -7445,7 +7618,12 @@ while True:
                             except ValueError:
                                 print("Invalid Input")
                                 continue
+                            except IndexError:
+                                print("Invalid Input")
                 except ValueError:
+                    print("Please enter a valid number")
+                    continue
+                except IndexError:
                     print("Please enter a valid number")
                     continue
                 break
@@ -7753,6 +7931,9 @@ while True:
                         print("Invalid Input")
                         continue
                 except IndexError:
+                    print("Invalid Input")
+                    continue
+                except ValueError:
                     print("Invalid Input")
                     continue
             print("Please choose what equipment you want: ")
@@ -8334,6 +8515,9 @@ while True:
                         print("Invalid Input")
                         continue
                 except IndexError:
+                    print("Invalid Input")
+                    continue
+                except ValueError:
                     print("Invalid Input")
                     continue
             print("Please Choose your first piece of equipment: ")
@@ -9359,6 +9543,9 @@ while True:
                 except ValueError:
                     print("Not a valid option")
                     continue
+                except IndexError:
+                    print("Not a valid option")
+                    continue
                 break
             print("Please Choose your second piece of equipment")
             print("1. Five Javelins")
@@ -9646,6 +9833,9 @@ while True:
                         print("Not a valid choice")
                         continue
                 except ValueError:
+                    print("Not a valid choice")
+                    continue
+                except IndexError:
                     print("Not a valid choice")
                     continue
                 break
@@ -9972,6 +10162,9 @@ while True:
                 except IndexError:
                     print("Invalid Input")
                     continue
+                except ValueError:
+                    print("Invalid Input")
+                    continue
             for index, item in enumerate(ranger_skill_list, start=1):
                 print(index, item)
             while True:
@@ -10096,6 +10289,9 @@ while True:
                 except IndexError:
                     print("Invalid Input")
                     continue
+                except ValueError:
+                    print("Invalid Input")
+                    continue
             print("Please Choose your first piece of equipment: ")
             print("1. Scale Mail")
             print("2. Leather Armor")
@@ -10124,6 +10320,9 @@ while True:
                         print("Invalid Input")
                         continue
                 except IndexError:
+                    print("Invalid Input")
+                    continue
+                except ValueError:
                     print("Invalid Input")
                     continue
             print("Please Choose your second piece of equipment: ")
@@ -10664,6 +10863,9 @@ while True:
                 except ValueError:
                     print("Not a valid choice")
                     continue
+                except IndexError:
+                    print("Not a valid choice")
+                    continue
                 break
     # Rogue Class Gen
     elif class_input == "9":
@@ -10979,128 +11181,7 @@ while True:
                 except IndexError:
                     print("Invalid Input")
                     continue
-            for index, item in enumerate(rogue_skill_list, start=1):
-                print(index, item)
-            while True:
-                try:
-                    skill_choice_he_input = int(input("Enter what skill you want second: "))
-                    skill_choice_three = rogue_skill_list[skill_choice_he_input - 1]
-                    if skill_choice_three in skill_list:
-                        if skill_choice_three == "Acrobatics":
-                            acrobatics += 2
-                            acrobatics_box = True
-                            skill_list.remove(skill_choice_three)
-                            rogue_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Animal Handling":
-                            animal_handling += 2
-                            animal_handling_box = True
-                            skill_list.remove(skill_choice_three)
-                            rogue_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Arcana":
-                            arcana += 2
-                            arcana_box = True
-                            skill_list.remove(skill_choice_three)
-                            rogue_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Athletics":
-                            athletics += 2
-                            athletics_box = True
-                            skill_list.remove(skill_choice_three)
-                            rogue_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Deception":
-                            deception += 2
-                            deception_box = True
-                            skill_list.remove(skill_choice_three)
-                            rogue_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "History":
-                            history += 2
-                            history_box = True
-                            skill_list.remove(skill_choice_three)
-                            rogue_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Insight":
-                            insight += 2
-                            insight_box = True
-                            skill_list.remove(skill_choice_three)
-                            rogue_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Intimidation":
-                            intimidation += 2
-                            intimidation_box = True
-                            skill_list.remove(skill_choice_three)
-                            rogue_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Investigation":
-                            investigation += 2
-                            investigation_box = True
-                            skill_list.remove(skill_choice_three)
-                            rogue_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Medicine":
-                            medicine += 2
-                            medicine_box = True
-                            skill_list.remove(skill_choice_three)
-                            rogue_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Nature":
-                            nature += 2
-                            nature_box = True
-                            skill_list.remove(skill_choice_three)
-                            rogue_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Perception":
-                            perception += 2
-                            perception_box = True
-                            skill_list.remove(skill_choice_three)
-                            rogue_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Performance":
-                            performance += 2
-                            performance_box = True
-                            skill_list.remove(skill_choice_three)
-                            rogue_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Persuasion":
-                            persuasion += 2
-                            persuasion_box = True
-                            skill_list.remove(skill_choice_three)
-                            rogue_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Religion":
-                            religion += 2
-                            religion_box = True
-                            skill_list.remove(skill_choice_three)
-                            rogue_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Sleight of Hand":
-                            slight_of_hand += 2
-                            slight_of_hand_box = True
-                            skill_list.remove(skill_choice_three)
-                            rogue_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Stealth":
-                            stealth += 2
-                            stealth_box = True
-                            skill_list.remove(skill_choice_three)
-                            rogue_skill_list.remove(skill_choice_three)
-                            break
-                        elif skill_choice_three == "Survival":
-                            survival += 2
-                            survival_box = True
-                            skill_list.remove(skill_choice_three)
-                            rogue_skill_list.remove(skill_choice_three)
-                            break
-                        else:
-                            print("Invalid input")
-                            continue
-                    else:
-                        print("Invalid Input")
-                        continue
-                except IndexError:
+                except ValueError:
                     print("Invalid Input")
                     continue
             for index, item in enumerate(rogue_skill_list, start=1):
@@ -11225,6 +11306,136 @@ while True:
                         print("Invalid Input")
                         continue
                 except IndexError:
+                    print("Invalid Input")
+                    continue
+                except ValueError:
+                    print("Invalid Input")
+                    continue
+            for index, item in enumerate(rogue_skill_list, start=1):
+                print(index, item)
+            while True:
+                try:
+                    skill_choice_he_input = int(input("Enter what skill you want second: "))
+                    skill_choice_three = rogue_skill_list[skill_choice_he_input - 1]
+                    if skill_choice_three in skill_list:
+                        if skill_choice_three == "Acrobatics":
+                            acrobatics += 2
+                            acrobatics_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Animal Handling":
+                            animal_handling += 2
+                            animal_handling_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Arcana":
+                            arcana += 2
+                            arcana_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Athletics":
+                            athletics += 2
+                            athletics_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Deception":
+                            deception += 2
+                            deception_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "History":
+                            history += 2
+                            history_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Insight":
+                            insight += 2
+                            insight_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Intimidation":
+                            intimidation += 2
+                            intimidation_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Investigation":
+                            investigation += 2
+                            investigation_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Medicine":
+                            medicine += 2
+                            medicine_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Nature":
+                            nature += 2
+                            nature_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Perception":
+                            perception += 2
+                            perception_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Performance":
+                            performance += 2
+                            performance_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Persuasion":
+                            persuasion += 2
+                            persuasion_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Religion":
+                            religion += 2
+                            religion_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Sleight of Hand":
+                            slight_of_hand += 2
+                            slight_of_hand_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Stealth":
+                            stealth += 2
+                            stealth_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        elif skill_choice_three == "Survival":
+                            survival += 2
+                            survival_box = True
+                            skill_list.remove(skill_choice_three)
+                            rogue_skill_list.remove(skill_choice_three)
+                            break
+                        else:
+                            print("Invalid input")
+                            continue
+                    else:
+                        print("Invalid Input")
+                        continue
+                except IndexError:
+                    print("Invalid Input")
+                    continue
+                except ValueError:
                     print("Invalid Input")
                     continue
             print("Please choose your piece of equipment: ")
@@ -11265,6 +11476,9 @@ while True:
                 except ValueError:
                     print("Invalid Input")
                     continue
+                except IndexError:
+                    print("Invalid Input")
+                    continue
                 break
             print("Please choose your second piece of equipment: ")
             print("1. A Shortbow and 20 arrows")
@@ -11299,6 +11513,9 @@ while True:
                     else:
                         continue
                 except ValueError:
+                    print("Invalid Input")
+                    continue
+                except IndexError:
                     print("Invalid Input")
                     continue
                 break
@@ -11874,6 +12091,9 @@ while True:
                 except ValueError:
                     print("Not a valid choice")
                     continue
+                except IndexError:
+                    print("Not a valid choice")
+                    continue
                 break
             print("Please choose Four Cantrips from the following list:")
             for index, item in enumerate(sorcerer_cantrip_spell_list, start=1):
@@ -11892,6 +12112,9 @@ while True:
                 except ValueError:
                     print("Please enter a valid number")
                     continue
+                except IndexError:
+                    print("Please enter a valid number")
+                    continue
             for index, item in enumerate(sorcerer_cantrip_spell_list, start=1):
                 print(index, item)
             while True:
@@ -11906,6 +12129,9 @@ while True:
                         print("Please enter a valid number")
                         continue
                 except ValueError:
+                    print("Please enter a valid number")
+                    continue
+                except IndexError:
                     print("Please enter a valid number")
                     continue
             for index, item in enumerate(sorcerer_cantrip_spell_list, start=1):
@@ -11924,6 +12150,9 @@ while True:
                 except ValueError:
                     print("Please enter a valid number")
                     continue
+                except IndexError:
+                    print("Please enter a valid number")
+                    continue
             for index, item in enumerate(sorcerer_cantrip_spell_list, start=1):
                 print(index, item)
             while True:
@@ -11938,6 +12167,9 @@ while True:
                         print("Please enter a valid number")
                         continue
                 except ValueError:
+                    print("Please enter a valid number")
+                    continue
+                except IndexError:
                     print("Please enter a valid number")
                     continue
             print("Please choose two spells from the following list:")
@@ -11957,6 +12189,9 @@ while True:
                 except ValueError:
                     print("Please enter a valid number")
                     continue
+                except IndexError:
+                    print("Please enter a valid number")
+                    continue
             for index, item in enumerate(sorcerer_spell_list_1, start=1):
                 print(index, item)
             while True:
@@ -11971,6 +12206,9 @@ while True:
                         print("Please enter a valid number")
                         continue
                 except ValueError:
+                    print("Please enter a valid number")
+                    continue
+                except IndexError:
                     print("Please enter a valid number")
                     continue
     # Warlock Class Gen
@@ -12264,6 +12502,9 @@ while True:
                 except IndexError:
                     print("Invalid Input")
                     continue
+                except ValueError:
+                    print("Invalid Input")
+                    continue
             print("Please Choose your first piece of equipment: ")
             print("1. Light crossbow and 20 bolts")
             print("2. Any Simple Weapon")
@@ -12541,6 +12782,8 @@ while True:
                 except ValueError:
                     print("Not a valid choice")
                     continue
+                except IndexError:
+                    print("Not a valid choice")
                 break
             print("Please Choose your Second piece of equipment: ")
             for index, item in enumerate(simple_weapon_list, start=1):
@@ -12813,6 +13056,9 @@ while True:
                 except ValueError:
                     print("Please enter a valid number")
                     continue
+                except IndexError:
+                    print("Please enter a valid number")
+                    continue
             for index, item in enumerate(warlock_cantrip_spell_list, start=1):
                 print(index, item)
             while True:
@@ -12827,6 +13073,9 @@ while True:
                         print("Please enter a valid number")
                         continue
                 except ValueError:
+                    print("Please enter a valid number")
+                    continue
+                except IndexError:
                     print("Please enter a valid number")
                     continue
             print("Please choose two spells from the following list:")
@@ -12846,6 +13095,9 @@ while True:
                 except ValueError:
                     print("Please enter a valid number")
                     continue
+                except IndexError:
+                    print("Please enter a valid number")
+                    continue
             for index, item in enumerate(warlock_spell_list_1, start=1):
                 print(index, item)
             while True:
@@ -12860,6 +13112,9 @@ while True:
                         print("Please enter a valid number")
                         continue
                 except ValueError:
+                    print("Please enter a valid number")
+                    continue
+                except IndexError:
                     print("Please enter a valid number")
                     continue
     # Wizard Class Gen
@@ -13150,6 +13405,9 @@ while True:
                 except IndexError:
                     print("Invalid Input")
                     continue
+                except ValueError:
+                    print("Invalid Input")
+                    continue
             print("Please choose a piece of equipment: ")
             print("1. A Quarterstaff")
             print("2. A Dagger")
@@ -13205,6 +13463,9 @@ while True:
                 except IndexError:
                     print("Invalid Input")
                     continue
+                except ValueError:
+                    print("Invalid Input")
+                    continue
             print("Please choose Three Cantrips from the following list:")
             for index, item in enumerate(wizard_cantrip_spell_list, start=1):
                 print(index, item)
@@ -13220,6 +13481,9 @@ while True:
                         print("Please enter a valid number")
                         continue
                 except ValueError:
+                    print("Please enter a valid number")
+                    continue
+                except IndexError:
                     print("Please enter a valid number")
                     continue
             for index, item in enumerate(wizard_cantrip_spell_list, start=1):
@@ -13238,6 +13502,9 @@ while True:
                 except ValueError:
                     print("Please enter a valid number")
                     continue
+                except IndexError:
+                    print("Please enter a valid number")
+                    continue
             for index, item in enumerate(wizard_cantrip_spell_list, start=1):
                 print(index, item)
             while True:
@@ -13252,6 +13519,9 @@ while True:
                         print("Please enter a valid number")
                         continue
                 except ValueError:
+                    print("Please enter a valid number")
+                    continue
+                except IndexError:
                     print("Please enter a valid number")
                     continue
             print("Please choose six spells from the following list:")
@@ -13271,20 +13541,7 @@ while True:
                 except ValueError:
                     print("Please enter a valid number")
                     continue
-            for index, item in enumerate(wizard_spell_list_1, start=1):
-                print(index, item)
-            while True:
-                try:
-                    spell_choice = int(input("Please enter the number of the spell you want to add: "))
-                    if spell_choice in range(1, len(wizard_spell_list_1) + 1):
-                        spell_choice -= 1
-                        first_level_spell_list.append(wizard_spell_list_1[spell_choice])
-                        wizard_spell_list_1.remove(wizard_spell_list_1[spell_choice])
-                        break
-                    else:
-                        print("Please enter a valid number")
-                        continue
-                except ValueError:
+                except IndexError:
                     print("Please enter a valid number")
                     continue
             for index, item in enumerate(wizard_spell_list_1, start=1):
@@ -13303,20 +13560,7 @@ while True:
                 except ValueError:
                     print("Please enter a valid number")
                     continue
-            for index, item in enumerate(wizard_spell_list_1, start=1):
-                print(index, item)
-            while True:
-                try:
-                    spell_choice = int(input("Please enter the number of the spell you want to add: "))
-                    if spell_choice in range(1, len(wizard_spell_list_1) + 1):
-                        spell_choice -= 1
-                        first_level_spell_list.append(wizard_spell_list_1[spell_choice])
-                        wizard_spell_list_1.remove(wizard_spell_list_1[spell_choice])
-                        break
-                    else:
-                        print("Please enter a valid number")
-                        continue
-                except ValueError:
+                except IndexError:
                     print("Please enter a valid number")
                     continue
             for index, item in enumerate(wizard_spell_list_1, start=1):
@@ -13335,6 +13579,9 @@ while True:
                 except ValueError:
                     print("Please enter a valid number")
                     continue
+                except IndexError:
+                    print("Please enter a valid number")
+                    continue
             for index, item in enumerate(wizard_spell_list_1, start=1):
                 print(index, item)
             while True:
@@ -13351,7 +13598,47 @@ while True:
                 except ValueError:
                     print("Please enter a valid number")
                     continue
-
+                except IndexError:
+                    print("Please enter a valid number")
+                    continue
+            for index, item in enumerate(wizard_spell_list_1, start=1):
+                print(index, item)
+            while True:
+                try:
+                    spell_choice = int(input("Please enter the number of the spell you want to add: "))
+                    if spell_choice in range(1, len(wizard_spell_list_1) + 1):
+                        spell_choice -= 1
+                        first_level_spell_list.append(wizard_spell_list_1[spell_choice])
+                        wizard_spell_list_1.remove(wizard_spell_list_1[spell_choice])
+                        break
+                    else:
+                        print("Please enter a valid number")
+                        continue
+                except ValueError:
+                    print("Please enter a valid number")
+                    continue
+                except IndexError:
+                    print("Please enter a valid number")
+                    continue
+            for index, item in enumerate(wizard_spell_list_1, start=1):
+                print(index, item)
+            while True:
+                try:
+                    spell_choice = int(input("Please enter the number of the spell you want to add: "))
+                    if spell_choice in range(1, len(wizard_spell_list_1) + 1):
+                        spell_choice -= 1
+                        first_level_spell_list.append(wizard_spell_list_1[spell_choice])
+                        wizard_spell_list_1.remove(wizard_spell_list_1[spell_choice])
+                        break
+                    else:
+                        print("Please enter a valid number")
+                        continue
+                except ValueError:
+                    print("Please enter a valid number")
+                    continue
+                except IndexError:
+                    print("Please enter a valid number")
+                    continue
     else:
         print("Invalid Input")
         continue
