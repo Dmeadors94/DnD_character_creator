@@ -6,7 +6,6 @@ import Modcal
 
 # ============================================
 # TO-DO LIST
-# TODO - Add spells and spell casting information to third page of PDF
 # TODO - Launch Beta with executable
 # ============================================
 # Define all undefined variable
@@ -14959,30 +14958,124 @@ flaws = input("Please describe your Character's flaw. This is something negative
               "I'm a very bad liar.\n"
               "I constantly mutter prayers and phrases from books when I'm nervous.\n"
               "Enter your Flaw: ")
-print("Please describe your Character's alignment. Your choices are :")
-print("==========================================================================================================")
-print("Lawful Good - Acts with compassion and always with honor and a sense of duty.")
-print("==========================================================================================================")
-print("Neutral Good - Acts altruistically, without regard for or against lawful precepts such as rules or tradition.")
-print("==========================================================================================================")
-print("Chaotic Good - Does what is necessary to bring about change for the better.")
-print("==========================================================================================================")
-print("Lawful Neutral - A lawful neutral character typically believes strongly in lawful concepts such")
-print("as honor, order, rules, and tradition, but often follows a personal code.")
-print("==========================================================================================================")
-print("True Neutral - Tends not to feel strongly towards any alignment, or actively seeks their balance.")
-print("==========================================================================================================")
-print("Chaotic Neutral - A chaotic neutral character is an individualist who follows their own heart")
-print("==========================================================================================================")
-print("Lawful Evil - A lawful evil character sees a well-ordered system as being easier to exploit than")
-print("to necessarily follow.")
-print("==========================================================================================================")
-print("Neutral Evil - A neutral evil character is typically selfish and has no qualms about turning on")
-print("allies-of-the-moment, and usually makes allies primarily to further their own goals.")
-print("============================================================================================================")
-print("Chaotic Evil - A chaotic evil character tends to have no respect for rules, other people's")
-print("lives, or anything but their own desires, which are typically selfish and cruel.")
-alignment = input("Enter your Alignment: ")
+print("Please Enter your Alignment from the list below: ")
+print("1.Lawful Good")
+print("2.Neutral Good")
+print("3.Chaotic Good")
+print("4.Lawful Neutral")
+print("5.True Neutral")
+print("6.Chaotic Neutral")
+print("7.Lawful Evil")
+print("8.Neutral Evil")
+print("9.Chaotic Evil")
+while True:
+    user_choice = input("Alignment Choice: ")
+    if user_choice == "1":
+        print("Lawful good characters like to obey the laws of the land and do good deeds out of the goodness of their"
+              "hearts.")
+        user_choice = input("Are you sure you want to be Lawful good?\n")
+        if user_choice.lower() in ["y", "yes"]:
+            alignment = "Lawful Good"
+            break
+        elif user_choice.lower() in ["n", "no"]:
+            continue
+        else:
+            print("Please choose Yes or No.")
+            continue
+    elif user_choice == "2":
+        print("Neutral Good characters dont follow any particular law or creed, but feel the need to do good in the"
+              "world")
+        user_choice = input("Are you sure you want to be Neutral Good?\n")
+        if user_choice.lower() in ["y", "yes"]:
+            alignment = "Neutral Good"
+            break
+        elif user_choice.lower() in ["n", "no"]:
+            continue
+        else:
+            print("Please choose Yes or No.")
+            continue
+    elif user_choice == "3":
+        print("Chaotic Good characters tend to be anti-authority and like to do things their own way. They do good"
+              "by any means, even if it breaks the law.")
+        user_choice = input("Are you sure you want to be Chaotic Good?\n")
+        if user_choice.lower() in ["y", "yes"]:
+            alignment = "Chaotic Good"
+            break
+        elif user_choice.lower() in ["n", "no"]:
+            continue
+        else:
+            print("Please choose Yes or No.")
+            continue
+    elif user_choice == "4":
+        print("Lawful Neutral characters are typically self-motivated but do believe in order and laws.")
+        user_choice = input("Are you sure you want to be Lawful Neutral?\n")
+        if user_choice.lower() in ["y", "yes"]:
+            alignment = "Lawful Neutral"
+            break
+        elif user_choice.lower() in ["n", "no"]:
+            continue
+        else:
+            print("Please choose Yes or No.")
+            continue
+    elif user_choice == "5":
+        print("True Neutral characters are neutral and do not feel strongly about the law or the rules of the"
+              "world.")
+        user_choice = input("Are you sure you want to be True Neutral?\n")
+        if user_choice.lower() in ["y", "yes"]:
+            alignment = "True Neutral"
+            break
+        elif user_choice.lower() in ["n", "no"]:
+            continue
+        else:
+            print("Please choose Yes or No.")
+            continue
+    elif user_choice == "6":
+        print("Chaotic Neutral characters are typically self-motivated but do not believe in order and laws.")
+        user_choice = input("Are you sure you want to be Chaotic Neutral?\n")
+        if user_choice.lower() in ["y", "yes"]:
+            alignment = "Chaotic Neutral"
+            break
+        elif user_choice.lower() in ["n", "no"]:
+            continue
+        else:
+            print("Please choose Yes or No.")
+            continue
+    elif user_choice == "7":
+        print("Lawful Evil characters are typically evil but follow some kind of code or dogma that they live life by.")
+        user_choice = input("Are you sure you want to be Lawful Evil?\n")
+        if user_choice.lower() in ["y", "yes"]:
+            alignment = "Lawful Evil"
+            break
+        elif user_choice.lower() in ["n", "no"]:
+            continue
+        else:
+            print("Please choose Yes or No.")
+            continue
+    elif user_choice == "8":
+        print("Neutral Evil characters are evil but do not follow any particular code or dogma.")
+        user_choice = input("Are you sure you want to be Neutral Evil?\n")
+        if user_choice.lower() in ["y", "yes"]:
+            alignment = "Neutral Evil"
+            break
+        elif user_choice.lower() in ["n", "no"]:
+            continue
+        else:
+            print("Please choose Yes or No.")
+            continue
+    elif user_choice == "9":
+        print("Chaotic Evil characters are evil and thrive on chaos and destruction.")
+        user_choice = input("Are you sure you want to be Chaotic Evil?\n")
+        if user_choice.lower() in ["y", "yes"]:
+            alignment = "Chaotic Evil"
+            break
+        elif user_choice.lower() in ["n", "no"]:
+            continue
+        else:
+            print("Please choose Yes or No.")
+        continue
+    else:
+        print("Please choose a valid alignment.")
+        continue
 experience = "0"
 background = input(
     "Please enter what your character was BEFORE they became an adventurer, This can be anything from a humble Miner "
