@@ -1576,7 +1576,6 @@ while True:
     print("11.Warlock")
     print("12.Wizard")
 
-    #try:
     class_input = input("Class Choice: ")
     # Barbarian Class Gen Start
     if class_input == "1":
@@ -15355,6 +15354,8 @@ data_dict = {
 
     'Feat+Traits': ""
 }
+
+
 
 def fill_pdf(input_pdf_path, output_pdf_path, data_dict):
     template_pdf = pdfrw.PdfReader(input_pdf_path)
