@@ -6,7 +6,6 @@ import Modcal
 
 # ============================================
 # TO-DO LIST
-# TODO - Add weapons properly to PDF (Barbarian, Bard, and Cleric Fixed)
 # TODO - Add spells and spell casting information to third page of PDF
 # TODO - Launch Beta with executable
 # ============================================
@@ -14,6 +13,9 @@ import Modcal
 speed = None
 hitdie = None
 hitdietotal = None
+spellcasting_ability = ""
+spell_save_dc = ""
+spell_attack_bonus = ""
 wpn_name = ""
 wpn1_damage = ""
 wpn1_attack_bonus = ""
@@ -73,6 +75,10 @@ spell_list_cantrip = ["Acid Splash", "Chill Touch", "Dancing Lights", "Druidcraf
                       "Prestidigitation", "Produce Flame", "Ray of Frost", "Sacred Flame", "Shillelagh",
                       "Shocking Grasp",
                       "Spare the Dying", "Thaumaturgy", "True Strike", "Vicious Mockery", "Resistance (Spell)"]
+bard_spell_list_1 = ["Animal Friendship", "Bane", "Charm Person", "Comprehend Languages", "Cure Wounds", "Detect Magic",
+                     "Disguise Self", "Faerie Fire", "Feather Fall", "Healing Word", "Heroism",
+                     "Hideous Laughter", "Identify", "Illusory Script", "Longstrider", "Silent Image", "Sleep",
+                     "Speak with Animals", "Thunderwave", "Unseen Servant"]
 cleric_spell_list_1 = ["Bane", "Bless", "Command", "Create or Destroy Water", "Cure Wounds", "Detect Evil and Good",
                        "Detect Magic", "Detect Poison and Disease", "Guiding Bolt", "Healing Word", "Inflict Wounds",
                        "Protection from Evil and Good", "Purify Food and Drink", "Sanctuary", "Shield of Faith"]
@@ -1614,6 +1620,12 @@ while True:
             cantrip_list.append("")
             cantrip_list.append("")
             cantrip_list.append("")
+            first_level_spell_list.append("")
+            first_level_spell_list.append("")
+            first_level_spell_list.append("")
+            first_level_spell_list.append("")
+            first_level_spell_list.append("")
+            first_level_spell_list.append("")
             hitdie = "1d12"
             hitdietotal = "1d12"
             equipmentlist.append("Four Javelin")
@@ -2472,6 +2484,9 @@ while True:
             STcha_box = True
             armor_class = 11 + dex_mod
             featurelist.append("Spellcasing(Bard)")
+            spellcasting_ability = "Charisma"
+            spell_save_dc = 10 + cha_mod
+            spell_attack_bonus = 2 + cha_mod
             featurelist.append("Bardic Inspiration")
             professionlist.append("Armor: Light")
             professionlist.append("Weapon: Simple")
@@ -2486,6 +2501,7 @@ while True:
             wpn_name_2 = "Dagger"
             wpn2_attack_bonus = 2 + dex_mod
             wpn2_damage = "1d4/P"
+
             while True:
                 print("Please choose your first piece of starting equipment: ")
                 print("1.Rapier")
@@ -3164,6 +3180,71 @@ while True:
                 except ValueError:
                     print("Invalid Input")
                     continue
+            print("Please choose four spells from the following list:")
+            for index, item in enumerate(bard_spell_list_1, start=1):
+                print(index, item)
+            while True:
+                try:
+                    spell_choice = int(input("Please enter the number of the spell you want to add: "))
+                    if spell_choice in range(1, len(bard_spell_list_1) + 1):
+                        spell_choice -= 1
+                        first_level_spell_list.append(bard_spell_list_1[spell_choice])
+                        bard_spell_list_1.remove(bard_spell_list_1[spell_choice])
+                        break
+                    else:
+                        print("Please enter a valid number")
+                        continue
+                except ValueError:
+                    print("Please enter a valid number")
+                    continue
+            for index, item in enumerate(bard_spell_list_1, start=1):
+                print(index, item)
+            while True:
+                try:
+                    spell_choice = int(input("Please enter the number of the spell you want to add: "))
+                    if spell_choice in range(1, len(bard_spell_list_1) + 1):
+                        spell_choice -= 1
+                        first_level_spell_list.append(bard_spell_list_1[spell_choice])
+                        bard_spell_list_1.remove(bard_spell_list_1[spell_choice])
+                        break
+                    else:
+                        print("Please enter a valid number")
+                        continue
+                except ValueError:
+                    print("Please enter a valid number")
+                    continue
+            for index, item in enumerate(bard_spell_list_1, start=1):
+                print(index, item)
+            while True:
+                try:
+                    spell_choice = int(input("Please enter the number of the spell you want to add: "))
+                    if spell_choice in range(1, len(bard_spell_list_1) + 1):
+                        spell_choice -= 1
+                        first_level_spell_list.append(bard_spell_list_1[spell_choice])
+                        bard_spell_list_1.remove(bard_spell_list_1[spell_choice])
+                        break
+                    else:
+                        print("Please enter a valid number")
+                        continue
+                except ValueError:
+                    print("Please enter a valid number")
+                    continue
+            for index, item in enumerate(bard_spell_list_1, start=1):
+                print(index, item)
+            while True:
+                try:
+                    spell_choice = int(input("Please enter the number of the spell you want to add: "))
+                    if spell_choice in range(1, len(bard_spell_list_1) + 1):
+                        spell_choice -= 1
+                        first_level_spell_list.append(bard_spell_list_1[spell_choice])
+                        bard_spell_list_1.remove(bard_spell_list_1[spell_choice])
+                        break
+                    else:
+                        print("Please enter a valid number")
+                        continue
+                except ValueError:
+                    print("Please enter a valid number")
+                    continue
             break
         else:
             print("Invalid Input")
@@ -3198,6 +3279,9 @@ while True:
             STcha += 2
             STcha_box = True
             featurelist.append("Spellcasing(Cleric)")
+            spellcasting_ability = "Wisdom"
+            spell_save_dc = 10 + wis_mod
+            spell_attack_bonus = 2 + wis_mod
             professionlist.append("Armor: Light")
             professionlist.append("Armor: Medium")
             professionlist.append("Armor: Shields")
@@ -4717,9 +4801,9 @@ while True:
                     except IndexError:
                         print("Please enter a valid number")
                         continue
-        else:
-            print("Invalid Input")
-            continue
+            else:
+                print("Invalid Input")
+                continue
         break
     # Cleric Class Gen End
     # Druid Class Gen Start
@@ -4752,6 +4836,9 @@ while True:
             STint_box = True
             armor_class = 11 + dex_mod
             featurelist.append("Spellcasing(Druid)")
+            spellcasting_ability = "Wisdom"
+            spell_save_dc = 10 + wis_mod
+            spell_attack_bonus = 2 + wis_mod
             professionlist.append("Armor: Light")
             professionlist.append("Armor: Medium")
             professionlist.append("Armor: Shields")
@@ -12547,6 +12634,10 @@ while True:
             STcon_box = True
             STcha += 2
             STcha_box = True
+            featurelist.append("Spellcasting(Sorcerer)")
+            spellcasting_ability = "Charisma"
+            spell_save_dc = 10 + cha_mod
+            spell_attack_bonus = 2 + cha_mod
             featurelist.append("Draconic Resilience")
             professionlist.append("Weapon: Daggers")
             professionlist.append("Weapon: Darts")
@@ -13310,6 +13401,10 @@ while True:
             STcha += 2
             STcha_box = True
             armor_class = 11 + dex_mod
+            featurelist.append("Spellcasting(Warlock)")
+            spellcasting_ability = "Charisma"
+            spell_save_dc = 10 + cha_mod
+            spell_attack_bonus = 2 + cha_mod
             featurelist.append("Pact: Fiend")
             featurelist.append("Dark One's Blessing")
             professionlist.append("Armor: Light")
@@ -14297,6 +14392,10 @@ while True:
             STint_box = True
             STwis += 2
             STwis_box = True
+            featurelist.append("Spellcasting(Wizard)")
+            spellcasting_ability = "Inteligence"
+            spell_save_dc = 10 + int_mod
+            spell_attack_bonus = 2 + int_mod
             featurelist.append("Arcane Recovery")
             professionlist.append("Weapon: Daggers")
             professionlist.append("Weapon: Darts")
@@ -14835,13 +14934,32 @@ while True:
         print("Please choose Yes or No.")
         continue
 print("Alright, now that we know what your character looks like, lets flesh out WHO they are.")
-personality_traits = input("Please describe your Character in one sentence.\nEnter sentence choice: ")
-ideals = input("Please describe your Character's ideal. This can be anything your Character aspires to be or obtain."
+personality_traits = input("Please describe a personality trait of your character in one sentence.\n"
+                           "Here are some examples:\nI continuously make quips when I'm nervous or frightened.\n"
+                           "I'm never as serene as when I get a chance to work with plants.\n"
+                           "Somewhere along the line, violence stopped having any effect on me.\n"
+                           "Enter sentence choice: ")
+ideals = input("Please describe your Character's ideal. This can be anything your Character aspires to be or obtain.\n"
+               "Here are some examples:\nCreativity. Easy solutions are for boring people -- "
+               "failing with style is much more compelling.\n"
+               "Respect. People deserve to be treated with dignity and respect.\n"
+               "Fairness. No one should get preferential treatment before the law.\n"
                "\nEnter your Ideal: ")
 bonds = input("Please describe your Character's bond. This can be some kind of personal quest or objective your "
-              "Character is trying to complete.\nEnter your Bond: ")
+              "Character is trying to complete.\n"
+              "Here are some examples: \n"
+              "I'm completely obsessed with magic and arcane arts and live to document the rules that control them.\n"
+              "My birthright was stolen from me; I will take it back one day -- and get my revenge.\n"
+              "I'm the caretaker of an old family estate -- my duty is to make sure everyone has a safe place to "
+              "live.\n"
+              "Enter your Bond: ")
 flaws = input("Please describe your Character's flaw. This is something negative about your character that THEY know "
-              "about and are trying to overcome.\nEnter your Flaw: ")
+              "about and are trying to overcome.\n"
+              "Here are some examples: \n"
+              "I don't trust anyone; I'm never let down, but I also never make friends.\n"
+              "I'm a very bad liar.\n"
+              "I constantly mutter prayers and phrases from books when I'm nervous.\n"
+              "Enter your Flaw: ")
 print("Please describe your Character's alignment. Your choices are :")
 print("==========================================================================================================")
 print("Lawful Good - Acts with compassion and always with honor and a sense of duty.")
@@ -14869,7 +14987,9 @@ alignment = input("Enter your Alignment: ")
 experience = "0"
 background = input(
     "Please enter what your character was BEFORE they became an adventurer, This can be anything from a humble Miner "
-    "to a holy Priest, or even a homeless Vagabond. The choice is yours!\nEnter Background: ")
+    "to a holy Priest, or even a homeless Vagabond. The choice is yours!\n"
+    "Please enter ONE word for your background.\n"
+    "Enter Background: ")
 print("Okay, so you were a", background,
       ". From the following list, choose two skills you feel most closely relate to your background.")
 for index, item in enumerate(skill_list, start=1):
@@ -15096,6 +15216,18 @@ while True:
 # RunPDFconverter - This code section deals with transfering the character data to a PDF
 # Define stuff that runs before the final PDF print
 hit_points_current = hit_points
+cantrip_list.append("")
+cantrip_list.append("")
+cantrip_list.append("")
+cantrip_list.append("")
+cantrip_list.append("")
+cantrip_list.append("")
+first_level_spell_list.append("")
+first_level_spell_list.append("")
+first_level_spell_list.append("")
+first_level_spell_list.append("")
+first_level_spell_list.append("")
+first_level_spell_list.append("")
 template_pdf = pdfrw.PdfReader(pdf_template)  # create a pdfrw object from our template.pdf
 # template_pdf  # uncomment to see all the data captured from this PDF.
 
@@ -15105,7 +15237,6 @@ ANNOT_VAL_KEY = '/V'
 ANNOT_RECT_KEY = '/Rect'
 SUBTYPE_KEY = '/Subtype'
 WIDGET_SUBTYPE_KEY = '/Widget'
-
 data_dict = {
     'ClassLevel': dndclass,
     'PlayerName': playername,
@@ -15207,10 +15338,23 @@ data_dict = {
     'Equipment': ', '.join(equipmentlist),
     'Spells 1014': cantrip_list[0],
     'Spells 1016': cantrip_list[1],
+    'Spells 1017': cantrip_list[2],
+    'Spells 1018': cantrip_list[3],
+    'Spells 1019': cantrip_list[4],
+    'Spells 1020': cantrip_list[5],
+    'Spells 1015': first_level_spell_list[0],
+    'Spells 1023': first_level_spell_list[1],
+    'Spells 1024': first_level_spell_list[2],
+    'Spells 1025': first_level_spell_list[3],
+    'Spells 1026': first_level_spell_list[4],
+    'Spells 1027': first_level_spell_list[5],
+    'Spellcasting Class 2': dndclass,
+    'SpellcastingAbility 2': spellcasting_ability,
+    'SpellSaveDC  2': spell_save_dc,
+    'SpellAtkBonus 2': spell_attack_bonus,
 
-    'Feat+Traits': "PlaceHolder"
+    'Feat+Traits': ""
 }
-
 
 def fill_pdf(input_pdf_path, output_pdf_path, data_dict):
     template_pdf = pdfrw.PdfReader(input_pdf_path)
@@ -15232,18 +15376,6 @@ def fill_pdf(input_pdf_path, output_pdf_path, data_dict):
                         else:
                             annotation.update(pdfrw.PdfDict(V='{}'.format(data_dict[key])))
                             annotation.update(pdfrw.PdfDict(AP=''))
-                    '''
-                    if key in data_dict.keys():
-                        if type(data_dict[key]) == bool:
-                            if data_dict[key] == True:
-                                annotation.update(pdfrw.PdfDict(
-                                        AS=pdfrw.PdfName('Yes')))
-                        else:
-                            annotation.update(
-                                pdfrw.PdfDict(V='{}'.format(data_dict[key]))
-                            )
-                            annotation.update(pdfrw.PdfDict(AP=''))
-                            '''
     template_pdf.Root.AcroForm.update(pdfrw.PdfDict(NeedAppearances=pdfrw.PdfObject('true')))
     pdfrw.PdfWriter().write(output_pdf_path, template_pdf)
 

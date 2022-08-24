@@ -18,7 +18,6 @@ Ideals
 DEXmod
 Bonds
 CON
-HDTotal
 Check Box 12
 Check Box 13
 Check Box 14
@@ -36,7 +35,6 @@ Wpn Name 2
 Wpn2 AtkBonus
 Wpn Name 3
 Wpn3 AtkBonus
-=check boxes for saving throws=
 Check Box 11
 Check Box 18
 Check Box 19
@@ -48,7 +46,6 @@ Wpn2 Damage
 WIS
 WISmod
 CHA
-=Check boxes for skills=
 Check Box 23
 Check Box 24
 Check Box 25
@@ -67,7 +64,6 @@ Check Box 37
 Check Box 38
 Check Box 39
 Check Box 40
-HPMax
 HPCurrent
 HPTemp
 Wpn3 Damage
@@ -106,6 +102,8 @@ Religion
 SleightofHand
 Stealth
 Survival
+HPMax
+HDTotal
 CharacterName 2
 Age
 Height
@@ -333,3 +331,5 @@ Check Box 3081
 Check Box 3082
 Spells 101013
 Check Box 3083
+
+Process finished with exit code 0
