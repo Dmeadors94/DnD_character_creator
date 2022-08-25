@@ -16,7 +16,8 @@ skill_dict = {
     "Perception": "The ability to notice things around you. This skill is used to notice things around you.",
     "Survival": "The ability to survive in the wild. This skill is used to survive in the wild.",
 }
-'''
+
+
 # Run StatGen
 def startstats():
     dicerolls = []
@@ -28,36 +29,46 @@ def startstats():
     return stat
 
 
-print("Please assign the stats to the following stats:")
-print("Strength: Your physical power")
-print("Dexterity: Your agility and swiftness")
-print("Constitution: Your endurance")
-print("Intelligence: Your reasoning and memory")
-print("Wisdom: Your perception and insight")
-print("Charisma: Your force of personality")
-while True:
-    stats = []
-    for stat in range(6):
-        stats.append(startstats())
-    print("Your stats are: ", stats)
-    reroll_choice = input("Do you want to re-roll your stats? Yes or No: ")
-    if reroll_choice.lower() in ["y", "yes"]:
-        continue
-    elif reroll_choice.lower() in ["n", "no"]:
-        break
-    else:
-        print("Please choose Yes or No.")
-        continue
-print("Your stats are: ", stats)
-'''
-
-
 class Character:
 
     def __init__(self, name):
+        self.strength = None
+        self.stats = []
         self.name = name
         self.race = None
         self.dndclass = None
+        self.stat_choice()
+
+    def stat_choice(self):
+        print("Please assign the stats to the following stats:")
+        print("Strength: Your physical power")
+        print("Dexterity: Your agility and swiftness")
+        print("Constitution: Your endurance")
+        print("Intelligence: Your reasoning and memory")
+        print("Wisdom: Your perception and insight")
+        print("Charisma: Your force of personality")
+        while True:
+            self.stats = []
+            for stat in range(6):
+                self.stats.append(startstats())
+            print("Your stats are: ", self.stats)
+            reroll_choice = input("Do you want to re-roll your stats? Yes or No: ")
+            if reroll_choice.lower() in ["y", "yes"]:
+                continue
+            elif reroll_choice.lower() in ["n", "no"]:
+                break
+            else:
+                print("Please choose Yes or No.")
+                continue
+        print("Your stats are: ", self.stats)
+        print("Please choose your Strength stat:")
+        self.strength = int(input("Enter your Strength stat: "))
+        while self.strength not in self.stats:
+            print("Please choose a valid stat.")
+            self.strength = int(input("Enter your Strength stat: "))
+        self.stats.remove(self.strength)
+        print("Please choose your Dexterity stat:")
+        self.dexterity = int(input("Enter your Dexterity stat: "))
 
 
 class DNDClass:
@@ -86,9 +97,15 @@ class DNDClass:
                 except ValueError:
                     print("This is not a valid number.")
                     add_skill_index = -1
-            #
             add_skill = self.allowed_skills.pop(add_skill_index)
-            self.pri_skills.append(add_skill)
+            for y in dict.keys(skill_dict):
+                if y == add_skill:
+                    print(f'{skill_dict[y]}')
+                    choice_skill = input("Do you want to be proficent in this skill? Yes or No: ")
+                    if choice_skill.lower() in ["y", "yes"]:
+                        self.pri_skills.append(add_skill)
+                    else:
+                        continue
 
 
 myname = input('enter a name: ')
@@ -102,114 +119,6 @@ mychar.dndclass.select_pri_skills()
 
 print("Your primary skills are: ", mychar.dndclass.pri_skills)
 
-'''
-while True:
-    strength = input("Out of your stats, which one should be Strength?\n")
-    try:
-        strength = int(strength)
-        if strength in stats:
-            stats.remove(int(strength))
-            str_mod = Modcal.Modcal(strength)
-            print("Your Strength Modifier is: ", str_mod)
-            print("Your remaining stats are: ", stats)
-            break
-        else:
-            print("Please enter one of your stats")
-        continue
-    except ValueError:
-        print("Please enter one of your stats")
-    except IndexError:
-        print("Please enter one of your stats")
-
-    continue
-while True:
-    dexterity = input("Out of your stats, which one should be Dexterity?\n")
-    try:
-        dexterity = int(dexterity)
-        if dexterity in stats:
-            stats.remove(int(dexterity))
-            dex_mod = Modcal.Modcal(dexterity)
-            print("Your Dexterity Modifier is: ", dex_mod)
-            print("Your remaining stats are: ", stats)
-            break
-        else:
-            print("Please enter one of your stats")
-        continue
-    except ValueError:
-        print("Please enter one of your stats")
-    except IndexError:
-        print("Please enter one of your stats")
-    continue
-while True:
-    constitution = input("Out of your stats, which one should be Constitution?\n")
-    try:
-        constitution = int(constitution)
-        if constitution in stats:
-            stats.remove(int(constitution))
-            con_mod = Modcal.Modcal(constitution)
-            print("Your Constitution Modifier is: ", con_mod)
-            print("Your remaining stats are: ", stats)
-            break
-        else:
-            print("Please enter one of your stats")
-        continue
-    except ValueError:
-        print("Please enter one of your stats")
-    except IndexError:
-        print("Please enter one of your stats")
-    continue
-while True:
-    intelligence = input("Out of your stats, which one should be Intelligence?\n")
-    try:
-        intelligence = int(intelligence)
-        if intelligence in stats:
-            stats.remove(int(intelligence))
-            int_mod = Modcal.Modcal(intelligence)
-            print("Your Intelligence Modifier is: ", int_mod)
-            print("Your remaining stats are: ", stats)
-            break
-        else:
-            print("Please enter one of your stats")
-        continue
-    except ValueError:
-        print("Please enter one of your stats")
-    except IndexError:
-        print("Please enter one of your stats")
-    continue
-while True:
-    wisdom = input("Out of your stats, which one should be Wisdom?\n")
-    try:
-        wisdom = int(wisdom)
-        if wisdom in stats:
-            stats.remove(int(wisdom))
-            wis_mod = Modcal.Modcal(wisdom)
-            print("Your Wisdom Modifier is: ", wis_mod)
-            print("Your remaining stat is: ", stats)
-            break
-        else:
-            print("Please enter one of your stats")
-        continue
-    except ValueError:
-        print("Please enter one of your stats")
-    except IndexError:
-        print("Please enter one of your stats")
-while True:
-    charisma = input("Out of your stats, which one should be Charisma?\n")
-    try:
-        charisma = int(charisma)
-        if charisma in stats:
-            stats.remove(int(charisma))
-            cha_mod = Modcal.Modcal(charisma)
-            print("Your Charisma Modifier is: ", cha_mod)
-            break
-        else:
-            print("Please enter one of your stats")
-        continue
-    except ValueError:
-        print("Please enter on of your stats")
-    except IndexError:
-        print("Please enter one of your stats")
-
 print("Your final stats are: ")
 print("Strength: ", strength)
 print("Dexterity: ", dexterity)
@@ -217,4 +126,3 @@ print("Constitution: ", constitution)
 print("Intelligence: ", intelligence)
 print("Wisdom: ", wisdom)
 print("Charisma: ", charisma)
-'''
