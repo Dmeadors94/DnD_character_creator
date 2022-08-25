@@ -11,6 +11,10 @@ skill_dict = {
               "read the magical symbols and to interpret magical effects.",
     "Athletics": "The ability to perform physical feats of strength and dexterity. This skill is used to perform "
                  "physical feats of strength and dexterity.",
+    "Intimidation": "The ability to intimidate people. This skill is used to intimidate people.",
+    "Nature": "The ability to control the natural world. This skill is used to control the natural world.",
+    "Perception": "The ability to notice things around you. This skill is used to notice things around you.",
+    "Survival": "The ability to survive in the wild. This skill is used to survive in the wild.",
 }
 '''
 # Run StatGen
@@ -48,32 +52,6 @@ print("Your stats are: ", stats)
 '''
 
 
-class DNDClass:
-    def __init__(self, name):
-        self.name = name
-        self.allowed_skills = []
-        self.skill_points = 0
-        self.pri_skills = []
-
-    def select_pri_skills(self):
-        global add_skill
-        self.pri_skills = []
-
-        for x in range(self.skill_points):
-            for i, skill in enumerate(self.allowed_skills, start=1):
-                print(i, skill)
-            add_skill = int(input(f'Please select skill {x + 1}: '))
-            while add_skill not in self.allowed_skills:
-                add_skill = int(input(f'That skill is not in the allowed skills. Please select skill {x + 1}: '))
-            self.allowed_skills.remove(add_skill)
-            self.pri_skills.append(add_skill)
-
-
-barbarian_class = DNDClass("Barbarian")
-barbarian_class.allowed_skills = ['Animal Handling', 'Athletics', 'Intimidation', 'Nature', 'Perception', 'Survival']
-barbarian_class.skill_points = 2
-
-
 class Character:
 
     def __init__(self, name):
@@ -82,11 +60,44 @@ class Character:
         self.dndclass = None
 
 
+class DNDClass:
+    def __init__(self, name):
+        self.name = name
+        self.allowed_skills = []
+        self.skill_points = 0
+        self.pri_skills = []
+
+    def select_pri_skills(self):
+        self.pri_skills = []
+
+        for x in range(self.skill_points):
+            for i, skill in enumerate(self.allowed_skills, start=1):
+                print(i, skill)
+            add_skill_index = input(f'Please select skill {x + 1}: ')
+            try:
+                add_skill_index = int(add_skill_index) - 1
+            except ValueError:
+                print("This is not a valid number.")
+                add_skill_index = -1
+            while add_skill_index < 0 or add_skill_index > (len(self.allowed_skills) - 1):
+                add_skill_index = input(f'That skill is not in the allowed skills. Please select skill {x + 1}: ')
+                try:
+                    add_skill_index = int(add_skill_index) - 1
+                except ValueError:
+                    print("This is not a valid number.")
+                    add_skill_index = -1
+            #
+            add_skill = self.allowed_skills.pop(add_skill_index)
+            self.pri_skills.append(add_skill)
+
+
 myname = input('enter a name: ')
 mychar = Character(myname)
-
+barbarian_class = DNDClass("Barbarian")
+barbarian_class.allowed_skills = ['Animal Handling', 'Athletics', 'Intimidation', 'Nature', 'Perception', 'Survival']
+barbarian_class.skill_points = 2
 mychar.dndclass = barbarian_class
-print(mychar.dndclass.skill_points)
+
 mychar.dndclass.select_pri_skills()
 
 print("Your primary skills are: ", mychar.dndclass.pri_skills)
