@@ -122,8 +122,8 @@ first_level_spell_list = []
 def startstats():
     dicerolls = []
     for d6Roll in range(4):
-        x = random.randint(1, 6)
-        dicerolls.append(x)
+        rolls = random.randint(1, 6)
+        dicerolls.append(rolls)
     del dicerolls[dicerolls.index(min(dicerolls))]  # deletes the lowest number
     stat = sum(dicerolls)  # totals the remaining 3 numbers
     return stat
@@ -164,8 +164,7 @@ while True:
     strength = input("Out of your stats, which one should be Strength?\n")
     try:
         strength = int(strength)
-        if strength == stats[0] or strength == stats[1] or strength == stats[2] or strength == stats[3] or strength == \
-                stats[4] or strength == stats[5]:
+        if strength in stats:
             stats.remove(int(strength))
             str_mod = Modcal.Modcal(strength)
             print("Your Strength Modifier is: ", str_mod)
@@ -184,8 +183,7 @@ while True:
     dexterity = input("Out of your stats, which one should be Dexterity?\n")
     try:
         dexterity = int(dexterity)
-        if dexterity == stats[0] or dexterity == stats[1] or dexterity == stats[2] or dexterity == stats[3] \
-                or dexterity == stats[4]:
+        if dexterity in stats:
             stats.remove(int(dexterity))
             dex_mod = Modcal.Modcal(dexterity)
             print("Your Dexterity Modifier is: ", dex_mod)
@@ -203,7 +201,7 @@ while True:
     constitution = input("Out of your stats, which one should be Constitution?\n")
     try:
         constitution = int(constitution)
-        if constitution == stats[0] or constitution == stats[1] or constitution == stats[2] or constitution == stats[3]:
+        if constitution in stats:
             stats.remove(int(constitution))
             con_mod = Modcal.Modcal(constitution)
             print("Your Constitution Modifier is: ", con_mod)
@@ -221,7 +219,7 @@ while True:
     intelligence = input("Out of your stats, which one should be Intelligence?\n")
     try:
         intelligence = int(intelligence)
-        if intelligence == stats[0] or intelligence == stats[1] or intelligence == stats[2]:
+        if intelligence in stats:
             stats.remove(int(intelligence))
             int_mod = Modcal.Modcal(intelligence)
             print("Your Intelligence Modifier is: ", int_mod)
@@ -239,7 +237,7 @@ while True:
     wisdom = input("Out of your stats, which one should be Wisdom?\n")
     try:
         wisdom = int(wisdom)
-        if wisdom == stats[0] or wisdom == stats[1]:
+        if wisdom in stats:
             stats.remove(int(wisdom))
             wis_mod = Modcal.Modcal(wisdom)
             print("Your Wisdom Modifier is: ", wis_mod)
@@ -256,7 +254,7 @@ while True:
     charisma = input("Out of your stats, which one should be Charisma?\n")
     try:
         charisma = int(charisma)
-        if charisma == stats[0]:
+        if charisma in stats:
             stats.remove(int(charisma))
             cha_mod = Modcal.Modcal(charisma)
             print("Your Charisma Modifier is: ", cha_mod)
@@ -15447,8 +15445,6 @@ data_dict = {
 
     'Feat+Traits': ""
 }
-
-
 
 def fill_pdf(input_pdf_path, output_pdf_path, data_dict):
     template_pdf = pdfrw.PdfReader(input_pdf_path)
