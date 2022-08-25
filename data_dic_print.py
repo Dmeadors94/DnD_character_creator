@@ -5,3 +5,7 @@ for y in dict.keys(skill_dict):
                         if choice_skill.lower() in ["y", "yes"]:
                             self.allowed_skills.remove(add_skill)
                             self.pri_skills.append(add_skill)
+
+
+
+                            #add damiit
