@@ -16,6 +16,58 @@ skill_dict = {
     "Perception": "The ability to notice things around you. This skill is used to notice things around you.",
     "Survival": "The ability to survive in the wild. This skill is used to survive in the wild.",
 }
+simple_weapon_dict = {
+    "Club": ["A simple weapon consisting of a club with a handle.", "1d4 Bludgeoning",
+             "Light - Ideal for two-weapon fighting"],
+    "Dagger": ["A sharp, light, and pointy weapon.", "1d4 Piercing",
+               "Finesse - You may use your Dexterity modifier instead"
+               "of your Strength modifier for attack rolls."],
+    "Greatclub": ["A heavy and large club that requires both hands.", "1d8 Bludgeoning", "Two-Handed - Requires "
+                                                                                         "both hands"],
+    "Handaxe": ["A light and sharp axe cable of being thrown.", "1d6 Slashing", "Light - Ideal for two-weapon fighting",
+                "Thrown - Range is 20ft for normal throws and 60ft for long throws."],
+    "Javelin": ["A long slender piece of wood with a sharp metal tip.", "1d6 Piercing", "Thrown - Range is 30ft for "
+                                                                                        "normal throws and 120ft "
+                                                                                        "for long throws."],
+    "Light Hammer": ["A simple light-weight hammer.", "1d4 Bludgeoning", "Light - Ideal for two-weapon fighting",
+                     "Thrown - Range is 20ft for normal throws and 60ft for long throws."],
+    "Mace": ["A short piece of wood that has a rounded metal head for clubbing.", "1d6 Bludgeoning"],
+    "Quarterstaff": ["A long carved piece of wood made for walking and fighting.", "1d6 Bludgeoning", "Versatile - "
+                                                                                                      "May be used "
+                                                                                                      "with two hands "
+                                                                                                      "to do 1d8 "
+                                                                                                      "damage instead "
+                                                                                                      "of 1d6."],
+    "Sickle": ["A curved piece of metal with a handle ment for farming.", "1d4 Slashing",
+               "Light - Ideal for two-weapon "
+               "fighting"],
+    "Spear": ["A long piece of wood with a sharp metal tip.", "1d6 Piercing", "Thrown - Range is 20ft for normal "
+                                                                              "throws and 60ft for long throws.,"
+                                                                              "Versatile - May be used with two hands "
+                                                                              "to do 1d8 damage instead of 1d6."],
+    "Light Crossbow": ["A ranged weapon ment to propel light bolts at a distance.", "1d8 Piercing", "Ammunition - This "
+                                                                                                    "weapon has a "
+                                                                                                    "range of 80ft "
+                                                                                                    "for normal shots "
+                                                                                                    "and 320ft for "
+                                                                                                    "long shots.",
+                       "Loading - You may "
+                       "only fire this weapon once per Action, Bonus Action, or Reaction.", "Two-handed - Requires "
+                                                                                            "two hands to use."],
+    "Dart": ["A small piece of metal with a sharp tip ment for throwing.", "1d4 Piercing", "Thrown - Range is 20ft for "
+                                                                                           "normal throws and 60ft "
+                                                                                           "for long throws.",
+             "Finesse - You may use your Dexterity modifier instead of your "
+             "Strength modifier for attack rolls."],
+    "Shortbow": ["A short piece of wood with a draw string to fire arrows.", "1d6 Piercing", "Ammunition - This weapon "
+                                                                                             "has a range of 80ft for "
+                                                                                             "normal shots and 320ft "
+                                                                                             "for long shots.",
+                 "Two-handed - Requires two hands to "
+                 "use."],
+    "Sling": ["A simple sling made for throwing small objects.", "1d4 Bludgeoning", "Ammunition - This weapon has a "
+                                                                                    "range of 30ft for normal shots "
+                                                                                    "and 120ft for long shots."]}
 
 
 # Run StatGen
@@ -284,9 +336,15 @@ mychar.dndclass.select_pri_skills()
 print("Your primary skills are: ", mychar.dndclass.pri_skills)
 
 print("Your final stats are: ")
-print("Strength: ", mychar.strength + mychar.race.ability_bonuses)
-print("Dexterity: ", mychar.dexterity + mychar.race.ability_bonuses)
-print("Constitution: ", mychar.constitution + mychar.race.ability_bonuses)
-print("Intelligence: ", mychar.intelligence + mychar.race.ability_bonuses)
-print("Wisdom: ", mychar.wisdom + mychar.race.ability_bonuses)
-print("Charisma: ", mychar.charisma + mychar.race.ability_bonuses)
+mychar.str_mod = Modcal.Modcal(mychar.strength + mychar.race.ability_bonuses)
+print("Strength: ", mychar.strength + mychar.race.ability_bonuses, "Modifier: ", mychar.str_mod)
+mychar.dex_mod = Modcal.Modcal(mychar.dexterity + mychar.race.ability_bonuses)
+print("Dexterity: ", mychar.dexterity + mychar.race.ability_bonuses, "Modifier: ", mychar.dex_mod)
+mychar.con_mod = Modcal.Modcal(mychar.constitution + mychar.race.ability_bonuses)
+print("Constitution: ", mychar.constitution + mychar.race.ability_bonuses, "Modifier :", mychar.con_mod)
+mychar.int_mod = Modcal.Modcal(mychar.intelligence + mychar.race.ability_bonuses)
+print("Intelligence: ", mychar.intelligence + mychar.race.ability_bonuses, "Modifier :", mychar.int_mod)
+mychar.wis_mod = Modcal.Modcal(mychar.wisdom + mychar.race.ability_bonuses)
+print("Wisdom: ", mychar.wisdom + mychar.race.ability_bonuses, "Modifier :", mychar.wis_mod)
+mychar.cha_mod = Modcal.Modcal(mychar.charisma + mychar.race.ability_bonuses)
+print("Charisma: ", mychar.charisma + mychar.race.ability_bonuses, "Modifier :", mychar.cha_mod)
