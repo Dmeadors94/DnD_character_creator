@@ -103,6 +103,7 @@ class DNDClass:
         self.allowed_equipment_choice_one = []
         self.allowed_equipment_choice_two = []
         self.static_equipment = []
+        self.is_a_spell_caster = False
 
     def select_pri_skills(self):
         self.pri_skills = []
@@ -387,10 +388,31 @@ class Character:
                                                   'Survival']
                 barbarian_class.allowed_equipment_choice_one = ['A Battleaxe', 'Any Martial Melee Weapon']
                 barbarian_class.allowed_equipment_choice_two = ['Two Handaxes', 'Any Simple Weapon']
-                barbarian_class.static_equipment = ['An Explorer\'s pack', 'Four Javelins']
+                barbarian_class.static_equipment = ["An Explorer's pack", 'Four Javelins']
                 barbarian_class.skill_points = 2
                 barbarian_class.class_features = ["Rage", "Unarmored Defense"]
+                barbarian_class.is_a_spell_caster = False
                 self.dndclass = barbarian_class
+        elif class_selection == "2":
+            print("Bards are quick and pretty. They can Sing, Dance, and Play an Instrument, causing them to give "
+                  "Bardic Inspiration, which they can use on their allies to grant a Inspiration die of 1d6 to them")
+            print("Are you sure you want to be a Bard? Yes or No: ")
+            bard_choice = input("Enter your choice: ")
+            if bard_choice.lower in ["y", "yes"]:
+                bard_class = DNDClass
+                bard_class.allowed_skills = ["Acrobatics", "Animal Handling", "Arcana", "Athletics", "Deception",
+                                             "History", "Insight", "Intimidation",
+                                             "Investigation", "Medicine", "Nature", "Perception", "Performance",
+                                             "Persuasion", "Religion",
+                                             "Sleight of Hand", "Stealth", "Survival"]
+                bard_class.allowed_equipment_choice_one = ["A Rapier", "A Longsword", "Any Simple Weapon"]
+                bard_class.allowed_equipment_choice_two = ["A Diplomat's pack", "Entertainer's Pack"]
+                bard_class.allowed_equipment_choice_three = ["A Lute", "Any other Musical Instrument"]
+                bard_class.static_equipment = ["Leather Armor", "A Dagger"]
+                bard_class.skill_points = 3
+                bard_class.featurelist = ["Bardic Inspiration"]
+                bard_class.is_a_spell_caster = True
+                self.dndclass = bard_class
 
 
 myname = input('enter a name: ')
