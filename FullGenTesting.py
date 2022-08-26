@@ -106,32 +106,39 @@ class DNDClass:
 
     def select_pri_skills(self):
         self.pri_skills = []
-
-        for x in range(self.skill_points):
-            for i, skill in enumerate(self.allowed_skills, start=1):
-                print(i, skill)
-            add_skill_index = input(f'Please select skill {x + 1}: ')
-            try:
-                add_skill_index = int(add_skill_index) - 1
-            except ValueError:
-                print("This is not a valid number.")
-                add_skill_index = -1
-            while add_skill_index < 0 or add_skill_index > (len(self.allowed_skills) - 1):
-                add_skill_index = input(f'That skill is not in the allowed skills. Please select skill {x + 1}: ')
+        escape = False
+        while not escape:
+            for x in range(self.skill_points):
+                for i, skill in enumerate(self.allowed_skills, start=1):
+                    print(i, skill)
+                add_skill_index = input(f'Please select skill : ')
                 try:
                     add_skill_index = int(add_skill_index) - 1
                 except ValueError:
                     print("This is not a valid number.")
                     add_skill_index = -1
-            add_skill = self.allowed_skills.pop(add_skill_index)
-            for y in dict.keys(skill_dict):
-                if y == add_skill:
-                    print(f'{skill_dict[y]}')
-                    choice_skill = input("Do you want to be proficient in this skill? Yes or No: ")
-                    if choice_skill.lower() in ["y", "yes"]:
-                        self.pri_skills.append(add_skill)
-                    else:
-                        continue
+                while add_skill_index < 0 or add_skill_index > (len(self.allowed_skills) - 1):
+                    add_skill_index = input(f'That skill is not in the allowed skills. Please select skill : ')
+                    try:
+                        add_skill_index = int(add_skill_index) - 1
+                    except ValueError:
+                        print("This is not a valid number.")
+                        add_skill_index = -1
+                add_skill = self.allowed_skills.pop(add_skill_index)
+                for y in dict.keys(skill_dict):
+                    if y == add_skill:
+                        print(f'{skill_dict[y]}')
+                        choice_skill = input("Do you want to be proficient in this skill? Yes or No: ")
+                        if choice_skill.lower() in ["y", "yes"]:
+                            self.pri_skills.append(add_skill)
+                            escape = True
+                        else:
+                            self.allowed_skills.insert(add_skill_index, add_skill)
+                            if self.skill_points < 2:
+                                self.skill_points += 1
+                                continue
+                            else:
+                                continue
 
     def select_equipment(self):
         print("Please select from the following list of equipment:")
