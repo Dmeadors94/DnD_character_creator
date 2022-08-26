@@ -68,6 +68,18 @@ simple_weapon_dict = {
     "Sling": ["A simple sling made for throwing small objects.", "1d4 Bludgeoning", "Ammunition - This weapon has a "
                                                                                     "range of 30ft for normal shots "
                                                                                     "and 120ft for long shots."]}
+martial_weapon_dict = {
+    "Battleaxe": ["A two-headed axe that would be used with two hands.", "1d8 Slashing", "Versatile - May be "
+                                                                                         "used with two "
+                                                                                         "hands to do 1d10 "
+                                                                                         "damage instead of 1d8."],
+    "Flail": ["A spiked ball on a chain.", "1d8 Bludgeoning"],
+    "Glaive": ["A long pole of wood with a long curved piece of metal on the end.", "1d10 Slashing",
+               "Heavy - Small creatures have disadvantage on attack rolls.", "Reach - Adds 5ft to your attack range.",
+               "Two-Handed - This weapon must be used with both hands."],
+    "Greataxe": ["A large two-handed and grand axe ment for battle.", "1d12 Slashing", "Heavy - Small creatures have "
+                                                                                       "disadvantage on attack rolls.",
+                 "Two-Handed - Must be used with both hands."]}
 
 
 # Run StatGen
@@ -88,6 +100,9 @@ class DNDClass:
         self.skill_points = 0
         self.pri_skills = []
         self.class_features = []
+        self.allowed_equipment_choice_one = []
+        self.allowed_equipment_choice_two = []
+        self.static_equipment = []
 
     def select_pri_skills(self):
         self.pri_skills = []
@@ -118,6 +133,45 @@ class DNDClass:
                     else:
                         continue
 
+    def select_equipment(self):
+        print("Please select from the following list of equipment:")
+        for i, equipment in enumerate(self.allowed_equipment_choice_one, start=1):
+            print(i, equipment)
+        choice_one = input("Please select equipment 1: ")
+        try:
+            choice_one = int(choice_one) - 1
+        except ValueError:
+            print("This is not a valid number.")
+            choice_one = -1
+        while choice_one < 0 or choice_one > (len(self.allowed_equipment_choice_one) - 1):
+            choice_one = input(f'That equipment is not in the allowed equipment. Please select equipment 1: ')
+            try:
+                choice_one = int(choice_one) - 1
+            except ValueError:
+                print("This is not a valid number.")
+                choice_one = -1
+        choice_one = self.allowed_equipment_choice_one.pop(choice_one)
+        print("Please select from the following list of equipment:")
+        for i, equipment in enumerate(self.allowed_equipment_choice_two, start=1):
+            print(i, equipment)
+        choice_two = input("Please select equipment 2: ")
+        try:
+            choice_two = int(choice_two) - 1
+        except ValueError:
+            print("This is not a valid number.")
+            choice_two = -1
+        while choice_two < 0 or choice_two > (len(self.allowed_equipment_choice_two) - 1):
+            choice_two = input(f'That equipment is not in the allowed equipment. Please select equipment 2: ')
+            try:
+                choice_two = int(choice_two) - 1
+            except ValueError:
+                print("This is not a valid number.")
+                choice_two = -1
+        choice_two = self.allowed_equipment_choice_two.pop(choice_two)
+        mychar.equipment_list.append(choice_one)
+        mychar.equipment_list.append(choice_two)
+        mychar.equipment_list.append(self.static_equipment)
+
 
 class DNDRace:
 
@@ -136,6 +190,7 @@ class DNDRace:
 class Character:
 
     def __init__(self, name):
+        self.equipment_list = []
         self.strength = None
         self.str_mod = None
         self.dexterity = None
@@ -152,8 +207,8 @@ class Character:
         self.name = name
         self.race = None
         self.dndclass = None
-        self.stat_choice()
-        self.race_choice()
+        # self.stat_choice()
+        # self.race_choice()
         self.class_choice()
 
     def stat_choice(self):
@@ -323,6 +378,9 @@ class Character:
                 barbarian_class.allowed_skills = ['Animal Handling', 'Athletics', 'Intimidation', 'Nature',
                                                   'Perception',
                                                   'Survival']
+                barbarian_class.allowed_equipment_choice_one = ['A Battleaxe', 'Any Martial Melee Weapon']
+                barbarian_class.allowed_equipment_choice_two = ['Two Handaxes', 'Any Simple Weapon']
+                barbarian_class.static_equipment = ['An Explorer\'s pack', 'Four Javelins']
                 barbarian_class.skill_points = 2
                 barbarian_class.class_features = ["Rage", "Unarmored Defense"]
                 self.dndclass = barbarian_class
