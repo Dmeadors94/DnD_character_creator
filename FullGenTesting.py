@@ -3,18 +3,32 @@ import random
 import Modcal
 
 skill_dict = {
-    "Acrobatics": "The ability to move through the air with ease. This skill is used to make graceful jumps and to "
-                  "make graceful glides.",
-    "Animal Handling": "The ability to calm and control wild animals. This skill is used to calm and control "
-                       "wild animals.",
-    "Arcana": "The ability to read the magical symbols and to interpret magical effects. This skill is used to "
-              "read the magical symbols and to interpret magical effects.",
-    "Athletics": "The ability to perform physical feats of strength and dexterity. This skill is used to perform "
-                 "physical feats of strength and dexterity.",
-    "Intimidation": "The ability to intimidate people. This skill is used to intimidate people.",
-    "Nature": "The ability to control the natural world. This skill is used to control the natural world.",
-    "Perception": "The ability to notice things around you. This skill is used to notice things around you.",
-    "Survival": "The ability to survive in the wild. This skill is used to survive in the wild.",
+    "Acrobatics": "Acrobatics covers your attempt to stay on your feet in a tricky situation, such as when you’re "
+                  "\ntrying to run across a sheet of ice, balance on a tightrope, or stay upright on a rocking ship’s "
+                  "\ndeck.",
+    "Animal Handling": "Your skill with animals allows you to befriend them and even command them.",
+    "Arcana": "Arcana covers the study of the magical and the supernatural.",
+    "Athletics": "Athletics covers your ability to perform simple physical tasks, such as jumping, climbing, "
+                 "\nswimming, or performing other manual tasks.",
+    "Deception": "Deception covers your ability to convincingly hide the truth.",
+    "History": "History covers the study of past events and your ability to recall lore about them.",
+    "Insight": "Insight covers your ability to notice details and hidden qualities in people and things.",
+    "Intimidation": "Intimidation covers your ability to convincingly force others to do what you want.",
+    "Investigation": "Investigation covers your ability to look into the nature of things, such as the origin of "
+                     "\nplants and animals, the causes of things, or the effects of things.",
+    "Medicine": "Medicine covers the study of the sick and the wounded.",
+    "Nature": "Nature covers the study of the natural world, including the study of the animals, plants, and "
+              "\nminerals found in the world.",
+    "Perception": "Perception covers your ability to notice things that are nearby, in the room, or at the "
+                  "\nconvenience of others.",
+    "Performance": "Performance covers your ability to act in a manner that draws attention to you.",
+    "Persuasion": "Persuasion covers your ability to convincingly force others to do what you want.",
+    "Religion": "Religion covers the study of the gods, their history, and their relationship to you.",
+    "Sleight of Hand": "Sleight of Hand covers your ability to move objects without being seen.",
+    "Stealth": "Stealth covers your ability to hide from enemies without being seen.",
+    "Survival": "Survival covers your ability to recognize the signs of danger, notice the location of hidden "
+                "\nthings, and avoid or outsmart groups of enemies."
+
 }
 simple_weapon_dict = {
     "Club": ["A simple weapon consisting of a club with a handle.", "1d4 Bludgeoning",
@@ -95,6 +109,7 @@ def startstats():
 
 class DNDClass:
     def __init__(self, name):
+        self.equipment_list = []
         self.name = name
         self.allowed_skills = []
         self.skill_points = 0
@@ -176,9 +191,40 @@ class DNDClass:
                 print("This is not a valid number.")
                 choice_two = -1
         choice_two = self.allowed_equipment_choice_two.pop(choice_two)
-        mychar.equipment_list.append(choice_one)
-        mychar.equipment_list.append(choice_two)
-        mychar.equipment_list.append(self.static_equipment)
+        self.equipment_list.append(choice_one)
+        self.equipment_list.append(choice_two)
+        self.equipment_list.append(self.static_equipment)
+        while "Any Simple Weapon" in self.equipment_list:
+            self.select_simple_weapon()
+
+    def select_simple_weapon(self):
+        selections = dict(enumerate(simple_weapon_dict))
+        for i, weapon in enumerate(simple_weapon_dict, start=1):
+            print(i, weapon)
+        choice_weapon = input("Please select a simple weapon: ")
+        try:
+            choice_weapon_a = int(choice_weapon) - 1
+        except ValueError:
+            print("This is not a valid number.")
+            choice_weapon_a = -1
+        while choice_weapon_a < 0 or choice_weapon_a > (len(simple_weapon_dict) - 1):
+            choice_weapon = input(f'That weapon is not in the allowed weapons. Please select a simple weapon: ')
+            try:
+                choice_weapon_a = int(choice_weapon) - 1
+            except ValueError:
+                print("This is not a valid number.")
+                choice_weapon_a = -1
+        choice_weapon_a = selections[choice_weapon_a]
+        for y in dict.keys(simple_weapon_dict):
+            if y == choice_weapon_a:
+                print(f'{simple_weapon_dict[y]}')
+                choice_skill = input("Do you want this Weapon? Yes or No: ")
+                if choice_skill.lower() in ["y", "yes"]:
+                    self.equipment_list.append(choice_weapon_a)
+                    self.equipment_list.remove("Any Simple Weapon")
+                    break
+                else:
+                    continue
 
 
 class DNDRace:
@@ -371,6 +417,7 @@ class Character:
     def class_choice(self):
         print("Please select a Class: ")
         print("1. Barbarian")
+        print("2. Bard")
         class_selection = input("Enter your choice: ")
         if class_selection == "1":
             print("Barbarians are strong and tough. They can Rage, causing them to have the following effects:\n"
@@ -398,8 +445,8 @@ class Character:
                   "Bardic Inspiration, which they can use on their allies to grant a Inspiration die of 1d6 to them")
             print("Are you sure you want to be a Bard? Yes or No: ")
             bard_choice = input("Enter your choice: ")
-            if bard_choice.lower in ["y", "yes"]:
-                bard_class = DNDClass
+            if bard_choice.lower() in ["y", "yes"]:
+                bard_class = DNDClass("Bard")
                 bard_class.allowed_skills = ["Acrobatics", "Animal Handling", "Arcana", "Athletics", "Deception",
                                              "History", "Insight", "Intimidation",
                                              "Investigation", "Medicine", "Nature", "Perception", "Performance",
@@ -418,7 +465,8 @@ class Character:
 myname = input('enter a name: ')
 mychar = Character(myname)
 
-mychar.dndclass.select_pri_skills()
+# mychar.dndclass.select_pri_skills()
+mychar.dndclass.select_equipment()
 
 print("Your primary skills are: ", mychar.dndclass.pri_skills)
 
