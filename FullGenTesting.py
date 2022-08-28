@@ -111,6 +111,7 @@ language_dict = {
     "Primordial": "The Primordial language is spoken by Elementals. It uses Dwarvish script.",
     "Sylvan": "The Sylvan language is spoken by Fey creatures. It uses Elvish script.",
     "Undercommon": "The Undercommon language is spoken by Underworld Traders. It uses Elvish script."}
+lang_race = ["Human"]
 
 
 # Run StatGen
@@ -122,6 +123,24 @@ def startstats():
     del dicerolls[dicerolls.index(min(dicerolls))]  # deletes the lowest number
     stat = sum(dicerolls)  # totals the remaining 3 numbers
     return stat
+
+
+def show_pri_skills():
+    print("Your primary skills are: ", mychar.dndclass.pri_skills)
+
+    print("Your final stats are: ")
+    mychar.str_mod = Modcal.Modcal(mychar.strength + mychar.race.str_ability_bonus)
+    print("Strength: ", mychar.strength + mychar.race.str_ability_bonus, "Modifier: ", mychar.str_mod)
+    mychar.dex_mod = Modcal.Modcal(mychar.dexterity + mychar.race.dex_ability_bonus)
+    print("Dexterity: ", mychar.dexterity + mychar.race.dex_ability_bonus, "Modifier: ", mychar.dex_mod)
+    mychar.con_mod = Modcal.Modcal(mychar.constitution + mychar.race.con_ability_bonus)
+    print("Constitution: ", mychar.constitution + mychar.race.con_ability_bonus, "Modifier :", mychar.con_mod)
+    mychar.int_mod = Modcal.Modcal(mychar.intelligence + mychar.race.int_ability_bonus)
+    print("Intelligence: ", mychar.intelligence + mychar.race.int_ability_bonus, "Modifier :", mychar.int_mod)
+    mychar.wis_mod = Modcal.Modcal(mychar.wisdom + mychar.race.wis_ability_bonus)
+    print("Wisdom: ", mychar.wisdom + mychar.race.wis_ability_bonus, "Modifier :", mychar.wis_mod)
+    mychar.cha_mod = Modcal.Modcal(mychar.charisma + mychar.race.cha_ability_bonus)
+    print("Charisma: ", mychar.charisma + mychar.race.cha_ability_bonus, "Modifier :", mychar.cha_mod)
 
 
 class DNDClass:
@@ -141,7 +160,7 @@ class DNDClass:
         self.pri_skills = []
         escape = False
         while not escape:
-            for x in range(self.skill_points):
+            for s in range(self.skill_points):
                 for i, skill in enumerate(self.allowed_skills, start=1):
                     print(i, skill)
                 add_skill_index = input(f'Please select skill : ')
@@ -248,6 +267,7 @@ class DNDRace:
     languages = []
 
     def __init__(self, name):
+        self.tool_list = []
         self.name = name
         self.speed = None
         self.size = None
@@ -259,12 +279,13 @@ class DNDRace:
         self.wis_ability_bonus = 0
         self.cha_ability_bonus = 0
         self.traits = None
-        self.features = None
+        self.features = []
         self.racial_skills = None
-        self.racial_prof = None
+        self.racial_prof = []
+        self.tool_choice = False
 
     def select_language(self):
-        if self.name == "Human":
+        if self.name in lang_race:
             selections = dict(enumerate(language_dict))
             for i, language in enumerate(language_dict, start=1):
                 print(i, language)
@@ -282,7 +303,6 @@ class DNDRace:
                     print("This is not a valid number.")
                     choice_language = -1
             choice_language = selections[choice_language]
-            print(self.languages)
             for y in dict.keys(language_dict):
                 if choice_language in self.languages:
                     print("You already have that language.")
@@ -300,6 +320,27 @@ class DNDRace:
 
         else:
             pass
+
+    def tool_select(self):
+        print("Please select from the following list of tools:")
+        selections = list(enumerate(self.tool_list))
+        for i, tool in enumerate(self.tool_list, start=1):
+            print(i, tool)
+        choice_tool = input("Please select a tool: ")
+        try:
+            choice_tool = int(choice_tool) - 1
+        except ValueError:
+            print("This is not a valid number.")
+            choice_tool = -1
+        while choice_tool < 0 or choice_tool > (len(self.tool_list) - 1):
+            choice_tool = input(f'That tool is not in the allowed tools. Please select a tool: ')
+            try:
+                choice_tool = int(choice_tool) - 1
+            except ValueError:
+                print("This is not a valid number.")
+                choice_tool = -1
+        choice_tool = selections[choice_tool]
+        self.racial_prof.append(choice_tool)
 
 
 class Character:
@@ -459,27 +500,65 @@ class Character:
         print("Charisma: ", self.charisma, "Modifier: ", self.cha_mod)
 
     def race_choice(self):
-        print("Please select a Race: ")
-        print("1. Human")
-        race_selection = input("Enter your choice: ")
-        if race_selection == "1":
-            print("Humans come in all shapes and sizes. Humans get +1 to all stats and a extra language"
-                  "of your choice.")
-            print("Are you sure you want to be a Human? Yes or No: ")
-            human_choice = input("Enter your choice: ")
-            if human_choice.lower() in ["y", "yes"]:
-                human_race = DNDRace("Human")
-                human_race.name = "Human"
-                human_race.speed = "30ft"
-                human_race.size = "Medium"
-                human_race.languages.append("Common")
-                human_race.str_ability_bonus = 1
-                human_race.dex_ability_bonus = 1
-                human_race.con_ability_bonus = 1
-                human_race.int_ability_bonus = 1
-                human_race.wis_ability_bonus = 1
-                human_race.cha_ability_bonus = 1
-                self.race = human_race
+        while True:
+            print("Please select a Race: ")
+            print("1. Human")
+            print("2. Dwarf")
+            race_selection = input("Enter your choice: ")
+            if race_selection == "1":
+                print("Humans come in all shapes and sizes. Humans get +1 to all stats and a extra language"
+                      "of your choice.")
+                print("Are you sure you want to be a Human? Yes or No: ")
+                human_choice = input("Enter your choice: ")
+                if human_choice.lower() in ["y", "yes"]:
+                    human_race = DNDRace("Human")
+                    human_race.name = "Human"
+                    human_race.speed = "30ft"
+                    human_race.size = "Medium"
+                    human_race.languages.append("Common")
+                    human_race.str_ability_bonus = 1
+                    human_race.dex_ability_bonus = 1
+                    human_race.con_ability_bonus = 1
+                    human_race.int_ability_bonus = 1
+                    human_race.wis_ability_bonus = 1
+                    human_race.cha_ability_bonus = 1
+                    self.race = human_race
+                    break
+                else:
+                    continue
+            elif race_selection == "2":
+                print("Dwarves are stout and short people known widely for their skills in Brewing, Mining, and "
+                      "Blacksmithing.\nThey get +2 to their constitution.\nThey have Darkvision to see better in the "
+                      "dark. "
+                      "\nThey have advantage on saving throws against poison and are resistant to poison damage.\n"
+                      "They have proficiency in the artisan's tools of their choice: smith's tools, brewer's tools, "
+                      "or mason's tools.\nThey have proficiency in the following weapons: battleaxe, handaxe, "
+                      "light hammer, "
+                      "warhammer, and war pick.\nThey also have Stonecunning, allowing them to be proficient and "
+                      "double\n "
+                      "their proficiency bonus in the History skill while working with Stonework.")
+                print("Are you sure you want to be a Dwarf? Yes or No: ")
+                dwarf_choice = input("Enter your choice: ")
+                if dwarf_choice.lower() in ["y", "yes"]:
+                    dwarf_race = DNDRace("Dwarf")
+                    dwarf_race.name = "Dwarf"
+                    dwarf_race.speed = "25ft"
+                    dwarf_race.size = "Medium"
+                    dwarf_race.languages.append("Common")
+                    dwarf_race.languages.append("Dwarvish")
+                    dwarf_race.features.append("Darkvision")
+                    dwarf_race.features.append("Dwarven Resilience")
+                    dwarf_race.features.append("Stonecunning")
+                    dwarf_race.tool_list = ("Brewer's Tools", "Smith's Tools", "Mason's Tools")
+                    dwarf_race.racial_prof.append("Battleaxe")
+                    dwarf_race.racial_prof.append("Handaxe")
+                    dwarf_race.racial_prof.append("Light Hammer")
+                    dwarf_race.racial_prof.append("Warhammer")
+                    dwarf_race.tool_choice = True
+                    self.race = dwarf_race
+                    break
+                else:
+                    continue
 
     def class_choice(self):
         print("Please select a Class: ")
@@ -531,26 +610,11 @@ class Character:
 
 myname = input('enter a name: ')
 mychar = Character(myname)
-x = mychar.race.select_language()
-if x:
+duplicate_lang = mychar.race.select_language()
+if duplicate_lang:
     mychar.race.select_language()
-print(mychar.race.languages)
+if mychar.race.tool_choice:
+    mychar.race.tool_select()
 # mychar.dndclass.select_pri_skills()
 # mychar.dndclass.select_equipment()
-'''
-print("Your primary skills are: ", mychar.dndclass.pri_skills)
-
-print("Your final stats are: ")
-mychar.str_mod = Modcal.Modcal(mychar.strength + mychar.race.str_ability_bonus)
-print("Strength: ", mychar.strength + mychar.race.str_ability_bonus, "Modifier: ", mychar.str_mod)
-mychar.dex_mod = Modcal.Modcal(mychar.dexterity + mychar.race.dex_ability_bonus)
-print("Dexterity: ", mychar.dexterity + mychar.race.dex_ability_bonus, "Modifier: ", mychar.dex_mod)
-mychar.con_mod = Modcal.Modcal(mychar.constitution + mychar.race.con_ability_bonus)
-print("Constitution: ", mychar.constitution + mychar.race.con_ability_bonus, "Modifier :", mychar.con_mod)
-mychar.int_mod = Modcal.Modcal(mychar.intelligence + mychar.race.int_ability_bonus)
-print("Intelligence: ", mychar.intelligence + mychar.race.int_ability_bonus, "Modifier :", mychar.int_mod)
-mychar.wis_mod = Modcal.Modcal(mychar.wisdom + mychar.race.wis_ability_bonus)
-print("Wisdom: ", mychar.wisdom + mychar.race.wis_ability_bonus, "Modifier :", mychar.wis_mod)
-mychar.cha_mod = Modcal.Modcal(mychar.charisma + mychar.race.cha_ability_bonus)
-print("Charisma: ", mychar.charisma + mychar.race.cha_ability_bonus, "Modifier :", mychar.cha_mod)
-'''
+# show_pri_skills()
