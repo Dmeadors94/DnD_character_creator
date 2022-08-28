@@ -94,6 +94,23 @@ martial_weapon_dict = {
     "Greataxe": ["A large two-handed and grand axe ment for battle.", "1d12 Slashing", "Heavy - Small creatures have "
                                                                                        "disadvantage on attack rolls.",
                  "Two-Handed - Must be used with both hands."]}
+language_dict = {
+    "Common": "The Common language is spoken by all creatures. It uses Common script",
+    "Dwarvish": "The Dwarvish language is spoken by the Dwarves. It uses Dwarvish script.",
+    "Elvish": "The Elvish language is spoken by the Elves. It uses Elvish script.",
+    "Giant": "The Giant language is spoken by Giants and Ogres. It uses Dwarvish script.",
+    "Gnomish": "The Gnomish language is spoken by Gnomes. It uses Dwarvish script.",
+    "Goblin": "The Goblin language is spoken by Goblins. It uses Dwarvish script.",
+    "Halfling": "The Halfling language is spoken by Halflings. It uses Common script.",
+    "Orc": "The Orc language is spoken by Orcs. It uses Dwarvish script.",
+    "Abyssal": "The Abyssal language is spoken by Demons. It uses Infernal script.",
+    "Celestial": "The Celestial language is spoken by Celestials. It uses Celestial script.",
+    "Deep Speech": "The Deep Speech language is spoken by Deep Speech creatures. It uses no known script.",
+    "Draconic": "The Draconic language is spoken by Dragons and Dragonborn. It uses Draconic script.",
+    "Infernal": "The Infernal language is spoken by Devils. It uses Infernal script.",
+    "Primordial": "The Primordial language is spoken by Elementals. It uses Dwarvish script.",
+    "Sylvan": "The Sylvan language is spoken by Fey creatures. It uses Elvish script.",
+    "Undercommon": "The Undercommon language is spoken by Underworld Traders. It uses Elvish script."}
 
 
 # Run StatGen
@@ -228,17 +245,61 @@ class DNDClass:
 
 
 class DNDRace:
+    languages = []
 
     def __init__(self, name):
         self.name = name
         self.speed = None
         self.size = None
-        self.languages = None
-        self.ability_bonuses = None
+        self.languages = []
+        self.str_ability_bonus = 0
+        self.dex_ability_bonus = 0
+        self.con_ability_bonus = 0
+        self.int_ability_bonus = 0
+        self.wis_ability_bonus = 0
+        self.cha_ability_bonus = 0
         self.traits = None
         self.features = None
         self.racial_skills = None
         self.racial_prof = None
+
+    def select_language(self):
+        if self.name == "Human":
+            selections = dict(enumerate(language_dict))
+            for i, language in enumerate(language_dict, start=1):
+                print(i, language)
+            choice_language = input("Please select a language: ")
+            try:
+                choice_language = int(choice_language) - 1
+            except ValueError:
+                print("This is not a valid number.")
+                choice_language = -1
+            while choice_language < 0 or choice_language > (len(language_dict) - 1):
+                choice_language = input(f'That language is not in the allowed languages. Please select a language: ')
+                try:
+                    choice_language = int(choice_language) - 1
+                except ValueError:
+                    print("This is not a valid number.")
+                    choice_language = -1
+            choice_language = selections[choice_language]
+            print(self.languages)
+            for y in dict.keys(language_dict):
+                if choice_language in self.languages:
+                    print("You already have that language.")
+                    return True
+                elif y == choice_language:
+                    print(f'{language_dict[y]}')
+                    choice_language_a = input("Do you want this language? Yes or No: ")
+                    if choice_language_a.lower() in ["y", "yes"]:
+                        self.languages.append(choice_language)
+                        break
+                    elif choice_language_a.lower() in ["n", "no"]:
+                        continue
+                    else:
+                        continue
+
+        else:
+            pass
 
 
 class Character:
@@ -262,8 +323,9 @@ class Character:
         self.race = None
         self.dndclass = None
         # self.stat_choice()
-        # self.race_choice()
-        self.class_choice()
+        self.race_choice()
+
+        # self.class_choice()
 
     def stat_choice(self):
         print("Please assign the stats to the following stats:")
@@ -406,12 +468,17 @@ class Character:
             print("Are you sure you want to be a Human? Yes or No: ")
             human_choice = input("Enter your choice: ")
             if human_choice.lower() in ["y", "yes"]:
-                human_race = DNDRace
+                human_race = DNDRace("Human")
                 human_race.name = "Human"
                 human_race.speed = "30ft"
                 human_race.size = "Medium"
-                human_race.languages = ["Common"]
-                human_race.ability_bonuses = 1
+                human_race.languages.append("Common")
+                human_race.str_ability_bonus = 1
+                human_race.dex_ability_bonus = 1
+                human_race.con_ability_bonus = 1
+                human_race.int_ability_bonus = 1
+                human_race.wis_ability_bonus = 1
+                human_race.cha_ability_bonus = 1
                 self.race = human_race
 
     def class_choice(self):
@@ -464,22 +531,26 @@ class Character:
 
 myname = input('enter a name: ')
 mychar = Character(myname)
-
+x = mychar.race.select_language()
+if x:
+    mychar.race.select_language()
+print(mychar.race.languages)
 # mychar.dndclass.select_pri_skills()
-mychar.dndclass.select_equipment()
-
+# mychar.dndclass.select_equipment()
+'''
 print("Your primary skills are: ", mychar.dndclass.pri_skills)
 
 print("Your final stats are: ")
-mychar.str_mod = Modcal.Modcal(mychar.strength + mychar.race.ability_bonuses)
-print("Strength: ", mychar.strength + mychar.race.ability_bonuses, "Modifier: ", mychar.str_mod)
-mychar.dex_mod = Modcal.Modcal(mychar.dexterity + mychar.race.ability_bonuses)
-print("Dexterity: ", mychar.dexterity + mychar.race.ability_bonuses, "Modifier: ", mychar.dex_mod)
-mychar.con_mod = Modcal.Modcal(mychar.constitution + mychar.race.ability_bonuses)
-print("Constitution: ", mychar.constitution + mychar.race.ability_bonuses, "Modifier :", mychar.con_mod)
-mychar.int_mod = Modcal.Modcal(mychar.intelligence + mychar.race.ability_bonuses)
-print("Intelligence: ", mychar.intelligence + mychar.race.ability_bonuses, "Modifier :", mychar.int_mod)
-mychar.wis_mod = Modcal.Modcal(mychar.wisdom + mychar.race.ability_bonuses)
-print("Wisdom: ", mychar.wisdom + mychar.race.ability_bonuses, "Modifier :", mychar.wis_mod)
-mychar.cha_mod = Modcal.Modcal(mychar.charisma + mychar.race.ability_bonuses)
-print("Charisma: ", mychar.charisma + mychar.race.ability_bonuses, "Modifier :", mychar.cha_mod)
+mychar.str_mod = Modcal.Modcal(mychar.strength + mychar.race.str_ability_bonus)
+print("Strength: ", mychar.strength + mychar.race.str_ability_bonus, "Modifier: ", mychar.str_mod)
+mychar.dex_mod = Modcal.Modcal(mychar.dexterity + mychar.race.dex_ability_bonus)
+print("Dexterity: ", mychar.dexterity + mychar.race.dex_ability_bonus, "Modifier: ", mychar.dex_mod)
+mychar.con_mod = Modcal.Modcal(mychar.constitution + mychar.race.con_ability_bonus)
+print("Constitution: ", mychar.constitution + mychar.race.con_ability_bonus, "Modifier :", mychar.con_mod)
+mychar.int_mod = Modcal.Modcal(mychar.intelligence + mychar.race.int_ability_bonus)
+print("Intelligence: ", mychar.intelligence + mychar.race.int_ability_bonus, "Modifier :", mychar.int_mod)
+mychar.wis_mod = Modcal.Modcal(mychar.wisdom + mychar.race.wis_ability_bonus)
+print("Wisdom: ", mychar.wisdom + mychar.race.wis_ability_bonus, "Modifier :", mychar.wis_mod)
+mychar.cha_mod = Modcal.Modcal(mychar.charisma + mychar.race.cha_ability_bonus)
+print("Charisma: ", mychar.charisma + mychar.race.cha_ability_bonus, "Modifier :", mychar.cha_mod)
+'''
