@@ -111,7 +111,11 @@ language_dict = {
     "Primordial": "The Primordial language is spoken by Elementals. It uses Dwarvish script.",
     "Sylvan": "The Sylvan language is spoken by Fey creatures. It uses Elvish script.",
     "Undercommon": "The Undercommon language is spoken by Underworld Traders. It uses Elvish script."}
-lang_race = ["Human"]
+lang_race = ["Human", "Half-Elf"]
+skill_list = ["Athletics", "Acrobatics", "Sleight of Hand", "Stealth", "Arcana",
+              "History", "Investigation", "Nature", "Religion", "Animal Handling",
+              "Insight", "Medicine", "Perception", "Survival", "Deception",
+              "Intimidation", "Performance", "Persuasion"]
 
 
 # Run StatGen
@@ -267,6 +271,9 @@ class DNDRace:
     languages = []
 
     def __init__(self, name):
+        self.allowed_skills = []
+        self.skill_points = None
+        self.race_skills = []
         self.tool_list = []
         self.name = name
         self.speed = None
@@ -341,6 +348,41 @@ class DNDRace:
                 choice_tool = -1
         choice_tool = selections[choice_tool]
         self.racial_prof.append(choice_tool)
+
+    def select_race_skills(self):
+        escape = False
+        while not escape:
+            for s in range(self.skill_points):
+                for i, skill in enumerate(self.allowed_skills, start=1):
+                    print(i, skill)
+                add_skill_index = input(f'Please select skill : ')
+                try:
+                    add_skill_index = int(add_skill_index) - 1
+                except ValueError:
+                    print("This is not a valid number.")
+                    add_skill_index = -1
+                while add_skill_index < 0 or add_skill_index > (len(self.allowed_skills) - 1):
+                    add_skill_index = input(f'That skill is not in the allowed skills. Please select skill : ')
+                    try:
+                        add_skill_index = int(add_skill_index) - 1
+                    except ValueError:
+                        print("This is not a valid number.")
+                        add_skill_index = -1
+                add_skill = self.allowed_skills.pop(add_skill_index)
+                for y in dict.keys(skill_dict):
+                    if y == add_skill:
+                        print(f'{skill_dict[y]}')
+                        choice_skill = input("Do you want to be proficient in this skill? Yes or No: ")
+                        if choice_skill.lower() in ["y", "yes"]:
+                            self.race_skills.append(add_skill)
+                            escape = True
+                        else:
+                            self.allowed_skills.insert(add_skill_index, add_skill)
+                            if self.skill_points < 2:
+                                self.skill_points += 1
+                                continue
+                            else:
+                                continue
 
 
 class Character:
@@ -504,6 +546,11 @@ class Character:
             print("Please select a Race: ")
             print("1. Human")
             print("2. Dwarf")
+            print("3. Elf")
+            print("4. Half-Elf")
+            print("5. Half-Orc")
+            print("6. Gnome")
+            print("7. Halfling")
             race_selection = input("Enter your choice: ")
             if race_selection == "1":
                 print("Humans come in all shapes and sizes. Humans get +1 to all stats and a extra language"
@@ -554,11 +601,139 @@ class Character:
                     dwarf_race.racial_prof.append("Handaxe")
                     dwarf_race.racial_prof.append("Light Hammer")
                     dwarf_race.racial_prof.append("Warhammer")
+                    dwarf_race.con_ability_bonus = 2
                     dwarf_race.tool_choice = True
                     self.race = dwarf_race
                     break
                 else:
                     continue
+            elif race_selection == "3":
+                print("Elves are tall and slender. Known widely for their poetry and connection to nature, they tend "
+                      "towards fanciful things in life.\nThey get +2 to their Dexterity.\nThey have Darkvision to "
+                      "see better in the "
+                      "dark. "
+                      "\nDo to their connection with the wild Fey, Elves have advantage on saving throws against being "
+                      "charmed and can not be put to sleep by magic.\nThey also have Trace, Elves do not need to "
+                      "sleep, \nand they can instead meditate for four hours to reap the benefits of 8 hours of rest.")
+                print("Are you sure you want to be a Elf? Yes or No: ")
+                elf_choice = input("Enter your choice: ")
+                if elf_choice.lower() in ["y", "yes"]:
+                    elf_race = DNDRace("Elf")
+                    elf_race.name = "Elf"
+                    elf_race.speed = "30ft"
+                    elf_race.size = "Medium"
+                    elf_race.languages.append("Common")
+                    elf_race.languages.append("Elvish")
+                    elf_race.features.append("Darkvision")
+                    elf_race.features.append("Keen senses")
+                    elf_race.features.append("Trance")
+                    elf_race.race_skills.append("Perception")
+                    elf_race.dex_ability_bonus = 2
+                    elf_race.tool_choice = False
+                    self.race = elf_race
+                    break
+            elif race_selection == "4":
+                print("Half-Elves are the offspring of Humans and Elves. They have traits of both races but tend to "
+                      "\nfall closely to one or the other depending on upbringing "
+                      "\nThey gain a +2 to Charisma due to their ability to socialize and adapt to two different "
+                      "cultures.\nAlso due to their Human ancestry they can choose two ability scores to increase by "
+                      "+1.\nThey have Darkvision to see better in the dark.\nThey are able two pick two skills to be "
+                      "proficient in.\nThey have advantage on saving throws "
+                      "against being charmed and can not be put to sleep by magic.\nThey also know both Common and "
+                      "Elvish Languages, and can pick one additional language. ")
+
+                print("Are you sure you want to be a Half-Elf? Yes or No: ")
+                half_elf_choice = input("Enter your choice: ")
+                if half_elf_choice.lower() in ["y", "yes"]:
+                    half_elf_race = DNDRace("Half-Elf")
+                    half_elf_race.name = "Half-Elf"
+                    half_elf_race.speed = "30ft"
+                    half_elf_race.size = "Medium"
+                    half_elf_race.languages.append("Common")
+                    half_elf_race.languages.append("Elvish")
+                    half_elf_race.features.append("Darkvision")
+                    half_elf_race.features.append("Fey Ancestry")
+                    half_elf_race.features.append("Skill Versatility")
+                    half_elf_race.cha_ability_bonus = 2
+                    half_elf_race.skill_points = 2
+                    half_elf_race.allowed_skills = ["Athletics", "Acrobatics", "Sleight of Hand", "Stealth", "Arcana",
+                                                    "History", "Investigation", "Nature", "Religion", "Animal Handling",
+                                                    "Insight", "Medicine", "Perception", "Survival", "Deception",
+                                                    "Intimidation", "Performance", "Persuasion"]
+                    half_elf_race.tool_choice = False
+                    self.race = half_elf_race
+                    break
+            elif race_selection == "5":
+                print("Half-Orcs are the offspring of Humans and Orcs. They tend to be larger and more brutish than "
+                      "their human counterparts.\nThey have an increase to their Strength score by +2 and "
+                      "Constitution score by +1.\nDue to their Orcish ancestry they have Darkvision. Allowing them to "
+                      "see in Dark places better than others.\nDo to their Orcish heritage Half-Orcs have the "
+                      "Intimidation skill be default.\nThey are able to survive being hit for more then their total "
+                      "health pool, dropping to 1 health instead. They must finish a long rest to use this feature "
+                      "again.\nWhen you score a critical hit with a melee weapon attack, you can roll one of the "
+                      "weapon’s damage dice one additional time and add it to the extra damage of the critical hit.")
+                print("Are you sure you want to be a Half-Orc? Yes or No: ")
+                half_orc_choice = input("Enter your choice: ")
+                if half_orc_choice.lower() in ["y", "yes"]:
+                    half_orc_race = DNDRace("Half-Orc")
+                    half_orc_race.name = "Half-Orc"
+                    half_orc_race.speed = "30ft"
+                    half_orc_race.size = "Medium"
+                    half_orc_race.languages.append("Common")
+                    half_orc_race.languages.append("Orcish")
+                    half_orc_race.features.append("Darkvision")
+                    half_orc_race.features.append("Menacing")
+                    half_orc_race.features.append("Relentless Endurance")
+                    half_orc_race.features.append("Savage Attacks")
+                    half_orc_race.race_skills.append("Perception")
+                    half_orc_race.str_ability_bonus = 2
+                    half_orc_race.con_ability_bonus = 1
+                    half_orc_race.tool_choice = False
+                    self.race = half_orc_race
+                    break
+            elif race_selection == "6":
+                print("Gnomes are willy and cunning. They are typically very Intelligent creatures and are known for "
+                      "their contributions to technology and magical arts.\nThey have a +2 to their Intelligence.\n"
+                      "They have Darkvision to see better in the dark.\nThey have advantage against all Intelligence, "
+                      "Wisdom, and Charisma saving throws against magic.")
+                print("Are you sure you want to be a Gnome? Yes or No: ")
+                gnome_choice = input("Enter your choice: ")
+                if gnome_choice.lower() in ["y", "yes"]:
+                    gnome_race = DNDRace("Gnome")
+                    gnome_race.name = "Gnome"
+                    gnome_race.speed = "25ft"
+                    gnome_race.size = "Small"
+                    gnome_race.languages.append("Common")
+                    gnome_race.languages.append("Gnomish")
+                    gnome_race.features.append("Darkvision")
+                    gnome_race.features.append("Gnome Cunning")
+                    gnome_race.int_ability_bonus = 2
+                    gnome_race.tool_choice = False
+                    self.race = gnome_race
+                    break
+            elif race_selection == "7":
+                print("Halflings are laid backed but adventurous folk that like to keep to themselves but make an "
+                      "exception for an opportunity for adventure.\n Due to their small size they have a +2 to their "
+                      "Dexterity.\nThey are inherently nimble and can move through the space of any creature that is "
+                      "smaller than them.\nThey are also inherently lucky, When you roll a 1 on the d20 for an attack "
+                      "roll, ability check, or saving throw, you can reroll the die and must use the new roll.\nAnd "
+                      "lastly they are Brave, resulting in advantage against being frightened.")
+                print("Are you sure you want to be a Halfling? Yes or No: ")
+                halfling_choice = input("Enter your choice: ")
+                if halfling_choice.lower() in ["y", "yes"]:
+                    halfling_race = DNDRace("Halfling")
+                    halfling_race.name = "Halfling"
+                    halfling_race.speed = "25ft"
+                    halfling_race.size = "Small"
+                    halfling_race.languages.append("Common")
+                    halfling_race.languages.append("Halfling")
+                    halfling_race.features.append("Lucky")
+                    halfling_race.features.append("Brave")
+                    halfling_race.features.append("Halfling Nimbleness")
+                    halfling_race.dex_ability_bonus = 2
+                    halfling_race.tool_choice = False
+                    self.race = halfling_race
+                    break
 
     def class_choice(self):
         print("Please select a Class: ")
@@ -611,10 +786,13 @@ class Character:
 myname = input('enter a name: ')
 mychar = Character(myname)
 duplicate_lang = mychar.race.select_language()
-if duplicate_lang:
-    mychar.race.select_language()
-if mychar.race.tool_choice:
+while duplicate_lang:
+    duplicate_lang = mychar.race.select_language()
+    if not duplicate_lang:
+        break
+while mychar.race.tool_choice:
     mychar.race.tool_select()
+mychar.race.select_race_skills()
 # mychar.dndclass.select_pri_skills()
 # mychar.dndclass.select_equipment()
 # show_pri_skills()
