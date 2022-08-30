@@ -149,6 +149,10 @@ def show_pri_skills():
 
 class DNDClass:
     def __init__(self, name):
+        self.god_choice = None
+        self.cantrip_list = []
+        self.first_level_spell_list = []
+        self.professions = []
         self.equipment_list = []
         self.name = name
         self.allowed_skills = []
@@ -266,11 +270,249 @@ class DNDClass:
                 else:
                     continue
 
+    def god_choice(self):
+        print("As a Cleric, you must choose a God to follow. This will give you additional powers.")
+        print("Please choose a god from the following list:")
+        print("1. Leven - The God of Life. Their domain focuses on healing.")
+        print("2. Ohen - The God of Light. Their domain focuses on the sun and fire")
+        print("3. Raiz - The God of Nature. Their domain focuses on the animals and plants")
+        print("4. Tempest - The God of Storms. Their domain focuses on the weather and the elements")
+        print("5. Viden - The God of Knowledge. Their domain focuses on the accumulation of knowledge")
+        print("6. Komik - The God of Trickery. Their domain focuses on the use of thievery and trickery")
+        print("7. Slag - The God of War. Their domain focuses on the use of weapons and combat")
+        print("8. Opas - The God of Death. Their domain focuses on the use of death, darkness, and blight")
+        while True:
+            try:
+                god_choice_input = int(input("Enter your choice: "))
+                if god_choice_input == 1:
+                    print("You have chosen Leven. You have the following powers:")
+                    print("=================================================================================")
+                    print("You gain Proficiency in Heavy Armor.")
+                    print("=================================================================================")
+                    print("You gain the Class Feature: starting at 1st level, your healing spells are more")
+                    print("effective. Whenever you use a spell of 1st level or higher to restore hit points "
+                          "to a")
+                    print(
+                        "creature, the creature regains additional hit points equal to 2 + the spell's level.")
+                    print("=================================================================================")
+                    print("Are you sure you want to choose this god? Yes or No?")
+                    god_choice_input = input("Enter your choice: ")
+                    if god_choice_input.lower() == "yes" or god_choice_input.lower() == "y":
+                        print("You have chosen Leven.")
+                        self.god_choice = "Leven"
+                        self.professions.append("Armor: Heavy")
+                        self.class_features.append("Divine Domain: Life")
+                        self.class_features.append("Disciple of Life")
+                        self.first_level_spell_list.append("Cure Wounds")
+                        self.first_level_spell_list.append("Bless")
+                        break
+                    else:
+                        print("Please Choose a God.")
+                        continue
+                elif god_choice_input == 2:
+                    print("You have chosen Ohen. You have the following powers:")
+                    print("=================================================================================")
+                    print("You gain the light cantrip.")
+                    print("=================================================================================")
+                    print("You gain the Class Feature: Warding Flare")
+                    print("At 1st level, you can interpose divine light between yourself and an attacking")
+                    print("enemy. When you are attacked by a creature within 30 feet of you that you can see,")
+                    print("you can use your reaction to impose disadvantage on the attack roll, causing light "
+                          "to")
+                    print("flare before the attacker before it hits or misses. An attacker that can't be "
+                          "blinded")
+                    print("is immune to this feature. You can use this feature a number of times equal to your")
+                    print("Wisdom modifier (a minimum of once). You regain all expended uses when you finish a")
+                    print("long rest.")
+                    print("=================================================================================")
+                    print("Are you sure you want to choose this god? Yes or No?")
+                    god_choice_input = input("Enter your choice: ")
+                    if god_choice_input.lower() == "yes" or god_choice_input.lower() == "y":
+                        print("You have chosen Ohen.")
+                        self.god_choice = "Ohen"
+                        self.class_features.append("Divine Domain: Light")
+                        self.class_features.append("Warding Flare")
+                        self.cantrip_list.append("Light")
+                        self.first_level_spell_list.append("Burning Hands")
+                        self.first_level_spell_list.append("Faire Fire")
+                        break
+                    else:
+                        print("Please Choose a God.")
+                        continue
+                elif god_choice_input == 3:
+                    print("You have chosen Raiz. You have the following powers:")
+                    print("=================================================================================")
+                    print(
+                        "Acolyte of Nature: At 1st level, you learn one cantrip of your choice from the druid")
+                    print("spell list. This cantrip counts as a cleric cantrip for you, but it doesn’t count")
+                    print("against the number of cleric cantrips you know. You also gain proficiency in one of")
+                    print("the following skills of your choice: Animal Handling, Nature, or Survival.")
+                    print("=================================================================================")
+                    print("You gain proficiency in Heavy Armor.")
+                    print("=================================================================================")
+                    print("Are you sure you want to choose this god? Yes or No?")
+                    god_choice_input = input("Enter your choice: ")
+                    if god_choice_input.lower() == "yes" or god_choice_input.lower() == "y":
+                        print("You have chosen Raiz.")
+                        self.god_choice = "Raiz"
+                        self.class_features.append("Divine Domain: Nature")
+                        self.professions.append("Armor: Heavy")
+                        self.first_level_spell_list.append("Animal Friendship")
+                        self.first_level_spell_list.append("Speak with Animals")
+                        # TODO add skill select for god
+                        print("Please choose a cantrip from the following list: ")
+                        # TODO add cantrip choice for god
+                        break
+                    else:
+                        print("Please Choose a God.")
+                        continue
+                elif god_choice_input == 4:
+                    print("You have chosen Tempest. You have the following powers:")
+                    print("=================================================================================")
+                    print("You gain proficiency with martial weapons and heavy armor.")
+                    print("=================================================================================")
+                    print("You gain the Class Feature: Wrath of the Storm")
+                    print("Also at 1st level, you can thunderously rebuke attackers. When a creature within 5")
+                    print("feet of you that you can see hits you with an attack, you can use your reaction to")
+                    print(
+                        "cause the creature to make a Dexterity saving throw. The creature takes 2d8 lightning")
+                    print(
+                        "or thunder damage (your choice) on a failed saving throw, and "
+                        "half as much damage on a")
+                    print("successful one. You can use this feature a number of times equal to your Wisdom")
+                    print(
+                        "modifier (a minimum of once). You regain all expended uses when you finish a "
+                        "long rest.")
+                    print("=================================================================================")
+                    print("Are you sure you want to choose this god? Yes or No?")
+                    god_choice_input = input("Enter your choice: ")
+                    if god_choice_input.lower() == "yes" or god_choice_input.lower() == "y":
+                        print("You have chosen Viden.")
+                        self.god_choice = "Viden"
+                        self.class_features.append("Divine Domain: Tempest")
+                        self.professions.append("Armor: Heavy")
+                        self.professions.append("Weapon: Martial")
+                        self.first_level_spell_list.append("Fog Cloud")
+                        self.first_level_spell_list.append("Thunderwave")
+                        break
+                    else:
+                        print("Please Choose a God.")
+                        continue
+                elif god_choice_input == 5:
+                    print("You have chosen Viden. You have the following powers:")
+                    print("=================================================================================")
+                    print("You gain the Class Feature: Blessings of Knowledge")
+                    print("At 1st level, you learn two languages of your choice. You also become proficient in")
+                    print(
+                        "your choice of two of the following skills: Arcana, History, Nature, or "
+                        "Religion. Your")
+                    print(
+                        "proficiency bonus is doubled for any ability check you make that uses either of those")
+                    print("skills.")
+                    print("=================================================================================")
+                    print("Are you sure you want to choose this god? Yes or No?")
+                    god_choice_input = input("Enter your choice: ")
+                    if god_choice_input.lower() == "yes" or god_choice_input.lower() == "y":
+                        print("You have chosen Viden.")
+                        self.god_choice = "Viden"
+                        self.class_features.append("Divine Domain: Knowledge")
+                        self.class_features.append("Blessings of Knowledge")
+                        self.first_level_spell_list.append("Identify")
+                        self.first_level_spell_list.append("Command")
+                        print("Please choose two of the following skills: ")
+                        # TODO add skill select for knowledge cleric
+                elif god_choice_input == 6:
+                    print("You have chosen Komik. You have the following powers:")
+                    print("=================================================================================")
+                    print("You gain the Class Feature: Blessing of the Trickster")
+                    print("Starting when you choose this domain at 1st level, you can use your action to "
+                          "touch a")
+                    print("willing creature other than yourself to give it advantage on Dexterity (Stealth)")
+                    print("checks. This blessing lasts for 1 hour or until you use this feature again.")
+                    print("=================================================================================")
+                    print("Are you sure you want to choose this god? Yes or No?")
+                    god_choice_input = input("Enter your choice: ")
+                    if god_choice_input.lower() == "yes" or god_choice_input.lower() == "y":
+                        print("You have chosen Komik.")
+                        self.god_choice = "Komik"
+                        self.class_features.append("Divine Domain: Trickery")
+                        self.class_features.append("Blessing of the Trickster")
+                        self.first_level_spell_list.append("Charm Person")
+                        self.first_level_spell_list.append("Disguise Self")
+                        break
+                    else:
+                        print("Please Choose a God.")
+                        continue
+                elif god_choice_input == 7:
+                    print("You have chosen Slag. You have the following powers:")
+                    print("=================================================================================")
+                    print("You gain proficiency in martial weapons and heavy armor.")
+                    print("=================================================================================")
+                    print("You gain the Class Feature: War Priest")
+                    print(
+                        "From 1st level, your god delivers bolts of inspiration to you while "
+                        "you are engaged in")
+                    print("battle. When you use the Attack action, you can make one weapon attack as a bonus")
+                    print("action. You can use this feature a number of times equal to your Wisdom modifier")
+                    print("(a minimum of once). You regain all expended uses when you finish a long rest.")
+                    print("=================================================================================")
+                    print("Are you sure you want to choose this god? Yes or No?")
+                    god_choice_input = input("Enter your choice: ")
+                    if god_choice_input.lower() == "yes" or god_choice_input.lower() == "y":
+                        print("You have chosen Slag.")
+                        self.god_choice = "Slag"
+                        self.class_features.append("Divine Domain: War")
+                        self.class_features.append("War Priest")
+                        self.professions.append("Weapon: Martial")
+                        self.professions.append("Armor: Heavy")
+                        self.first_level_spell_list.append("Divine Favor")
+                        self.first_level_spell_list.append("Shield of Faith")
+                        break
+                    else:
+                        print("Please Choose a God.")
+                        continue
+                elif god_choice_input == 8:
+                    print("You have chosen Opas. You have the following powers:")
+                    print("=================================================================================")
+                    print("You gain proficiency in martial weapons.")
+                    print("=================================================================================")
+                    print("You gain the Class Feature: Reaper")
+                    print("At 1st level, you learn one necromancy cantrip of your choice from any spell list.")
+                    print("When you cast a necromancy cantrip that normally targets only one creature,")
+                    print("the spell can instead target two creatures within range and within 5 feet of each")
+                    print("other.")
+                    print("=================================================================================")
+                    print("Are you sure you want to choose this god? Yes or No?")
+                    god_choice_input = input("Enter your choice: ")
+                    if god_choice_input.lower() == "yes" or god_choice_input.lower() == "y":
+                        print("You have chosen Opas.")
+                        self.god_choice = "Opas"
+                        self.class_features.append("Divine Domain: Death")
+                        self.class_features.append("Reaper")
+                        self.professions.append("Weapon: Martial")
+                        self.first_level_spell_list.append("False Life")
+                        self.first_level_spell_list.append("Ray of Sickness")
+                        break
+                    else:
+                        print("Please Choose a God.")
+                        continue
+                else:
+                    print("Invalid input")
+                    continue
+            except ValueError:
+                print("Invalid input")
+                continue
+            except IndexError:
+                print("Invalid input")
+                continue
+            break
+
 
 class DNDRace:
     languages = []
 
     def __init__(self, name):
+        self.race_cantrip = []
         self.allowed_skills = []
         self.skill_points = None
         self.race_skills = []
@@ -383,6 +625,55 @@ class DNDRace:
                                 continue
                             else:
                                 continue
+
+    def scale_choice(self):
+        while True:
+            print("Please choose a Dragon color from the list below, the damage type indicates your breath weapon "
+                  "damage AND your damage resistance.: ")
+            print("1. Black - Acid damage - 5 by 30 ft. line(Dex. save)")
+            print("2. Blue - Lightning damage - 5 by 30 ft. line(Dex. save)")
+            print("3. Brass - Fire damage - 5 by 30 ft. line(Dex. save)")
+            print("4. Bronze - Lightning damage - 5 by 30 ft. line(Dex. save)")
+            print("5. Copper - Acid damage - 5 by 30 ft. line(Dex. save)")
+            print("6. Gold - Fire damage - 15ft. cone(Dex. save)")
+            print("7. Green - Poison damage - 15ft. cone(Con. save)")
+            print("8. Red - Fire damage - 15ft. cone(Dex. save")
+            print("9. Silver - Cold damage - 15ft. cone(Con. save)")
+            print("10. White - Cold damage - 15ft. cone(Con. save)")
+            scale_choice_a = input("Scale Color Choice: ")
+            if scale_choice_a == "1":
+                self.features.append("Black - Acid damage - 5 by 30 ft. line(Dex. save)")
+                break
+            elif scale_choice_a == "2":
+                self.features.append("Blue - Lightning damage - 5 by 30 ft. line(Dex. save)")
+                break
+            elif scale_choice_a == "3":
+                self.features.append("Brass - Fire damage - 5 by 30 ft. line(Dex. save)")
+                break
+            elif scale_choice_a == "4":
+                self.features.append("Bronze - Lightning damage - 5 by 30 ft. line(Dex. save)")
+                break
+            elif scale_choice_a == "5":
+                self.features.append("Copper - Acid damage - 5 by 30 ft. line(Dex. save)")
+                break
+            elif scale_choice_a == "6":
+                self.features.append("Gold - Fire damage - 15ft. cone(Dex. save)")
+                break
+            elif scale_choice_a == "7":
+                self.features.append("Green - Poison damage - 15ft. cone(Con. save)")
+                break
+            elif scale_choice_a == "8":
+                self.features.append("Red - Fire damage - 15ft. cone(Dex. save")
+                break
+            elif scale_choice_a == "9":
+                self.features.append("Silver - Cold damage - 15ft. cone(Con. save)")
+                break
+            elif scale_choice_a == "10":
+                self.features.append("White - Cold damage - 15ft. cone(Con. save)")
+                break
+            else:
+                print("Not a valid option.")
+                continue
 
 
 class Character:
@@ -551,6 +842,8 @@ class Character:
             print("5. Half-Orc")
             print("6. Gnome")
             print("7. Halfling")
+            print("8. Tiefling")
+            print("9. Dragonborn")
             race_selection = input("Enter your choice: ")
             if race_selection == "1":
                 print("Humans come in all shapes and sizes. Humans get +1 to all stats and a extra language"
@@ -734,6 +1027,50 @@ class Character:
                     halfling_race.tool_choice = False
                     self.race = halfling_race
                     break
+            elif race_selection == "8":
+                print("Tieflings are creatures born with devil-like features caused by a deal with a devil somewhere "
+                      "in their family line or a interbreeding of devil and human.\nThey are widely distrusted by are "
+                      "a varied by personality as humans are.\nDue to their Infernal heritage, they gain the "
+                      "following:\nDarkvison, which is the ability to see better in the dark.\nFire resistance.\nAnd "
+                      "they start out knowing the cantrip 'Thaumaturgy'.")
+                print("Are you sure you want to be a Tiefling? Yes or No: ")
+                tiefling_choice = input("Enter your choice: ")
+                if tiefling_choice.lower() in ["y", "yes"]:
+                    tiefling_race = DNDRace("Tiefling")
+                    tiefling_race.name = "Tiefling"
+                    tiefling_race.speed = "30ft"
+                    tiefling_race.size = "Medium"
+                    tiefling_race.languages.append("Common")
+                    tiefling_race.languages.append("Infernal")
+                    tiefling_race.features.append("Darkvision")
+                    tiefling_race.features.append("Hellish Resistance")
+                    tiefling_race.features.append("Infernal Legacy")
+                    tiefling_race.race_cantrip.append("Thaumaturgy")
+                    tiefling_race.cha_ability_bonus = 2
+                    tiefling_race.int_ability_bonus = 1
+                    tiefling_race.tool_choice = False
+                    self.race = tiefling_race
+                    break
+            elif race_selection == "9":
+                print("Nobody knows the true origin of the Dragonborn, but they are bi-pedal humanoid Dragon-like "
+                      "creatures. They tend to live in tribal societies and are considered very honorable "
+                      "people.\nTheir Strength score increases by 2 and their Charisma score by 1.\nThey get a Breath "
+                      "Weapon and damage resistance based on the color of Dragon they are.\n")
+                print("Are you sure you want to be a Dragonborn? Yes or No: ")
+                dragonborn_choice = input("Enter your choice: ")
+                if dragonborn_choice.lower() in ["y", "yes"]:
+                    dragonborn_race = DNDRace("Dragonborn")
+                    dragonborn_race.name = "Dragonborn"
+                    dragonborn_race.speed = "30ft"
+                    dragonborn_race.size = "Medium"
+                    dragonborn_race.languages.append("Common")
+                    dragonborn_race.languages.append("Draconic")
+                    dragonborn_race.features.append("Draconic Ancestry")
+                    dragonborn_race.scale_choice()
+                    dragonborn_race.dex_ability_bonus = 2
+                    dragonborn_race.tool_choice = False
+                    self.race = dragonborn_race
+                    break
 
     def class_choice(self):
         print("Please select a Class: ")
@@ -781,6 +1118,24 @@ class Character:
                 bard_class.featurelist = ["Bardic Inspiration"]
                 bard_class.is_a_spell_caster = True
                 self.dndclass = bard_class
+        elif class_selection == "3":
+            print("Clerics are natural healers and defenders. They can call upon the powers of their deities to "
+                  "heal their allies and themselves.\nThey can also use their powers to destroy enemies.\n")
+            print("Are you sure you want to be a Cleric? Yes or No: ")
+            cleric_choice = input("Enter your choice: ")
+            if cleric_choice.lower() in ["y", "yes"]:
+                cleric_class = DNDClass("Cleric")
+                cleric_class.god_choice()
+                cleric_class.allowed_skills = ["History", "Insight", "Medicine", "Persuasion", "Religion"]
+                cleric_class.allowed_equipment_choice_one = ["A Mace", "A Warhammer(If proficient)"]
+                cleric_class.allowed_equipment_choice_two = ["Scale mail", "Leather Armor", "Chainmail(If proficient)"]
+                cleric_class.allowed_equipment_choice_three = ["A Light Crossbow and 20 bolts", "Any Simple Weapon"]
+                cleric_class.static_equipment = ["A Priest's pack", "Explorer's pack"]
+                cleric_class.static_equipment = ["Shield", "Holy Symbol"]
+                cleric_class.skill_points = 2
+                cleric_class.featurelist = ["Spellcasting", "Divine Domain"]
+                cleric_class.is_a_spell_caster = True
+                self.dndclass = cleric_class
 
 
 myname = input('enter a name: ')
