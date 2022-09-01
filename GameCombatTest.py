@@ -70,7 +70,7 @@ class Character:
 
 
 random_mob = (random.choice(list(monsters.items())))
-hero = Character("Hero", 10, 2, 13)
+hero = Character("Hero", 50, 10, 13)
 monster = Enemy(random_mob[0], random_mob[1]["health"], random_mob[1]["power"], random_mob[1]["armor_class"])
 
 hero.print_status()
